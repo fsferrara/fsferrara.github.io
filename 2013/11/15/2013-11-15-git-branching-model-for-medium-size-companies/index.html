@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-45189328-2', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <title>A GIT branching model for medium-size companies | fsferrara</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="This article explains how a medium size company, which has several teams, can adopt GIT for the source code management. As a software configuration management, GIT serves two different functions. The">
+<meta name="keywords" content="git,branching-model,collaboration,devops,teams">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A GIT branching model for medium-size companies">
+<meta property="og:url" content="http:&#x2F;&#x2F;fsferrara.github.io&#x2F;2013&#x2F;11&#x2F;15&#x2F;2013-11-15-git-branching-model-for-medium-size-companies&#x2F;index.html">
+<meta property="og:site_name" content="fsferrara">
+<meta property="og:description" content="This article explains how a medium size company, which has several teams, can adopt GIT for the source code management. As a software configuration management, GIT serves two different functions. The">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-12-15T18:35:00.752Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@fsferrara">
+<link rel="publisher" href="+SaverioFerrara">
+  
+    <link rel="alternate" href="/atom.xml" title="fsferrara" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">fsferrara</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">...another Software Engineer blog!</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://fsferrara.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2013-11-15-git-branching-model-for-medium-size-companies" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/11/15/2013-11-15-git-branching-model-for-medium-size-companies/" class="article-date">
+  <time datetime="2013-11-15T11:00:00.000Z" itemprop="datePublished">2013-11-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/programming/">programming</a>►<a class="article-category-link" href="/categories/programming/system-administration/">system administration</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      A GIT branching model for medium-size companies
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>This article explains how a medium size company, which has several teams, can adopt GIT for the source code management. As a software configuration management, GIT serves two different functions. The first one is the management support for controlling changes to software products, and the second one is merely development support for coordinating file changes among product developers. In particular here I want to talk about the branching model.</p>
+<a id="more"></a>
+
+
+
+<p>The following branching model is for a single product, whereas only the last product version is maintained (i.e. a web site or a mobile app). Additionally this branching model support an agile process model, where a new product version is released (hopefully) at the end of each team sprint.</p>
+<p>This proposal is based on the &#8220;branch-by-purpose&#8221; model (@see <a href="http://svn.haxx.se/users/archive-2007-10/att-0101/SCMBranchingModels.pdf" target="_blank" rel="noopener">The Importance of Branching Models in SCM</a>), but it also provide a branch for the next release.</p>
+<p>Main actors here are:</p>
+<ul>
+<li><strong>Developers</strong>, one or more developer teams</li>
+<li><strong>Release manager</strong>, or a release team</li>
+<li><strong>System administrator</strong>, or a sysadm team</li>
+</ul>
+<p>This branching model is inspired by the work of <a href="http://nvie.com/about/" target="_blank" rel="noopener">Vincent Driessen</a>.</p>
+<h2 id="Branches-organization"><a href="#Branches-organization" class="headerlink" title="Branches organization"></a>Branches organization</h2><p>A good branching model for medium-size technology department should absolutely have these characteristics:</p>
+<ul>
+<li>Parallel Development</li>
+<li>Collaboration</li>
+<li>Release Staging</li>
+<li>Support for emergency fixes (hotfix)</li>
+</ul>
+<p>The proposed branching model has three branches, each with an infinite life. System administrators will always use the &#8216;master&#8217; branch: everything is happy and deployable in master. Developers should always use the &#8216;develop&#8217; branch, and all teams share this branch to commit their features. Also developers can&#8217;t commit anything in the master branch, the release manager is in charge of this operation. The release manager has its own branch &#8216;candidate&#8217; in order to integrate in it the team&#8217;s patches, test these patches, promote versions, and then commit stable versions in the &#8216;master&#8217; branch. The original work <a href="http://nvie.com/posts/a-successful-git-branching-model/" target="_blank" rel="noopener">GitFlow</a> does not have the &#8216;candidate&#8217; branch, but uses a new branch for each release. I, instead, prefer to have the integration branch always with the same name: this can be useful in the future for the dependencies management.</p>
+<h2 id="Creating-the-three-branches"><a href="#Creating-the-three-branches" class="headerlink" title="Creating the three branches"></a>Creating the three branches</h2><p>Once created the repository with the master branch, you can create &#8216;candidate&#8217; and &#8216;develop&#8217; branches.</p>
+<pre lang="bash">[~/git]$ git clone https://github.com/fsferrara/lemon.git
+Cloning into 'lemon'...
+remote: Counting objects: 12, done.
+remote: Compressing objects: 100% (11/11), done.
+remote: Total 12 (delta 2), reused 10 (delta 0)
+Unpacking objects: 100% (12/12), done.
+[~/git]$ cd lemon
+
+[master][~/git/lemon]$ git branch -a
+* master
+  remotes/origin/HEAD -&gt; origin/master
+  remotes/origin/master
+
+[master][~/git/lemon]$ git branch candidate master
+[master][~/git/lemon]$ git branch develop candidate
+
+[master][~/git/lemon]$ git push origin candidate
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/fsferrara/lemon.git
+ * [new branch]      candidate -&gt; candidate
+
+[master][~/git/lemon]$ git push origin develop
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/fsferrara/lemon.git
+ * [new branch]      develop -&gt; develop</pre>
+
+<p>Now we have these three branches:</p>
+<pre>
+   develop        candidate        master
+      +               +               +
+      |               |               |
+      |               |               |
+      |               |               |
+      |               |               |
+      |               |               |
+      |               |               |
+      |               |               |
+      |               |               |
+      |               |               |
+      |               |               |
+      |               |               |
+      |               |               |
+      |               |               |
+      |               |               |
+      |               |               |
+      |               |               |
+      |               |               |
+      |               |               |
+      |               |               |
+      |               |               |
+      v               v               v
+</pre>
+
+<h2 id="The-features"><a href="#The-features" class="headerlink" title="The features"></a>The features</h2><p>Any new feature should be developed in a separate branch. So, a developer that is on &#8216;develop&#8217; branch&#8230;</p>
+<pre lang="bash">[master][~/git/lemon]$ git checkout develop
+Switched to branch 'develop'
+[develop][~/git/lemon]$ git branch -a
+  candidate
+* develop
+  master
+  remotes/origin/HEAD -&gt; origin/master
+  remotes/origin/candidate
+  remotes/origin/develop
+  remotes/origin/master</pre>
+
+<p>&#8230;must start a feature branch, and share it with its team:</p>
+<pre lang="bash">[develop][~/git/lemon]$ git checkout -b myteam/amazing_feature
+Switched to a new branch 'myteam/amazing_feature'
+
+[myteam/amazing_feature][~/git/lemon]$ git push origin myteam/amazing_feature
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/fsferrara/lemon.git
+ * [new branch]      myteam/amazing_feature -&gt; myteam/amazing_feature</pre>
+
+<p>Rebasing keeps our code working, merging easy, and history clean. Developer should maintain this branch always rebased with remote branches &#8216;origin/devel&#8217; and &#8216;origin/myteam/amazing_feature&#8217;, by doing these operations:</p>
+<pre lang="bash">[myteam/amazing_feature][~/git/lemon]$ git fetch origin
+[develop][~/git/lemon]$ git rebase origin/develop
+Current branch develop is up to date.
+[develop][~/git/lemon]$ git rebase origin/myteam/amazing_feature
+Current branch develop is up to date.</pre>
+
+<p>The branch &#8216;myteam/amazing_feature&#8217; contains all the feature commits. These commit should not be done directly on the &#8216;develop&#8217; branch because anything committed to this branch can be delivered on-line without any notice. Once the feature is done, the feature branch is reintegrated in the &#8216;develop&#8217; branch.</p>
+<pre>
+   feature         develop
+                      +
+                      |
+      +               |
+      |               O
+      | _____________/|
+      |/              |
+      O               |
+      |               |
+      O               |
+      |               |
+      O               |
+      |\_____________ |
+      |              \|
+      |               O
+      v               |
+                      |
+                      |
+                      |
+                      |
+                      v
+</pre>
+
+<p>At this point a &#8220;merge request&#8221; can be created also to manage the code review process. To finish a feature, perform these operations:</p>
+<pre lang="bash">[myteam/amazing_feature][~/git/lemon]$ git fetch
+[myteam/amazing_feature][~/git/lemon]$ git rebase -i origin/develop
+Successfully rebased and updated refs/heads/myteam/amazing_feature.
+
+[master][~/git/lemon]$ git checkout develop
+Switched to branch 'develop'
+
+[develop][~/git/lemon]$ git fetch
+[develop][~/git/lemon]$ git merge origin/develop
+Already up-to-date.
+
+[develop][~/git/lemon]$ git merge --no-ff myteam/amazing_feature
+Merge made by the 'recursive' strategy.
+ hello.js | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+[develop][~/git/lemon]$ git push origin develop
+Counting objects: 1, done.
+Writing objects: 100% (1/1), 241 bytes, done.
+Total 1 (delta 0), reused 0 (delta 0)
+To https://github.com/fsferrara/lemon.git
+   cd84dc7..ee499c9  develop -&gt; develop</pre>
+
+<p>The option &#8220;&#8211;no-ff&#8221; preserves feature history and easy full-feature reverts merge. Now we can delete the feature branch:</p>
+<pre lang="bash">[develop][~/git/lemon]$ git branch -d myteam/amazing_feature
+Deleted branch myteam/amazing_feature (was a30b140).
+
+[develop][~/git/lemon]$ git push --delete origin myteam/amazing_feature
+To https://github.com/fsferrara/lemon.git
+ - [deleted]         myteam/amazing_feature</pre>
+
+<h2 id="Integration-phase-and-release"><a href="#Integration-phase-and-release" class="headerlink" title="Integration phase and release"></a>Integration phase and release</h2><p>At any time the release engineer can merge the new content of &#8216;devel&#8217; and start an integration phase, as this picture show:</p>
+<pre>
+   develop        candidate        master
+      +               +               +
+      |               |               |
+      |               |               |
+      O               |               |
+      |\_____________ |               |
+      |              \|               |
+      |               O code chill    |
+      |               |               |
+      |               |               |
+      |               O               |
+      | _____________/| bugfixes      |
+      |/              O               |
+      O _____________/|               |
+      |/              |               |
+      O               O code freeze   |
+      |               |\_____________ |
+      |               |              \|
+      |               |               O tag
+      |               |               |
+      |               |               |
+      |               |               |
+      v               v               v
+</pre>
+
+<p>The integration starts with the <em>code chill</em> phase, that is the phase in which only small bugfixes are allowed. Personally I hate these bugfixes, and I prefer to perform all kind of tests directly on &#8216;devel&#8217; branch: for me the integration phase should be only the final check. Once the code is ready to be deployed in production, we have the reintegration with &#8216;master&#8217;. At this point the release engineer can create the tag directly on master. Optionally the tag to be created can point before to the head of &#8216;candidate&#8217; branch and then can be updated to point to &#8216;master&#8217;.</p>
+<h2 id="Deploying-and-emergency-fixes"><a href="#Deploying-and-emergency-fixes" class="headerlink" title="Deploying and emergency fixes"></a>Deploying and emergency fixes</h2><p>Everything is happy and up-to-date in master: the system administrator can use tags created by the release engineer to deploy a specific version of the product. This support the deploy of the latest version and also the roll-back to a previous version. Once reintegrated the branch &#8216;candidate&#8217; into &#8216;master&#8217;, a new tag is created following these steps:</p>
+<pre lang="bash">[master][~/git/lemon]$ git tag -a 1.2.3 -m "Promoted on `date`"
+[master][~/git/lemon]$ git tag -l
+1.2.3
+
+[master][~/git/lemon]$ git push --tags
+Counting objects: 1, done.
+Writing objects: 100% (1/1), 182 bytes, done.
+Total 1 (delta 0), reused 0 (delta 0)
+To https://github.com/fsferrara/lemon.git
+ * [new tag]         1.2.3 -&gt; 1.2.3
+
+[master][~/git/lemon]$ git ls-remote --tags origin
+83fd280e796bc4134c2e7b31106b9f8ed85ecf2c    refs/tags/1.2.3
+cd84dc74b39607706e8f1b110411b4a508c6f3e8    refs/tags/1.2.3^{}</pre>
+
+<p>If for testing purpose you already created the tag 1.2.3 pointing the &#8216;candidate&#8217; branch, now you can move this tag by using the option &#8220;-f&#8221;.</p>
+<p>Also the emergency bug fixes (hotfix) are supported by this model, as shown in this picture:</p>
+<pre>
+   master          hotfix
+      +
+      |
+      |               +
+  tag O v1.2.3        |
+      |\_____________ |
+      |              \|
+      |               O
+      |               |
+      |               O
+      |               |
+      |               O
+      | _____________/|
+      |/              |
+  tag O v1.2.4        |
+      |               |
+      |               v
+      |
+      v
+</pre>
+
+<h2 id="Useful-configuration"><a href="#Useful-configuration" class="headerlink" title="Useful configuration"></a>Useful configuration</h2><p>Autosetup rebase so that pulls operations rebase by default</p>
+<pre lang="bash">git config --global branch.autosetuprebase always</pre>
+
+<h2 id="DOs-and-DON-8217-Ts"><a href="#DOs-and-DON-8217-Ts" class="headerlink" title="DOs and DON&#8217;Ts"></a>DOs and DON&#8217;Ts</h2><p>No DO or DON&#8217;T is sacred. You&#8217;ll obviously run into exceptions, and develop your own way of doing things. However, these are guidelines I&#8217;ve found useful.</p>
+<h3 id="DOs"><a href="#DOs" class="headerlink" title="DOs"></a>DOs</h3><ul>
+<li><em>do</em> master must always be deployable.</li>
+<li><em>do</em> all changes are made through feature branches</li>
+<li><em>do</em> use a &#8220;merge request&#8221; (aka &#8220;pull request&#8221;) to manage code-reviews</li>
+<li><em>do</em> rebase to avoid/resolve conflicts before to merge</li>
+<li><em>do</em> keep master in working order</li>
+<li><em>do</em> rebase your feature branches often</li>
+<li><em>do</em> tag releases</li>
+<li><em>do</em> learn to rebase and merge</li>
+</ul>
+<h3 id="DON-8217-Ts"><a href="#DON-8217-Ts" class="headerlink" title="DON&#8217;Ts"></a>DON&#8217;Ts</h3><ul>
+<li><em>don&#8217;t</em> fork</li>
+<li><em>don&#8217;t</em> merge broken code.</li>
+<li><em>don&#8217;t</em> commit onto master directly.</li>
+<li><em>don&#8217;t</em> hotfix onto master! use a specific hotfix branch.</li>
+<li><em>don&#8217;t</em> rebase master.</li>
+<li><em>don&#8217;t</em> merge with conflicts. Handle conflicts upon rebasing.</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://fsferrara.github.io/2013/11/15/2013-11-15-git-branching-model-for-medium-size-companies/" data-id="ck47cqjv9002gs8am4fo42a4x" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/branching-model/" rel="tag">branching-model</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/collaboration/" rel="tag">collaboration</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/devops/" rel="tag">devops</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/teams/" rel="tag">teams</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2013/11/22/2013-11-22-building-web-applications-scala/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Building web applications with Scala
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2013/11/03/2013-11-03-git-explained-subversion-users/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">GIT explained for Subversion users</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/board-games/">board games</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/history/">history</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/history/thoughts/">thoughts</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/internet/">internet</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/programming/">programming</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/programming/system-administration/">system administration</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/security-and-privacy/">security and privacy</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-administration/">system administration</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/talks/">talks</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/thoughts/">thoughts</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/thoughts/programming/">programming</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/XML/" rel="tag">XML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ackermann/" rel="tag">ackermann</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ai/" rel="tag">ai</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/amarel/" rel="tag">amarel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aop/" rel="tag">aop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/api/" rel="tag">api</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/array/" rel="tag">array</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/artificial-intelligence/" rel="tag">artificial-intelligence</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aspect/" rel="tag">aspect</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aspectj/" rel="tag">aspectj</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/asterisk/" rel="tag">asterisk</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/basex/" rel="tag">basex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/big-data/" rel="tag">big-data</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/boot2docker/" rel="tag">boot2docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/branching-model/" rel="tag">branching-model</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/brooks/" rel="tag">brooks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/" rel="tag">c</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chat/" rel="tag">chat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/collaboration/" rel="tag">collaboration</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/command-pattern/" rel="tag">command-pattern</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/computability/" rel="tag">computability</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/computer-science/" rel="tag">computer-science</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crosscutting/" rel="tag">crosscutting</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data/" rel="tag">data</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-structures/" rel="tag">data structures</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-structures/" rel="tag">data-structures</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debug/" rel="tag">debug</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/devops/" rel="tag">devops</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dos/" rel="tag">dos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/drinking-game/" rel="tag">drinking-game</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/frege/" rel="tag">frege</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/game/" rel="tag">game</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gdb/" rel="tag">gdb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/global-worker/" rel="tag">global-worker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/graphql/" rel="tag">graphql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/godel/" rel="tag">gödel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hadoop/" rel="tag">hadoop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hilbert/" rel="tag">hilbert</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hystrix/" rel="tag">hystrix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/irc/" rel="tag">irc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/isdn/" rel="tag">isdn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jekyll/" rel="tag">jekyll</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kant/" rel="tag">kant</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lift/" rel="tag">lift</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mccharty/" rel="tag">mccharty</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/meetup/" rel="tag">meetup</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/metrics/" rel="tag">metrics</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mpeg-7/" rel="tag">mpeg-7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ms-dos/" rel="tag">ms-dos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/octopress/" rel="tag">octopress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/p3p/" rel="tag">p3p</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pbx/" rel="tag">pbx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pointers/" rel="tag">pointers</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/privacy/" rel="tag">privacy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/regex/" rel="tag">regex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/regular-expression/" rel="tag">regular-expression</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rest/" rel="tag">rest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ruby/" rel="tag">ruby</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sbt/" rel="tag">sbt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scala/" rel="tag">scala</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/" rel="tag">shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sort/" rel="tag">sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/" rel="tag">spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/subversion/" rel="tag">subversion</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/svn/" rel="tag">svn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/talks/" rel="tag">talks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/teams/" rel="tag">teams</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tuning/" rel="tag">tuning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/turing/" rel="tag">turing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/" rel="tag">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unix/" rel="tag">unix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/versioning/" rel="tag">versioning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/warehouse/" rel="tag">warehouse</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/" rel="tag">windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows-server/" rel="tag">windows server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xml/" rel="tag">xml</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xquery/" rel="tag">xquery</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/XML/" style="font-size: 10px;">XML</a> <a href="/tags/ackermann/" style="font-size: 10px;">ackermann</a> <a href="/tags/ai/" style="font-size: 17.5px;">ai</a> <a href="/tags/algorithm/" style="font-size: 12.5px;">algorithm</a> <a href="/tags/amarel/" style="font-size: 10px;">amarel</a> <a href="/tags/aop/" style="font-size: 10px;">aop</a> <a href="/tags/api/" style="font-size: 10px;">api</a> <a href="/tags/array/" style="font-size: 12.5px;">array</a> <a href="/tags/artificial-intelligence/" style="font-size: 17.5px;">artificial-intelligence</a> <a href="/tags/aspect/" style="font-size: 10px;">aspect</a> <a href="/tags/aspectj/" style="font-size: 10px;">aspectj</a> <a href="/tags/asterisk/" style="font-size: 10px;">asterisk</a> <a href="/tags/basex/" style="font-size: 10px;">basex</a> <a href="/tags/big-data/" style="font-size: 10px;">big-data</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/boot2docker/" style="font-size: 10px;">boot2docker</a> <a href="/tags/branching-model/" style="font-size: 10px;">branching-model</a> <a href="/tags/brooks/" style="font-size: 10px;">brooks</a> <a href="/tags/c/" style="font-size: 20px;">c</a> <a href="/tags/chat/" style="font-size: 10px;">chat</a> <a href="/tags/collaboration/" style="font-size: 10px;">collaboration</a> <a href="/tags/command-pattern/" style="font-size: 10px;">command-pattern</a> <a href="/tags/computability/" style="font-size: 10px;">computability</a> <a href="/tags/computer-science/" style="font-size: 20px;">computer-science</a> <a href="/tags/crosscutting/" style="font-size: 10px;">crosscutting</a> <a href="/tags/data/" style="font-size: 10px;">data</a> <a href="/tags/data-structures/" style="font-size: 10px;">data structures</a> <a href="/tags/data-structures/" style="font-size: 10px;">data-structures</a> <a href="/tags/debug/" style="font-size: 10px;">debug</a> <a href="/tags/devops/" style="font-size: 12.5px;">devops</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/dos/" style="font-size: 10px;">dos</a> <a href="/tags/drinking-game/" style="font-size: 10px;">drinking-game</a> <a href="/tags/frege/" style="font-size: 10px;">frege</a> <a href="/tags/game/" style="font-size: 10px;">game</a> <a href="/tags/gdb/" style="font-size: 10px;">gdb</a> <a href="/tags/git/" style="font-size: 12.5px;">git</a> <a href="/tags/global-worker/" style="font-size: 10px;">global-worker</a> <a href="/tags/graphql/" style="font-size: 10px;">graphql</a> <a href="/tags/godel/" style="font-size: 10px;">gödel</a> <a href="/tags/hadoop/" style="font-size: 10px;">hadoop</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hilbert/" style="font-size: 10px;">hilbert</a> <a href="/tags/hystrix/" style="font-size: 10px;">hystrix</a> <a href="/tags/irc/" style="font-size: 10px;">irc</a> <a href="/tags/isdn/" style="font-size: 10px;">isdn</a> <a href="/tags/java/" style="font-size: 17.5px;">java</a> <a href="/tags/jekyll/" style="font-size: 10px;">jekyll</a> <a href="/tags/kant/" style="font-size: 10px;">kant</a> <a href="/tags/lift/" style="font-size: 10px;">lift</a> <a href="/tags/linux/" style="font-size: 12.5px;">linux</a> <a href="/tags/mccharty/" style="font-size: 10px;">mccharty</a> <a href="/tags/meetup/" style="font-size: 10px;">meetup</a> <a href="/tags/metrics/" style="font-size: 10px;">metrics</a> <a href="/tags/mpeg-7/" style="font-size: 10px;">mpeg-7</a> <a href="/tags/ms-dos/" style="font-size: 10px;">ms-dos</a> <a href="/tags/octopress/" style="font-size: 10px;">octopress</a> <a href="/tags/p3p/" style="font-size: 10px;">p3p</a> <a href="/tags/pbx/" style="font-size: 10px;">pbx</a> <a href="/tags/pointers/" style="font-size: 10px;">pointers</a> <a href="/tags/privacy/" style="font-size: 10px;">privacy</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/regular-expression/" style="font-size: 10px;">regular-expression</a> <a href="/tags/rest/" style="font-size: 12.5px;">rest</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/sbt/" style="font-size: 10px;">sbt</a> <a href="/tags/scala/" style="font-size: 10px;">scala</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/sort/" style="font-size: 15px;">sort</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/subversion/" style="font-size: 10px;">subversion</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/talks/" style="font-size: 12.5px;">talks</a> <a href="/tags/teams/" style="font-size: 10px;">teams</a> <a href="/tags/tuning/" style="font-size: 12.5px;">tuning</a> <a href="/tags/turing/" style="font-size: 12.5px;">turing</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/unix/" style="font-size: 10px;">unix</a> <a href="/tags/versioning/" style="font-size: 10px;">versioning</a> <a href="/tags/warehouse/" style="font-size: 10px;">warehouse</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/windows-server/" style="font-size: 10px;">windows server</a> <a href="/tags/xml/" style="font-size: 12.5px;">xml</a> <a href="/tags/xquery/" style="font-size: 10px;">xquery</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">February 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/01/">January 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/10/">October 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09/">September 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/07/">July 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/06/">June 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05/">May 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09/">September 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/11/">November 2006</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/1983/09/">September 1983</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/08/26/2018-08-26-isolate-services-using-the-command-pattern/">Isolate services using the command pattern</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/05/2018-01-05-blogging-with-octopress-and-jekyll/">Blogging with Octopress and Jekyll</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/21/2017-12-21-da-rest-a-graphql-in-90-minuti/">Da REST a GraphQL in 90 minuti</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/10/2017-12-10-getting-started-with-graphql/">Getting Started With GraphQL</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/16/2016-06-16-my-eight-rules-to-effectively-work-in-a-global-team/">My eight rules to effectively work in a global team</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Saverio<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

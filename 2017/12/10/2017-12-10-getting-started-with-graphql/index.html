@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-45189328-2', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <title>Getting Started With GraphQL | fsferrara</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="What is GraphQL? The draft RFC specification (October 2016), defines it as &amp;#8220;a query language created by Facebook in 2012 for describing the capabilities and requirements of data models for cl">
+<meta name="keywords" content="rest,api,graphql">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Getting Started With GraphQL">
+<meta property="og:url" content="http:&#x2F;&#x2F;fsferrara.github.io&#x2F;2017&#x2F;12&#x2F;10&#x2F;2017-12-10-getting-started-with-graphql&#x2F;index.html">
+<meta property="og:site_name" content="fsferrara">
+<meta property="og:description" content="What is GraphQL? The draft RFC specification (October 2016), defines it as &amp;#8220;a query language created by Facebook in 2012 for describing the capabilities and requirements of data models for cl">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-12-15T18:35:00.758Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@fsferrara">
+<link rel="publisher" href="+SaverioFerrara">
+  
+    <link rel="alternate" href="/atom.xml" title="fsferrara" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">fsferrara</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">...another Software Engineer blog!</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://fsferrara.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2017-12-10-getting-started-with-graphql" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/10/2017-12-10-getting-started-with-graphql/" class="article-date">
+  <time datetime="2017-12-10T11:00:00.000Z" itemprop="datePublished">2017-12-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/programming/">programming</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Getting Started With GraphQL
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <div>
+  What is GraphQL? The <a href="http://facebook.github.io/graphql/October2016/" target="_blank" rel="noopener">draft RFC specification</a> (October 2016), defines it as &#8220;a query language created by Facebook in 2012 for describing the capabilities and requirements of data models for client‐server applications&#8221;. More simply, GraphQL is a language specification for API. It defines in which way the client should query the server, and in which way the server should execute those queries.
+</div>
+
+<a id="more"></a>
+
+<div>
+  From the definition above, it is clear that GraphQL can be adopted as an alternative to REST. Let&#8217;s now analyze its features with an example in order to understand GraphQL base concepts.<br /> Think about your favourite website for booking hotel rooms, that is obviously <a href="https://www.hotels.com/" target="_blank" rel="noopener">hotels.com</a>, and let&#8217;s try to design a GraphQL service that provides the reservation list for a specific user.
+</div>
+
+<h2 id="Data-model"><a href="#Data-model" class="headerlink" title="Data model"></a>Data model</h2><div>
+  The first thing to do is defining the graph of the data provided by the service.
+</div>
+
+<div>
+  The <strong>data model</strong> we are going to define follows this structure:
+</div>
+
+<div>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">+--------------------------------------+         +----------------------------+         +---------------------+</span></pre></td></tr><tr><td class="code"><pre><span class="line">| QueryType                            |         | ReservationType            |         | HotelType           |</span></pre></td></tr><tr><td class="code"><pre><span class="line">+--------------------------------------+         +----------------------------+         +---------------------+</span></pre></td></tr><tr><td class="code"><pre><span class="line">|                                      |         |                            |         |                     |</span></pre></td></tr><tr><td class="code"><pre><span class="line">| reservationList: [ReservationType!]! +-------&gt; | hotelId: ID!               |         | hotelName: String!  |</span></pre></td></tr><tr><td class="code"><pre><span class="line">|                                      |         | checkIn: String!           |         | fullAddress: String |</span></pre></td></tr><tr><td class="code"><pre><span class="line">+--------------------------------------+         | checkOut: String!          |         | starRating: Int!    |</span></pre></td></tr><tr><td class="code"><pre><span class="line">                                                 | hotelDetails: HotelType!   +-------&gt; |                     |</span></pre></td></tr><tr><td class="code"><pre><span class="line">                                                 | status: ReservationStatus! |         +---------------------+</span></pre></td></tr><tr><td class="code"><pre><span class="line">                                                 |                            |</span></pre></td></tr><tr><td class="code"><pre><span class="line">                                                 +----------------------------+</span></pre></td></tr></table></figure>
+
+  <p>
+    GraphQL models your data as a graph but it still needs entry points to that graph. Those entry points are the queries defined in the QueryType, that is the root of all the queries.<br /> In this example, it is defined only one query named &#8220;reservationList&#8221; that returns a list of &#8220;ReservationType&#8221;. In turn, ReservationType describes a hotel reservation and HotelType describe a hotel.
+  </p>
+
+<h2 id="GraphQL-Schema-definition"><a href="#GraphQL-Schema-definition" class="headerlink" title="GraphQL Schema definition"></a>GraphQL Schema definition</h2>  <p>
+    Using the &#8220;<em>GraphQL schema language</em>&#8220;, explained in the <a href="http://graphql.org/learn/schema/" target="_blank" rel="noopener">official GraphQL website</a>, our <strong>data model</strong> can be described in this way:
+  </p>
+</div>
+
+<div>
+  <pre class="lang:default highlight:0 decode:true">schema {
+    query: QueryType
+}
+
+<p>type QueryType {<br>  reservationsList(userId: ID!): [ReservationType!]!<br>}</p>
+<p>type ReservationType {<br>  hotelId: ID!<br>  checkIn: String!<br>  checkOut: String!<br>  hotelDetails: HotelType!<br>  status: ReservationStatus!<br>}</p>
+<p>type HotelType {<br>  hotelName: String!<br>  fullAddress: String<br>  starRating: Int!<br>}</p>
+<p>enum ReservationStatus {<br>  UPCOMING<br>  COMPLETED<br>  CANCELLED<br>}</pre></p>
+  <p>
+    In very short, in this graphql<strong> schema definition</strong> we have:
+  </p>
+</div>
+
+<div>
+  <ul>
+    <li>
+      the keyword &#8220;schema&#8221;, that is the root of the schema;
+    </li>
+    <li>
+      ID, String, and Int are built-in <a href="http://graphql.org/learn/schema/#scalar-types" target="_blank" rel="noopener">Scalar Types</a>;
+    </li>
+    <li>
+      ReservationStatus is an <a href="http://graphql.org/learn/schema/#enumeration-types" target="_blank" rel="noopener">Enumeration Type</a>;
+    </li>
+    <li>
+      the others are <a href="http://graphql.org/learn/schema/#object-types-and-fields" target="_blank" rel="noopener">Object Types</a>.
+    </li>
+  </ul>
+</div>
+
+<div>
+  This GraphQL schema can be parsed in order to be used for a real service. For instance, Apollo &#8220;<a href="https://github.com/apollographql/graphql-tools" target="_blank" rel="noopener">graphql tools</a>&#8221; is a javascript utility for parsing such a schema.
+</div>
+
+<h2 id="Query-example"><a href="#Query-example" class="headerlink" title="Query example"></a>Query example</h2><div>
+  This is an example of a query, valid for our schema:
+</div>
+
+<div>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  reservationsList(userId: 12345) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    hotelId</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    checkIn</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    checkOut</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    hotelDetails &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">      hotelName</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">      fullAddress</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">      starRating</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    status</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+  <p>
+    This query is sent from the client to the server in order to request the list of hotel ids in which the user number 12345 has made a reservation. Once the server receives this query, it is validated against the defined schema and then it is executed.
+  </p>
+
+<h2 id="Response-example"><a href="#Response-example" class="headerlink" title="Response example"></a>Response example</h2>  <p>
+    The generated response is JSON with the exact shape of the request:
+  </p>
+</div>
+
+<div>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  &quot;data&quot;: &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    &quot;reservationsList&quot;: [</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">      &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        &quot;hotelId&quot;: &quot;103&quot;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        &quot;checkIn&quot;: &quot;2018-11-29&quot;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">        &quot;checkOut&quot;: &quot;2018-11-30&quot;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">        &quot;hotelDetails&quot;: &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">          &quot;hotelName&quot;: &quot;Hotel Campanile Metz Nord - Talange&quot;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">          &quot;fullAddress&quot;: &quot;Zone Actipole, Talange, Moselle, 57525, France&quot;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">          &quot;starRating&quot;: 5</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">        &#125;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">        &quot;status&quot;: &quot;UPCOMING&quot;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">      &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">    ]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+</div>
+
+<div>
+  Please note that the client asks only for the data it needs, and with only one query. This is an advantage of using GraphQL because, in general, it <span style="text-decoration: underline;">reduces the number of roundtrips</span> and <span style="text-decoration: underline;">minimizes the amount of data transferred on the network</span>.
+</div>
+
+<h2 id="Query-execution"><a href="#Query-execution" class="headerlink" title="Query execution"></a>Query execution</h2><div>
+  But what happened on the server when a query is executed?
+</div>
+
+<div>
+  Every field has a function associated with it, and every time the server needs to produce that field then that function is executed. Those functions are named <strong>resolvers</strong>.
+</div>
+
+<div>
+  In this specific example, it is defined a custom resolver for &#8220;reservationList&#8221; that provides a list of reservations and a custom resolver for &#8220;hotelDetails&#8221; that provides the necessary details for each hotel. For all the others fields, a built-in resolver is used to produce a scalar value.
+</div>
+
+<div>
+  If you are interested in analyzing the entire source code for this example, with the complete resolvers definition, you can find a really nice <a href="https://github.com/fsferrara/from-rest-to-graphql-meetup" target="_blank" rel="noopener">javascript implementation on github</a> :-).
+</div>
+
+<div>
+</div>
+
+<div>
+  The execution aspect of a GraphQL server is described <a href="http://graphql.org/learn/execution/" target="_blank" rel="noopener">here</a>. Once again, GraphQL is not an implementation: it only defines aspect for servers to execute queries. Even if GraphQL is not a ready-to-use library, there are already <a href="http://graphql.org/code/" target="_blank" rel="noopener">several GraphQL implementations</a> such as graphql.js, graphql-ruby, graphql-java, and so on.
+</div>
+
+<h2 id="Introspection"><a href="#Introspection" class="headerlink" title="Introspection"></a>Introspection</h2><div>
+  A really cool feature of a GraphQL service is the <a href="http://graphql.org/learn/introspection/" target="_blank" rel="noopener">ability to introspect</a> itself. Every GraphQL server has a special schema field at the query root named __\_\_schema__:
+</div>
+
+<div>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  __schema &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    ...</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+  <p>
+    Using that field, the service can expose the definition of every object and every field it can provide. This leads to really nice features like:
+  </p>
+</div>
+
+<ul>
+<li><span style="text-decoration: underline;">Auto documentation</span>: the client knows the exact GraphQL schema.</li>
+<li><span style="text-decoration: underline;">Code generation</span>: the client can use a client generated from the schema.</li>
+<li><span style="text-decoration: underline;">Static validation</span>: the GraphQL client can validate the query before sending it to the server</li>
+</ul>
+<div>
+  As a consequence, there are available very useful tools like <a href="https://github.com/graphql/graphiql" target="_blank" rel="noopener">GraphiQL</a>, that is a kind of schema explorer for GraphQL. It is really useful to try and discover server features.
+</div>
+
+<h2 id="HTTP-Caching"><a href="#HTTP-Caching" class="headerlink" title="HTTP Caching"></a>HTTP Caching</h2><div>
+  We get a lot of advantages using GraphQL, but there are also drawbacks. The one I faced is HTTP caching.
+</div>
+
+<div>
+  A GraphQL endpoint can receive queries in different formats and it is really hard to define a caching policy server-side. Often the solution is to use a client-side cache. There are already libraries to implement normalized cache client-side, such as <a href="https://www.apollographql.com/" target="_blank" rel="noopener">Apollo</a> and <a href="http://facebook.github.io/relay/" target="_blank" rel="noopener">Relay</a>.
+</div>
+
+<div>
+  Even if caching on the client is a good solution in most cases, I believe this situation can be improved in the future.
+</div>
+
+<div>
+  For instance, a &#8220;smart&#8221; cache system can analyze a GraphQL request and understand which part of the query can take advantage of the cache.
+</div>
+
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><div>
+  Personally, I am quite happy in using GrapQL server-side and I tend to prefer it over REST. I think the most valuable advantage is the fact that clients already know how to query a GraphQL service and this makes integration straightforward.
+</div>
+
+<div>
+  Anyway, this article covers only a few GraphQL features. There are more such as mutations, subscriptions, deferred queries, live queries, and batch operations. Please refer to the official <a href="http://graphql.org/" target="_blank" rel="noopener">GraphQL website</a> for further information.
+</div>
+
+<div>
+  A really useful resource is <a href="https://www.howtographql.com/" target="_blank" rel="noopener">https://www.howtographql.com/</a> which contains free tutorials to learn all about GraphQL covering several GraphQL implementations.
+</div>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://fsferrara.github.io/2017/12/10/2017-12-10-getting-started-with-graphql/" data-id="ck47cqjvh0032s8amewne81h9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/api/" rel="tag">api</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/graphql/" rel="tag">graphql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rest/" rel="tag">rest</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/12/21/2017-12-21-da-rest-a-graphql-in-90-minuti/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Da REST a GraphQL in 90 minuti
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/06/16/2016-06-16-my-eight-rules-to-effectively-work-in-a-global-team/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">My eight rules to effectively work in a global team</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/board-games/">board games</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/history/">history</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/history/thoughts/">thoughts</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/internet/">internet</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/programming/">programming</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/programming/system-administration/">system administration</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/security-and-privacy/">security and privacy</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-administration/">system administration</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/talks/">talks</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/thoughts/">thoughts</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/thoughts/programming/">programming</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/XML/" rel="tag">XML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ackermann/" rel="tag">ackermann</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ai/" rel="tag">ai</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/amarel/" rel="tag">amarel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aop/" rel="tag">aop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/api/" rel="tag">api</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/array/" rel="tag">array</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/artificial-intelligence/" rel="tag">artificial-intelligence</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aspect/" rel="tag">aspect</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aspectj/" rel="tag">aspectj</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/asterisk/" rel="tag">asterisk</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/basex/" rel="tag">basex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/big-data/" rel="tag">big-data</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/boot2docker/" rel="tag">boot2docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/branching-model/" rel="tag">branching-model</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/brooks/" rel="tag">brooks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/" rel="tag">c</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chat/" rel="tag">chat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/collaboration/" rel="tag">collaboration</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/command-pattern/" rel="tag">command-pattern</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/computability/" rel="tag">computability</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/computer-science/" rel="tag">computer-science</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crosscutting/" rel="tag">crosscutting</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data/" rel="tag">data</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-structures/" rel="tag">data structures</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-structures/" rel="tag">data-structures</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debug/" rel="tag">debug</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/devops/" rel="tag">devops</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dos/" rel="tag">dos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/drinking-game/" rel="tag">drinking-game</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/frege/" rel="tag">frege</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/game/" rel="tag">game</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gdb/" rel="tag">gdb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/global-worker/" rel="tag">global-worker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/graphql/" rel="tag">graphql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/godel/" rel="tag">gödel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hadoop/" rel="tag">hadoop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hilbert/" rel="tag">hilbert</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hystrix/" rel="tag">hystrix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/irc/" rel="tag">irc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/isdn/" rel="tag">isdn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jekyll/" rel="tag">jekyll</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kant/" rel="tag">kant</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lift/" rel="tag">lift</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mccharty/" rel="tag">mccharty</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/meetup/" rel="tag">meetup</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/metrics/" rel="tag">metrics</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mpeg-7/" rel="tag">mpeg-7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ms-dos/" rel="tag">ms-dos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/octopress/" rel="tag">octopress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/p3p/" rel="tag">p3p</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pbx/" rel="tag">pbx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pointers/" rel="tag">pointers</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/privacy/" rel="tag">privacy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/regex/" rel="tag">regex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/regular-expression/" rel="tag">regular-expression</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rest/" rel="tag">rest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ruby/" rel="tag">ruby</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sbt/" rel="tag">sbt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scala/" rel="tag">scala</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/" rel="tag">shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sort/" rel="tag">sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/" rel="tag">spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/subversion/" rel="tag">subversion</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/svn/" rel="tag">svn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/talks/" rel="tag">talks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/teams/" rel="tag">teams</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tuning/" rel="tag">tuning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/turing/" rel="tag">turing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/" rel="tag">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unix/" rel="tag">unix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/versioning/" rel="tag">versioning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/warehouse/" rel="tag">warehouse</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/" rel="tag">windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows-server/" rel="tag">windows server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xml/" rel="tag">xml</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xquery/" rel="tag">xquery</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/XML/" style="font-size: 10px;">XML</a> <a href="/tags/ackermann/" style="font-size: 10px;">ackermann</a> <a href="/tags/ai/" style="font-size: 17.5px;">ai</a> <a href="/tags/algorithm/" style="font-size: 12.5px;">algorithm</a> <a href="/tags/amarel/" style="font-size: 10px;">amarel</a> <a href="/tags/aop/" style="font-size: 10px;">aop</a> <a href="/tags/api/" style="font-size: 10px;">api</a> <a href="/tags/array/" style="font-size: 12.5px;">array</a> <a href="/tags/artificial-intelligence/" style="font-size: 17.5px;">artificial-intelligence</a> <a href="/tags/aspect/" style="font-size: 10px;">aspect</a> <a href="/tags/aspectj/" style="font-size: 10px;">aspectj</a> <a href="/tags/asterisk/" style="font-size: 10px;">asterisk</a> <a href="/tags/basex/" style="font-size: 10px;">basex</a> <a href="/tags/big-data/" style="font-size: 10px;">big-data</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/boot2docker/" style="font-size: 10px;">boot2docker</a> <a href="/tags/branching-model/" style="font-size: 10px;">branching-model</a> <a href="/tags/brooks/" style="font-size: 10px;">brooks</a> <a href="/tags/c/" style="font-size: 20px;">c</a> <a href="/tags/chat/" style="font-size: 10px;">chat</a> <a href="/tags/collaboration/" style="font-size: 10px;">collaboration</a> <a href="/tags/command-pattern/" style="font-size: 10px;">command-pattern</a> <a href="/tags/computability/" style="font-size: 10px;">computability</a> <a href="/tags/computer-science/" style="font-size: 20px;">computer-science</a> <a href="/tags/crosscutting/" style="font-size: 10px;">crosscutting</a> <a href="/tags/data/" style="font-size: 10px;">data</a> <a href="/tags/data-structures/" style="font-size: 10px;">data structures</a> <a href="/tags/data-structures/" style="font-size: 10px;">data-structures</a> <a href="/tags/debug/" style="font-size: 10px;">debug</a> <a href="/tags/devops/" style="font-size: 12.5px;">devops</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/dos/" style="font-size: 10px;">dos</a> <a href="/tags/drinking-game/" style="font-size: 10px;">drinking-game</a> <a href="/tags/frege/" style="font-size: 10px;">frege</a> <a href="/tags/game/" style="font-size: 10px;">game</a> <a href="/tags/gdb/" style="font-size: 10px;">gdb</a> <a href="/tags/git/" style="font-size: 12.5px;">git</a> <a href="/tags/global-worker/" style="font-size: 10px;">global-worker</a> <a href="/tags/graphql/" style="font-size: 10px;">graphql</a> <a href="/tags/godel/" style="font-size: 10px;">gödel</a> <a href="/tags/hadoop/" style="font-size: 10px;">hadoop</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hilbert/" style="font-size: 10px;">hilbert</a> <a href="/tags/hystrix/" style="font-size: 10px;">hystrix</a> <a href="/tags/irc/" style="font-size: 10px;">irc</a> <a href="/tags/isdn/" style="font-size: 10px;">isdn</a> <a href="/tags/java/" style="font-size: 17.5px;">java</a> <a href="/tags/jekyll/" style="font-size: 10px;">jekyll</a> <a href="/tags/kant/" style="font-size: 10px;">kant</a> <a href="/tags/lift/" style="font-size: 10px;">lift</a> <a href="/tags/linux/" style="font-size: 12.5px;">linux</a> <a href="/tags/mccharty/" style="font-size: 10px;">mccharty</a> <a href="/tags/meetup/" style="font-size: 10px;">meetup</a> <a href="/tags/metrics/" style="font-size: 10px;">metrics</a> <a href="/tags/mpeg-7/" style="font-size: 10px;">mpeg-7</a> <a href="/tags/ms-dos/" style="font-size: 10px;">ms-dos</a> <a href="/tags/octopress/" style="font-size: 10px;">octopress</a> <a href="/tags/p3p/" style="font-size: 10px;">p3p</a> <a href="/tags/pbx/" style="font-size: 10px;">pbx</a> <a href="/tags/pointers/" style="font-size: 10px;">pointers</a> <a href="/tags/privacy/" style="font-size: 10px;">privacy</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/regular-expression/" style="font-size: 10px;">regular-expression</a> <a href="/tags/rest/" style="font-size: 12.5px;">rest</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/sbt/" style="font-size: 10px;">sbt</a> <a href="/tags/scala/" style="font-size: 10px;">scala</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/sort/" style="font-size: 15px;">sort</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/subversion/" style="font-size: 10px;">subversion</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/talks/" style="font-size: 12.5px;">talks</a> <a href="/tags/teams/" style="font-size: 10px;">teams</a> <a href="/tags/tuning/" style="font-size: 12.5px;">tuning</a> <a href="/tags/turing/" style="font-size: 12.5px;">turing</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/unix/" style="font-size: 10px;">unix</a> <a href="/tags/versioning/" style="font-size: 10px;">versioning</a> <a href="/tags/warehouse/" style="font-size: 10px;">warehouse</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/windows-server/" style="font-size: 10px;">windows server</a> <a href="/tags/xml/" style="font-size: 12.5px;">xml</a> <a href="/tags/xquery/" style="font-size: 10px;">xquery</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">February 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/01/">January 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/10/">October 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09/">September 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/07/">July 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/06/">June 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05/">May 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09/">September 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/11/">November 2006</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/1983/09/">September 1983</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/08/26/2018-08-26-isolate-services-using-the-command-pattern/">Isolate services using the command pattern</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/05/2018-01-05-blogging-with-octopress-and-jekyll/">Blogging with Octopress and Jekyll</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/21/2017-12-21-da-rest-a-graphql-in-90-minuti/">Da REST a GraphQL in 90 minuti</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/10/2017-12-10-getting-started-with-graphql/">Getting Started With GraphQL</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/16/2016-06-16-my-eight-rules-to-effectively-work-in-a-global-team/">My eight rules to effectively work in a global team</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Saverio<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

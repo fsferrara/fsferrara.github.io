@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-45189328-2', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <title>Running containers with Docker | fsferrara</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications. Consisting of Docker Engine, a portable, lightweight runtime and packaging tool, and Docker Hu">
+<meta name="keywords" content="devops,boot2docker,docker">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Running containers with Docker">
+<meta property="og:url" content="http:&#x2F;&#x2F;fsferrara.github.io&#x2F;2015&#x2F;04&#x2F;03&#x2F;2015-04-03-running-containers-with-docker&#x2F;index.html">
+<meta property="og:site_name" content="fsferrara">
+<meta property="og:description" content="Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications. Consisting of Docker Engine, a portable, lightweight runtime and packaging tool, and Docker Hu">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-12-15T18:35:00.755Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@fsferrara">
+<link rel="publisher" href="+SaverioFerrara">
+  
+    <link rel="alternate" href="/atom.xml" title="fsferrara" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">fsferrara</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">...another Software Engineer blog!</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://fsferrara.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2015-04-03-running-containers-with-docker" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/03/2015-04-03-running-containers-with-docker/" class="article-date">
+  <time datetime="2015-04-03T10:00:00.000Z" itemprop="datePublished">2015-04-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/programming/">programming</a>►<a class="article-category-link" href="/categories/programming/system-administration/">system administration</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Running containers with Docker
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>Docker</strong> is an open platform for developers and sysadmins to build, ship, and run distributed applications. Consisting of <strong>Docker Engine</strong>, a portable, <em>lightweight runtime and packaging tool</em>, and <strong>Docker Hub</strong>, a <em>cloud service for sharing applications and automating workflows</em>, Docker enables apps to be quickly assembled from components and eliminates the friction between development, QA, and production environments. As a result, IT can ship faster and run the same app, unchanged, on laptops, data center VMs, and any cloud.</p>
+<p>This post describes how to run Docker machines with the help of Boot2Docker.</p>
+<a id="more"></a>
+
+<h2 id="Boot2Docker"><a href="#Boot2Docker" class="headerlink" title="Boot2Docker"></a>Boot2Docker</h2><p>Boot2Docker is a lightweight Linux distribution made specifically to run Docker containers. It is currently designed and tuned <strong>for development</strong>. Using it for <em>any kind of production workloads at this time is highly discouraged</em>.</p>
+<p>After boot2docker installation, we can download the boot2docker-vm by typing this command:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">saverio@mstar:boot2docker &gt; boot2docker init</span></pre></td></tr></table></figure>
+
+<p>this will download and install into <strong>VirtualBox</strong> a VM.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">saverio@mstar:boot2docker &gt; VBoxManage list vms</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">&quot;boot2docker-vm&quot; &#123;0c34b443-1f74-44c6-88cb-f8cb5fd885c9&#125;</span></pre></td></tr></table></figure>
+
+<p>The boot2docker-vm VM is switched off. To urn it on type the command:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">saverio@mstar:boot2docker &gt; boot2docker up</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">Waiting for VM and Docker daemon to start...</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">.........................ooooooooooooooooooooooooo</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">Started.</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">Writing &#x2F;Users&#x2F;saverio&#x2F;.boot2docker&#x2F;certs&#x2F;boot2docker-vm&#x2F;ca.pem</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">Writing &#x2F;Users&#x2F;saverio&#x2F;.boot2docker&#x2F;certs&#x2F;boot2docker-vm&#x2F;cert.pem</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">Writing &#x2F;Users&#x2F;saverio&#x2F;.boot2docker&#x2F;certs&#x2F;boot2docker-vm&#x2F;key.pem</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">To connect the Docker client to the Docker daemon, please set:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    export DOCKER_HOST&#x3D;tcp:&#x2F;&#x2F;192.168.59.103:2376</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    export DOCKER_CERT_PATH&#x3D;&#x2F;Users&#x2F;fferrara&#x2F;.boot2docker&#x2F;certs&#x2F;boot2docker-vm</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">    export DOCKER_TLS_VERIFY&#x3D;1</span></pre></td></tr></table></figure>
+
+<p>Boot2Docker is now up and running.</p>
+<p>The Next step is to set up a Docker machine. <a href="https://hub.docker.com/" target="_blank" rel="noopener">Docker Hub</a> hosts a collection of docker machines.</p>
+<p>Boot2Docker sets up two <strong>network adaptors</strong>, one using NAT to allow the VM to download images and files from the internet, and a host only network that Docker container’s ports will be exposed on.</p>
+<p>To expose a port you should use a command like this one</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">docker run --name nginx-test -d -p 80:80 nginx</span></pre></td></tr></table></figure>
+
+<p>To start practicing with <strong>Docker</strong> let’s ssh-ing into the running boot2docker vm.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">saverio@mstar:boot2docker &gt; boot2docker ssh</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">                        ##        .</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">                  ## ## ##       &#x3D;&#x3D;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">               ## ## ## ##      &#x3D;&#x3D;&#x3D;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">           &#x2F;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;\___&#x2F; &#x3D;&#x3D;&#x3D;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">      ~~~ &#123;~~ ~~~~ ~~~ ~~~~ ~~ ~ &#x2F;  &#x3D;&#x3D;&#x3D;- ~~~</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">           \______ o          __&#x2F;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">             \    \        __&#x2F;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">              \____\______&#x2F;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"> _                 _   ____     _            _</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">| |__   ___   ___ | |_|___ \ __| | ___   ___| | _____ _ __</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">| &#39;_ \ &#x2F; _ \ &#x2F; _ \| __| __) &#x2F; _&#96; |&#x2F; _ \ &#x2F; __| |&#x2F; &#x2F; _ \ &#39;__|</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">| |_) | (_) | (_) | |_ &#x2F; __&#x2F; (_| | (_) | (__|   &lt;  __&#x2F; |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">|_.__&#x2F; \___&#x2F; \___&#x2F; \__|_____\__,_|\___&#x2F; \___|_|\_\___|_|</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">Boot2Docker version 1.5.0, build master : a66bce5 - Tue Feb 10 23:31:27 UTC 2015</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">Docker version 1.5.0, build a8a31ef</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">docker@boot2docker:~$</span></pre></td></tr></table></figure>
+
+<h2 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h2><p>The Docker Engine consists of two parts: a daemon, a server process that manages all the containers, and a client, which acts as a remote control for the daemon.</p>
+<p>If you’re loggeg into the boot2docker machine, you can check if the docker daemon is running.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">docker@boot2docker:~$ docker version</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">Client version: 1.5.0</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">Client API version: 1.17</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">Go version (client): go1.4.1</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">Git commit (client): a8a31ef</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">OS&#x2F;Arch (client): linux&#x2F;amd64</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">Server version: 1.5.0</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">Server API version: 1.17</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">Go version (server): go1.4.1</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">Git commit (server): a8a31ef</span></pre></td></tr></table></figure>
+
+<p>This will verify that the daemon is running and that you can connect to it. If you can see the version number you know you are all set.</p>
+<p>I found very useful the [interactive tutorial(<a href="https://www.docker.com/tryit/" target="_blank" rel="noopener">https://www.docker.com/tryit/</a>) because the best way to understand Docker is to try it!</p>
+<h3 id="Searching-for-images"><a href="#Searching-for-images" class="headerlink" title="Searching for images"></a>Searching for images</h3><p>The easiest way to get started is to use a container image from someone else. Container images are available on the Docker Hub Registry, a cloud-based collection of applications. You can find them online at Docker Hub as well <em>through the Docker Engine client command line</em>.</p>
+<p>To search for a container, you can use the command <em>docker search</em>. For example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">docker@boot2docker:~$ docker search tutorial</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">NAME                                       DESCRIPTION   STARS     OFFICIAL   AUTOMATED</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">learn&#x2F;tutorial                                           8</span></pre></td></tr></table></figure>
+
+<p>Searched for a “tutorial” container.</p>
+<h3 id="Downloading-container-images"><a href="#Downloading-container-images" class="headerlink" title="Downloading container images"></a>Downloading container images</h3><p>Container images can be downloaded easily using <em>docker pull</em>. For images in the Docker Hub Registry, the name you specify is constructed as /.</p>
+<p>To download learn/tutorial container:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">docker@boot2docker:~$ docker pull learn&#x2F;tutorial</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">Pulling repository learn&#x2F;tutorial</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">8dbd9e392a96: Download complete</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">Status: Downloaded newer image for learn&#x2F;tutorial:latest</span></pre></td></tr></table></figure>
+
+<p>With a container Docker can download several layers because a docker images can consists of several layers.</p>
+<h3 id="Run-a-container"><a href="#Run-a-container" class="headerlink" title="Run a container"></a>Run a container</h3><p>You can think of containers as a process in a box. The box contains everything the process might need, so it has the filesystem, system libraries, shell and such, but by default none of these are running. You <em>start</em> a container by running a process in it.</p>
+<p>The command docker run takes a minimum of two arguments:</p>
+<ol>
+<li>an image name, and</li>
+<li>the command you want to execute within that image.</li>
+</ol>
+<p>So, for the learn/tutorial container, it is:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">docker@boot2docker:~$ docker run learn&#x2F;tutorial echo &quot;hello world&quot;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">hello world</span></pre></td></tr></table></figure>
+
+<p>With this you have just started a container and executed a program inside of it, when the program stopped, so did the container.</p>
+<h3 id="Installing-things"><a href="#Installing-things" class="headerlink" title="Installing things"></a>Installing things</h3><p>Next we are going to install a simple utility, ping, in the container. The image is based upon ubuntu, so you can run the command <em>apt-get install -y ping</em> in the container.</p>
+<p>Note that even though the container stops right after a command completes, the changes are not forgotten.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">docker@boot2docker:~$ docker run learn&#x2F;tutorial apt-get install -y ping</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">Reading package lists...</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">Building dependency tree...</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">The following NEW packages will be installed:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  iputils-ping</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">Need to get 56.1 kB of archives.</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">After this operation, 143 kB of additional disk space will be used.</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">Get:1 http:&#x2F;&#x2F;archive.ubuntu.com&#x2F;ubuntu&#x2F; precise&#x2F;main iputils-ping amd64 3:20101006-1ubuntu1 [56.1 kB]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">debconf: delaying package configuration, since apt-utils is not installed</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">Fetched 56.1 kB in 0s (276 kB&#x2F;s)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">Selecting previously unselected package iputils-ping.</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">(Reading database ... 7545 files and directories currently installed.)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">Unpacking iputils-ping (from ...&#x2F;iputils-ping_3%3a20101006-1ubuntu1_amd64.deb) ...</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">Setting up iputils-ping (3:20101006-1ubuntu1) ...</span></pre></td></tr></table></figure>
+
+<p>That worked! You have installed a program on top of a base image. Your changes to the filesystem have been kept, but are not yet saved.</p>
+<h3 id="Save-your-changes"><a href="#Save-your-changes" class="headerlink" title="Save your changes"></a>Save your changes</h3><p>After you make changes (by running a command inside a container), you probably want to save those changes. This will enable you to start from this point later. With Docker, the process of saving the state is called <strong>committing</strong>. Commit basically saves the difference between the old image and the new state.</p>
+<p>To do that there are several steps. First use <em>docker ps -l</em> to find the ID of the container you created by installing ping.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">docker@boot2docker:~$ docker ps -l</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">CONTAINER ID        IMAGE                   COMMAND                CREATED             STATUS                     PORTS               NAMES</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">3cba51f3bedc        learn&#x2F;tutorial:latest   &quot;apt-get install -y    3 minutes ago       Exited (0) 3 minutes ago                       modest_cori</span></pre></td></tr></table></figure>
+
+<p>The id is 3cba51f3bedc.</p>
+<p>The second step is to actually commit the changes:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">docker@boot2docker:~$ docker commit 3cba51f3bedc learn&#x2F;ping</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">86d9da396ee3c8d9d00326838999050d75bf831a016e4a6f0611edd5f62a624b</span></pre></td></tr></table></figure>
+
+<p>That worked! Please take note that Docker has returned a new ID. This ID is the image ID.</p>
+<h3 id="Run-your-new-image"><a href="#Run-your-new-image" class="headerlink" title="Run your new image"></a>Run your new image</h3><p>You have built a complete, self-contained image with the ‘ping’ utility installed named <strong>learn/ping</strong>. Your image can now run on any host that runs Docker.</p>
+<p>Let’s try it now with a ping to the host google.com:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">docker@boot2docker:~$ docker run learn&#x2F;ping ping google.com</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">PING google.com (216.58.210.46) 56(84) bytes of data.</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">64 bytes from lhr14s23-in-f14.1e100.net (216.58.210.46): icmp_req&#x3D;1 ttl&#x3D;61 time&#x3D;37.3 ms</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">64 bytes from lhr14s23-in-f14.1e100.net (216.58.210.46): icmp_req&#x3D;2 ttl&#x3D;61 time&#x3D;36.5 ms</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">64 bytes from lhr14s23-in-f14.1e100.net (216.58.210.46): icmp_req&#x3D;3 ttl&#x3D;61 time&#x3D;44.2 ms</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">^C</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">--- google.com ping statistics ---</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">9 packets transmitted, 9 received, 0% packet loss, time 8019ms</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">rtt min&#x2F;avg&#x2F;max&#x2F;mdev &#x3D; 35.384&#x2F;37.963&#x2F;44.248&#x2F;2.814 ms</span></pre></td></tr></table></figure>
+
+<p>That worked! Note that normally you can use one of Ctrl-C, Ctrl-P, or Ctrl-Q to disconnect (I don’t know why on my Mac none of those three worked). The container will keep running until it will disconnect automatically.</p>
+<p>Your image is now a running container. Using <strong>docker ps</strong> we can see a list of all running containers and using <strong>docker inspect</strong>. We can see useful information about this container.</p>
+<h3 id="Push-your-image-to-the-Docker-Hub-Registry"><a href="#Push-your-image-to-the-Docker-Hub-Registry" class="headerlink" title="Push your image to the Docker Hub Registry"></a>Push your image to the Docker Hub Registry</h3><p>Now that you have verified that your image works, you can share it with others. Remember that you pulled (downloaded) the learn/tutorial image from the Registry? By pushing (uploading) images that you build, you can easily retrieve them to use on other hosts as well as share them with other users.</p>
+<p>To do that the command <strong>docker push</strong> is used:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">docker@boot2docker:~$ docker push learn&#x2F;ping</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">The push refers to a repository [learn&#x2F;ping] (len: 1)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">Sending image list</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">Please login prior to push:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">Username:</span></pre></td></tr></table></figure>
+
+<p>Ops… it requires to be registered to Docker Hub so that’s all for now.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://fsferrara.github.io/2015/04/03/2015-04-03-running-containers-with-docker/" data-id="ck47cqjvc002ms8amd5oh0cdd" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/boot2docker/" rel="tag">boot2docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/devops/" rel="tag">devops</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/" rel="tag">docker</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/12/18/2015-12-18-aspect-oriented-programming-with-spring-and-aspectj/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Aspect Oriented Programming with Spring and AspectJ
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/02/21/2014-02-21-planning-cluster-hadoop-bigdata/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Planning a Cluster for Hadoop BigData</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/board-games/">board games</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/history/">history</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/history/thoughts/">thoughts</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/internet/">internet</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/programming/">programming</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/programming/system-administration/">system administration</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/security-and-privacy/">security and privacy</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-administration/">system administration</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/talks/">talks</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/thoughts/">thoughts</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/thoughts/programming/">programming</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/XML/" rel="tag">XML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ackermann/" rel="tag">ackermann</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ai/" rel="tag">ai</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/amarel/" rel="tag">amarel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aop/" rel="tag">aop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/api/" rel="tag">api</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/array/" rel="tag">array</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/artificial-intelligence/" rel="tag">artificial-intelligence</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aspect/" rel="tag">aspect</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aspectj/" rel="tag">aspectj</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/asterisk/" rel="tag">asterisk</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/basex/" rel="tag">basex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/big-data/" rel="tag">big-data</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/boot2docker/" rel="tag">boot2docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/branching-model/" rel="tag">branching-model</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/brooks/" rel="tag">brooks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/" rel="tag">c</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chat/" rel="tag">chat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/collaboration/" rel="tag">collaboration</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/command-pattern/" rel="tag">command-pattern</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/computability/" rel="tag">computability</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/computer-science/" rel="tag">computer-science</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crosscutting/" rel="tag">crosscutting</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data/" rel="tag">data</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-structures/" rel="tag">data structures</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-structures/" rel="tag">data-structures</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debug/" rel="tag">debug</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/devops/" rel="tag">devops</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dos/" rel="tag">dos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/drinking-game/" rel="tag">drinking-game</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/frege/" rel="tag">frege</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/game/" rel="tag">game</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gdb/" rel="tag">gdb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/global-worker/" rel="tag">global-worker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/graphql/" rel="tag">graphql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/godel/" rel="tag">gödel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hadoop/" rel="tag">hadoop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hilbert/" rel="tag">hilbert</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hystrix/" rel="tag">hystrix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/irc/" rel="tag">irc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/isdn/" rel="tag">isdn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jekyll/" rel="tag">jekyll</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kant/" rel="tag">kant</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lift/" rel="tag">lift</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mccharty/" rel="tag">mccharty</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/meetup/" rel="tag">meetup</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/metrics/" rel="tag">metrics</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mpeg-7/" rel="tag">mpeg-7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ms-dos/" rel="tag">ms-dos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/octopress/" rel="tag">octopress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/p3p/" rel="tag">p3p</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pbx/" rel="tag">pbx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pointers/" rel="tag">pointers</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/privacy/" rel="tag">privacy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/regex/" rel="tag">regex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/regular-expression/" rel="tag">regular-expression</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rest/" rel="tag">rest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ruby/" rel="tag">ruby</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sbt/" rel="tag">sbt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scala/" rel="tag">scala</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/" rel="tag">shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sort/" rel="tag">sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/" rel="tag">spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/subversion/" rel="tag">subversion</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/svn/" rel="tag">svn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/talks/" rel="tag">talks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/teams/" rel="tag">teams</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tuning/" rel="tag">tuning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/turing/" rel="tag">turing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/" rel="tag">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unix/" rel="tag">unix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/versioning/" rel="tag">versioning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/warehouse/" rel="tag">warehouse</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/" rel="tag">windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows-server/" rel="tag">windows server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xml/" rel="tag">xml</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xquery/" rel="tag">xquery</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/XML/" style="font-size: 10px;">XML</a> <a href="/tags/ackermann/" style="font-size: 10px;">ackermann</a> <a href="/tags/ai/" style="font-size: 17.5px;">ai</a> <a href="/tags/algorithm/" style="font-size: 12.5px;">algorithm</a> <a href="/tags/amarel/" style="font-size: 10px;">amarel</a> <a href="/tags/aop/" style="font-size: 10px;">aop</a> <a href="/tags/api/" style="font-size: 10px;">api</a> <a href="/tags/array/" style="font-size: 12.5px;">array</a> <a href="/tags/artificial-intelligence/" style="font-size: 17.5px;">artificial-intelligence</a> <a href="/tags/aspect/" style="font-size: 10px;">aspect</a> <a href="/tags/aspectj/" style="font-size: 10px;">aspectj</a> <a href="/tags/asterisk/" style="font-size: 10px;">asterisk</a> <a href="/tags/basex/" style="font-size: 10px;">basex</a> <a href="/tags/big-data/" style="font-size: 10px;">big-data</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/boot2docker/" style="font-size: 10px;">boot2docker</a> <a href="/tags/branching-model/" style="font-size: 10px;">branching-model</a> <a href="/tags/brooks/" style="font-size: 10px;">brooks</a> <a href="/tags/c/" style="font-size: 20px;">c</a> <a href="/tags/chat/" style="font-size: 10px;">chat</a> <a href="/tags/collaboration/" style="font-size: 10px;">collaboration</a> <a href="/tags/command-pattern/" style="font-size: 10px;">command-pattern</a> <a href="/tags/computability/" style="font-size: 10px;">computability</a> <a href="/tags/computer-science/" style="font-size: 20px;">computer-science</a> <a href="/tags/crosscutting/" style="font-size: 10px;">crosscutting</a> <a href="/tags/data/" style="font-size: 10px;">data</a> <a href="/tags/data-structures/" style="font-size: 10px;">data structures</a> <a href="/tags/data-structures/" style="font-size: 10px;">data-structures</a> <a href="/tags/debug/" style="font-size: 10px;">debug</a> <a href="/tags/devops/" style="font-size: 12.5px;">devops</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/dos/" style="font-size: 10px;">dos</a> <a href="/tags/drinking-game/" style="font-size: 10px;">drinking-game</a> <a href="/tags/frege/" style="font-size: 10px;">frege</a> <a href="/tags/game/" style="font-size: 10px;">game</a> <a href="/tags/gdb/" style="font-size: 10px;">gdb</a> <a href="/tags/git/" style="font-size: 12.5px;">git</a> <a href="/tags/global-worker/" style="font-size: 10px;">global-worker</a> <a href="/tags/graphql/" style="font-size: 10px;">graphql</a> <a href="/tags/godel/" style="font-size: 10px;">gödel</a> <a href="/tags/hadoop/" style="font-size: 10px;">hadoop</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hilbert/" style="font-size: 10px;">hilbert</a> <a href="/tags/hystrix/" style="font-size: 10px;">hystrix</a> <a href="/tags/irc/" style="font-size: 10px;">irc</a> <a href="/tags/isdn/" style="font-size: 10px;">isdn</a> <a href="/tags/java/" style="font-size: 17.5px;">java</a> <a href="/tags/jekyll/" style="font-size: 10px;">jekyll</a> <a href="/tags/kant/" style="font-size: 10px;">kant</a> <a href="/tags/lift/" style="font-size: 10px;">lift</a> <a href="/tags/linux/" style="font-size: 12.5px;">linux</a> <a href="/tags/mccharty/" style="font-size: 10px;">mccharty</a> <a href="/tags/meetup/" style="font-size: 10px;">meetup</a> <a href="/tags/metrics/" style="font-size: 10px;">metrics</a> <a href="/tags/mpeg-7/" style="font-size: 10px;">mpeg-7</a> <a href="/tags/ms-dos/" style="font-size: 10px;">ms-dos</a> <a href="/tags/octopress/" style="font-size: 10px;">octopress</a> <a href="/tags/p3p/" style="font-size: 10px;">p3p</a> <a href="/tags/pbx/" style="font-size: 10px;">pbx</a> <a href="/tags/pointers/" style="font-size: 10px;">pointers</a> <a href="/tags/privacy/" style="font-size: 10px;">privacy</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/regular-expression/" style="font-size: 10px;">regular-expression</a> <a href="/tags/rest/" style="font-size: 12.5px;">rest</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/sbt/" style="font-size: 10px;">sbt</a> <a href="/tags/scala/" style="font-size: 10px;">scala</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/sort/" style="font-size: 15px;">sort</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/subversion/" style="font-size: 10px;">subversion</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/talks/" style="font-size: 12.5px;">talks</a> <a href="/tags/teams/" style="font-size: 10px;">teams</a> <a href="/tags/tuning/" style="font-size: 12.5px;">tuning</a> <a href="/tags/turing/" style="font-size: 12.5px;">turing</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/unix/" style="font-size: 10px;">unix</a> <a href="/tags/versioning/" style="font-size: 10px;">versioning</a> <a href="/tags/warehouse/" style="font-size: 10px;">warehouse</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/windows-server/" style="font-size: 10px;">windows server</a> <a href="/tags/xml/" style="font-size: 12.5px;">xml</a> <a href="/tags/xquery/" style="font-size: 10px;">xquery</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">February 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/01/">January 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/10/">October 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09/">September 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/07/">July 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/06/">June 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05/">May 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09/">September 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/11/">November 2006</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/1983/09/">September 1983</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/08/26/2018-08-26-isolate-services-using-the-command-pattern/">Isolate services using the command pattern</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/05/2018-01-05-blogging-with-octopress-and-jekyll/">Blogging with Octopress and Jekyll</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/21/2017-12-21-da-rest-a-graphql-in-90-minuti/">Da REST a GraphQL in 90 minuti</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/10/2017-12-10-getting-started-with-graphql/">Getting Started With GraphQL</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/16/2016-06-16-my-eight-rules-to-effectively-work-in-a-global-team/">My eight rules to effectively work in a global team</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Saverio<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

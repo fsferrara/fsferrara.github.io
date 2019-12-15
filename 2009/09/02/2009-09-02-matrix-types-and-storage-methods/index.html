@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-45189328-2', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <title>Matrix types and Storage methods | fsferrara</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="In mathematics, a matrix (plural matrices) is a rectangular array of numbers, symbols, or expressions, arranged in rows and columns. The individual items in a matrix are called its elements or entries">
+<meta name="keywords" content="array,data structures">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Matrix types and Storage methods">
+<meta property="og:url" content="http:&#x2F;&#x2F;fsferrara.github.io&#x2F;2009&#x2F;09&#x2F;02&#x2F;2009-09-02-matrix-types-and-storage-methods&#x2F;index.html">
+<meta property="og:site_name" content="fsferrara">
+<meta property="og:description" content="In mathematics, a matrix (plural matrices) is a rectangular array of numbers, symbols, or expressions, arranged in rows and columns. The individual items in a matrix are called its elements or entries">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-12-15T18:35:00.746Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@fsferrara">
+<link rel="publisher" href="+SaverioFerrara">
+  
+    <link rel="alternate" href="/atom.xml" title="fsferrara" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">fsferrara</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">...another Software Engineer blog!</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://fsferrara.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2009-09-02-matrix-types-and-storage-methods" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2009/09/02/2009-09-02-matrix-types-and-storage-methods/" class="article-date">
+  <time datetime="2009-09-02T10:00:00.000Z" itemprop="datePublished">2009-09-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/programming/">programming</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Matrix types and Storage methods
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>In mathematics, a matrix (plural matrices) is a rectangular array of numbers, symbols, or expressions, arranged in rows and columns. The individual items in a matrix are called its elements or entries.</p>
+<p>In computer science the term &#8220;matrix&#8221; refers to a multidimensional array, that is a systematic arrangement of objects, usually in rows and columns.</p>
+<p>In questo articolo si illustra i vari tidi di matrice, e i vari tipi di memorizzazione di matrice. Dal modo in cui sono collocati gli elementi all&#8217;interno di una matrice, possiamo distinguere vari tipi</p>
+<a id="more"></a>
+
+<h2 id="Matrice-SINGOLARE"><a href="#Matrice-SINGOLARE" class="headerlink" title="Matrice SINGOLARE"></a>Matrice SINGOLARE</h2><p>e&#8217; una matrice triangolare (sueriore o inferiore), dove almeno un elemento a[i,i] della diagonale e&#8217; uguale a 0.</p>
+<p>La caratteristica di una matrice triangolare e&#8217; che se fa parte di un sistema lineare, allora il sistema ammette infinite soluzioni.</p>
+<p>Il determinante di una matrice singolare e&#8217; uguale a zero.</p>
+<h2 id="Matrice-A-DIAGONALE-DOMINANTE"><a href="#Matrice-A-DIAGONALE-DOMINANTE" class="headerlink" title="Matrice A DIAGONALE DOMINANTE"></a>Matrice A DIAGONALE DOMINANTE</h2><p>matrice quadrate appartenente a R[nxn] di dice a diagonale dominante se per ogni i=1,2,&#8230;,n vale:</p>
+<p>n</p>
+<p>abs(a[i,i]) &gt;=  sum  abs(a[i,j]) quando i != j</p>
+<p>i,j=1</p>
+<p>se vale il segno &gt; allora di dice DIAGONALE STRETTAMENTE DOMINANTE</p>
+<h2 id="Matrice-DEFINITA-POSITIVA"><a href="#Matrice-DEFINITA-POSITIVA" class="headerlink" title="Matrice DEFINITA POSITIVA"></a>Matrice DEFINITA POSITIVA</h2><p>una matrice quadrata A appartenente a R[nxn], che e&#8217; simmetrice, si dice definita positiva se per qualsiasi vettore x appartenente a R[n], e x != 0, risulta:  x(trasposto) * A * x &gt; 0</p>
+<h2 id="Matrice-ORTOGONALE"><a href="#Matrice-ORTOGONALE" class="headerlink" title="Matrice ORTOGONALE"></a>Matrice ORTOGONALE</h2><p>una matrice Q e&#8217; ortogonale se la sua inversa e&#8217; proprio uguale alla sua trasposta.</p>
+<p>Da Q * Q(inversa) = I  segue che Q * Q(trasosta) = I</p>
+<h2 id="Matrice-CIRCOLANTE"><a href="#Matrice-CIRCOLANTE" class="headerlink" title="Matrice CIRCOLANTE"></a>Matrice CIRCOLANTE</h2><p>e&#8217; una matrice dove il vettore riga k-esimo e&#8217; ottenuto dal vettore riga (k-1)-esimo shiftato circolarmente di una posizione verso destra:</p>
+<p>Esempio:</p>
+<p>1 2 3 4 5</p>
+<p>5 1 2 3 4</p>
+<p>4 5 1 2 3</p>
+<p>3 4 5 1 2</p>
+<p>2 3 4 5 1</p>
+<h2 id="Matrici-di-TOEPLITZ"><a href="#Matrici-di-TOEPLITZ" class="headerlink" title="Matrici di TOEPLITZ"></a>Matrici di TOEPLITZ</h2><p>Sono uguali alle Matrici CIRCOLANTI, con la caratteristica che non viene effettuato lo shift circolare, ma ad ogni shift puo&#8217; etrare un nuovo elemento. Esempio</p>
+<p>1 2 3 4 5</p>
+<p>9 1 2 3 4</p>
+<p>6 9 1 2 3</p>
+<p>0 6 9 1 2</p>
+<p>1 0 6 9 1</p>
+<p>Una matrice di TOEPLITZ puo&#8217; essere immersa in una matrice CIRCOLANTE piu&#8217; grande in modo da poter usare algoritmi per matrici CIRCOLANTI.</p>
+<h2 id="Matrice-SIMMETRICA"><a href="#Matrice-SIMMETRICA" class="headerlink" title="Matrice SIMMETRICA"></a>Matrice SIMMETRICA</h2><p>Una matrice si dice simmetrica quando A[i][j] = A[j][i]</p>
+<h2 id="Matrice-BIDIAGONALE-superiore-o-inferiore"><a href="#Matrice-BIDIAGONALE-superiore-o-inferiore" class="headerlink" title="Matrice BIDIAGONALE (superiore o inferiore)"></a>Matrice BIDIAGONALE (superiore o inferiore)</h2><p>Bidiagonale inferiore se: a(i,j)=0 per j&gt;i e per i&gt;j+1</p>
+<p>Bidiagonale superiore se: a(i,j)=0 per i&gt;j e per j&gt;i+1</p>
+<h2 id="Matrice-TRIDIAGONALE"><a href="#Matrice-TRIDIAGONALE" class="headerlink" title="Matrice TRIDIAGONALE"></a>Matrice TRIDIAGONALE</h2><p>Matrice tridiagonale: se a(i,j)=0 per |i-j|&gt;1</p>
+<p>In una matrice tridiagonale di dim nxn gli elementi che bisogna effettivamente conservare sono quelli delle tre diagonali cioË sono 3n-2.</p>
+<h2 id="Matrice-SPARSA"><a href="#Matrice-SPARSA" class="headerlink" title="Matrice SPARSA"></a>Matrice SPARSA</h2><p>E&#8217; una matrice a[n,m] in cui ci sono molti elementi uguali a 0. La sparsita&#8217; di una matrice si misura grazie al &#8220;Grado di sparsita’&#8221;:</p>
+<p>numero coefficienti nulli</p>
+<p>SP = &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-</p>
+<p>numero totale coefficienti</p>
+<p>Quando gli elementi nulli sono 0, allora  -&gt; SP = 0 |</p>
+<p>|-&gt; Quindi 0 &lt;= SP &lt;= 1</p>
+<p>Quando non ci sono elementi nulli, allora -&gt; SP = 1 |</p>
+<p>La matrice e&#8217; molto sparsa quando SP e&#8217; molto vicino a 1.</p>
+<h2 id="Matrice-A-BANDA"><a href="#Matrice-A-BANDA" class="headerlink" title="Matrice A BANDA"></a>Matrice A BANDA</h2><p>Ampiezza di banda inferiore=p, ampiezza di banda superiore=q  se a(i,j)=0 per i&gt;j+p e per j&gt;i+q</p>
+<h2 id="CONFRONTO-SIMMETRICA-DIAGONALE-DOMINANTE-E-SIMMETRICA-DEFINITA-POSITIVA"><a href="#CONFRONTO-SIMMETRICA-DIAGONALE-DOMINANTE-E-SIMMETRICA-DEFINITA-POSITIVA" class="headerlink" title="CONFRONTO: SIMMETRICA DIAGONALE DOMINANTE E SIMMETRICA DEFINITA POSITIVA"></a>CONFRONTO: SIMMETRICA DIAGONALE DOMINANTE E SIMMETRICA DEFINITA POSITIVA</h2><p>|-Simmetrica                        |-Simmetrica</p>
+<p>se   A = |                         =&gt;    A = |                         ?</p>
+<p>|-Diagonale dominante               |-Definita positiva</p>
+<p>Ovvero quando una matrice simmetrica a diagonale dominante e&#8217; anche definita positiva? L&#8217;affermazione e&#8217; vera quando A e&#8217;:</p>
+<p>&#8211; non singolare (det(A)&gt;0)</p>
+<p>&#8211; simmetrica</p>
+<p>&#8211; a diagonale dominante</p>
+<p>&#8211; ha gli elementi sulla diag non negativi</p>
+<h1 id="Tipi-di-Memorizzazione-per-una-Matrice"><a href="#Tipi-di-Memorizzazione-per-una-Matrice" class="headerlink" title="Tipi di Memorizzazione per una Matrice"></a>Tipi di Memorizzazione per una Matrice</h1><p>A secondo del tipo di matrice, possiamo scegliere il metodo di memorizzazione più adatto alle nostre esigenze. Le memorizzazioni sono spesse scelte per ottimizzare lo spazio su disco e i calcoli sulle matrici, come:</p>
+<p>1) Prodotto scalare tra due vettori</p>
+<p>Da come risultato uno scalare.</p>
+<p>2) Prodotto Matrice-Matrice</p>
+<p>Basato sul prodotto scalare di sue vettori.</p>
+<p>A[nxm] * B[mxp] = C[nxp]</p>
+<p>3) Norma 1 di una matrice</p>
+<p>Data una matrice facciamo la somma degli elementi riga per riga. La norma 1 sara&#8217; uguale al massimo, in valore assoluto, di tutte le somme ottenute.</p>
+<p>4) Norma infinito di una matrice</p>
+<p>Data una matrice facciamo la somma degli elementi colonna per colonna. La norma 1 sara&#8217; uguale al massimo, in valore assoluto, di tutte le somme ottenute.</p>
+<p>Qui vi sono alcuni metodi di memorizzazione:</p>
+<h2 id="BAND-STORAGE"><a href="#BAND-STORAGE" class="headerlink" title="BAND STORAGE"></a>BAND STORAGE</h2><p>Questa memorizzazione e&#8217; utile per memorizzare matrici a banda. Si consideri la seguente matrice a bandauna matrice 6&#215;6 con p=1 e q=2</p>
+<p>a(1,1) a(1,2) a(1,3)</p>
+<p>a(2,1) a(2,2) a(2,3) a(2,4)</p>
+<p>a(3,2) a(3,3) a(3,4) a(3,5)</p>
+<p>a(4,3) a(4,4) a(4,5) a(4,6)</p>
+<p>a(5,4) a(5,5) a(5,6)</p>
+<p>a(6,5) a(6,6)</p>
+<p>questa matrice viene memorizzata nel formato BAND STORAGE nel seguente modo:</p>
+<p>*      *   a(1,3) a(2,4) a(3,5) a(4,6)</p>
+<ul>
+<li>a(1,2) a(2,3) a(3,4) a(4,5) a(5,6)</li>
+</ul>
+<p>a(1,1) a(2,2) a(3,3) a(4,4) a(5,5) a(6,6)</p>
+<p>a(2,1) a(3,2) a(4,3) a(5,4) a(6,5)    *</p>
+<h2 id="PACKED-STORAGE"><a href="#PACKED-STORAGE" class="headerlink" title="PACKED STORAGE"></a>PACKED STORAGE</h2><p>Questa memorizzazione e&#8217; utile per matrici simmetriche oppure triangolari (inferiori o superiori). Si consideri la seguente matrice triangolare:</p>
+<p>a(1,1) a(1,2) a(1,3) a(1,4) a(1,5)</p>
+<p>a(2,2) a(2,3) a(2,4) a(2,5)</p>
+<p>a(3,3) a(3,4) a(3,5)</p>
+<p>a(4,4) a(4,5)</p>
+<p>a(5,5)</p>
+<p>questa matrice memorizzata in PACKED STORAGE per righe:</p>
+<p>a(1,1) a(1,2) a(1,3) a(1,4) a(1,5) a(2,2) a(2,3) a(2,4) a(2,5) a(3,3) a(3,4) a(3,5) a(4,4) a(4,5) a(5,5)</p>
+<p>mentre memorizzata in PACKED STORAGE per colonne:</p>
+<p>a(1,1) a(1,2) a(2,2) a(1,3) a(2,3) a(3,3) a(1,4) a(2,4) a(3,4) a(4,4) a(1,5) a(2,5) a(3,5) a(4,5) a(5,5)</p>
+<h2 id="MEMORIZZAZIONE-CON-TRE-VETTORI"><a href="#MEMORIZZAZIONE-CON-TRE-VETTORI" class="headerlink" title="MEMORIZZAZIONE CON TRE VETTORI"></a>MEMORIZZAZIONE CON TRE VETTORI</h2><p>Questa memorizzazione e&#8217; utile per matrici sparse.</p>
+<p>Dicendo &#8220;nz&#8221; il numero di elementi non nulli dela matrice sparsa A ed n la sua dimensione, si memorizza la matrice in tre vettori:</p>
+<p>R[nz]  = (elementi non nulli riga per riga)</p>
+<p>J[nz]  = (indici di colonna degli elementi di R[])</p>
+<p>I[n+1] = (posizione in R del primo elemento non nullo di ogni riga di A; L&#8217;ultimo elemento e&#8217; I(n+1)=nz+1)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://fsferrara.github.io/2009/09/02/2009-09-02-matrix-types-and-storage-methods/" data-id="ck47cqjul0015s8amektg8vo9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/array/" rel="tag">array</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/data-structures/" rel="tag">data structures</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2009/10/25/2009-10-25-very-brief-introduction-to-regular-expressions/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Very brief introduction to Regular Expressions
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2009/07/28/2009-07-28-disable-goku-script-spam-feature/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Disable Goku Script spam feature</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/board-games/">board games</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/history/">history</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/history/thoughts/">thoughts</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/internet/">internet</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/programming/">programming</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/programming/system-administration/">system administration</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/security-and-privacy/">security and privacy</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-administration/">system administration</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/talks/">talks</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/thoughts/">thoughts</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/thoughts/programming/">programming</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/XML/" rel="tag">XML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ackermann/" rel="tag">ackermann</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ai/" rel="tag">ai</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/amarel/" rel="tag">amarel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aop/" rel="tag">aop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/api/" rel="tag">api</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/array/" rel="tag">array</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/artificial-intelligence/" rel="tag">artificial-intelligence</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aspect/" rel="tag">aspect</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aspectj/" rel="tag">aspectj</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/asterisk/" rel="tag">asterisk</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/basex/" rel="tag">basex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/big-data/" rel="tag">big-data</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/boot2docker/" rel="tag">boot2docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/branching-model/" rel="tag">branching-model</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/brooks/" rel="tag">brooks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/" rel="tag">c</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chat/" rel="tag">chat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/collaboration/" rel="tag">collaboration</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/command-pattern/" rel="tag">command-pattern</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/computability/" rel="tag">computability</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/computer-science/" rel="tag">computer-science</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crosscutting/" rel="tag">crosscutting</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data/" rel="tag">data</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-structures/" rel="tag">data structures</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-structures/" rel="tag">data-structures</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debug/" rel="tag">debug</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/devops/" rel="tag">devops</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dos/" rel="tag">dos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/drinking-game/" rel="tag">drinking-game</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/frege/" rel="tag">frege</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/game/" rel="tag">game</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gdb/" rel="tag">gdb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/global-worker/" rel="tag">global-worker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/graphql/" rel="tag">graphql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/godel/" rel="tag">gödel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hadoop/" rel="tag">hadoop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hilbert/" rel="tag">hilbert</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hystrix/" rel="tag">hystrix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/irc/" rel="tag">irc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/isdn/" rel="tag">isdn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jekyll/" rel="tag">jekyll</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kant/" rel="tag">kant</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lift/" rel="tag">lift</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mccharty/" rel="tag">mccharty</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/meetup/" rel="tag">meetup</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/metrics/" rel="tag">metrics</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mpeg-7/" rel="tag">mpeg-7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ms-dos/" rel="tag">ms-dos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/octopress/" rel="tag">octopress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/p3p/" rel="tag">p3p</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pbx/" rel="tag">pbx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pointers/" rel="tag">pointers</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/privacy/" rel="tag">privacy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/regex/" rel="tag">regex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/regular-expression/" rel="tag">regular-expression</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rest/" rel="tag">rest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ruby/" rel="tag">ruby</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sbt/" rel="tag">sbt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scala/" rel="tag">scala</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/" rel="tag">shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sort/" rel="tag">sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/" rel="tag">spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/subversion/" rel="tag">subversion</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/svn/" rel="tag">svn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/talks/" rel="tag">talks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/teams/" rel="tag">teams</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tuning/" rel="tag">tuning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/turing/" rel="tag">turing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/" rel="tag">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unix/" rel="tag">unix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/versioning/" rel="tag">versioning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/warehouse/" rel="tag">warehouse</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/" rel="tag">windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows-server/" rel="tag">windows server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xml/" rel="tag">xml</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xquery/" rel="tag">xquery</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/XML/" style="font-size: 10px;">XML</a> <a href="/tags/ackermann/" style="font-size: 10px;">ackermann</a> <a href="/tags/ai/" style="font-size: 17.5px;">ai</a> <a href="/tags/algorithm/" style="font-size: 12.5px;">algorithm</a> <a href="/tags/amarel/" style="font-size: 10px;">amarel</a> <a href="/tags/aop/" style="font-size: 10px;">aop</a> <a href="/tags/api/" style="font-size: 10px;">api</a> <a href="/tags/array/" style="font-size: 12.5px;">array</a> <a href="/tags/artificial-intelligence/" style="font-size: 17.5px;">artificial-intelligence</a> <a href="/tags/aspect/" style="font-size: 10px;">aspect</a> <a href="/tags/aspectj/" style="font-size: 10px;">aspectj</a> <a href="/tags/asterisk/" style="font-size: 10px;">asterisk</a> <a href="/tags/basex/" style="font-size: 10px;">basex</a> <a href="/tags/big-data/" style="font-size: 10px;">big-data</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/boot2docker/" style="font-size: 10px;">boot2docker</a> <a href="/tags/branching-model/" style="font-size: 10px;">branching-model</a> <a href="/tags/brooks/" style="font-size: 10px;">brooks</a> <a href="/tags/c/" style="font-size: 20px;">c</a> <a href="/tags/chat/" style="font-size: 10px;">chat</a> <a href="/tags/collaboration/" style="font-size: 10px;">collaboration</a> <a href="/tags/command-pattern/" style="font-size: 10px;">command-pattern</a> <a href="/tags/computability/" style="font-size: 10px;">computability</a> <a href="/tags/computer-science/" style="font-size: 20px;">computer-science</a> <a href="/tags/crosscutting/" style="font-size: 10px;">crosscutting</a> <a href="/tags/data/" style="font-size: 10px;">data</a> <a href="/tags/data-structures/" style="font-size: 10px;">data structures</a> <a href="/tags/data-structures/" style="font-size: 10px;">data-structures</a> <a href="/tags/debug/" style="font-size: 10px;">debug</a> <a href="/tags/devops/" style="font-size: 12.5px;">devops</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/dos/" style="font-size: 10px;">dos</a> <a href="/tags/drinking-game/" style="font-size: 10px;">drinking-game</a> <a href="/tags/frege/" style="font-size: 10px;">frege</a> <a href="/tags/game/" style="font-size: 10px;">game</a> <a href="/tags/gdb/" style="font-size: 10px;">gdb</a> <a href="/tags/git/" style="font-size: 12.5px;">git</a> <a href="/tags/global-worker/" style="font-size: 10px;">global-worker</a> <a href="/tags/graphql/" style="font-size: 10px;">graphql</a> <a href="/tags/godel/" style="font-size: 10px;">gödel</a> <a href="/tags/hadoop/" style="font-size: 10px;">hadoop</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hilbert/" style="font-size: 10px;">hilbert</a> <a href="/tags/hystrix/" style="font-size: 10px;">hystrix</a> <a href="/tags/irc/" style="font-size: 10px;">irc</a> <a href="/tags/isdn/" style="font-size: 10px;">isdn</a> <a href="/tags/java/" style="font-size: 17.5px;">java</a> <a href="/tags/jekyll/" style="font-size: 10px;">jekyll</a> <a href="/tags/kant/" style="font-size: 10px;">kant</a> <a href="/tags/lift/" style="font-size: 10px;">lift</a> <a href="/tags/linux/" style="font-size: 12.5px;">linux</a> <a href="/tags/mccharty/" style="font-size: 10px;">mccharty</a> <a href="/tags/meetup/" style="font-size: 10px;">meetup</a> <a href="/tags/metrics/" style="font-size: 10px;">metrics</a> <a href="/tags/mpeg-7/" style="font-size: 10px;">mpeg-7</a> <a href="/tags/ms-dos/" style="font-size: 10px;">ms-dos</a> <a href="/tags/octopress/" style="font-size: 10px;">octopress</a> <a href="/tags/p3p/" style="font-size: 10px;">p3p</a> <a href="/tags/pbx/" style="font-size: 10px;">pbx</a> <a href="/tags/pointers/" style="font-size: 10px;">pointers</a> <a href="/tags/privacy/" style="font-size: 10px;">privacy</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/regular-expression/" style="font-size: 10px;">regular-expression</a> <a href="/tags/rest/" style="font-size: 12.5px;">rest</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/sbt/" style="font-size: 10px;">sbt</a> <a href="/tags/scala/" style="font-size: 10px;">scala</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/sort/" style="font-size: 15px;">sort</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/subversion/" style="font-size: 10px;">subversion</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/talks/" style="font-size: 12.5px;">talks</a> <a href="/tags/teams/" style="font-size: 10px;">teams</a> <a href="/tags/tuning/" style="font-size: 12.5px;">tuning</a> <a href="/tags/turing/" style="font-size: 12.5px;">turing</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/unix/" style="font-size: 10px;">unix</a> <a href="/tags/versioning/" style="font-size: 10px;">versioning</a> <a href="/tags/warehouse/" style="font-size: 10px;">warehouse</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/windows-server/" style="font-size: 10px;">windows server</a> <a href="/tags/xml/" style="font-size: 12.5px;">xml</a> <a href="/tags/xquery/" style="font-size: 10px;">xquery</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">February 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/01/">January 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/10/">October 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09/">September 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/07/">July 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/06/">June 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05/">May 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09/">September 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/11/">November 2006</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/1983/09/">September 1983</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/08/26/2018-08-26-isolate-services-using-the-command-pattern/">Isolate services using the command pattern</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/05/2018-01-05-blogging-with-octopress-and-jekyll/">Blogging with Octopress and Jekyll</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/21/2017-12-21-da-rest-a-graphql-in-90-minuti/">Da REST a GraphQL in 90 minuti</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/10/2017-12-10-getting-started-with-graphql/">Getting Started With GraphQL</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/16/2016-06-16-my-eight-rules-to-effectively-work-in-a-global-team/">My eight rules to effectively work in a global team</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Saverio<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
