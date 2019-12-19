@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-45189328-2', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <title>Relation - On Representations of Problems of Reasoning about Actions | fsferrara</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Relazione sull’articolo: “On Representations of Problems of Reasoning about Actions”.Saul Amarel - RCA Laboratories Princeton, N.J. In questo articolo Saul Amarel parla dei problemi di “ragionamento s">
+<meta name="keywords" content="ai,artificial-intelligence,computer-science,amarel">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Relation - On Representations of Problems of Reasoning about Actions">
+<meta property="og:url" content="http:&#x2F;&#x2F;fsferrara.github.io&#x2F;2007&#x2F;09&#x2F;20&#x2F;relation-on-representations-of-problems-of-reasoning-about-actions&#x2F;index.html">
+<meta property="og:site_name" content="fsferrara">
+<meta property="og:description" content="Relazione sull’articolo: “On Representations of Problems of Reasoning about Actions”.Saul Amarel - RCA Laboratories Princeton, N.J. In questo articolo Saul Amarel parla dei problemi di “ragionamento s">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-12-19T21:51:34.408Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@fsferrara">
+<link rel="publisher" href="+SaverioFerrara">
+  
+    <link rel="alternate" href="/atom.xml" title="fsferrara" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">fsferrara</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">...another Software Engineer blog!</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://fsferrara.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-relation-on-representations-of-problems-of-reasoning-about-actions" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/09/20/relation-on-representations-of-problems-of-reasoning-about-actions/" class="article-date">
+  <time datetime="2007-09-20T10:00:00.000Z" itemprop="datePublished">2007-09-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/history/">history</a>►<a class="article-category-link" href="/categories/history/thoughts/">thoughts</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Relation - On Representations of Problems of Reasoning about Actions
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Relazione-sull’articolo-“On-Representations-of-Problems-of-Reasoning-about-Actions”"><a href="#Relazione-sull’articolo-“On-Representations-of-Problems-of-Reasoning-about-Actions”" class="headerlink" title="Relazione sull’articolo: “On Representations of Problems of Reasoning about Actions”."></a>Relazione sull’articolo: “On Representations of Problems of Reasoning about Actions”.</h1><p>Saul Amarel - RCA Laboratories Princeton, N.J.</p>
+<p>In questo articolo Saul Amarel parla dei problemi di “ragionamento sulle azioni” (reasoning about action), ossia dei problemi che trattano l’individuazione delle azioni da compiere per avere un certo risultato. In questa categoria cadono problemi di tipo industriale/militare, e sicuramente li abbiamo incontrati nella nostra vita, quando ad esempio organizziamo una cena tra amici.</p>
+<a id="more"></a>
+
+<p>In generale la rappresentazione di un problema può essere fatta in diversi modi, e questo fattore condiziona poi la risoluzione del problema stesso. Tenuto conto della relazione tra la formulazione del problema e il modulo “problem solving system” addetto a risolvere il problema, si tende a cercare una rappresentazione tale da semplificare il processo di risoluzione del problema. Nella maggior parte di questo articolo l’attenzione è rivolta proprio a questo: capire bene come formulare il problema per poi risolverlo in modo semplice!</p>
+<p>Le prinicipali caratteristiche di un problema di “ragionamento sulle azioni” sono:</p>
+<ul>
+<li>Una situazione iniziale e una situazione finale;</li>
+<li>Un insieme d’azioni che variano lo stato della situazione;</li>
+<li>Un insieme di vincoli che limita la fattibilità delle azioni.</li>
+</ul>
+<p>Il compito del modulo “problem solving system” è trovare la miglior sequenza di azioni che ci portano dalla situazione iniziale alla situazione finale senza violare nessun vincolo. </p>
+<p>I problemi vengono formulati e risolti in un sistema “P” composto da:</p>
+<ul>
+<li><em>Un linguaggio per descrivere gli N-States</em>: questi ultimi rappresentano gli stati delle varie situazioni (ad esempio la situazione iniziale e la situazione finale sono due N-States);</li>
+<li><em>Un linguaggio di descrizione estesa</em>: per descrivere più dettagliatamente un N-State, ricorriamo a questo linguaggio ottenendo così una descrizione estesa dello stato;</li>
+<li><em>Regole per le azioni</em>: specificano una possibile prossima situazione basandosi su un insieme di caratteristiche che troviamo nella situazione corrente.</li>
+</ul>
+<p>Inizialmente la formulazione di un problema di ragionamento è fatta in linguaggio naturale, quindi possiamo individuare differenti linguaggi per descrivere gli N-States, ed è proprio la scelta di uno di questi linguaggi che condiziona la quantità di sforzi da fare per risolvere il problema. Per mettere in evidenzia questo particolare, nell’articolo viene discusso ampiamente una versione estesa del problema dei “Missionary and Cannibals” esaminando 6 formulazioni (da F1 a F6).</p>
+<p>La formulazione F1 del problema è  interamente verbale: “Tre missionari e tre cannibali cercano di attraversare un fiume ed hanno a disposizione una barca che può trasportare una o due persone.  Bisogna trovare il modo di condurre tutti sull’altra sponda senza mai lasciare in un posto un numero di missionari inferiore a quello dei cannibali. In generale, vi sono N missionari ed N cannibali e la barca ha capacità K (dove N è maggiore o uguale a 3, e K maggiore o uguale a 2).”</p>
+<p>A partire dalla formulazioni F1, viene data la formulazione F2 definendo un sistema P come prima descritto. In particolare gli elementi base degli N-States sono:</p>
+<ul>
+<li>N missionari (m1, … , mn) e N cannibali (c1, … , cn);</li>
+<li>Un oggetto barca bk con la relazione on(<qualcuno>, bk) la quale indica che <qualcuno> è sulla barca;</li>
+<li>Due spazi pL e pR con la relazione at(<qualcuno>, <spazio>) che ci da informazioni sulla posizione dei cannibali e dei missonari.</li>
+</ul>
+<p>Ovviamente la situazione iniziale, la situazione finale, e tutte le altre possibili situazioni, possono essere descritte combinando gli elementi base appena introdotti.<br>Per avere una descrizione estesa degli N-States (linguaggio di descrizione estesa), introduciamo:</p>
+<ul>
+<li>{m} insieme di missionari; {m}L, {m}R, {m}b sono i missionari rispettivamente a sinistra, a destra, e sulla barca;</li>
+<li>{c} insieme di cannibali; {c}L, {c}R, {c}b sono i cannibali rispettivamente a sinistra, a destra, e sulla barca</li>
+</ul>
+<p>Definiamo inoltre, sempre per la descrizione estesa degli N-States, le variabili M, ML, MR, Mb che rappresentano rispettivamente |{m}|, |{m}L|, |{m}R|, |{m}b| . In modo analogo definiamo C, CL, CR, Cb: queste ultime definizioni sono utili per applicare poi gli operatori matematici (ad esempio &lt;, &gt;, =, +, -, ed altri).<br>Con la definizione appena data possiamo avere le seguenti azioni:</p>
+<ul>
+<li>LBL, LBR: per caricare la barca sia sulla riva sinistra (Load Boat Left - LBL), che su quella destra;</li>
+<li>MBRL, MBLR: per navigare il fiume (Move Boat from Right to Left - MBRL);</li>
+<li>UBL, UBR: per scaricare la barca (Unload Boat Left - UBL).</li>
+</ul>
+<p>Ogni azione è definita formalmente, e a questo punto possono essere definite alcune regole per le azioni, per fare in modo che il numero dei missionari non sia mai inferiore al numero dei cannibali. Questa appena data è la formulazione F1 del problema dei cannibali e dei missionari, definita proprio come descritto all’inizio dell’articolo.</p>
+<p>La parte riguardante la formalizzazione delle regole è molto delicata, in quanto inserire una regola ridondante fa destabilizzare l’intero sistema rendendolo molto alta la complessità degli N-States del problema. Esaminando questo aspetto, e notando che nella formulazione F2 ci sono molti dettagli che possiamo eliminare, nell’articolo è proposta una formulazione ristretta del problema (chiamata formulazione F3), la quale non fa altro che eliminare i dettagli ridondanti. Con quest’ultima formulazione si riduce il numero delle regole da rispettare, e degli N-States possibili. Questo si nota dal fatto che nella formulazione F2 lo stato iniziale è descritto da:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">s0 &#x3D; at(bk, pL), at(m1, pL), ..., at(mn, pL), at(c1, pL), ... , at(cn, pL)</span></pre></td></tr></table></figure>
+
+<p>Mentre nella formulazione F3 lo stato iniziale è descritto da:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">s0 &#x3D; (N, N, 1)</span></pre></td></tr></table></figure>
+
+<p>Nel quale il primo N indica il numero di missionari sulla riva sinistra, il secondo N indica il numero di cannibali sulla riva sinistra, e il numero 1 indica che la barca si trova sulla riva sinistra.</p>
+<p>L’ultima formulazione del problema in questione è la formulazione F4, nella quale Amarel si concentra sullo scopo da perseguire: trovare la strada più corta per spostare cannibali e missionari sull’altra sponda del fiume (ammesso sia possibile). Si nota il problema è riconducibile a un tipico problema di derivazione e quindi nell’articolo si definisce un sistema di inferenza naturale basato sulle nozioni di “stati del problema” (P-States), e relativi movimenti (Relevan Moves). Una relazione del tipo:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">S &#x3D; (sa &#x3D;&gt; sb)</span></pre></td></tr></table></figure>
+
+<p>è un esempio di P-State ed indica l’ottenibilità di sb a partire da sa. I movimenti relativi possono essere di due tipi:</p>
+<ul>
+<li><em>Movimenti relativi non terminali</em>: Un movimento non terminale risulta essere l’applicazione di una regola di azione al lato sinistro di un P-State come ad esempio quella che consente di ottenere sb da sa tale che sb sia diverso da sa.</li>
+<li><em>Movimenti relativi terminali</em>: Un movimento terminale è invece un movimento dove si presenta un’uguaglianza tra quello che è il lato sinistro e il lato destro di un P-State.</li>
+</ul>
+<p>Una soluzione del problema nella formulazione F4 è una sequenza di P-State ottenuti dall’applicazione successiva di movimenti relativi non terminali, che ci portano dallo stato iniziale ad uno stato in cui non è più possibile applicare movimenti relativi non terminali. Ovviamente se tutti i possibili sviluppi da un P-State terminano, allora non esistono soluzione (cosa che non è vera per il problema dei missionari e dei cannibali), se invece ciò non accade vorrà dire che la soluzione è determinata dal percorso che non termina e che ci porta nello stato finale desiderato.</p>
+<p>Questo articolo formula lo stesso problema in vari modi possibili, ma non per mostrare come sia possibile fare ciò, ma per evidenziare che lo stesso problema può essere risolto con più efficienza se è formulato in modo intelligente.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://fsferrara.github.io/2007/09/20/relation-on-representations-of-problems-of-reasoning-about-actions/" data-id="ck4d9rifa002b7aambzmja8db" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ai/" rel="tag">ai</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/amarel/" rel="tag">amarel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/artificial-intelligence/" rel="tag">artificial-intelligence</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/computer-science/" rel="tag">computer-science</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2007/09/27/relation-programs-with-common-sense/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Relation - Programs With Common Sense
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2007/09/08/relation-intelligence-without-representation/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Relation - Intelligence without representation</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/board-games/">board games</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/history/">history</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/history/thoughts/">thoughts</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/internet/">internet</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/programming/">programming</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/programming/system-administration/">system administration</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/security-and-privacy/">security and privacy</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-administration/">system administration</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/talks/">talks</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/thoughts/">thoughts</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/thoughts/programming/">programming</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/XML/" rel="tag">XML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ackermann/" rel="tag">ackermann</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ai/" rel="tag">ai</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/amarel/" rel="tag">amarel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aop/" rel="tag">aop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/api/" rel="tag">api</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/array/" rel="tag">array</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/artificial-intelligence/" rel="tag">artificial-intelligence</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aspect/" rel="tag">aspect</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aspectj/" rel="tag">aspectj</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/asterisk/" rel="tag">asterisk</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/basex/" rel="tag">basex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/big-data/" rel="tag">big-data</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/boot2docker/" rel="tag">boot2docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/branching-model/" rel="tag">branching-model</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/brooks/" rel="tag">brooks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/" rel="tag">c</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chat/" rel="tag">chat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/collaboration/" rel="tag">collaboration</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/command-pattern/" rel="tag">command-pattern</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/computability/" rel="tag">computability</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/computer-science/" rel="tag">computer-science</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crosscutting/" rel="tag">crosscutting</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data/" rel="tag">data</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-structures/" rel="tag">data structures</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-structures/" rel="tag">data-structures</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debug/" rel="tag">debug</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/devops/" rel="tag">devops</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dos/" rel="tag">dos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/drinking-game/" rel="tag">drinking-game</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/frege/" rel="tag">frege</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/game/" rel="tag">game</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gdb/" rel="tag">gdb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/global-worker/" rel="tag">global-worker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/graphql/" rel="tag">graphql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/godel/" rel="tag">gödel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hadoop/" rel="tag">hadoop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hilbert/" rel="tag">hilbert</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hystrix/" rel="tag">hystrix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/irc/" rel="tag">irc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/isdn/" rel="tag">isdn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jekyll/" rel="tag">jekyll</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kant/" rel="tag">kant</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lift/" rel="tag">lift</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mccharty/" rel="tag">mccharty</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/meetup/" rel="tag">meetup</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/metrics/" rel="tag">metrics</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mpeg-7/" rel="tag">mpeg-7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ms-dos/" rel="tag">ms-dos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/octopress/" rel="tag">octopress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/p3p/" rel="tag">p3p</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pbx/" rel="tag">pbx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pointers/" rel="tag">pointers</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/privacy/" rel="tag">privacy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/regex/" rel="tag">regex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/regular-expression/" rel="tag">regular-expression</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rest/" rel="tag">rest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ruby/" rel="tag">ruby</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sbt/" rel="tag">sbt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scala/" rel="tag">scala</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/" rel="tag">shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sort/" rel="tag">sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/" rel="tag">spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/subversion/" rel="tag">subversion</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/svn/" rel="tag">svn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/talks/" rel="tag">talks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/teams/" rel="tag">teams</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tuning/" rel="tag">tuning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/turing/" rel="tag">turing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/" rel="tag">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unix/" rel="tag">unix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/versioning/" rel="tag">versioning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/warehouse/" rel="tag">warehouse</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/" rel="tag">windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows-server/" rel="tag">windows server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xml/" rel="tag">xml</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xquery/" rel="tag">xquery</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/XML/" style="font-size: 10px;">XML</a> <a href="/tags/ackermann/" style="font-size: 10px;">ackermann</a> <a href="/tags/ai/" style="font-size: 17.5px;">ai</a> <a href="/tags/algorithm/" style="font-size: 12.5px;">algorithm</a> <a href="/tags/amarel/" style="font-size: 10px;">amarel</a> <a href="/tags/aop/" style="font-size: 10px;">aop</a> <a href="/tags/api/" style="font-size: 10px;">api</a> <a href="/tags/array/" style="font-size: 12.5px;">array</a> <a href="/tags/artificial-intelligence/" style="font-size: 17.5px;">artificial-intelligence</a> <a href="/tags/aspect/" style="font-size: 10px;">aspect</a> <a href="/tags/aspectj/" style="font-size: 10px;">aspectj</a> <a href="/tags/asterisk/" style="font-size: 10px;">asterisk</a> <a href="/tags/basex/" style="font-size: 10px;">basex</a> <a href="/tags/big-data/" style="font-size: 10px;">big-data</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/boot2docker/" style="font-size: 10px;">boot2docker</a> <a href="/tags/branching-model/" style="font-size: 10px;">branching-model</a> <a href="/tags/brooks/" style="font-size: 10px;">brooks</a> <a href="/tags/c/" style="font-size: 20px;">c</a> <a href="/tags/chat/" style="font-size: 10px;">chat</a> <a href="/tags/collaboration/" style="font-size: 10px;">collaboration</a> <a href="/tags/command-pattern/" style="font-size: 10px;">command-pattern</a> <a href="/tags/computability/" style="font-size: 10px;">computability</a> <a href="/tags/computer-science/" style="font-size: 20px;">computer-science</a> <a href="/tags/crosscutting/" style="font-size: 10px;">crosscutting</a> <a href="/tags/data/" style="font-size: 10px;">data</a> <a href="/tags/data-structures/" style="font-size: 10px;">data structures</a> <a href="/tags/data-structures/" style="font-size: 10px;">data-structures</a> <a href="/tags/debug/" style="font-size: 10px;">debug</a> <a href="/tags/devops/" style="font-size: 12.5px;">devops</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/dos/" style="font-size: 10px;">dos</a> <a href="/tags/drinking-game/" style="font-size: 10px;">drinking-game</a> <a href="/tags/frege/" style="font-size: 10px;">frege</a> <a href="/tags/game/" style="font-size: 10px;">game</a> <a href="/tags/gdb/" style="font-size: 10px;">gdb</a> <a href="/tags/git/" style="font-size: 12.5px;">git</a> <a href="/tags/global-worker/" style="font-size: 10px;">global-worker</a> <a href="/tags/graphql/" style="font-size: 10px;">graphql</a> <a href="/tags/godel/" style="font-size: 10px;">gödel</a> <a href="/tags/hadoop/" style="font-size: 10px;">hadoop</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hilbert/" style="font-size: 10px;">hilbert</a> <a href="/tags/hystrix/" style="font-size: 10px;">hystrix</a> <a href="/tags/irc/" style="font-size: 10px;">irc</a> <a href="/tags/isdn/" style="font-size: 10px;">isdn</a> <a href="/tags/java/" style="font-size: 17.5px;">java</a> <a href="/tags/jekyll/" style="font-size: 10px;">jekyll</a> <a href="/tags/kant/" style="font-size: 10px;">kant</a> <a href="/tags/lift/" style="font-size: 10px;">lift</a> <a href="/tags/linux/" style="font-size: 12.5px;">linux</a> <a href="/tags/mccharty/" style="font-size: 10px;">mccharty</a> <a href="/tags/meetup/" style="font-size: 10px;">meetup</a> <a href="/tags/metrics/" style="font-size: 10px;">metrics</a> <a href="/tags/mpeg-7/" style="font-size: 10px;">mpeg-7</a> <a href="/tags/ms-dos/" style="font-size: 10px;">ms-dos</a> <a href="/tags/octopress/" style="font-size: 10px;">octopress</a> <a href="/tags/p3p/" style="font-size: 10px;">p3p</a> <a href="/tags/pbx/" style="font-size: 10px;">pbx</a> <a href="/tags/pointers/" style="font-size: 10px;">pointers</a> <a href="/tags/privacy/" style="font-size: 10px;">privacy</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/regular-expression/" style="font-size: 10px;">regular-expression</a> <a href="/tags/rest/" style="font-size: 12.5px;">rest</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/sbt/" style="font-size: 10px;">sbt</a> <a href="/tags/scala/" style="font-size: 10px;">scala</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/sort/" style="font-size: 15px;">sort</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/subversion/" style="font-size: 10px;">subversion</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/talks/" style="font-size: 12.5px;">talks</a> <a href="/tags/teams/" style="font-size: 10px;">teams</a> <a href="/tags/tuning/" style="font-size: 12.5px;">tuning</a> <a href="/tags/turing/" style="font-size: 12.5px;">turing</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/unix/" style="font-size: 10px;">unix</a> <a href="/tags/versioning/" style="font-size: 10px;">versioning</a> <a href="/tags/warehouse/" style="font-size: 10px;">warehouse</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/windows-server/" style="font-size: 10px;">windows server</a> <a href="/tags/xml/" style="font-size: 12.5px;">xml</a> <a href="/tags/xquery/" style="font-size: 10px;">xquery</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">February 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/01/">January 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/10/">October 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09/">September 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/07/">July 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/06/">June 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05/">May 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09/">September 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/11/">November 2006</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/1983/09/">September 1983</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/08/26/isolate-services-using-the-command-pattern/">Isolate services using the command pattern</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/05/blogging-with-octopress-and-jekyll/">Blogging with Octopress and Jekyll</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/21/da-rest-a-graphql-in-90-minuti/">Da REST a GraphQL in 90 minuti</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/10/getting-started-with-graphql/">Getting Started With GraphQL</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/16/my-eight-rules-to-effectively-work-in-a-global-team/">My eight rules to effectively work in a global team</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Saverio<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
