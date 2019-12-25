@@ -4842,6 +4842,8 @@ Program received signal EXC_BAD_ACCESS, Could not access memory.
     <url>/2006/11/17/linux-2_6-features/</url>
     <content><![CDATA[<h1 id="Principali-caratteristiche-di-un-sistema-Linux-con-kernel-aggiornato-alla-versione-2-6-X"><a href="#Principali-caratteristiche-di-un-sistema-Linux-con-kernel-aggiornato-alla-versione-2-6-X" class="headerlink" title="Principali caratteristiche di un sistema Linux con kernel aggiornato alla versione 2.6.X"></a>Principali caratteristiche di un sistema Linux con kernel aggiornato alla versione 2.6.X</h1><p><em>17 Novembre 2006, Università degli studi di Napoli “Federico II”<br>Corso di Laurea in Informatica</em></p>
 <p>Il materiale è relativo ad un seminario tenuto per il corso di <em>Sistemi Operativi</em>.</p>
+<a id="more"></a>
+
 <h2 id="Argomenti-Trattati"><a href="#Argomenti-Trattati" class="headerlink" title="Argomenti Trattati"></a>Argomenti Trattati</h2><ul>
 <li>Supporto Multi Piattaforma Linux Internals</li>
 <li>File System</li>
