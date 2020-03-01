@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Working Together in a Global Company Story</title>
+    <title>Working Together in a Global Company - Slide Deck</title>
     <url>/2019/05/04/working-together-in-a-global-company-on-medium/</url>
     <content><![CDATA[<p>I still remember when I joined the Hotels.com technology team and how excited I was to start such a new challenge. Since the very early days, I noticed that working in a global company is quite different from working in the same building. That is obvious, I know, but it wasn’t easy to get used to the new way of working.</p>
 <p>I missed getting in touch with new teammates, and sometimes felt isolated from others and had the feeling of being a <em>remote worker</em>. Later on, only when I started working from home for 2 days per week, I realized that working in a <em>global team</em> has a lot in common with the <em>remote work</em>.</p>
-<p>In this story, I will list <strong>my personal seven rules</strong> that allowed me to collaborate effectively with colleagues scattered across the world.</p>
 <a id="more"></a>
 
-<p>…Content is missing.</p>
-<h2 id="Slides"><a href="#Slides" class="headerlink" title="Slides"></a>Slides</h2><p>The slides deck is available for download with the takeaways.<br><a href="/downloads/talks/working-together-in-a-global-company.pdf"><i class="fa fa-download" aria-hidden="true"></i> Working Together in a Global Company</a><br>Thank you!</p>
+<p>In this story, I will list <strong>my personal seven rules</strong> that allowed me to collaborate effectively with colleagues scattered across the world.</p>
+<p>The slides deck is available for download.<br><a href="/downloads/talks/working-together-in-a-global-company.pdf"><i class="fa fa-download" aria-hidden="true"></i> Working Together in a Global Company</a><br>Thank you!</p>
 ]]></content>
       <categories>
         <category>thoughts</category>
       </categories>
       <tags>
-        <tag>global-worker</tag>
+        <tag>remote-working global-workforce distributed-teams</tag>
       </tags>
   </entry>
   <entry>
@@ -1186,10 +1185,10 @@ cd84dc74b39607706e8f1b110411b4a508c6f3e8    refs/tags/1.2.3^{}</pre>
         <category>programming</category>
       </categories>
       <tags>
-        <tag>git</tag>
         <tag>branching-model</tag>
         <tag>collaboration</tag>
         <tag>devops</tag>
+        <tag>git</tag>
         <tag>teams</tag>
       </tags>
   </entry>
