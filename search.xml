@@ -1,20 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Saverio&#39;s Source Code channel on Twitch</title>
+    <url>/2020/03/08/saverio-source-code-show/</url>
+    <content><![CDATA[<p>Do you have fun while programming? Maybe you do think it is quite strange… Well, it’s not! Just think of <a href="https://en.wikipedia.org/wiki/Competitive_programming" target="_blank" rel="noopener">competitive programming</a>, that is defined as <em>“mind sport”</em>. An example is <a href="https://www.codewars.com/" target="_blank" rel="noopener">Code Wars</a>, a website that provides a large collection of coding challenges submitted and edited by their the community. But it is not the only one, there are a lot of <a href="https://www.freecodecamp.org/news/the-10-most-popular-coding-challenge-websites-of-2016-fb8a5672d22f/" target="_blank" rel="noopener">other examples</a>.</p>
+<a id="more"></a>
+
+<p>A mixture of code challenge and gaming is <a href="https://www.codingame.com/" target="_blank" rel="noopener">Coding Game</a>. Here it is clear that coding can be a playful activity.<br>On the other hand, there is <a href="https://www.twitch.tv/" target="_blank" rel="noopener">Twitch</a>, the world’s leading live streaming platform for gamers and the things we love. With Twitch it is possible to watch and chat in real-time with millions of other fans from around the world.</p>
+<p>As a result, here it is <a href="https://www.twitch.tv/fsferrara" target="_blank" rel="noopener">Saverio’s Source Code twitch channel</a>. It has been created to acquire and share knowledge with others who may be interested while enjoying software programing.</p>
+<p>If you like the idea, then maybe you’re interested in <a href="/show/">knowing more</a>.</p>
+]]></content>
+      <categories>
+        <category>programming</category>
+      </categories>
+      <tags>
+        <tag>learning</tag>
+        <tag>streaming</tag>
+        <tag>show</tag>
+        <tag>gaming</tag>
+        <tag>twitch</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Working Together in a Global Company - Slide Deck</title>
     <url>/2019/05/04/working-together-in-a-global-company-on-medium/</url>
-    <content><![CDATA[<p>I still remember when I joined the Hotels.com technology team and how excited I was to start such a new challenge. Since the very early days, I noticed that working in a global company is quite different from working in the same building. That is obvious, I know, but it wasn’t easy to get used to the new way of working.</p>
+    <content><![CDATA[<p>I still remember when I joined the Hotels.com™ (part of Expedia Group™) technology team and how excited I was to start such a new challenge. Since the very early days, I noticed that working in a global company is quite different from working in the same building. That is obvious, I know, but it wasn’t easy to get used to the new way of working.</p>
 <p>I missed getting in touch with new teammates, and sometimes felt isolated from others and had the feeling of being a <em>remote worker</em>. Later on, only when I started working from home for 2 days per week, I realized that working in a <em>global team</em> has a lot in common with the <em>remote work</em>.</p>
 <a id="more"></a>
 
-<p>In this story, I will list <strong>my personal seven rules</strong> that allowed me to collaborate effectively with colleagues scattered across the world.</p>
+<p><a href="https://medium.com/@egtech" target="_blank" rel="noopener">The story available on Medium</a> tells my journey, from working in the same room with my team to collaborating effectively in a global company. I have always been interested in remote work and I have collected for you <em>my 7 tips</em> that can help those who start working in a global workforce.</p>
 <p>The slides deck is available for download.<br><a href="/downloads/talks/working-together-in-a-global-company.pdf"><i class="fa fa-download" aria-hidden="true"></i> Working Together in a Global Company</a><br>Thank you!</p>
 ]]></content>
       <categories>
         <category>thoughts</category>
       </categories>
       <tags>
-        <tag>remote-working global-workforce distributed-teams</tag>
+        <tag>collaboration</tag>
+        <tag>remote-working</tag>
+        <tag>global-workforce</tag>
+        <tag>distributed-teams</tag>
       </tags>
   </entry>
   <entry>
@@ -3365,9 +3389,9 @@ main()
         <category>programming</category>
       </categories>
       <tags>
+        <tag>algorithm</tag>
         <tag>c</tag>
         <tag>sort</tag>
-        <tag>algorithm</tag>
       </tags>
   </entry>
   <entry>
