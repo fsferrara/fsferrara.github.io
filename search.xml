@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Sending and receiving TCP/UDP packets using Netcat</title>
+    <url>/2020/08/02/sending-and-receiving-packets-using-netcat/</url>
+    <content><![CDATA[<p>This story will show you how to use Netcat to send and receive TCP/UDP packets.<br>We’ll focus on a specific example… we’ll simulate a Statsd client/server.</p>
+<p>What is Netcat? Netcat is a featured networking utility which reads and writes data across network connections, using the TCP/IP protocol. Designed to be a reliable “back-end” tool, Netcat can be used directly with other programs and scripts to send files from a client to a server and back. At the same time, it is a feature-rich network debugging and exploration tool that can specify the network parameters while also establishing a connection to a remote host via a tunnel. </p>
+<a id="more"></a>
+
+<p>Although Netcat can do many things, its main purpose and most desirable functions are to:</p>
+<ol>
+<li>Create an initial socket to establish a connection from the server to the client.</li>
+<li>Once connected, Netcat will automatically generate a second socket to transmit files from the server to the client and visa versa.</li>
+</ol>
+<h2 id="Netcat-version"><a href="#Netcat-version" class="headerlink" title="Netcat version"></a>Netcat version</h2><p>There are several, and incompatible, Netcat implementations. I believe Linux has the most advanced implementation but, unfortunately, I am on MacOS Catalina 10.15.6. So I used netcat 0.7.1 installed through homebrew. Actually, MacOS already provides a netcat implementation (i.e. <code>/usr/bin/nc</code>) that I honestly don’t like.</p>
+<h2 id="Test-your-Netcat-understanding-as-a-client-server"><a href="#Test-your-Netcat-understanding-as-a-client-server" class="headerlink" title="Test your Netcat understanding as a client-server"></a>Test your Netcat understanding as a client-server</h2><p>Open two computer terminals, the first will act as the server and the second will be the client.</p>
+<h3 id="Simulate-the-server"><a href="#Simulate-the-server" class="headerlink" title="Simulate the server"></a>Simulate the server</h3><p>With Netcat, your computer can be converted into a fake server.<br>Focus to the server terminal, you want to start at port 8125/UDP, so issue:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ netcat -ulzp 8125</span></pre></td></tr></table></figure>
+
+<p>The server is now up and listening.</p>
+<h3 id="Simulate-the-client"><a href="#Simulate-the-client" class="headerlink" title="Simulate the client"></a>Simulate the client</h3><p>In addition, we can use netcat to connect to the port (8125) recently opened.<br>Switch to the client terminal and send a message to 8125/UDP:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">echo &quot;my-app.node.timer:102522|ms&quot; | netcat -nuc 127.0.0.1 8125</span></pre></td></tr></table></figure>
+
+<p>Now you should see the fake metric <code>my-app.node.timer:102522|ms</code> sent by the client in the output of the fake server.</p>
+]]></content>
+      <categories>
+        <category>devops</category>
+      </categories>
+      <tags>
+        <tag>macos</tag>
+        <tag>unix</tag>
+        <tag>netcat</tag>
+        <tag>tcp</tag>
+        <tag>udp</tag>
+        <tag>statsd</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Saverio&#39;s Source Code channel on Twitch</title>
     <url>/2020/03/08/saverio-source-code-show/</url>
     <content><![CDATA[<p>Do you have fun while programming? Maybe you do think it is quite strange… Well, it’s not! Just think of <a href="https://en.wikipedia.org/wiki/Competitive_programming" target="_blank" rel="noopener">competitive programming</a>, that is defined as <em>“mind sport”</em>. An example is <a href="https://www.codewars.com/" target="_blank" rel="noopener">Code Wars</a>, a website that provides a large collection of coding challenges submitted and edited by their the community. But it is not the only one, there are a lot of <a href="https://www.freecodecamp.org/news/the-10-most-popular-coding-challenge-websites-of-2016-fb8a5672d22f/" target="_blank" rel="noopener">other examples</a>.</p>
@@ -1209,10 +1244,10 @@ cd84dc74b39607706e8f1b110411b4a508c6f3e8    refs/tags/1.2.3^{}</pre>
         <category>programming</category>
       </categories>
       <tags>
+        <tag>git</tag>
         <tag>branching-model</tag>
         <tag>collaboration</tag>
         <tag>devops</tag>
-        <tag>git</tag>
         <tag>teams</tag>
       </tags>
   </entry>
@@ -4066,11 +4101,11 @@ for (i=0;i&lt;n;i++)
         <category>system administration</category>
       </categories>
       <tags>
+        <tag>unix</tag>
         <tag>linux</tag>
         <tag>dos</tag>
         <tag>ms-dos</tag>
         <tag>shell</tag>
-        <tag>unix</tag>
         <tag>windows</tag>
       </tags>
   </entry>
