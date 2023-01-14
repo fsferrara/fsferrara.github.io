@@ -18,7 +18,7 @@
 <h3 id="1-3-Use-a-shortcut-to-change-space"><a href="#1-3-Use-a-shortcut-to-change-space" class="headerlink" title="1.3 Use a shortcut to change space"></a>1.3 Use a shortcut to change space</h3><p>Shortcuts are convenient to use with a fixed spaces number/order. To enable them:</p>
 <ul>
 <li>Open System Preferences &gt; Keyboard &gt; Shortcuts &gt; Mission Control<ul>
-<li>Select ^1 to ^9 to switch to the related desktop</li>
+<li>Select ^1 to ^9 to switch to the related desktop (note: <code>^</code> is the CTRL key)</li>
 </ul>
 </li>
 </ul>
