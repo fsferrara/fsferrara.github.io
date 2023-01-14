@@ -1,6 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>My MacOS Monterey Setup</title>
+    <url>/2022/12/30/my-macos-monterey-setup/</url>
+    <content><![CDATA[<h1 id="My-MacOS-Monterey-Setup"><a href="#My-MacOS-Monterey-Setup" class="headerlink" title="My MacOS Monterey Setup"></a>My MacOS Monterey Setup</h1><p>I think you are supposing I am a macOS fan… but I am not! Linux is my favourite OS, so why I spent time customizing macOS? I am also a software developer and, like many others, I have been asked to use macOS.</p>
+<p>The experience was very frustrating at the beginning and I suspect the main issue was the entire Mission Control system. Typical questions: “Where is the window I opened a moment ago?”, “Why the order of the spaces keeps changing?”, “Do I really need those fancy animations?”.<br>Then I spent a couple of days in macOS customization and I’d like to thank the other blogger who shared their configs. The result is a Windows/Linux-like desktop setup, that tries to leverage default macOS behaviour as much as possible. In the specific, I mean a setup that is fast, keyboard-centric and without distractions.<br>Now, let’s describe the setup in detail following a recipe-style format so I (and you) can re-execute the same recipe if I’ll need it.</p>
+<a id="more"></a>
+
+<h2 id="1-Spaces"><a href="#1-Spaces" class="headerlink" title="1. Spaces"></a>1. Spaces</h2><h3 id="1-1-Create-9-spaces"><a href="#1-1-Create-9-spaces" class="headerlink" title="1.1 Create 9 spaces."></a>1.1 Create 9 spaces.</h3><p>Spaces in macOS are what other OSs call virtual desktops or just desktops. I use a fixed number of spaces (9), avoiding creating/destroying them.<br>Personally, I use spaces more than full-screen apps. This setup works with full-screen apps too, though.</p>
+<h3 id="1-2-The-space-order-should-not-change"><a href="#1-2-The-space-order-should-not-change" class="headerlink" title="1.2 The space order should not change"></a>1.2 The space order should not change</h3><p>The nice Mission Control thinks it knows which is the optimal space order for us. And keeps changing the order as you switch apps. Probably this is good for the average user… but we’re power users, right? To disable this:</p>
+<ul>
+<li>Open System Preferences &gt; Mission Control<ul>
+<li>Uncheck “Automatically rearrange Spaces based on most recent use”</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-3-Use-a-shortcut-to-change-space"><a href="#1-3-Use-a-shortcut-to-change-space" class="headerlink" title="1.3 Use a shortcut to change space"></a>1.3 Use a shortcut to change space</h3><p>Shortcuts are convenient to use with a fixed spaces number/order. To enable them:</p>
+<ul>
+<li>Open System Preferences &gt; Keyboard &gt; Shortcuts &gt; Mission Control<ul>
+<li>Select ^1 to ^9 to switch to the related desktop</li>
+</ul>
+</li>
+</ul>
+<p>BTW this is the reason I suggest creating 9 spaces. You can’t assign a shortcut to a space if it doesn’t exist. At this point, you may delete and re-create the spaces and MacOS will remember the shortcut.</p>
+<h3 id="1-4-Make-it-clear-which-is-the-current-space"><a href="#1-4-Make-it-clear-which-is-the-current-space" class="headerlink" title="1.4 Make it clear which is the current space"></a>1.4 Make it clear which is the current space</h3><p>I find it useful to have a space indicator. <a href="https://github.com/dshnkao/SpaceId/releases" target="_blank" rel="noopener">SpaceID</a> (<code>brew install --cask spaceid</code>) shows the desktop number in the menu bar. In the preferences, I choose to have one “Icon per Space”, so that it displays an array of 9 spaces. And yes, it works with a multimonitor setup as well.</p>
+<h2 id="2-Disable-desktop-feature"><a href="#2-Disable-desktop-feature" class="headerlink" title="2. Disable desktop feature"></a>2. Disable desktop feature</h2><h3 id="2-1-No-desktop-icons"><a href="#2-1-No-desktop-icons" class="headerlink" title="2.1 No desktop icons"></a>2.1 No desktop icons</h3><p>The desktop icons are an outdated concept. Do we really need to create that mess on the screen?<br>macOS allows disabling the desktop feature. But not by default… we need an app to customize this behaviour.</p>
+<ul>
+<li>Install <a href="http://www.bresink.com/osx/TinkerTool.html" target="_blank" rel="noopener">TinkerTool</a>. It is an application to access selected preference settings of your personal user account which are not visible in System Preferences.</li>
+<li>Open TinkerTool &gt; Finder<ul>
+<li>check “disable desktop feature”.</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-2-Use-a-plain-desktop-background"><a href="#2-2-Use-a-plain-desktop-background" class="headerlink" title="2.2 Use a plain desktop background"></a>2.2 Use a plain desktop background</h3><p>Pretty pictures are nice. Using them as a desktop background is distracting and keeps you more time at your desk.<br>MacOS provides by default single-colour desktop pictures. In the system preferences, go to:</p>
+<ul>
+<li>Desktop &amp; Screen Saver<ul>
+<li>Desktop<ul>
+<li>Apple &gt; Colors<ul>
+<li>select a single colour as desktop wallpaper.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Use them to stay focused when you work.<br>An option would be to pick a different colour for each space. This may help you give meaning to the spaces.</p>
+<h2 id="3-Window-manager"><a href="#3-Window-manager" class="headerlink" title="3. Window manager"></a>3. Window manager</h2><h3 id="3-1-Install-an-additional-window-manager"><a href="#3-1-Install-an-additional-window-manager" class="headerlink" title="3.1 Install an additional window manager"></a>3.1 Install an additional window manager</h3><p>MacOS already has a built-in window manager that helps organise several windows in a space. This embedded window manager can be enhanced by installing additional software that will add additional features on top of the existing ones.</p>
+<p>At this point, one can go all-in and drastically change the default macOS behaviour with a tiling window manager like <a href="https://ianyh.com/amethyst/" target="_blank" rel="noopener">Amethyst</a> (<code>brew install --cask amethyst</code>). In this case, I would configure it to enable 10px window margins and resize windows using the mouse.</p>
+<p>I am not that kind of engineer, though. Personally, I picked a lighter option which is <a href="https://rectangleapp.com/" target="_blank" rel="noopener">Rectangle</a> (<code>brew install --cask rectangle</code>). It just works and doesn’t conflict with the existing macOS window manager.</p>
+<h3 id="3-2-Reduce-motion-and-transparency"><a href="#3-2-Reduce-motion-and-transparency" class="headerlink" title="3.2 Reduce motion and transparency"></a>3.2 Reduce motion and transparency</h3><p>The fancy animations are cool, I know. But they are slow and distracting.<br>We can live without them. In system preferences, go to:</p>
+<ul>
+<li>Accessibility<ul>
+<li>Display<ul>
+<li>Check “Reduce motion”: the space switch animation is now quicker</li>
+<li>Check “Reduce transparency”: it also looks better with a single-color wallpaper</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-3-Switch-between-windows"><a href="#3-3-Switch-between-windows" class="headerlink" title="3.3 Switch between windows"></a>3.3 Switch between windows</h3><p>That is what I really dislike about macOS, at least until Monterey. Whan an application creates more than one window, it is not direct to select a specific window using the keyboard.<br>I mean, you can do it… but it sucks. In detail, first, you have to select the app with the <code>Command + tab</code>, then press <code>arrow down</code>, and then select the app window. If you already have that app focus, you may use <code>Command +</code>, but I still don’t like it!</p>
+<p>I suggest using <a href="https://alt-tab-macos.netlify.app/" target="_blank" rel="noopener">AltTab</a> (<code>brew install --cask alt-tab</code>), which brings the power of Windows’s “alt-tab” window switcher to macOS. Nothing revolutionary, really!<br>I did a little step further and configured AltTab to be activated with <code>Command</code> instead of <code>Alt</code> for two reasons. The first one is that <code>Alt</code> is the default <a href="https://en.wikipedia.org/wiki/Compose_key" target="_blank" rel="noopener">compose key</a>. The second reason is to completely replace the macOS app switcher that, at this point, is not needed anymore. To do that, right-click the AltTab menubar icon and:</p>
+<ul>
+<li>Preferences<ul>
+<li>Controls<ul>
+<li>Shortcut 1<ul>
+<li>Use <code>command+tab</code> as activating shortcut</li>
+</ul>
+</li>
+<li>Shortcut 2<ul>
+<li>Use <code>command+`</code> as activating shortcut</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>If you’d like to have a minimalist and faster AltTab, you may hide the window thumbnail preview feature.</p>
+<h2 id="4-Dock"><a href="#4-Dock" class="headerlink" title="4. Dock"></a>4. Dock</h2><h3 id="4-1-Mimic-other-OSes-window-minimization"><a href="#4-1-Mimic-other-OSes-window-minimization" class="headerlink" title="4.1 Mimic other OSes window minimization"></a>4.1 Mimic other OSes window minimization</h3><p>Usually, in Linux/Windows the windows are minimized in the original app icon that is visible in the main bar. The dock can behave in a similar way, just go to the system preferences and select:</p>
+<ul>
+<li>Dock &amp; Menu Bar<ul>
+<li>Check “Minimize windows into application icon”.</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-2-Assign-apps-to-spaces"><a href="#4-2-Assign-apps-to-spaces" class="headerlink" title="4.2 Assign apps to spaces"></a>4.2 Assign apps to spaces</h3><p>MacOS allows the assignment of an app to a specific space. This is a valuable feature if you usually open a set of apps at a start-up (I think everyone does it) and want them to be opened in the space you want. To select a space for an app:</p>
+<ul>
+<li>Open the app in the space you use for it<ul>
+<li>right click on the app dock icon<ul>
+<li>select: option &gt; assign to “this Desktop”.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>I don’t think other desktop environments have this feature. It is extremely useful, though.</p>
+<h3 id="4-3-Launching-apps"><a href="#4-3-Launching-apps" class="headerlink" title="4.3 Launching apps"></a>4.3 Launching apps</h3><p>Spotlight is great to launch apps. But there is another launcher that is even cooler: it is <a href="https://www.alfredapp.com/" target="_blank" rel="noopener">Alfred</a> (<code>brew install --cask alfred</code>).<br>Like I did with AltTab, I configured Alfred to be activated with <code>Command</code> key in order to completely replace Spotlight. To do that, go to the:</p>
+<ul>
+<li>Preferences<ul>
+<li>General<ul>
+<li>Configure <code>command+space</code> as a shortcut: it will replace Spotlight</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Hint: using an app launcher will allow you to autohide the dock (<code>Option+Command+D</code>). You won’t need it.</p>
+<h2 id="5-Other-utilities"><a href="#5-Other-utilities" class="headerlink" title="5. Other utilities"></a>5. Other utilities</h2><h3 id="5-1-Clipboard-history"><a href="#5-1-Clipboard-history" class="headerlink" title="5.1 Clipboard history"></a>5.1 Clipboard history</h3><p><a href="https://github.com/Clipy/Clipy" target="_blank" rel="noopener">Clipy</a> (<code>brew install --cask clipy</code>) is a clipboard extension app for macOS. It keeps the clipboard history in plain text like my beloved <a href="https://userbase.kde.org/Klipper" target="_blank" rel="noopener">Klipper</a>.</p>
+<h3 id="5-2-Keep-the-menubar-tidy"><a href="#5-2-Keep-the-menubar-tidy" class="headerlink" title="5.2 Keep the menubar tidy"></a>5.2 Keep the menubar tidy</h3><p>In this post, I tried to keep out whatever is related to the look and feel because everyone has different tastes. But MacOS menubar often has lots of tray icons on the right and, at least for some apps, several menu items on the left. Those two sets may meet in the mid-ish and some icons may be impacted.<br><a href="https://github.com/Mortennn/Dozer" target="_blank" rel="noopener">Dozer</a> (<code>brew install --cask dozer</code>) doesn’t solve this issue but reduces it by hiding the menubar icons that are not always necessary. In my specific setup, I configured:</p>
+<ul>
+<li><code>clipy</code> and <code>spaceid</code> icons to be always visible.  </li>
+<li>To automatically hide the other menubar icons after 10 seconds</li>
+</ul>
+<h2 id="6-The-terminal-is-your-friend"><a href="#6-The-terminal-is-your-friend" class="headerlink" title="6. The terminal is your friend"></a>6. The terminal is your friend</h2><p>Whenever possible, I prefer using terminal-based apps as opposed to GUI apps. I am not covering here the several apps, but for sure you need a great terminal emulator to do that. MacOS default terminal app isn’t that bad at all. A powerful alternative would be <a href="https://iterm2.com/" target="_blank" rel="noopener">iTerm2</a>: as per its documentation, it “brings the terminal into the modern age with features you never knew you always wanted” and I agree. For sure, it has a very cool keyboard shortcuts that will speed up your work.</p>
+<h3 id="6-1-Display-function-keys-on-the-Touch-Bar"><a href="#6-1-Display-function-keys-on-the-Touch-Bar" class="headerlink" title="6.1 Display function keys on the Touch Bar"></a>6.1 Display function keys on the Touch Bar</h3><p>It is convenient to always display function keys on the Touch Bar for the terminal app.<br>This configuration is per app. I did it for the <code>Terminal</code> app:</p>
+<ol>
+<li>Go to Apple &gt; System Preferences</li>
+<li>Select the Keyboard preference pane</li>
+<li>Click on the Shortcuts tab</li>
+<li>In the left sidebar, select the Function Keys option</li>
+<li>On the right-hand side click on the plus + button</li>
+<li>Select the <code>Terminal</code> app</li>
+<li>Add the app</li>
+</ol>
+<p>Now the MacOS default terminal always displays the function keys. You can have the same preferences for other apps (iTerm, IDE, etc).</p>
+]]></content>
+      <categories>
+        <category>writing</category>
+      </categories>
+      <tags>
+        <tag>productivity</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Cherry-picking git commits amongst different repositories</title>
     <url>/2021/09/05/cherry-picking-git-commits-amongst-different-repositories/</url>
     <content><![CDATA[<p>I am trying how the <code>git cherry-pick</code> commands works and, in the specific, I am wondering if it is suitable to copy commits amongst two different repositories that are sharing only the first part of the git log history. Let’s start by creating two new repositories named <em>repo_A</em> and <em>repo_B</em>.</p>
@@ -1847,9 +1981,9 @@ To https://github.com/fsferrara/lemon.git
         <category>history</category>
       </categories>
       <tags>
-        <tag>computer-science</tag>
-        <tag>artificial-intelligence</tag>
         <tag>ai</tag>
+        <tag>artificial-intelligence</tag>
+        <tag>computer-science</tag>
         <tag>turing</tag>
       </tags>
   </entry>
@@ -3489,9 +3623,9 @@ main()
         <category>programming</category>
       </categories>
       <tags>
-        <tag>algorithm</tag>
         <tag>c</tag>
         <tag>sort</tag>
+        <tag>algorithm</tag>
       </tags>
   </entry>
   <entry>
@@ -4767,9 +4901,9 @@ Program received signal EXC_BAD_ACCESS, Could not access memory.
         <category>history</category>
       </categories>
       <tags>
-        <tag>computer-science</tag>
-        <tag>artificial-intelligence</tag>
         <tag>ai</tag>
+        <tag>artificial-intelligence</tag>
+        <tag>computer-science</tag>
         <tag>mccharty</tag>
       </tags>
   </entry>
@@ -4836,9 +4970,9 @@ Program received signal EXC_BAD_ACCESS, Could not access memory.
         <category>history</category>
       </categories>
       <tags>
-        <tag>computer-science</tag>
-        <tag>artificial-intelligence</tag>
         <tag>ai</tag>
+        <tag>artificial-intelligence</tag>
+        <tag>computer-science</tag>
         <tag>amarel</tag>
       </tags>
   </entry>
@@ -4889,9 +5023,9 @@ Program received signal EXC_BAD_ACCESS, Could not access memory.
         <category>history</category>
       </categories>
       <tags>
-        <tag>computer-science</tag>
-        <tag>artificial-intelligence</tag>
         <tag>ai</tag>
+        <tag>artificial-intelligence</tag>
+        <tag>computer-science</tag>
         <tag>brooks</tag>
       </tags>
   </entry>
