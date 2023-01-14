@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/logo/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/logo/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/logo/favicon-16x16.png">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://fsferrara.github.io').hostname,
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.6.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="Scala is general purpose programming language very popular for building web application. But why? At the moment I really don&amp;#8217;t know why :) , I&amp;#8217;m just reading about it and sharing my though">
+<meta name="keywords" content="java,lift,rest,sbt,scala">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Building web applications with Scala">
+<meta property="og:url" content="http:&#x2F;&#x2F;fsferrara.github.io&#x2F;2013&#x2F;11&#x2F;22&#x2F;building-web-applications-scala&#x2F;index.html">
+<meta property="og:site_name" content="fsferrara">
+<meta property="og:description" content="Scala is general purpose programming language very popular for building web application. But why? At the moment I really don&amp;#8217;t know why :) , I&amp;#8217;m just reading about it and sharing my though">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2023-01-03T16:17:53.801Z">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://fsferrara.github.io/2013/11/22/building-web-applications-scala/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Building web applications with Scala | fsferrara</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-45189328-2"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-45189328-2');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">fsferrara</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/fsferrara" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://fsferrara.github.io/2013/11/22/building-web-applications-scala/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/logo/logo.png">
+      <meta itemprop="name" content="Saverio Ferrara">
+      <meta itemprop="description" content="Hello, my name is Saverio and I’m a software engineer and a passionate software developer. Addicted to the Linux operating system, I love learning new things and working with all the open source technologies.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fsferrara">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Building web applications with Scala
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2013-11-22 00:00:00" itemprop="dateCreated datePublished" datetime="2013-11-22T00:00:00+01:00">2013-11-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-01-03 17:17:53" itemprop="dateModified" datetime="2023-01-03T17:17:53+01:00">2023-01-03</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/programming/" itemprop="url" rel="index">
+                    <span itemprop="name">programming</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>Scala is general purpose programming language very popular for building web application. But why? At the moment I really don&#8217;t know why :) , I&#8217;m just reading about it and sharing my thoughts with you.</p>
+<p>Let&#8217;s start from Scala. It&#8217;s a programming language both object-oriented and functional: we can refer to this kind of programming language as &#8220;object-functional&#8221;. We say that is a programming language because there is a compiler for it, but also an interpreter is available.</p>
+<p>It is intended to be compiled to Java bytecode, so the resulting executable runs on the JVM, and Java libraries can be used directly in Scala code and vice-versa. Maybe this is the real strength of this language&#8230; it allows to write brand-new web application while reusing legacy java libraries. That&#8217;s awesome for a company with a bunch of old java code.</p>
+<a id="more"></a>
+
+<h2 id="Scala-powered-Web-Framework"><a href="#Scala-powered-Web-Framework" class="headerlink" title="Scala-powered Web Framework"></a>Scala-powered Web Framework</h2><p>Of course there is the possibility to simply use scala with any java-enabled web framework, but let&#8217;s choose a specialized one from the several web frameworks that use scala as main language. At the moment the main frameworks are:</p>
+<ul>
+<li><a href="http://liftweb.net" target="_blank" rel="noopener">Lift</a> seems the most mature. As the official website states, Lift is highly secure and has the best JSON handling library in Scala: this make lift a good choice to build a web service. Moreover lift is not a traditional MVC framework, but it has a View First approach: lift loads the view first and builds your page from the view. &#8220;Why?&#8221; Because complex HTML pages rarely contain a dominant piece of logic&#8230; a single controller&#8230; but contain many different components that can interact or not.</li>
+<li><a href="http://www.playframework.com" target="_blank" rel="noopener">Play</a> seems to have a better documentation and videos, and looks more familiar (traditional MVC pattern). At a glance it has a better support for modern web and mobile application. It has a good support to templates, and allows writing code in Scala, Java, Javascript, Coffeescript, and others languages.</li>
+<li><a>Scalatra</a> is a simple, accessible and free web micro-framework. It combines the power of the JVM with the beauty and brevity of Scala. It seems very easy to set up, and it is designed exactly to create web services. As micro-framework Scalatra doesn&#8217;t offer much functionality.</li>
+</ul>
+<p>In my opinion Play is the best framework here for building medium-size applications: for large application I really like the &#8220;<a href="http://stackoverflow.com/questions/13290118/differences-between-mvc-and-view-first-approach-in-web-development" target="_blank" rel="noopener">View First</a>&#8221; approach, so I choose lift for a first experiment.</p>
+<h2 id="SBT"><a href="#SBT" class="headerlink" title="SBT"></a>SBT</h2><p>At first I thought it meant &#8220;Scala Build Tool&#8221; but actually SBT stands for &#8220;Simple Build Tool&#8221; and, even if it is more popular for Scala projects, it can be also used for Java projects.</p>
+<p>SBT is the de facto build tool for the Scala community, used by both the Lift web framework and Play Framework.</p>
+<p>Similar to Java&#8217;s Maven, it has a native support for compiling Scala code and integrating with many Scala test frameworks (continuous compilation, testing, and deployment). Moreover it manages dependencies using Ivy (and library for apache Ant that is compatible with apache Maven repositories). Integrated with the Scala interpreter, it supports debugging and rapid programming iteration.</p>
+<p>The build file is entirely written in Scala. It is placed in the root directory of the project and the default name is &#8216;build.sbt&#8217;. This is an example:</p>
+<pre lang="scala">organization := "com.fsferrara"
+name := "myfirstlift"
+version := "0.1-SNAPSHOT"
+scalaVersion := "2.10.0"
+
+// xsbt-web-plugin configuration
+seq(webSettings :_*)
+
+libraryDependencies ++= {
+  val liftVersion = "2.5.1"
+  Seq(
+    "net.liftweb" %% "lift-webkit" % liftVersion % "compile",
+    "org.eclipse.jetty" % "jetty-webapp" % "8.1.7.v20120910"  %
+      "container,test",
+    "org.eclipse.jetty.orbit" % "javax.servlet" % "3.0.0.v201112011016" %
+      "container,compile" artifacts Artifact("javax.servlet", "jar", "jar")
+  )
+}</pre>
+
+<p>The object &#8216;webSettings&#8217; contains the standard web configuration used to launch the web container, that is, in this example, Jetty. &#8216;Seq&#8217;, with a capital S, is the interface of a Java List: it contains the list of all the dependencies to download.</p>
+<p>I took the above file from a lift webapp template I&#8217;m building. A Scala application has another SBT configuration file &#8216;project/plugins.sbt&#8217; that contains the list of plugins used by the application:</p>
+<pre lang="scala">addSbtPlugin("com.earldouglas" % "xsbt-web-plugin" % "0.4.2")</pre>
+
+<p>The <a href="https://github.com/JamesEarlDouglas/xsbt-web-plugin" target="_blank" rel="noopener">xsbt-web-plugin</a> plugin is used to build Scala web application.</p>
+<h2 id="My-first-Hello-World-lift-application"><a href="#My-first-Hello-World-lift-application" class="headerlink" title="My first Hello World lift application"></a>My first Hello World lift application</h2><p>To complete the classic &#8220;hello world&#8221; application, we need three more files. The first one is the well-known &#8216;src/main/webapp/WEB-INF/web.xml&#8217;:</p>
+<pre lang="html" escaped="true">&lt;!DOCTYPE web-app SYSTEM "http://java.sun.com/dtd/web-app_2_3.dtd"&gt;
+&lt;web-app&gt;
+  &lt;filter&gt;
+    &lt;filter-name&gt;LiftFilter&lt;/filter-name&gt;
+    &lt;display-name&gt;Lift Filter&lt;/display-name&gt;
+    &lt;description&gt;The Filter that intercepts Lift calls&lt;/description&gt;
+    &lt;filter-class&gt;net.liftweb.http.LiftFilter&lt;/filter-class&gt;
+  &lt;/filter&gt;
+  &lt;filter-mapping&gt;
+    &lt;filter-name&gt;LiftFilter&lt;/filter-name&gt;
+    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+  &lt;/filter-mapping&gt;
+&lt;/web-app&gt;</pre>
+
+<p>With this file a LiftFilter servlet is instantiated and all the HTTP requests are forwarded to it. This is the entry point of the Lift framework. The next file, the &#8220;View&#8221;, is &#8216;src/main/webapp/index.html&#8217;:</p>
+<pre lang="html" escaped="true">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Lift From Scratch&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello World&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+
+<p>The last one is our first &#8216;.scala&#8217; file, Finally! So we create &#8216;src/main/scala/bootstrap/Boot.scala&#8217;:</p>
+<pre lang="scala">package bootstrap.liftweb
+
+import net.liftweb.http.{Html5Properties, LiftRules, Req}
+import net.liftweb.sitemap.{Menu, SiteMap}
+
+class Boot {
+  def boot {
+    LiftRules.addToPackages("code")
+
+    // Build SiteMap
+    def sitemap(): SiteMap = SiteMap(
+      Menu.i("Home") / "index"
+    )
+
+    // Use HTML5 for rendering
+    LiftRules.htmlProperties.default.set((r: Req) =&gt;
+      new Html5Properties(r.userAgent))
+  }
+}</pre>
+
+<p>This file defines a &#8216;Boot&#8217; class containing only one method named &#8216;boot&#8217;. This class is instantiated early and run: it allows the application to modify lift&#8217;s environment. The first instruction of the &#8216;boot&#8217; method defines the package used to search for &#8220;Snippets&#8221; (a Snippet is the component that transforms the incoming HTML to the dynamically generated HTML).</p>
+<p>Next is the definition of the SiteMap: every page on the site needs a SiteMap entry.</p>
+<p>What? A class with a method? Where is the functional side of Scala?</p>
+<p>Scala is an object-functional programming language. In my initial opinion it seems that only the object-oriented side of Scala is used, while only few part of code are written completely functional. Maybe the most used &#8220;functional feature&#8221; is the immutability: I read it in <a href="http://blog.manub.net/2013/11/like-immutable-objects/" target="_blank" rel="noopener">this interesting post</a>.</p>
+<h2 id="Starting-our-application"><a href="#Starting-our-application" class="headerlink" title="Starting our application"></a>Starting our application</h2><p>In order to start our application, open the shell and change directory to the root of our project and type in &#8216;sbt&#8217;. Obviously you should first in install the SBT tool.</p>
+<p>Now the console of SBT starts, it seems quite slow, and to download all the dependencies type the command &#8220;update&#8221;. Next to start tomcat, use the command &#8220;container:start&#8221;. By default a Jetty server will start, and we can see our first project at the address <em><a href="http://localhost:8080" target="_blank" rel="noopener">http://localhost:8080</a></em>.</p>
+<h3 id="Developing-with-a-text-editor"><a href="#Developing-with-a-text-editor" class="headerlink" title="Developing with a text editor"></a>Developing with a text editor</h3><p>SBT has plugins available used to develop Scala application with IntelliJ Idea, Eclipse, and Netbeans. I like to develop my application with a fast text editor with few unused features. My favourite text editor now is Sublime Text, you surely know it!</p>
+<p>Also I like compile and refresh my application while developing: To do that we can use SBT with this instruction:</p>
+<pre lang="bash">~; container:start; container:reload /</pre>
+
+<p>An SBT command prefixed with ~ makes that command run when files change. The first semicolon introduces a sequence of commands, where if the first command succeeds, the second will run. The second semicolon means the reload command will run if the start command ran OK. The start command will recompile any Scala source files that have changed. Honestly I don&#8217;t know what the last character (/) means.</p>
+<h2 id="Our-first-Snippet"><a href="#Our-first-Snippet" class="headerlink" title="Our first Snippet"></a>Our first Snippet</h2><p>Like I said before Lift adopts a view-first approach, so the first thing that is loaded is the View (in this case the HTML) and then the snippets are applied to it.</p>
+<p>Our first snippet is &#8216;src/main/scala/code/snippet/HelloSnippet.scala&#8217;.</p>
+<pre lang="scala">package code.snippet
+
+import net.liftweb.util.Helpers._
+import net.liftweb.util.PassThru
+
+import scala.util.Random
+import xml.Text
+
+class HelloSnippet {
+  private def fiftyFifty = Random.nextBoolean
+
+  def render =
+    if (fiftyFifty) "*" #&gt; Text("Hello Saverio")
+    else PassThru
+}</pre>
+
+<p>For those of you who do not know, my name is Saverio. This snippet, with a probability of fifty percent, can change the text value of the HTML object linked to it. So the next step is to modify the view in this way:</p>
+<pre lang="html" escaped="true">...
+&lt;div data-lift="HelloSnippet"&gt;
+  Hello World
+&lt;/div&gt;
+...</pre>
+
+<p>Try it! The page can render now &#8220;Hello World&#8221; or &#8220;Hello Saverio&#8221;. All works because in the Boot class we defined the folder &#8216;code&#8217; as the place where to search for snippets (remember: <code>LiftRules.addToPackages(&quot;code&quot;)</code>)</p>
+<h2 id="A-REST-endpoint-written-with-Lift"><a href="#A-REST-endpoint-written-with-Lift" class="headerlink" title="A REST endpoint written with Lift"></a>A REST endpoint written with Lift</h2><p>Lift makes providing REST web services very simple. REST (<a href="http://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank" rel="noopener">Representational State Transfer</a>) is an architectural style that abstracts the architectural elements within a distributed hypermedia system. REST ignores the details of component implementation and protocol syntax in order to focus on the roles of components: it has emerged as a predominant web API design model. For those of you who already know SOAP-based web services, the main <a href="http://stackoverflow.com/questions/2131965/main-differences-between-soap-and-restful-web-services-in-java" target="_blank" rel="noopener">difference</a> between the two is that REST is almost always going to be faster, whilst SOAP is provides a mechanism for services to describe themselves to clients, and to advertise their existence. REST is much more lightweight and can be implemented using almost any tool, leading to lower bandwidth and shorter learning curve. However, the clients have to know what to send and what to expect. In general, When you&#8217;re publishing an API to the outside world that is either complex or likely to change, SOAP will be more useful. Other than that, REST is usually the better option.</p>
+<p>In an extremely small nutshell REST is the convention between two systems to communicate by exchanging JSON messages.</p>
+<p>Let&#8217;s write a really simple PingRest service: create the file &#8216;src/main/scala/code/lib/PingRest.scala&#8217;.</p>
+<pre lang="scala">package code.lib
+
+import net.liftweb._
+import net.liftweb.http._
+import net.liftweb.http.rest._
+import net.liftweb.json.JsonAST._
+import net.liftweb.json.JsonDSL._
+
+object PingRest extends RestHelper {
+
+  serve {
+    case JsonGet("api" :: "ping" :: "pong" :: Nil, req) =&gt; sayHello
+  }
+
+  val sayHello: JValue = {
+    (
+      ("ping" -&gt; "pong")
+    )
+  }
+}</pre>
+
+<p>The PingRest class extend RestHelper, a helper used to speed-up the build of web services. Anyway is possible to create a web service without using RestHelper.</p>
+<p>To enable this endpoint, we have to modify the Boot code. We must add, at the end of the &#8216;boot&#8217; method, this line: <code>LiftRules.dispatch.append(PingRest)</code>.</p>
+<p>Now each request to the url <em><a href="http://localhost:8080/api/ping/pong.json" target="_blank" rel="noopener">http://localhost:8080/api/ping/pong.json</a></em> produces this answer</p>
+<pre lang="json">{
+  "ping":"pong"
+}</pre>
+
+<p>The libraries &#8216;net.liftweb.json.JsonAST._&#8217; and &#8216;net.liftweb.json.JsonDSL._&#8217; are used to create a JSON response.</p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Scala is designed to concisely express solutions in an elegant, type-safe and lightweight (low ceremonial) manner. Scala has full support for functional programming, including currying, pattern matching, algebraic data types, lazy evaluation, tail recursion, immutability, and so on.</p>
+<p>Scala allows the reusing of legacy java libraries, that&#8217;s true, but I really don&#8217;t like the idea to have another language server-side. I think that adding additional languages, like Scala or Coffeescript, will only increase the complexity of our project and makes it difficult to find people who know how to work on the project.</p>
+<p>Furthermore many web frameworks for Scala assume that part of Scala source code should be translated into Javascript code to be executed in the user browser: this introduces another difficulty in debugging Scala application. Other web framework use instead Javascript as main language (for example <a href="http://expressjs.com" target="_blank" rel="noopener">express</a> in the MEAN stack) and in that case the code you write is the same code you should debug. Additionally you write Javascript on both client side and server side.</p>
+<p>You can download all the source code in this <a href="https://github.com/fsferrara/learn-scala" target="_blank" rel="noopener">collection of project</a> on github.</p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Saverio Ferrara
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="/http:/fsferrara.github.io/2013/11/22/building-web-applications-scala/" title="Building web applications with Scala">http://fsferrara.github.io/2013/11/22/building-web-applications-scala/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/en" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/java/" rel="tag"># java</a>
+              <a href="/tags/lift/" rel="tag"># lift</a>
+              <a href="/tags/rest/" rel="tag"># rest</a>
+              <a href="/tags/sbt/" rel="tag"># sbt</a>
+              <a href="/tags/scala/" rel="tag"># scala</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2013/11/15/git-branching-model-for-medium-size-companies/" rel="prev" title="A GIT branching model for medium-size companies">
+      <i class="fa fa-chevron-left"></i> A GIT branching model for medium-size companies
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2014/02/21/planning-cluster-hadoop-bigdata/" rel="next" title="Planning a Cluster for Hadoop BigData">
+      Planning a Cluster for Hadoop BigData <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Scala-powered-Web-Framework"><span class="nav-number">1.</span> <span class="nav-text">Scala-powered Web Framework</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SBT"><span class="nav-number">2.</span> <span class="nav-text">SBT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#My-first-Hello-World-lift-application"><span class="nav-number">3.</span> <span class="nav-text">My first Hello World lift application</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Starting-our-application"><span class="nav-number">4.</span> <span class="nav-text">Starting our application</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Developing-with-a-text-editor"><span class="nav-number">4.1.</span> <span class="nav-text">Developing with a text editor</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Our-first-Snippet"><span class="nav-number">5.</span> <span class="nav-text">Our first Snippet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A-REST-endpoint-written-with-Lift"><span class="nav-number">6.</span> <span class="nav-text">A REST endpoint written with Lift</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conclusion"><span class="nav-number">7.</span> <span class="nav-text">Conclusion</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Saverio Ferrara"
+      src="/images/logo/logo.png">
+  <p class="site-author-name" itemprop="name">Saverio Ferrara</p>
+  <div class="site-description" itemprop="description">Hello, my name is Saverio and I’m a software engineer and a passionate software developer. Addicted to the Linux operating system, I love learning new things and working with all the open source technologies.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">96</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/fsferrara" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;fsferrara" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/fsferrara" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;fsferrara" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/fsferrara" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;fsferrara" rel="noopener" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Saverio Ferrara</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.6.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: {page: {
+            url: "http://fsferrara.github.io/2013/11/22/building-web-applications-scala/",
+            identifier: "2013/11/22/building-web-applications-scala/",
+            title: "Building web applications with Scala"
+          }
+        }
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://fsferrara.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/logo/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/logo/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/logo/favicon-16x16.png">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://fsferrara.github.io').hostname,
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.6.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="Nowadays, most blogs are powered by Wordpress. I am a Wordpress users too and I have to admit it is really a great for blogs.As others CMS, Wordpress requires a database and PHP in order to process th">
+<meta name="keywords" content="blog,ruby,jekyll,octopress,hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Blogging with Octopress and Jekyll">
+<meta property="og:url" content="http:&#x2F;&#x2F;fsferrara.github.io&#x2F;2018&#x2F;01&#x2F;05&#x2F;blogging-with-octopress-and-jekyll&#x2F;index.html">
+<meta property="og:site_name" content="fsferrara">
+<meta property="og:description" content="Nowadays, most blogs are powered by Wordpress. I am a Wordpress users too and I have to admit it is really a great for blogs.As others CMS, Wordpress requires a database and PHP in order to process th">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2023-01-03T16:17:53.801Z">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://fsferrara.github.io/2018/01/05/blogging-with-octopress-and-jekyll/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Blogging with Octopress and Jekyll | fsferrara</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-45189328-2"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-45189328-2');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">fsferrara</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/fsferrara" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://fsferrara.github.io/2018/01/05/blogging-with-octopress-and-jekyll/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/logo/logo.png">
+      <meta itemprop="name" content="Saverio Ferrara">
+      <meta itemprop="description" content="Hello, my name is Saverio and I’m a software engineer and a passionate software developer. Addicted to the Linux operating system, I love learning new things and working with all the open source technologies.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fsferrara">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Blogging with Octopress and Jekyll
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-01-05 00:00:00" itemprop="dateCreated datePublished" datetime="2018-01-05T00:00:00+01:00">2018-01-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-01-03 17:17:53" itemprop="dateModified" datetime="2023-01-03T17:17:53+01:00">2023-01-03</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/blog/" itemprop="url" rel="index">
+                    <span itemprop="name">blog</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>Nowadays, most blogs are powered by <em>Wordpress</em>. I am a Wordpress users too and I have to admit it is really a great for blogs.<br>As others CMS, Wordpress requires a database and PHP in order to process the <strong>dynamic</strong> pages server-side.<br><em>Jekyll</em> is a static site generator. With it I can generate all my blog pages in on my computer and then publish the entire website on a static hosting server.</p>
+<a id="more"></a>
+
+<p><strong>Update</strong> - Actually I used Octopress for few days. Then I moved to a very similar static site generator: <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>. Hexo is easier to use and quite compatible with the Jekyll blog format. Additionally, Hexo runs with nodejs :-)<br>Have a look at the <a href="https://github.com/fsferrara/blog" target="_blank" rel="noopener">source code with instructions</a>.</p>
+<h2 id="Prepare-the-Jekyll-environment"><a href="#Prepare-the-Jekyll-environment" class="headerlink" title="Prepare the Jekyll environment"></a>Prepare the Jekyll environment</h2><p>The first drawback is that you need to set-up a local dev environment in order to be able to generate a static website on your machine. For Jekyll/Octopress you need several tool: git, ruby with bundler, and a javascript runtime.</p>
+<h3 id="git"><a href="#git" class="headerlink" title="git"></a>git</h3><p>I bet you already know what git is.</p>
+<h3 id="ruby"><a href="#ruby" class="headerlink" title="ruby"></a>ruby</h3><p>Ruby is an open source programming language. In order to install it locally, the are convenient ways such as <a href="http://rbenv.org/" target="_blank" rel="noopener">rbenv</a> or <a href="https://rvm.io/" target="_blank" rel="noopener">rvm</a>.<br>Make sure to install at least ruby 1.9.3 in order to be compatible with <em>Octopress</em> 3.0 and check with:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&gt; ruby --version</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">ruby 2.4.3p205 (2017-12-14 revision 61247) [x86_64-darwin16]</span></pre></td></tr></table></figure>
+
+<h3 id="A-javascript-runtime"><a href="#A-javascript-runtime" class="headerlink" title="A javascript runtime"></a>A javascript runtime</h3><p>My favourite javascript runtime is <a href="https://nodejs.org/" target="_blank" rel="noopener">nodejs</a>. A convenient way to install it is <a href="https://github.com/creationix/nvm" target="_blank" rel="noopener">nvm</a>. After the installation you can check it with:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&gt; node --version</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">v6.11.2</span></pre></td></tr></table></figure>
+
+<h3 id="Bundler"><a href="#Bundler" class="headerlink" title="Bundler"></a>Bundler</h3><p>Ruby libraries are, almost always, distributed in form of ruby-gems (in short <em>gems</em>).<br><strong>Bundler</strong> provides a consistent environment for ruby projects by tracking and installing the exact gems and versions that are needed. All the <em>gems</em> dependencies are declared in the <strong>Gemfile</strong> and jekyll websites usually have a Gemfile for the dependencies.</p>
+<p>Bundler is a gem itself and to install it (globally in your ruby environment) just type:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">gem install bundler</span></pre></td></tr></table></figure>
+
+<p>Note: if you are using an old version of <em>rbenv</em>, then you’ll need to run <code>rbenv rehash</code> in order to be able to start using <em>bundler</em>.</p>
+<h2 id="Start-a-new-website"><a href="#Start-a-new-website" class="headerlink" title="Start a new website"></a>Start a new website</h2><p>For my first experience with <em>Jekyll</em> I am going with <em>Octopress</em> (a blogging framework based on Jekyll). It is basically Jekyll with a new graphic theme and additional plugins.<br>To start clone the Octopress source code <code>git clone git://github.com/imathis/octopress.git octopress</code> and then:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&gt; cd octopress&#x2F;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">[git:master]&gt; bundle install</span></pre></td></tr></table></figure>
+
+<p>With <code>bundle install</code> we are downloading all the gems needed to generate the website locally.<br>A very special gem is <em>rake</em>, a <em>Make-like</em> task-runner implemented in ruby. It is used in Octopress to simplify some development task that are usually performed manually when using a plain Jekyll installation.<br>For example, I used <code>bundle exec rake setup_github_pages</code> to publish my local website to github-pages. This task created a <em>source</em> branch for the local <em>Octopress</em> installation and setup a <em>master</em> branch in the <em>_deploy</em> subfolder.</p>
+<p> pushed the local octopress installation to the <em>source</em> branch of my github repository.</p>
+<h3 id="Setup-an-Octopress-theme"><a href="#Setup-an-Octopress-theme" class="headerlink" title="Setup an Octopress theme"></a>Setup an Octopress theme</h3><p>In order to use the default theme, just type:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">[git:source *]&gt; bundle exec rake install</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">## Copying classic theme into .&#x2F;source and .&#x2F;sass</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">mkdir -p source</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">cp -r .themes&#x2F;classic&#x2F;source&#x2F;. source</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">mkdir -p sass</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">cp -r .themes&#x2F;classic&#x2F;sass&#x2F;. sass</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">mkdir -p source&#x2F;_posts</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">mkdir -p public</span></pre></td></tr></table></figure>
+
+<p>The <em>classic</em> theme has been copied in the <em>source</em> and <em>sass</em> directories.<br>Also the <em>public</em> folder has been created: it will host my generated pages.</p>
+<h3 id="Generate-the-static-website"><a href="#Generate-the-static-website" class="headerlink" title="Generate the static website"></a>Generate the static website</h3><p>Using <em>rake</em>, just issue:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">[git:source *]&gt; bundle exec rake generate</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">## Generating Site with Jekyll</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">directory source&#x2F;stylesheets</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    write source&#x2F;stylesheets&#x2F;screen.css</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">Configuration file: &#x2F;opt&#x2F;home&#x2F;github&#x2F;fsferrara&#x2F;octopress&#x2F;_config.yml</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">            Source: source</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">       Destination: public</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">      Generating...</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">                    done.</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"> Auto-regeneration: disabled. Use --watch to enable.</span></pre></td></tr></table></figure>
+
+<h3 id="Generate-the-static-website-1"><a href="#Generate-the-static-website-1" class="headerlink" title="Generate the static website"></a>Generate the static website</h3><p>Always using <em>rake</em>, just issue <code>bundle exec rake deploy</code>.</p>
+<h3 id="Commit-the-website-source"><a href="#Commit-the-website-source" class="headerlink" title="Commit the website source"></a>Commit the website source</h3><p>This is the Jekyll feature I like most: I can version the source code of the website :-)<br>For the first commit:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">[git:source *]&gt; git add .</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">[git:source +]&gt; git commit -m &quot;my first octopress commit&quot;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">[git:source]&gt; git push origin source</span></pre></td></tr></table></figure>
+
+<p>Since I am using github as hosting solution, I have a <em>source</em> branch containing the source code of the blog, and a <em>master</em> branch (linked to the <em>_deploy</em> subfolder) containing the generated website.</p>
+<h3 id="Restoring-the-local-website-on-a-new-computer"><a href="#Restoring-the-local-website-on-a-new-computer" class="headerlink" title="Restoring the local website on a new computer"></a>Restoring the local website on a new computer</h3><p>Or at least, restoring the local website on the same computer with a new os installation.<br>The steps are:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&gt; git clone https:&#x2F;&#x2F;github.com&#x2F;fsferrara&#x2F;fsferrara.github.io.git</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">&gt; cd fsferrara.github.io</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">[git:master]&gt; git checkout source</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">[git:source]&gt; git remote add octopress git:&#x2F;&#x2F;github.com&#x2F;imathis&#x2F;octopress.git</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">[git:source]&gt; git clone https:&#x2F;&#x2F;github.com&#x2F;fsferrara&#x2F;fsferrara.github.io.git _deploy</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">[git:source]&gt; bundle install</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">[git:source]&gt; bundle exec rake generate</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">[git:source]&gt; bundle exec rake deploy</span></pre></td></tr></table></figure>
+
+<p>The procedure is quite the same, except the fact I had to clone the <em>master</em> branch in the <em>_deploy</em> subfolder because I am using github-pages.</p>
+<h2 id="My-first-post-with-Octopress"><a href="#My-first-post-with-Octopress" class="headerlink" title="My first post with Octopress"></a>My first post with Octopress</h2><p>My first post is exactly this one you are now reading. As per Jekyll convention it is named in a format like <code>YYYY-MM-DD-post-title.markdown</code> and it is placed in the <em>source/_posts</em> directory.<br>Anyway, the <em>new_post</em> rake task simplify the operation of adding a new post. I could have run this:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">[git:source]&gt; bundler exec rake new_post[&quot;Blogging with Octopress and Jekyll&quot;]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">mkdir -p source&#x2F;_posts</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">Creating new post: source&#x2F;_posts&#x2F;2018-01-05-blogging-with-octopress-and-jekyll.markdown</span></pre></td></tr></table></figure>
+
+<p>to have the new post file in the <em>source/_posts</em> folder. Additionally, the post file is created with the standard <strong>Front Matter</strong>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">[git:source]&gt; cat source&#x2F;_posts&#x2F;2018-01-05-blogging-with-octopress-and-jekyll.markdown</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">---</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">layout: post</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">title: &quot;Blogging with Octopress and Jekyll&quot;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">date: 2018-01-05 23:01:08 +0100</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">comments: true</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">categories:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">---</span></pre></td></tr></table></figure>
+
+<p><em>Front matter</em> is where Jekyll starts to get really cool. Any file that contains a <a href="https://jekyllrb.com/docs/frontmatter/" target="_blank" rel="noopener">YAML front matter</a> block will be processed by Jekyll as a special file. This block adds meta-data to the file sush as permalink, categories, tags, and so on.</p>
+<h2 id="The-about-page"><a href="#The-about-page" class="headerlink" title="The about page"></a>The about page</h2><p>Similar to the post creation, the rake task <em>new_page</em> helps to create new pages.<br>For the usual <em>about</em> page: <code>bundle exec rake new_page[&quot;about&quot;]</code>. Here are <a href="http://octopress.org/docs/blogging/" target="_blank" rel="noopener">more information about Octopress pages</a>.</p>
+<p>The <em>about</em> page usually has a link in the main menu. To add such a link, modify the file <code>source/_includes/custom/navigation.html</code> to add a new entry.</p>
+<h2 id="Preview-the-changes-locally-before-publishing"><a href="#Preview-the-changes-locally-before-publishing" class="headerlink" title="Preview the changes locally before publishing"></a>Preview the changes locally before publishing</h2><p>Jekyll is able to generate and serve the static website locally. Octopress offers the rake task <code>bundle exec rake preview</code> that starts a web server locally listening at <em><a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a></em>.<br>This task will also watch for local changes and apply them immediately to the local preview.</p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Saverio Ferrara
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="/http:/fsferrara.github.io/2018/01/05/blogging-with-octopress-and-jekyll/" title="Blogging with Octopress and Jekyll">http://fsferrara.github.io/2018/01/05/blogging-with-octopress-and-jekyll/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/en" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/blog/" rel="tag"># blog</a>
+              <a href="/tags/ruby/" rel="tag"># ruby</a>
+              <a href="/tags/jekyll/" rel="tag"># jekyll</a>
+              <a href="/tags/octopress/" rel="tag"># octopress</a>
+              <a href="/tags/hexo/" rel="tag"># hexo</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/12/21/da-rest-a-graphql-in-90-minuti/" rel="prev" title="Da REST a GraphQL in 90 minuti">
+      <i class="fa fa-chevron-left"></i> Da REST a GraphQL in 90 minuti
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/08/26/isolate-services-using-the-command-pattern/" rel="next" title="Isolate services using the command pattern">
+      Isolate services using the command pattern <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Prepare-the-Jekyll-environment"><span class="nav-number">1.</span> <span class="nav-text">Prepare the Jekyll environment</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#git"><span class="nav-number">1.1.</span> <span class="nav-text">git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ruby"><span class="nav-number">1.2.</span> <span class="nav-text">ruby</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#A-javascript-runtime"><span class="nav-number">1.3.</span> <span class="nav-text">A javascript runtime</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bundler"><span class="nav-number">1.4.</span> <span class="nav-text">Bundler</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Start-a-new-website"><span class="nav-number">2.</span> <span class="nav-text">Start a new website</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Setup-an-Octopress-theme"><span class="nav-number">2.1.</span> <span class="nav-text">Setup an Octopress theme</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-the-static-website"><span class="nav-number">2.2.</span> <span class="nav-text">Generate the static website</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-the-static-website-1"><span class="nav-number">2.3.</span> <span class="nav-text">Generate the static website</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Commit-the-website-source"><span class="nav-number">2.4.</span> <span class="nav-text">Commit the website source</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Restoring-the-local-website-on-a-new-computer"><span class="nav-number">2.5.</span> <span class="nav-text">Restoring the local website on a new computer</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#My-first-post-with-Octopress"><span class="nav-number">3.</span> <span class="nav-text">My first post with Octopress</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-about-page"><span class="nav-number">4.</span> <span class="nav-text">The about page</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Preview-the-changes-locally-before-publishing"><span class="nav-number">5.</span> <span class="nav-text">Preview the changes locally before publishing</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Saverio Ferrara"
+      src="/images/logo/logo.png">
+  <p class="site-author-name" itemprop="name">Saverio Ferrara</p>
+  <div class="site-description" itemprop="description">Hello, my name is Saverio and I’m a software engineer and a passionate software developer. Addicted to the Linux operating system, I love learning new things and working with all the open source technologies.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">96</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/fsferrara" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;fsferrara" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/fsferrara" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;fsferrara" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/fsferrara" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;fsferrara" rel="noopener" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Saverio Ferrara</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.6.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: {page: {
+            url: "http://fsferrara.github.io/2018/01/05/blogging-with-octopress-and-jekyll/",
+            identifier: "2018/01/05/blogging-with-octopress-and-jekyll/",
+            title: "Blogging with Octopress and Jekyll"
+          }
+        }
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://fsferrara.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+</script>
+
+</body>
+</html>
