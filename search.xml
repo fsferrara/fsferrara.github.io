@@ -4300,8 +4300,8 @@ for (i=0;i&lt;n;i++)
         <category>system administration</category>
       </categories>
       <tags>
-        <tag>unix</tag>
         <tag>linux</tag>
+        <tag>unix</tag>
         <tag>dos</tag>
         <tag>ms-dos</tag>
         <tag>shell</tag>
