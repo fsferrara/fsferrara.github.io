@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/logo/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/logo/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/logo/favicon-16x16.png">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://fsferrara.github.io').hostname,
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.6.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="As software engineer, if you’re reading this, for sure you already know that the error budget is defined when we select a Service Level Indicator (SLI) and set for it a target Service Level Objective">
+<meta name="keywords" content="reliability,slo,sli,error-budget,alerting">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Error budget burn rate alerts for major outages">
+<meta property="og:url" content="http:&#x2F;&#x2F;fsferrara.github.io&#x2F;2023&#x2F;02&#x2F;03&#x2F;error-budget-burn-rate-alerts-for-major-outages&#x2F;index.html">
+<meta property="og:site_name" content="fsferrara">
+<meta property="og:description" content="As software engineer, if you’re reading this, for sure you already know that the error budget is defined when we select a Service Level Indicator (SLI) and set for it a target Service Level Objective">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http:&#x2F;&#x2F;fsferrara.github.io&#x2F;images&#x2F;blog&#x2F;error-budget-formulas&#x2F;01-burn-rate.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;fsferrara.github.io&#x2F;images&#x2F;blog&#x2F;error-budget-formulas&#x2F;02-maximum-burn-rate.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;fsferrara.github.io&#x2F;images&#x2F;blog&#x2F;error-budget-formulas&#x2F;03-window-budget.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;fsferrara.github.io&#x2F;images&#x2F;blog&#x2F;error-budget-formulas&#x2F;04-budget-consumed.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;fsferrara.github.io&#x2F;images&#x2F;blog&#x2F;error-budget-formulas&#x2F;05-budget-consumed-example-1.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;fsferrara.github.io&#x2F;images&#x2F;blog&#x2F;error-budget-formulas&#x2F;06-burn-rate-alert.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;fsferrara.github.io&#x2F;images&#x2F;blog&#x2F;error-budget-formulas&#x2F;07-burn-rate-alert-example-1.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;fsferrara.github.io&#x2F;images&#x2F;blog&#x2F;error-budget-formulas&#x2F;08-burn-rate-alert-example-2.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;fsferrara.github.io&#x2F;images&#x2F;blog&#x2F;error-budget-formulas&#x2F;09-error-budget-formulas.png">
+<meta property="og:updated_time" content="2023-02-03T14:24:49.576Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;fsferrara.github.io&#x2F;images&#x2F;blog&#x2F;error-budget-formulas&#x2F;01-burn-rate.png">
+
+<link rel="canonical" href="http://fsferrara.github.io/2023/02/03/error-budget-burn-rate-alerts-for-major-outages/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Error budget burn rate alerts for major outages | fsferrara</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-45189328-2"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-45189328-2');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">fsferrara</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/fsferrara" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://fsferrara.github.io/2023/02/03/error-budget-burn-rate-alerts-for-major-outages/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/logo/logo.png">
+      <meta itemprop="name" content="Saverio Ferrara">
+      <meta itemprop="description" content="Hello, my name is Saverio and I’m a software engineer and a passionate software developer. Addicted to the Linux operating system, I love learning new things and working with all the open source technologies.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fsferrara">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Error budget burn rate alerts for major outages
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-02-03 00:00:00 / Modified: 15:24:49" itemprop="dateCreated datePublished" datetime="2023-02-03T00:00:00+01:00">2023-02-03</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/devops/" itemprop="url" rel="index">
+                    <span itemprop="name">devops</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>As software engineer, if you’re reading this, for sure you already know that the error budget is defined when we select a <em>Service Level Indicator</em> (SLI) and set for it a target <em>Service Level Objective</em> (SLO) over a specific time-period. If you don’t, then head to the “references” section below that suggests introductory resources.</p>
+<p>How fast can we consume the error budget? This question was not easy to answer for me. That’s why I’d like to share my notes.</p>
+<a id="more"></a>
+
+<p>Let’s focus on a specific example so that we’ll be able to quantify the error budget. We’ll consider an availability SLI that, as you surely know, is the proportion of the good events over the total number of events. In addition, we’ll consider:</p>
+<ul>
+<li><strong>SLO target</strong>: 95%</li>
+<li><strong>Budget window</strong>: 720h (i.e., 30 days)</li>
+</ul>
+<p>In case you’re not familiar with those concepts, at the end of this article there is the “terminology” section that can help. </p>
+<p>The error budget is amount of not “good events” derived from an SLO’s target percentage (100% - target percentage). In our case the error budget is 100% - 95%. Hence:</p>
+<ul>
+<li><strong>Error budget</strong>: 5%</li>
+</ul>
+<p>Google introduced the concept of <strong>burn rate</strong> that is a number which represents how fast, relative to the SLO, the service consumes the error budget. It is defined as:</p>
+<img src="/images/blog/error-budget-formulas/01-burn-rate.png" class="center" title="burn rate">
+
+<p>By definition, a burn rate of 1 means that the service is consuming error budget at a rate that leaves you with exactly 0 budget at the end of the budget window.<br>A burn rate of 2 means that the service is consuming the error budget twice as fast as a burn rate of 1.</p>
+<p>The burn rate can’t be an infinite number. Considering we’re experiencing a complete service outage, then our error rate is 100%. So, the <em>maximum burn rate</em> is:</p>
+<img src="/images/blog/error-budget-formulas/02-maximum-burn-rate.png" class="center" title="maximum burn rate">
+
+<p>In our example the maximum burn rate is 100% divided by 5%, hence:</p>
+<ul>
+<li><strong>Max Burn Rate</strong>: 20</li>
+</ul>
+<p>So, how fast can we burn the error budget? The maximum burn rate tells us that we can consume the error budget up to 20 time faster than normal. This doesn’t answer our question!</p>
+<h2 id="How-big-is-my-error-budget"><a href="#How-big-is-my-error-budget" class="headerlink" title="How big is my error budget?"></a>How big is my error budget?</h2><p>Let’s reason in hours and see if we can make it clearer. The key concept here is that we should consider a “complete outage” of the service.</p>
+<p>An error budget of 5% over a budget window of 720h tells us that we are allowed to have a complete outage of 36h without violating the SLO target. This is the <strong>Window Budget</strong>:</p>
+<img src="/images/blog/error-budget-formulas/03-window-budget.png" class="center" title="window budget">
+
+<p>Returning to the initial question… how fast can we burn the error budget? The answer is 36 hours.</p>
+<h2 id="How-much-error-budget-can-I-consume-in-one-hour"><a href="#How-much-error-budget-can-I-consume-in-one-hour" class="headerlink" title="How much error budget can I consume in one hour?"></a>How much error budget can I consume in one hour?</h2><p>This question is more interesting and allow us to set alerts. Instead of considering the entire budget window of 720 hours, let’s focus on a restricted alert window of 1 hour. In case of complete outage, the maximum amount of <strong>budget consumed</strong> is:</p>
+<img src="/images/blog/error-budget-formulas/04-budget-consumed.png" class="center" title="budget consumed">
+
+<p>In our case:</p>
+<img src="/images/blog/error-budget-formulas/05-budget-consumed-example-1.png" class="center" title="budget consumed - example">
+
+<p>Careful here! The <em>maximum budget consumed</em> is the 2.77% of the entire error budget. So, in one hour we can consume the 2.77% of 5%. Always considering a complete outage.</p>
+<h2 id="How-to-set-a-burn-rate-alert-for-a-complete-outage"><a href="#How-to-set-a-burn-rate-alert-for-a-complete-outage" class="headerlink" title="How to set a burn rate alert for a complete outage?"></a>How to set a burn rate alert for a complete outage?</h2><p>Having an alert on the burn rate, means we want to be alerted if our budget is consuming fast over a restricted time-period (i.e., the alert window). Monitoring tools allow to set such kind of alerts and we should only define how long should be the alert window and what is the burn rate threshold. Like before we’ll suppose 1 hour alert window and the burn is calculated as:</p>
+<img src="/images/blog/error-budget-formulas/06-burn-rate-alert.png" class="center" title="burn rate alert">
+
+<p>Let’s do the math:</p>
+<img src="/images/blog/error-budget-formulas/07-burn-rate-alert-example-1.png" class="center" title="burn rate alert - example">
+
+<p>This is exactly the value we got before for the maximum burn rate. In fact, we’re still considering a complete outage.</p>
+<h2 id="How-to-set-a-burn-rate-alert-for-a-major-outage"><a href="#How-to-set-a-burn-rate-alert-for-a-major-outage" class="headerlink" title="How to set a burn rate alert for a major outage?"></a>How to set a burn rate alert for a major outage?</h2><p>Alerting on a complete outage is very extreme and, in some cases, may lead to a poor alert recall. A more reasonable approach is to be alerted when the 80% of the calls are failing. Let’s do this.</p>
+<p>If in case of complete outage, we can burn the 2.77% of the budget, then we should decrease it by 20% if the 80% of the calls are failing. The resulting budget consumed in 1 hour is then ~2.22%. Let’s apply the burn rate formula again, and we’ll have:</p>
+<img src="/images/blog/error-budget-formulas/08-burn-rate-alert-example-2.png" class="center" title="burn rate alert - example 2">
+
+<p>Answer: having an alert with a burn rate of 16 will warn us in case we’ll experience a drop of 80% of the good events during the 1-hour period.</p>
+<h2 id="Terminology"><a href="#Terminology" class="headerlink" title="Terminology"></a>Terminology</h2><p><strong>SLI</strong> (%): Service Level Indicator. A quantifiable measure of service reliability that tells you if things are working.</p>
+<p><strong>SLO</strong> (%): Service Level Objective. A reliability target for an SLI that tells you if the users are happy or sad.</p>
+<p><strong>SLA</strong> (%): Service Level Agreement. A contract that the service provider promises users on service reliability. Agreed reliability targets should be more relaxed than the internal SLOs to give enough room for unexpected outages.</p>
+<p><strong>Target</strong> (%): SLO Target. It is the availability target (%) defined by the SLO.</p>
+<p><strong>Budget</strong> (%): Error Budget. Either the number of requests out of the total requests or the amount of time for a given period, a system can afford to be unreliable before users become unhappy.</p>
+<p><strong>Burn Rate</strong> (number): It is an indicator that define how fast, relative to the SLO, the service consumes the error budget.</p>
+<p><strong>Budget Window</strong> (h): The length of the error budget window. We recommend 30 days (720 hours). It usually is 7, 30, or 90 days.</p>
+<p><strong>Alert Window</strong> (h): It is a time window (in hours) in which we’d calculate the burn rate and notify the team if the budget is burning too fast. For example: 1 hour.</p>
+<p><strong>Budget Remaining</strong> (%): Error Budget Remaining. The remaining error budget within the Budget Window</p>
+<p><strong>Budget Consumed</strong> (%): It is the percentage of Error Budget consumed within a time-period. For alerts, it refers to the Alert Window.</p>
+<p><strong>Current Status</strong> (%): It is the SLI value over the budget window.</p>
+<p><strong>Budget Consumption Time</strong> (h): Time (hours) until error budget is fully consumed within the time window.</p>
+<p><strong>Window Budget</strong> (h): Is the total amount of time we can spend with a complete outage that will consume the entire Budget.</p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p>•    <a href="https://sre.google/workbook/implementing-slos/" target="_blank" rel="noopener">Google SRE: implementing SLOs</a><br>•    <a href="https://sre.google/workbook/alerting-on-slos/" target="_blank" rel="noopener">Google SRE: alerting on SLOs</a><br>•    <a href="https://medium.com/expedia-group-tech/error-budget-policy-adoption-at-expedia-group-7d80d41c4a8b" target="_blank" rel="noopener">Error budget policy at Expedia Group</a><br>•    <a href="https://medium.com/expedia-group-tech/error-budget-policies-in-practice-4c98f56a28c1" target="_blank" rel="noopener">Error budget policies in practices</a></p>
+<h2 id="Appendix-Error-Budget-Formulas"><a href="#Appendix-Error-Budget-Formulas" class="headerlink" title="Appendix: Error Budget Formulas"></a>Appendix: Error Budget Formulas</h2><img src="/images/blog/error-budget-formulas/09-error-budget-formulas.png" class="center" title="error budget formulas">
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Saverio Ferrara
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="/http:/fsferrara.github.io/2023/02/03/error-budget-burn-rate-alerts-for-major-outages/" title="Error budget burn rate alerts for major outages">http://fsferrara.github.io/2023/02/03/error-budget-burn-rate-alerts-for-major-outages/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/en" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/reliability/" rel="tag"># reliability</a>
+              <a href="/tags/slo/" rel="tag"># slo</a>
+              <a href="/tags/sli/" rel="tag"># sli</a>
+              <a href="/tags/error-budget/" rel="tag"># error-budget</a>
+              <a href="/tags/alerting/" rel="tag"># alerting</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/12/30/my-macos-monterey-setup/" rel="prev" title="My MacOS Monterey Setup">
+      <i class="fa fa-chevron-left"></i> My MacOS Monterey Setup
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#How-big-is-my-error-budget"><span class="nav-number">1.</span> <span class="nav-text">How big is my error budget?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-much-error-budget-can-I-consume-in-one-hour"><span class="nav-number">2.</span> <span class="nav-text">How much error budget can I consume in one hour?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-to-set-a-burn-rate-alert-for-a-complete-outage"><span class="nav-number">3.</span> <span class="nav-text">How to set a burn rate alert for a complete outage?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-to-set-a-burn-rate-alert-for-a-major-outage"><span class="nav-number">4.</span> <span class="nav-text">How to set a burn rate alert for a major outage?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Terminology"><span class="nav-number">5.</span> <span class="nav-text">Terminology</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#References"><span class="nav-number">6.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Appendix-Error-Budget-Formulas"><span class="nav-number">7.</span> <span class="nav-text">Appendix: Error Budget Formulas</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Saverio Ferrara"
+      src="/images/logo/logo.png">
+  <p class="site-author-name" itemprop="name">Saverio Ferrara</p>
+  <div class="site-description" itemprop="description">Hello, my name is Saverio and I’m a software engineer and a passionate software developer. Addicted to the Linux operating system, I love learning new things and working with all the open source technologies.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">102</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/fsferrara" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;fsferrara" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/fsferrara" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;fsferrara" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/fsferrara" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;fsferrara" rel="noopener" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Saverio Ferrara</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.6.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: {page: {
+            url: "http://fsferrara.github.io/2023/02/03/error-budget-burn-rate-alerts-for-major-outages/",
+            identifier: "2023/02/03/error-budget-burn-rate-alerts-for-major-outages/",
+            title: "Error budget burn rate alerts for major outages"
+          }
+        }
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://fsferrara.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+</script>
+
+</body>
+</html>
