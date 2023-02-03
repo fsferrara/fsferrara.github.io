@@ -7,7 +7,7 @@
 <p>How fast can we consume the error budget? This question was not easy to answer for me. That’s why I’d like to share my notes.</p>
 <a id="more"></a>
 
-<p>Ops… nothing here! <a href="https://medium.com/..." target="_blank" rel="noopener">The story is available on Medium</a>.</p>
+<p>Ops… nothing here! <a href="https://medium.com/@fsferrara/error-budget-burn-rate-alerts-for-major-outages-3e999f8a200d?source=friends_link&sk=117fc8435eeb3deed664c177efcf697e" target="_blank" rel="noopener">The story is available on Medium</a>.</p>
 <p>Other resources available:</p>
 <p><a href="/downloads/error-budget-formulas.pdf"><i class="fa fa-download" aria-hidden="true"></i> Error budget formulas cheat-sheet</a>.</p>
 <p>Thank you!</p>
@@ -247,8 +247,8 @@
         <category>devops</category>
       </categories>
       <tags>
-        <tag>unix</tag>
         <tag>macos</tag>
+        <tag>unix</tag>
         <tag>netcat</tag>
         <tag>tcp</tag>
         <tag>udp</tag>
@@ -4323,11 +4323,11 @@ for (i=0;i&lt;n;i++)
         <category>system administration</category>
       </categories>
       <tags>
+        <tag>unix</tag>
         <tag>linux</tag>
         <tag>dos</tag>
         <tag>ms-dos</tag>
         <tag>shell</tag>
-        <tag>unix</tag>
         <tag>windows</tag>
       </tags>
   </entry>
