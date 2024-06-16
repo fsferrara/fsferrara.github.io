@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"fsferrara.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Sulla rete ci sono parecchie guide sul come fare il tuning di ubuntu (cioè come alleggerire ubuntu) ma ho deciso di raggruppare il tutto in questa guida. Ubuntu Linux è una distribuzione piuttosto sem">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tuning Ubuntu Linux 9.04">
+<meta property="og:url" content="http://fsferrara.github.io/2009/07/04/tuning-ubuntu-linux-9-04/index.html">
+<meta property="og:site_name" content="fsferrara">
+<meta property="og:description" content="Sulla rete ci sono parecchie guide sul come fare il tuning di ubuntu (cioè come alleggerire ubuntu) ma ho deciso di raggruppare il tutto in questa guida. Ubuntu Linux è una distribuzione piuttosto sem">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2009-07-03T22:00:00.000Z">
+<meta property="article:modified_time" content="2024-06-16T13:00:09.695Z">
+<meta property="article:author" content="Saverio Ferrara">
+<meta property="article:tag" content="tuning">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="ubuntu">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://fsferrara.github.io/2009/07/04/tuning-ubuntu-linux-9-04/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Tuning Ubuntu Linux 9.04 | fsferrara</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">fsferrara</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/fsferrara" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://fsferrara.github.io/2009/07/04/tuning-ubuntu-linux-9-04/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/logo/logo.png">
+      <meta itemprop="name" content="Saverio Ferrara">
+      <meta itemprop="description" content="Hello, my name is Saverio and I’m a software engineer and a passionate software developer. Addicted to the Linux operating system, I love learning new things and working with all the open source technologies.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fsferrara">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Tuning Ubuntu Linux 9.04
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2009-07-04 00:00:00" itemprop="dateCreated datePublished" datetime="2009-07-04T00:00:00+02:00">2009-07-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-06-16 15:00:09" itemprop="dateModified" datetime="2024-06-16T15:00:09+02:00">2024-06-16</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/system-administration/" itemprop="url" rel="index"><span itemprop="name">system administration</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>Sulla rete ci sono parecchie guide sul come fare il tuning di ubuntu (cioè come alleggerire ubuntu) ma ho deciso di raggruppare il tutto in questa guida.</p>
+<p>Ubuntu Linux è una distribuzione piuttosto semplice da usare ma ma stabile, poiché basata su debian, tuttavia ubuntu di default ha molti pacchetti e servizi che si possono tranquillamente disabilitare o adattare secondo le proprie esigenze, così facendo guadagneremo in spazio sull&#8217;hdd e qualche mb di ram, questo significa avere un sistema operativo più snello e più reattivo.</p>
+<p>La presente guida è valida per la maggior parte degli utenti, ma ovviamente informatevi prima se un servizio\pacchetto non vi serve davvero&#8230; ad esempio chi possiede una stampante HP non dovrebbe disabilitare i relativi servizi per la sua gestione :-P</p>
+<span id="more"></span>
+
+<h2 id="Disabilitare-Servizi"><a href="#Disabilitare-Servizi" class="headerlink" title="Disabilitare Servizi"></a>Disabilitare Servizi</h2><p>bene possiamo cominciare:</p>
+<p>inanzitutto installiamo da synaptic il boot-up manager che permette di disabilitare alcuni servizi:</p>
+<ul>
+<li><strong>anacron</strong>, <strong>atd</strong>, <strong>cron</strong> &#8211; servizi di pianificazione, servono per gli aggiornamenti automatici dei pacchetti di Ubuntu, e altri compiti  un po’ obsoleti,disattivabile.<span style="text-decoration: line-through;"><br /> </span></li>
+<li><strong>apport</strong> &#8211; generatore di rapporti per i crash, che andranno salvati in &#x2F;var&#x2F;crash.</li>
+<li><strong>brltty</strong> &#8211; gestione di dispositivi braille</li>
+<li><strong>bluetooth</strong> &#8211; gestisce il bluetooth,se ne fate uso non disabilitatelo</li>
+<li><strong>cupsys</strong> &#8211; se non avete\usate una stampante connessa al PC, sappiate che potete disabilitarlo</li>
+<li><strong>dhcp3-server</strong> &#8211; se non fate da server dhcp in una rete potete disabilitarlo</li>
+<li><strong>hotkey-setup</strong> &#8211; se non usate tasti speciali (ad esempio inun notebook o nelle moderne tastiere multimediali) potete disabilitarlo</li>
+<li><strong>laptop-mode</strong> &#8211; si occupa della gestione ottimizzata per allungare la vita alla batteria in un portatile.</li>
+<li><strong>phplip</strong> &#8211; se non avete una stampante HP potete disabilitarlo</li>
+<li><strong>powernowd</strong>* &#8211; gestione dello scaling della CPU, di solito si usa sui portatili</li>
+<li><strong>readahead</strong>* &#8211; serve a precaricare in memoria file&#x2F;librerie elencate in &#x2F;etc&#x2F;readahead&#x2F;* se avete molta ram potete abilitarlo.</li>
+<li><strong>rsync</strong> &#8211; serve a copiare&#x2F;sincronizzare file in remoto. difficilmente serve</li>
+<li><strong>screen</strong> -non so cosa sia ma non ci sono problemi a disabilitarlo (credo)</li>
+</ul>
+<h2 id="Disinstallazione-di-Pacchetti"><a href="#Disinstallazione-di-Pacchetti" class="headerlink" title="Disinstallazione di Pacchetti"></a>Disinstallazione di Pacchetti</h2><p>Questi sono pacchetti di che di solito sono installati di default ma che sono dinsintallabili (a seconda della necessità dell&#8217;utente). Vi ricordo di leggere prima la descrizione del pacchetto prima di eliminarlo dal sistema!!!</p>
+<p>bluez (bluetooth)</p>
+<p>hpijs e hplip* (stampanti HP)</p>
+<p>ubuntu-docs (documentazione)</p>
+<p>gnome-games (i giochi di ubuntu)</p>
+<p>gnome-games-data (file contenenti giochi di ubuntu)openoffice.org-help-en-us (file d’aiuto per OpenOffice in inglese)</p>
+<p>openoffice.org-help-en-gb (file d’aiuto per OpenOffice in inglese)</p>
+<p>openoffice.org-thesaurus-en-au  (supporto lingua inglese&#x2F;australiano per OpenOffice)</p>
+<p>openoffice.org-help-it (file d’aiuto per OpenOffice in italiano)</p>
+<p>gimp-help-common (file d’aiuto per GIMP in italiano)</p>
+<p>example-content (contenuti d’esempio)</p>
+<p>cups* (vari pacchetti relativi alla stampa, <strong>attenzione</strong> con questi!)</p>
+<p>gnome-screensaver (gli screensaver)</p>
+<p>xsane (consente gi gestire gli scanner)</p>
+<h2 id="Rimuovere-Mono"><a href="#Rimuovere-Mono" class="headerlink" title="Rimuovere Mono"></a>Rimuovere Mono</h2><p>con questo comando potremmo liberarci di mono,pacchetto presente di default su ubuntu:</p>
+<blockquote>
+<p style="text-align: left;">
+  <strong>Mono è un progetto open sourceNovell (precedentemente da Ximian) per creare un insieme di strumenti compatibili con il Framework .NET, secondo gli standard ECMA coordinato da </strong>
+</p>
+
+<ul style="text-align: left;">
+  <li>
+    <strong> è un programma di instant messaging per MSN.</strong>
+  </li>
+  <li>
+    <strong>GLyrics è un programma per la ricerca di testi musicali.</strong>
+  </li>
+  <li>
+    <strong>Gnome Do è un lanciatore per Linux (simile a Quicksilver).</strong>
+  </li>
+  <li>
+    <strong>iFolder 3 (della Novell) permette la condivisione di file attraverso molteplici computer e con altri utenti tramite peer-to-peer o attraverso server groupware di Novell.</strong>
+  </li>
+  <li>
+    <strong>Imendio Blam! è un aggregatore di news e feed RSS buono tra l&#8217;altro per la lettura di feed planet come Planet Gnome.</strong>
+  </li>
+  <li>
+    <strong>MonoDevelop è un IDE per la creazione di applicazioni Mono. Originariamente è stato un port di SharpDevelop per Gtk#, ma oggi viene sviluppato indipendentemente.</strong>
+  </li>
+  <li>
+    <strong>Muine è un riproduttore musicale con una interfaccia utente progettata per essere intuitiva, sviluppato da Jorn Baayen il quale ha già collaborato allo sviluppo di Rhythmbox.</strong>
+  </li>
+  <li>
+    <strong>Second Life, il mondo virtuale creato da Linden Lab, si dice stia per passare dall&#8217;utilizzo del Linden Scripting Language (LSL) a Mono, in un futuro prossimo.</strong>
+  </li>
+  <li>
+    <strong>SkyNET è una mappa stellare.</strong>
+  </li>
+  <li>
+    <strong>smuxi è un client IRC per utenti esperti scritto usando Gtk#/Gnome#, SmartIrc4net e Nini.</strong>
+  </li>
+  <li>
+    <strong>Tomboy è una applicazione desktop per annotazioni che utilizza un sistema di link simile al Wiki.</strong>
+  </li>
+</ul>
+
+<p style="text-align: left;">
+  (tratto da wikipedia)
+</p>
+</blockquote>
+<p><strong><code>sudo apt-get --purge remove libmono0</code></strong></p>
+<h2 style="text-align: left;">
+  Ulteriore Tuning
+</h2>
+
+<p style="text-align: left;">
+  in generale potete alleggerire il sistema con programmi meno pesanti ad esempio epiphany al posto di firefox,abi word al posto di opneoffice e via dicendo con questo comando eliminate “<strong>evolution-exchange</strong>“ che è un pacchetto che si occupa di cercare il server ms-exchange che spesso non è utilizzato ma occupa ram:
+</p>
+
+<p><strong><code>sudo apt-get --purge remove evolution-exchange</code></strong></p>
+<p style="text-align: left;">
+  ora andate su servizi ed eliminate quelli che non usate o non vi interessano,posto una lista di quelli meno usati (sui dextop)
+</p>
+
+<p style="text-align: left;">
+  bootlogd e stop-bootlogd<br /> rsync<br /> apmd<br /> powernowd<br /> acpi-support<br /> laptop-mode<br /> mdadm
+</p>
+
+<p>un altro consiglio che posso darvi è dare un &#8220;apt-get install localepurge&#8221; per installare un programma da utilizzare tramite terminale che consente di eliminare le lingue non utilizzate</p>
+<p>Ciao al prossimo articolo!!!</p>
+<p style="text-align: left;">
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/tuning/" rel="tag"># tuning</a>
+              <a href="/tags/linux/" rel="tag"># linux</a>
+              <a href="/tags/ubuntu/" rel="tag"># ubuntu</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2009/07/03/multidimensional-arrays-in-c/" rel="prev" title="Multidimensional Arrays in C">
+      <i class="fa fa-chevron-left"></i> Multidimensional Arrays in C
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2009/07/07/c-implementation-of-quicksort-algorithm/" rel="next" title="C implementation of Quicksort algorithm">
+      C implementation of Quicksort algorithm <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Disabilitare-Servizi"><span class="nav-number">1.</span> <span class="nav-text">Disabilitare Servizi</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Disinstallazione-di-Pacchetti"><span class="nav-number">2.</span> <span class="nav-text">Disinstallazione di Pacchetti</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Rimuovere-Mono"><span class="nav-number">3.</span> <span class="nav-text">Rimuovere Mono</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">
+  Ulteriore Tuning
+</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Saverio Ferrara"
+      src="/images/logo/logo.png">
+  <p class="site-author-name" itemprop="name">Saverio Ferrara</p>
+  <div class="site-description" itemprop="description">Hello, my name is Saverio and I’m a software engineer and a passionate software developer. Addicted to the Linux operating system, I love learning new things and working with all the open source technologies.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">43</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">106</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/fsferrara" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;fsferrara" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/fsferrara" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;fsferrara" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/fsferrara" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;fsferrara" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Saverio Ferrara</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://fsferrara.github.io/2009/07/04/tuning-ubuntu-linux-9-04/";
+    this.page.identifier = "2009/07/04/tuning-ubuntu-linux-9-04/";
+    this.page.title = "Tuning Ubuntu Linux 9.04";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://fsferrara.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

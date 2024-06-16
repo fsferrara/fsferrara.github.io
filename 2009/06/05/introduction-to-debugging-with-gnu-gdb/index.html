@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"fsferrara.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="GNU debugger (talvolta chiamato semplicemente GDB) è il nome di un programma libero sviluppato da GNU. È il debugger predefinito del software GNU, gira su molte piattaforme (tra cui i sistemi Unix-lik">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Introduction to debugging with GNU GDB">
+<meta property="og:url" content="http://fsferrara.github.io/2009/06/05/introduction-to-debugging-with-gnu-gdb/index.html">
+<meta property="og:site_name" content="fsferrara">
+<meta property="og:description" content="GNU debugger (talvolta chiamato semplicemente GDB) è il nome di un programma libero sviluppato da GNU. È il debugger predefinito del software GNU, gira su molte piattaforme (tra cui i sistemi Unix-lik">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2009-06-04T22:00:00.000Z">
+<meta property="article:modified_time" content="2024-06-16T13:00:09.689Z">
+<meta property="article:author" content="Saverio Ferrara">
+<meta property="article:tag" content="c">
+<meta property="article:tag" content="debug">
+<meta property="article:tag" content="gdb">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://fsferrara.github.io/2009/06/05/introduction-to-debugging-with-gnu-gdb/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Introduction to debugging with GNU GDB | fsferrara</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">fsferrara</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/fsferrara" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://fsferrara.github.io/2009/06/05/introduction-to-debugging-with-gnu-gdb/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/logo/logo.png">
+      <meta itemprop="name" content="Saverio Ferrara">
+      <meta itemprop="description" content="Hello, my name is Saverio and I’m a software engineer and a passionate software developer. Addicted to the Linux operating system, I love learning new things and working with all the open source technologies.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fsferrara">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Introduction to debugging with GNU GDB
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2009-06-05 00:00:00" itemprop="dateCreated datePublished" datetime="2009-06-05T00:00:00+02:00">2009-06-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-06-16 15:00:09" itemprop="dateModified" datetime="2024-06-16T15:00:09+02:00">2024-06-16</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">programming</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>GNU debugger (talvolta chiamato semplicemente GDB) è il nome di un programma libero sviluppato da GNU. È il debugger predefinito del software GNU, gira su molte piattaforme (tra cui i sistemi Unix-like e Microsoft Windows) ed è capace di analizzare numerosi linguaggi di programmazione, tra cui Ada, C, C++ e Fortran.</p>
+<p>GDB (ovvero GNU DeBugger) è molto più di un semplice debugger: è un vero e proprio program execution path analysis tool.</p>
+<p>Invocando il comando “gdb &#8211;help” avremo:</p>
+<span id="more"></span>
+
+<pre class="shell">This is the GNU debugger.  Usage:
+
+    gdb [options] [executable-file [core-file or process-id]]
+    gdb [options] --args executable-file [inferior-arguments ...]
+
+Options:
+
+  --args             Arguments after executable-file are passed to inferior
+  --[no]async        Enable (disable) asynchronous version of CLI
+  -b BAUDRATE        Set serial port baud rate used for remote debugging.
+  --batch            Exit after processing options.
+  --cd=DIR           Change current directory to DIR.
+  --command=FILE     Execute GDB commands from FILE.
+  --core=COREFILE    Analyze the core dump COREFILE.
+  --pid=PID          Attach to running process PID.
+  --dbx              DBX compatibility mode.
+  --directory=DIR    Search for source files in DIR.
+  --epoch            Output information used by epoch emacs-GDB interface.
+  --exec=EXECFILE    Use EXECFILE as the executable.
+  --fullname         Output information used by emacs-GDB interface.
+  --help             Print this message.
+  --interpreter=INTERP
+                     Select a specific interpreter / user interface
+  --mapped           Use mapped symbol files if supported on this system.
+  --nw               Do not use a window interface.
+  --nx               Do not read .gdbinit file.
+  --quiet            Do not print version number on startup.
+  --readnow          Fully read symbol files on first access.
+  --se=FILE          Use FILE as symbol file and executable file.
+  --symbols=SYMFILE  Read symbols from SYMFILE.
+  --tty=TTY          Use TTY for input/output by the program being debugged.
+  --version          Print version information and then exit.
+  -w                 Use a window interface.
+  --write            Set writing into executable and core files.
+  --xdb              XDB compatibility mode.</pre>
+
+<p>Bhè… ci sono molte opzione, come la maggior parte dei programmi :-P . in questa guida ci limiteremo a chiamare gdb passandoci semplicente il nome dell’eseguibile da analizzare.</p>
+<p>Facciamo subito il solito primo esempio: hello.c.</p>
+<pre lang="c">#include
+
+int main()
+{
+        printf("Hello World\n");
+        exit(0);
+}</pre>
+
+<p>Se vogliamo analizzare questo programma dobbiamo compilarlo con l’opzione “-g” del compilatore gcc; in questo modo l’eseguibile conterrà delle informazioni utili al debugger per analizzare il programma. Compiliamo…</p>
+<pre class="shell">emac:~/temp ferrara$ gcc -g -o helloworld hello.c
+emac:~/temp ferrara$ ls -l
+total 32
+-rw-r--r--  1 ferrara  ferrara     72 19 Nov 22:41 hello.c
+-rwxr-xr-x  1 ferrara  ferrara  11764 19 Nov 22:45 helloworld</pre>
+
+<p>Adesso abbiamo il nostro eseguibile chiamato “helloword” compilato per essere esaminato con gdb. Non ci resta che lanciare il comando:</p>
+<pre class="shell">emac:~/temp ferrara$ gdb helloworld
+GNU gdb 5.3-20030128 (Apple version gdb-309) (Thu Dec  4 15:41:30 GMT 2003)
+Copyright 2003 Free Software Foundation, Inc.
+GDB is free software, covered by the GNU General Public License, and you are
+welcome to change it and/or distribute copies of it under certain conditions.
+Type "show copying" to see the conditions.
+There is absolutely no warranty for GDB.  Type "show warranty" for details.
+This GDB was configured as "powerpc-apple-darwin".
+Reading symbols for shared libraries .. done
+(gdb) <strong>&lt;-- Prompt di gdb</strong></pre>
+
+<p>Gdb ha caricato il nostro eseguibile e ci ha presentato il suo prompt (gdb). Adesso abbiamo svariati comandi a nostra disposizione! Esaminiamo il più semplice: list. Esso, seguito dal nome della funzione o del numero di linea, ci presenta a video il sorgente:</p>
+<pre class="shell">(gdb) list main <strong>&lt; -- Comando dato al prompt di gdb</strong>
+1       #include
+2
+3       int main()
+4       {
+5               printf("Hello World\n");
+6               exit(0);
+7       }
+8</pre>
+
+<p>Per maggiori informazioni basta digitare il comando “help list” al prompt di gdb per avere maggiori informazioni su questo comando. Ma come fa gdb a sapere il codice del programma helloworld se noi abbiamo fassato come argomento solo l’eseguibile? Questa informazione è stata registrata nell’eseguibile grazie all’opzione –g del compilatore :-).</p>
+<p>Ora con il comando run facciamo girare il programma all’interno di gdb:</p>
+<pre class="shell">(gdb) run &tab; &lt; -- Comando dato al prompt di gdb
+Starting program: /Users/ferrara/temp/helloworld
+Reading symbols for shared libraries . done
+Hello World &tab; &lt;-- Output del pogramma
+
+Program exited normally.</pre>
+
+<p>Come si poteva immaginare non ci sono errori. Alla fine dell’esecuzione gdb ci ripresenta il suo prompt e possiamo continuare a dargli altri comandi.</p>
+<p>Adesso proveremo a disassemblare il codice di helloworld con il comando disass:</p>
+<pre class="shell">(gdb) disass main <strong>&lt; -- Comando dato al prompt di gdb</strong>
+Dump of assembler code for function main:
+0x00001da4 :    mflr    r0
+0x00001da8 :    stmw    r30,-8(r1)
+0x00001dac :    stw     r0,8(r1)
+0x00001db0 :   stwu    r1,-80(r1)
+0x00001db4 :   mr      r30,r1
+0x00001db8 :   bcl-    20,4*cr7+so,0x1dbc
+0x00001dbc :   mflr    r31
+0x00001dc0 :   addis   r3,r31,0
+0x00001dc4 :   addi    r3,r3,564
+0x00001dc8 :   bl      0x1f34
+0x00001dcc :   li      r3,0
+0x00001dd0 :   bl      0x1dd4
+End of assembler dump.</pre>
+
+<p>Questa funzione di gdb delizierà gli smanettoni, ma non approfondiremo questo argomento.</p>
+<p>Per uscire dal gdb e quindi tornare al prompt della nostra shell bastera digitare il comando quit o semplicemente q.</p>
+<h2 id="Primo-esempio-di-debugging"><a href="#Primo-esempio-di-debugging" class="headerlink" title="Primo esempio di debugging"></a>Primo esempio di debugging</h2><p>Esaminiamo il seguente programma (segmentation_fault.c):</p>
+<pre lang="c">#include
+#include
+
+int main()
+{
+        char *buf;
+
+        strcpy(buf,"HelloWorld");
+
+        printf("%s\n", buf);
+
+        exit(0);
+}</pre>
+
+<p>Questo programma stampa a video “HelloWorld”. Ma eseguendolo abbiamo un errore:</p>
+<pre class="shell">emac:~/temp ferrara$ gcc -g -o sfault segmentation_fault.c
+emac:~/temp ferrara$ ./sfault
+Bus error</pre>
+
+<p>Dove abbiamo sbagliato? Lanciamo gdb e diamo il comando run per avviare il programma:</p>
+<pre class="shell">emac:~/temp ferrara$ gdb sfault <strong>&lt; -- Comando dato alla shell per avviare gdb</strong>
+GNU gdb 5.3-20030128 (Apple version gdb-309) (Thu Dec  4 15:41:30 GMT 2003)
+Copyright 2003 Free Software Foundation, Inc.
+GDB is free software, covered by the GNU General Public License, and you are
+welcome to change it and/or distribute copies of it under certain conditions.
+Type "show copying" to see the conditions.
+There is absolutely no warranty for GDB.  Type "show warranty" for details.
+This GDB was configured as "powerpc-apple-darwin".
+Reading symbols for shared libraries .. done
+(gdb) run &tab; &lt;-- Comando dato al prompt di gdb
+Starting program: /Users/ferrara/temp/sfault
+Reading symbols for shared libraries . done
+
+Program received signal EXC_BAD_ACCESS, Could not access memory. <strong>&lt;-- Trovato un errore</strong>
+0x90007680 in strcpy () <strong>&lt;-- La funzione dove si blocca il programma è strcpy</strong>
+(gdb) <strong>&lt;-- Prompt di gdb per eventuali altri comandi</strong></pre>
+
+<p>Questa è un informazione utilissima, ma si può avere di più. Siccome è difficile pensare che ci sia un bug nelle glibc (cioè dove è implementata la funzione strcpy()) proviamo a pensare che abbiamo passato alla funzione i parametri sbagliati, quindi inseriremo un breakpoint alla riga 8 e mentre il programma rimane bloccato aspettando il comando step per superare il breakpoint gli faremo stampare la variabile buf e il suo contenuto per verificarlo:</p>
+<pre class="shell">(gdb) list <strong>&lt;-- Chiedo il listato del sorgente</strong>
+1       #include
+2       #include
+3
+4       int main()
+5       {
+6               char *buf;
+7               long i;
+8
+9               strcpy(buf,"HelloWorld");
+10
+(gdb) b 8 <strong>&lt;-- Inserisco un breakpoint alla riga 8</strong>
+Breakpoint 1 at 0x1d8c: file segmentatio_fault.c, line 8.
+(gdb) run <strong>&lt;-- Avvio il programma</strong>
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y <strong>&lt;-- Chiedo di ricominciare da capo</strong>
+Starting program: /Users/ferrara/temp/sfault
+
+Breakpoint 1, main () at segmentatio_fault.c:9
+9               strcpy(buf,"HelloWorld"); <strong>&lt;-- Si è fermato prima di eseguire la riga 9</strong>
+(gdb) p buf <strong>&lt;-- Stampo la variabile buf</strong>
+$1 = 0x0
+(gdb) p *buf <strong>&lt;-- Stampo il contenuto di buf</strong>
+Cannot access memory at address 0x0 <strong>&lt;-- Questo è il notro errore</strong>
+(gdb) bt <strong>&lt;-- Stampo lo stack del programma alla riga 8</strong>
+#0  main () at segmentatio_fault.c:9
+(gdb) step  <strong>&lt;-- Continuiamo l’esecuzione del programma</strong>
+
+Program received signal EXC_BAD_ACCESS, Could not access memory.
+0x90007680 in strcpy ()
+(gdb) bt <strong>&lt;-- Stampo lo stack dopo il blocco del programma</strong>
+#0  0x90007680 in strcpy () <strong>&lt;-- Il programma si è bloccato in questa punto</strong>
+#1  0x00001d9c in main () at segmentatio_fault.c:9
+(gdb) clear 8 <strong>&lt;-- Cancello il breakpoint alla riga 8</strong>
+Deleted breakpoint 1
+(gdb) q <strong>&lt;-- Esco da gdb perché ho tutte le informazioni che mi servono</strong>
+The program is running.  Exit anyway? (y or n) y <strong>&lt;-- Confermo</strong>
+emac:~/temp ferrara$ <strong>&lt;-- Prompt di shell</strong></pre>
+
+<p>Il codice di questo programma era molto semplice, e il bug si poteva trovare anche solo leggendo il codice sorgente. Intanto abbiamo imparato l’utilizzo base dei seguenti comandi:</p>
+<table border="0">
+  <tr>
+    <td>
+      b
+    </td>
+
+<pre><code>&lt;td&gt;
+  (breakpoint) &amp;#8211; Inserisce un breakpoint.
+&lt;/td&gt;
+</code></pre>
+  </tr>
+
+  <tr>
+    <td>
+      step
+    </td>
+
+<pre><code>&lt;td&gt;
+  Supera il breakpoint in cui si è fermato e raggiunge il prossimo breakpoint oppure a fine del programma.
+&lt;/td&gt;
+</code></pre>
+  </tr>
+
+  <tr>
+    <td>
+      clear
+    </td>
+
+<pre><code>&lt;td&gt;
+  Cancella un breakpoint.
+&lt;/td&gt;
+</code></pre>
+  </tr>
+
+  <tr>
+    <td>
+      run
+    </td>
+
+<pre><code>&lt;td&gt;
+  Esegue il programma che stiamo esaminando e lo fa ripartire se si blocca o finisce.
+&lt;/td&gt;
+</code></pre>
+  </tr>
+
+  <tr>
+    <td>
+      p
+    </td>
+
+<pre><code>&lt;td&gt;
+  (print) – Stampa a video il contenuto di una variabile (puntatore, struttura, o altro).
+&lt;/td&gt;
+</code></pre>
+  </tr>
+
+  <tr>
+    <td>
+      bt
+    </td>
+
+<pre><code>&lt;td&gt;
+  (backtrace) – Stampa il backtrace dello stack corrente.
+&lt;/td&gt;
+</code></pre>
+  </tr>
+
+  <tr>
+    <td>
+      list
+    </td>
+
+<pre><code>&lt;td&gt;
+  Stampa il codice sorgente del programma. E’ un modo per sapere in quale linea inserire il breakpoint.
+&lt;/td&gt;
+</code></pre>
+  </tr>
+
+  <tr>
+    <td>
+      q
+    </td>
+
+<pre><code>&lt;td&gt;
+  (quit) – Uscita da gdb.
+&lt;/td&gt;
+</code></pre>
+  </tr>
+</table>
+
+<h2 id="Programmi-che-richiedono-parametri"><a href="#Programmi-che-richiedono-parametri" class="headerlink" title="Programmi che richiedono parametri"></a>Programmi che richiedono parametri</h2><p>Per analizzare dei programmi che richiedono parametri come questo:</p>
+<pre lang="c">#include
+
+int main(int argc, char *argv[])
+{
+    int i,a;
+    char *car;
+    int ALLOCATO,SCRITTI;
+
+    if (argc != 3)
+        printf("usa: %s  \n",argv[0]), exit(1);
+
+    ALLOCATO = atoi(argv[1]);
+    SCRITTI = atoi(argv[2]);
+
+    car = (char *) malloc(ALLOCATO*sizeof(char));
+
+    for(i=0,a='a' ; i &lt; SCRITTI ; i++,a++)
+        car[i]=a;
+
+    printf("%s\n",car);
+
+    exit(0);
+}</pre>
+
+<p>Basta chiamare gdb come abbiamo fatto finora e passare gli argomenti assieme al comando run:</p>
+<pre class="shell">(gdb) run 5 5
+Starting program: /Users/ferrara/temp/serio 5 5
+Reading symbols for shared libraries . done
+abcde
+
+Program exited normally.
+(gdb)</pre>
+
+<p>Passando come secondo argomento un numero molto grande rispetto al primo si ha un vero e proprio segmentation fault:</p>
+<pre class="shell">(gdb) run 5 99999999
+Starting program: /Users/ferrara/temp/serio 5 99999999
+
+Program received signal EXC_BAD_ACCESS, Could not access memory.
+0x00001d40 in main (argc=3, argv=0xbffffce8) at serio.c:18
+18                      car[i]=a;
+(gdb)</pre>
+
+<p>Come mai accade questo? Adesso avete gli strumenti necessari per procedere da soli… buon divertimento con gdb!</p>
+<h2 id="Conclusioni"><a href="#Conclusioni" class="headerlink" title="Conclusioni"></a>Conclusioni</h2><p>Questo documento è da considerarsi una semplicissima introduzione, giusto quel che basta per cominciare ad usare il manuale di gdb senza perdersi tra le tantissime opzioni.</p>
+<p>Per ulteriori informazioni digitare il comando “man gdb” dal prompt di shell oppure “help ” dal prompt di gdb.</p>
+<p>Per ci si scoccia di usare un debugger a linea di comando può trovare delle front end per gdb come xxgdb.</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/c/" rel="tag"># c</a>
+              <a href="/tags/debug/" rel="tag"># debug</a>
+              <a href="/tags/gdb/" rel="tag"># gdb</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2009/05/20/loop-unrolling-technique/" rel="prev" title="Loop-Unrolling Technique">
+      <i class="fa fa-chevron-left"></i> Loop-Unrolling Technique
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2009/06/20/installation-guide-of-windows-server-2003/" rel="next" title="Installation guide of Windows Server 2003">
+      Installation guide of Windows Server 2003 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Primo-esempio-di-debugging"><span class="nav-number">1.</span> <span class="nav-text">Primo esempio di debugging</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Programmi-che-richiedono-parametri"><span class="nav-number">2.</span> <span class="nav-text">Programmi che richiedono parametri</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conclusioni"><span class="nav-number">3.</span> <span class="nav-text">Conclusioni</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Saverio Ferrara"
+      src="/images/logo/logo.png">
+  <p class="site-author-name" itemprop="name">Saverio Ferrara</p>
+  <div class="site-description" itemprop="description">Hello, my name is Saverio and I’m a software engineer and a passionate software developer. Addicted to the Linux operating system, I love learning new things and working with all the open source technologies.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">43</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">106</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/fsferrara" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;fsferrara" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/fsferrara" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;fsferrara" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/fsferrara" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;fsferrara" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Saverio Ferrara</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://fsferrara.github.io/2009/06/05/introduction-to-debugging-with-gnu-gdb/";
+    this.page.identifier = "2009/06/05/introduction-to-debugging-with-gnu-gdb/";
+    this.page.title = "Introduction to debugging with GNU GDB";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://fsferrara.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

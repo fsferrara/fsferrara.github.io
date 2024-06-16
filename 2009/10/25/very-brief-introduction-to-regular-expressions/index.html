@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"fsferrara.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Le espressioni regolari sono utili per descrivere la validità di valori, come ad esempio valori di attributi, dati caratteri, e qualsiasi tipo di valore esprimibile con un certo alfabeto. Il concetto">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Very brief introduction to Regular Expressions">
+<meta property="og:url" content="http://fsferrara.github.io/2009/10/25/very-brief-introduction-to-regular-expressions/index.html">
+<meta property="og:site_name" content="fsferrara">
+<meta property="og:description" content="Le espressioni regolari sono utili per descrivere la validità di valori, come ad esempio valori di attributi, dati caratteri, e qualsiasi tipo di valore esprimibile con un certo alfabeto. Il concetto">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2009-10-24T22:00:00.000Z">
+<meta property="article:modified_time" content="2024-06-16T13:00:09.696Z">
+<meta property="article:author" content="Saverio Ferrara">
+<meta property="article:tag" content="regex">
+<meta property="article:tag" content="regular-expression">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://fsferrara.github.io/2009/10/25/very-brief-introduction-to-regular-expressions/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Very brief introduction to Regular Expressions | fsferrara</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">fsferrara</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/fsferrara" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://fsferrara.github.io/2009/10/25/very-brief-introduction-to-regular-expressions/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/logo/logo.png">
+      <meta itemprop="name" content="Saverio Ferrara">
+      <meta itemprop="description" content="Hello, my name is Saverio and I’m a software engineer and a passionate software developer. Addicted to the Linux operating system, I love learning new things and working with all the open source technologies.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fsferrara">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Very brief introduction to Regular Expressions
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2009-10-25 00:00:00" itemprop="dateCreated datePublished" datetime="2009-10-25T00:00:00+02:00">2009-10-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-06-16 15:00:09" itemprop="dateModified" datetime="2024-06-16T15:00:09+02:00">2024-06-16</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">programming</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>Le espressioni regolari sono utili per descrivere la validità di valori, come ad esempio valori di attributi, dati caratteri, e qualsiasi tipo di valore esprimibile con un certo alfabeto.</p>
+<p>Il concetto di espressione regolare è un formalismo importante utilizzato, in varie forme, in svariate applicazioni&#8230; ad esempio nei linguaggi di schema (come DTD di XML) per descrivere sequenze di elementi o caratteri. I linguaggi regolari sono utilizzati in molte altre aree dell&#8217;informatica oltre a XML, dall&#8217;elaborazione del testo e del linguaggio naturale alla verifica formale dei componenti hardware.</p>
+<p>Potrebbe essere necessario, ad esempio, vincolare un valore &#8216;data&#8217; in modo tale da rispettare il formato dd-mm-yyyy, ovvero sia composto da due cifre per il giorno, seguite da due per il mese e quattro per l&#8217;anno, tutto separato da un segno meno “-”. Alternativamente possiamo specificare che un certo valore deve essere un numero intero.</p>
+<p>Chiamiamo Σ un alfabeto consistente in un insieme di atomi, che tipicamente sono caratteri Unicode o nomi di elementi. Un&#8217;espressione regolare su Σ è costruita in base alle seguenti regole:</p>
+<span id="more"></span>
+
+<ul>
+<li>ogni atomo in Σ, preso da solo, è un espressione regolare;</li>
+<li>se a e b sono espressioni regolari, allora lo sono anche le seguenti:<ul>
+<li><pre>a?</pre>
+</li>
+<li><pre>a*</pre>
+</li>
+<li><pre>a+</pre>
+</li>
+<li><pre>a b</pre>
+</li>
+<li><pre>a|b</pre>
+</li>
+<li><pre>(a)</pre></li>
+</ul>
+</li>
+</ul>
+<p>Gli operatori ?, , e + hanno una precedenza superiore alla concatenazione (l&#8217;operatore vuoto o “giustapposizione”), che a sua volta ha una precedenza superiore a |. E&#8217; sempre possibile usare le parentesi per raggruppare sotto-espressioni, superando così le precedenze di default. L&#8217;espressione ab*|c, in cui l&#8217;alfabeto Σ contiene a, b, e c, è interpretata come (a(b*))|c e non a(b*|c).</p>
+<p>Una stringa finita di atomi di Σ può corrispondere o meno a una data espressione regolare a:</p>
+<ul>
+<li>un atomo r appartenente a Σ corrisponde unicamente al singolo atomo r;</li>
+<li>a? corrisponde ad a opzionalmente, ovvero a qualsiasi stringa corrisponda ad a più la stringa vuota;</li>
+<li>a* corrisponde a zero o più ripetizioni delle stringhe che corrispondono ad a;</li>
+<li>a+ corrisponde ad una o più ripetizioni delle stringhe che corrispondono ad a;</li>
+<li>a b corrisponde a ciò a cui corrisponde &#8216;a&#8217; seguito da ciò a cui corrisponde b;</li>
+<li>a|b corrisponde all&#8217;unione delle corrispondenze di a e b;</li>
+<li>(a) ha le stesse corrispondente di a.</li>
+</ul>
+<p>L&#8217;espressione regolare (a(b*))|c corrisponde così a tutte le stringhe composte da una a seguite da zero o più b, oppure una singola c da sola.</p>
+<p>Un linguaggio regolare è un insieme di stringhe che corrispondono a una qualche espressione regolare.</p>
+<p>E&#8217; possibile definire un&#8217;espressione regolare d (che sta per digit, cifra) scrivendo:</p>
+<pre>0|1|2|3|4|5|6|7|8|9</pre>
+
+<p>laddove l&#8217;alfabeto è composto ad esempio da tutti caratteri Unicode. Possiamo partire da questa definizione per definire un&#8217;altra espressione regolare &#8216;data&#8217; scrivendo dd-dd-dddd. Naturalmente quest&#8217;espressione corrisponde anche a stringhe come 88-26-9995, che non denotano date reali, ma con un po&#8217; più di sforzo è possibile catturare precisamente l&#8217;insieme di stringhe desiderato: in effetti su può usare un linguaggio regolare per gestire correttamente anche gli anni bisestili, ma allora le cose si fanno parecchie complicate!</p>
+<p>La seguente espressione regolare descrive gli interi con un alfabeto composto dalle dieci cifre e dal segno meno:</p>
+<pre>0|-?(|1|2|3|4|5|6|7|8|9)(0|1|2|3|4|5|6|7|8|9)*</pre>
+
+<p>Secondo questa definizione, -42, 0, 117 sono accettabili, mentre 000, -0 e 3.14 non lo sono.</p>
+<p>Adesso facciamo l&#8217;ultimo esempio, più complicato! In XHTML il contenuto di un elemento table dev&#8217;essere una sequenza che consiste in un elemento opzionale &#8216;caption&#8217; seguito da un certo numero di elementi &#8216;col&#8217; o alternativamente &#8216;colgroup&#8217;, i quali a loro volta sono opzionalmente seguiti da un elemento &#8216;thead&#8217; e uno &#8216;tfoot&#8217;, per concludere almeno un elemento &#8216;tbody&#8217; (o alternativamente &#8216;tr&#8217;). Possiamo scrivere con un&#8217;espressione regolare:</p>
+<pre>caption? ( col* | colgroup* ) thead? tfoot? ( tbody+ | tr+ )</pre>
+
+<p>Esistono molte varianti delle espressioni regolari&#8230; ad esempio le regular expression del linguaggio perl: tuttavia la maggior parte di queste varianti si limita ad aggiungere zucchero sintattico alla notazione base che abbiamo appena presentato.</p>
+<p>Un&#8217;estensione tipica sono gli intervalli di caratteri: [0-9], ad esempio, è una comoda abbreviazione per indicare le cifre al posto di 0|1|2|3|4|5|6|7|8|9. In modo analogo a{n,m} con n e m numeri interi non negativi, denota da n ad m ripetizioni di a.</p>
+<p>Questa è l&#8217;introduzione alle espressioni regolari; per lavorare efficientemente con un vero implementazione di queste espressioni richiede ulteriore studio.</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/regex/" rel="tag"># regex</a>
+              <a href="/tags/regular-expression/" rel="tag"># regular-expression</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2009/09/02/matrix-types-and-storage-methods/" rel="prev" title="Matrix types and Storage methods">
+      <i class="fa fa-chevron-left"></i> Matrix types and Storage methods
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2009/10/26/very-brief-introduction-to-xml/" rel="next" title="Very brief introduction to XML">
+      Very brief introduction to XML <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Saverio Ferrara"
+      src="/images/logo/logo.png">
+  <p class="site-author-name" itemprop="name">Saverio Ferrara</p>
+  <div class="site-description" itemprop="description">Hello, my name is Saverio and I’m a software engineer and a passionate software developer. Addicted to the Linux operating system, I love learning new things and working with all the open source technologies.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">43</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">106</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/fsferrara" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;fsferrara" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/fsferrara" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;fsferrara" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/fsferrara" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;fsferrara" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Saverio Ferrara</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://fsferrara.github.io/2009/10/25/very-brief-introduction-to-regular-expressions/";
+    this.page.identifier = "2009/10/25/very-brief-introduction-to-regular-expressions/";
+    this.page.title = "Very brief introduction to Regular Expressions";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://fsferrara.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

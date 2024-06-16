@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"fsferrara.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="La diffusione delle connessioni a banda larga ha agevolato la diffusione di audio e video via web: un esempio eclatante è YouTube! Ma riuscire a trovare un video particolare tra la grossa quantità">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Describing media with XML and MPEG-7">
+<meta property="og:url" content="http://fsferrara.github.io/2009/10/27/describing-media-with-xml-and-mpeg-7/index.html">
+<meta property="og:site_name" content="fsferrara">
+<meta property="og:description" content="La diffusione delle connessioni a banda larga ha agevolato la diffusione di audio e video via web: un esempio eclatante è YouTube! Ma riuscire a trovare un video particolare tra la grossa quantità">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2009-10-26T23:00:00.000Z">
+<meta property="article:modified_time" content="2024-06-16T13:00:09.685Z">
+<meta property="article:author" content="Saverio Ferrara">
+<meta property="article:tag" content="mpeg-7">
+<meta property="article:tag" content="xml">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://fsferrara.github.io/2009/10/27/describing-media-with-xml-and-mpeg-7/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Describing media with XML and MPEG-7 | fsferrara</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">fsferrara</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/fsferrara" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://fsferrara.github.io/2009/10/27/describing-media-with-xml-and-mpeg-7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/logo/logo.png">
+      <meta itemprop="name" content="Saverio Ferrara">
+      <meta itemprop="description" content="Hello, my name is Saverio and I’m a software engineer and a passionate software developer. Addicted to the Linux operating system, I love learning new things and working with all the open source technologies.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fsferrara">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Describing media with XML and MPEG-7
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2009-10-27 00:00:00" itemprop="dateCreated datePublished" datetime="2009-10-27T00:00:00+01:00">2009-10-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-06-16 15:00:09" itemprop="dateModified" datetime="2024-06-16T15:00:09+02:00">2024-06-16</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">programming</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p class="western">
+  La diffusione delle connessioni a banda larga ha agevolato la diffusione di audio e video via web: un esempio eclatante è YouTube! Ma riuscire a trovare un video particolare tra la grossa quantità di dati multimediali sul web è un compito arduo: il valore del dato multimediale dipende da quanto è agevole trovarlo, gestirlo, ed accedere.
+</p>
+
+<p style="margin-bottom: 0cm;">
+  Per gestire questa grossa quantità di dati multimediali, sia da parte degli utenti, sia da parte dei sistemi automatici, ci aiuta Mpeg-7: uno standard nato per codificare i contenuti multimediali attraverso la definizione di metadati sui dati multimediali.
+</p>
+
+<p style="margin-bottom: 0cm;">
+  I precedenti standard Mpeg-1 (1992), Mpeg-2 (1994), e Mpeg-4 (1999) riguardano la codifica del video. Nel 2001 è stato definito Mpeg-7 che non definisce il modo di codificare un video, ma riguarda la sua metataggatura attraverso un linguaggio XML.<br /> Perché 7? Mpeg-7 permette di definire metadati sui video codificati con Mpeg 1, 2, e 4. Siccome 4+2+1=7, nasce il nome Mpeg-7.
+</p>
+
+<p style="margin-bottom: 0cm;">
+  <span id="more"></span>
+</p>
+
+<p style="margin-bottom: 0cm;">
+  Notiamo come non è stato nominato Mpeg-3, lo standard per i famosissimi mp3 :) . In realtà questo standard non esiste, ma il nome Mpeg-3 è usato per riferirsi alla parte audio di Mpeg-2.
+</p>
+
+<h2 id="Metadati-western"><a href="#Metadati-western" class="headerlink" title="Metadati {.western}"></a>Metadati {.western}</h2><p style="margin-bottom: 0cm;">
+  I metadati associati ad un video permettono di descrivere cosa c&#8217;è nel video. Mpeg-7 permette descrizioni sia a basso livello (caratteristiche del segnale, come il colore di un oggetto), sia ad alto livello (informazioni semantiche, come la scena di un goal in una partita di calcio).<br /> Un esempio di file XML in formato Mpeg-7 contenente la descrizione di un video di una notizia è:
+</p>
+
+<pre lang="xml">&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
+ &lt;!--Metadati generati automaticamente dall'applicazione--&gt;
+&lt;Mpeg7 xmlns="urn:mpeg:mpeg7:schema:2001" xmlns:mpeg7="urn:mpeg:mpeg7:schema:2001"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:mpeg:mpeg7:schema:2001 Mpeg7-2001.xsd"&gt;
+ &lt;Description xsi:type="ContentEntityType"&gt;
+ &lt;MultimediaContent xsi:type="VideoType"&gt;
+ &lt;Video&gt;
+ &lt;MediaInformation&gt;
+ &lt;MediaProfile&gt;
+ &lt;MediaFormat&gt;
+ &lt;Content href="MPEG7ContentCS" /&gt;
+ &lt;FileFormat href="urn:mpeg:mpeg7:cs:FileFormatCS:2001:3"&gt;
+ &lt;Name&gt;mpeg&lt;/Name&gt;
+ &lt;/FileFormat&gt;
+ &lt;FileSize&gt;17333073&lt;/FileSize&gt;
+ &lt;VisualCoding&gt;
+ &lt;Format colorDomain="color"
+ href="urn:mpeg:mpeg7:cs:VisualCodingFormatCS:2001:1" /&gt;
+ &lt;Frame height="576" rate="8000" width="720" /&gt;
+ &lt;/VisualCoding&gt;
+ &lt;/MediaFormat&gt;
+ &lt;MediaInstance id="v20090201_video_15213221"&gt;
+ &lt;InstanceIdentifier /&gt;
+ &lt;MediaLocator&gt;
+ &lt;MediaUri&gt;20090201_video_15213221.mov&lt;/MediaUri&gt;
+ &lt;/MediaLocator&gt;
+ &lt;/MediaInstance&gt;
+ &lt;/MediaProfile&gt;
+ &lt;/MediaInformation&gt;
+ &lt;CreationInformation&gt;
+ &lt;Creation&gt;
+ &lt;Title&gt;Obama: presto un piano per famiglie Usa per tagliare costi
+ mutui&lt;/Title&gt;
+ &lt;Abstract&gt;
+ &lt;FreeTextAnnotation&gt;
+ Presidente cerca arginare effetti devastante crisi economica
+ &lt;/FreeTextAnnotation&gt;
+ &lt;StructuredAnnotation&gt;
+ &lt;When&gt;
+ &lt;Name&gt;1 Feb 2009&lt;/Name&gt;
+ &lt;/When&gt;
+ &lt;/StructuredAnnotation&gt;
+ &lt;/Abstract&gt;
+ &lt;Creator&gt;
+ &lt;Role href="urn:mpeg:mpeg7:cs:RoleCS:2001:producer"&gt;
+ &lt;Name&gt;Red&lt;/Name&gt;
+ &lt;/Role&gt;
+ &lt;Agent xsi:type="OrganizationType"&gt;
+ &lt;Name&gt;Apcom&lt;/Name&gt;
+ &lt;/Agent&gt;
+ &lt;/Creator&gt;
+ &lt;CreationCoordinates&gt;
+ &lt;Location&gt;
+ &lt;Name&gt;milano&lt;/Name&gt;
+ &lt;/Location&gt;
+ &lt;Date&gt;
+ &lt;TimePoint&gt;2009-02-01T15:21:32&lt;/TimePoint&gt;
+ &lt;/Date&gt;
+ &lt;/CreationCoordinates&gt;
+ &lt;CopyrightString&gt;TMNews&lt;/CopyrightString&gt;
+ &lt;/Creation&gt;
+ &lt;Classification&gt;
+ &lt;Genre href="urn:mpeg:TVAnytime_v0.1ContentCS:3.14"&gt;
+ &lt;Name&gt;est&lt;/Name&gt;
+ &lt;/Genre&gt;
+ &lt;MediaReview&gt;
+ &lt;Rating&gt;
+ &lt;RatingValue&gt;0.0&lt;/RatingValue&gt;
+ &lt;RatingScheme best="5" style="higherBetter" worst="0"&gt;
+ &lt;Name&gt;Overall&lt;/Name&gt;
+ &lt;/RatingScheme&gt;
+ &lt;/Rating&gt;
+ &lt;/MediaReview&gt;
+ &lt;/Classification&gt;
+ &lt;RelatedMaterial&gt;
+ &lt;MediaLocator&gt;
+ &lt;MediaUri&gt;20090201_video_17483840.mov&lt;/MediaUri&gt;
+ &lt;/MediaLocator&gt;
+ &lt;/RelatedMaterial&gt;
+ &lt;RelatedMaterial&gt;
+ &lt;MediaLocator&gt;
+ &lt;MediaUri&gt;20090201_video_18024720.mov&lt;/MediaUri&gt;
+ &lt;/MediaLocator&gt;
+ &lt;/RelatedMaterial&gt;
+ &lt;RelatedMaterial&gt;
+ &lt;MediaLocator&gt;
+ &lt;MediaUri&gt;20090201_video_18094945.mov&lt;/MediaUri&gt;
+ &lt;/MediaLocator&gt;
+ &lt;/RelatedMaterial&gt;
+ &lt;RelatedMaterial&gt;
+ &lt;MediaLocator&gt;
+ &lt;MediaUri&gt;20090201_video_18153193.mov&lt;/MediaUri&gt;
+ &lt;/MediaLocator&gt;
+ &lt;/RelatedMaterial&gt;
+ &lt;RelatedMaterial&gt;
+ &lt;MediaLocator&gt;
+ &lt;MediaUri&gt;20090202_video_13033231.mov&lt;/MediaUri&gt;
+ &lt;/MediaLocator&gt;
+ &lt;/RelatedMaterial&gt;
+ &lt;RelatedMaterial&gt;
+ &lt;MediaLocator&gt;
+ &lt;MediaUri&gt;20090202_video_13094131.mov&lt;/MediaUri&gt;
+ &lt;/MediaLocator&gt;
+ &lt;/RelatedMaterial&gt;
+ &lt;RelatedMaterial&gt;
+ &lt;MediaLocator&gt;
+ &lt;MediaUri&gt;20090202_video_16491593.mov&lt;/MediaUri&gt;
+ &lt;/MediaLocator&gt;
+ &lt;/RelatedMaterial&gt;
+ &lt;RelatedMaterial&gt;
+ &lt;MediaLocator&gt;
+ &lt;MediaUri&gt;20090202_video_17042673.mov&lt;/MediaUri&gt;
+ &lt;/MediaLocator&gt;
+ &lt;/RelatedMaterial&gt;
+ &lt;/CreationInformation&gt;
+ &lt;UsageInformation&gt;
+ &lt;Availability id="onDemand"&gt;
+ &lt;InstanceRef href="MPEG7PublicationTypeCS:4" /&gt;
+ &lt;Dissemination&gt;
+ &lt;Format href="MPEG7PublicationTypeCS:4"&gt;
+ &lt;Name&gt;Internet&lt;/Name&gt;
+ &lt;/Format&gt;
+ &lt;Location&gt;
+ &lt;Region&gt;it&lt;/Region&gt;
+ &lt;/Location&gt;
+ &lt;/Dissemination&gt;
+ &lt;/Availability&gt;
+ &lt;UsageRecord&gt;
+ &lt;AvailabilityRef idref="onDemand" /&gt;
+ &lt;Audience&gt;0&lt;/Audience&gt;
+ &lt;/UsageRecord&gt;
+ &lt;/UsageInformation&gt;
+ &lt;MediaTime&gt;
+ &lt;MediaTimePoint&gt;T00:00:00&lt;/MediaTimePoint&gt;
+ &lt;MediaDuration&gt;PT0H0M29S&lt;/MediaDuration&gt;
+ &lt;/MediaTime&gt;
+ &lt;/Video&gt;
+ &lt;/MultimediaContent&gt;
+ &lt;MultimediaContent xsi:type="ImageType"&gt;
+ &lt;Image&gt;
+ &lt;MediaInformation&gt;
+ &lt;MediaProfile&gt;
+ &lt;MediaFormat&gt;
+ &lt;Content href="urn:mpeg:mpeg7:cs:ContentCS:2001:2"&gt;
+ &lt;Name&gt;visual&lt;/Name&gt;
+ &lt;/Content&gt;
+ &lt;FileFormat href="urn:mpeg:mpeg7:cs:FileFormatCS:2001:3"&gt;
+ &lt;Name&gt;JPEG2000&lt;/Name&gt;
+ &lt;/FileFormat&gt;
+ &lt;FileSize&gt;12014&lt;/FileSize&gt;
+ &lt;VisualCoding&gt;
+ &lt;Format colorDomain="binary"
+ href="urn:mpeg:mpeg7:cs:VisualCodingFormatCS:2001:1"&gt;
+ &lt;Name&gt;JPEG2000&lt;/Name&gt;
+ &lt;/Format&gt;
+ &lt;Frame height="288" rate="0" width="360" /&gt;
+ &lt;/VisualCoding&gt;
+ &lt;/MediaFormat&gt;
+ &lt;MediaInstance id="i20090201_video_15213221"&gt;
+ &lt;InstanceIdentifier /&gt;
+ &lt;MediaLocator&gt;
+ &lt;MediaUri&gt;20090201_video_15213221.jpg&lt;/MediaUri&gt;
+ &lt;/MediaLocator&gt;
+ &lt;/MediaInstance&gt;
+ &lt;/MediaProfile&gt;
+ &lt;/MediaInformation&gt;
+ &lt;CreationInformation&gt;
+ &lt;Creation&gt;
+ &lt;Title&gt;
+ Foto
+&lt;/Title&gt;
+ &lt;Creator&gt;
+ &lt;Role href="urn:mpeg:mpeg7:cs:RoleCS:AUTHOR"&gt;
+ &lt;Name&gt;Red&lt;/Name&gt;
+ &lt;/Role&gt;
+ &lt;Agent xsi:type="OrganizationType"&gt;
+ &lt;Name&gt;MPEG&lt;/Name&gt;
+ &lt;/Agent&gt;
+ &lt;/Creator&gt;
+ &lt;/Creation&gt;
+ &lt;/CreationInformation&gt;
+ &lt;/Image&gt;
+ &lt;/MultimediaContent&gt;
+ &lt;/Description&gt;
+&lt;/Mpeg7&gt;</pre>
+
+<p style="margin-bottom: 0cm;">
+  Mpeg-7 è un linguaggio XML, ossia usa XML per definire i metadati. In realtà un file Mpeg-7 non è altro che un file &#8216;.xml&#8217; associato ad uno o più oggetti multimediali. Quindi è possibile memorizzare i metadati indipendentemente dai video&#8230; ad esempio un possibile uso di Mpeg-7, è la costruzione di un database multimediale!
+</p>
+
+<h2 id="Componenti-di-Mpeg-7-western"><a href="#Componenti-di-Mpeg-7-western" class="headerlink" title="Componenti di Mpeg-7 {.western}"></a>Componenti di Mpeg-7 {.western}</h2><p style="margin-bottom: 0cm;">
+  Lo standard Mpeg-7 è composta da quattro elementi fondamentali:
+</p>
+
+<ul>
+<li><p style="margin-bottom: 0cm;">
+  Description Tools
+</p>
+</li>
+<li><p style="margin-bottom: 0cm;">
+  Descriptor
+</p>
+</li>
+<li><p style="margin-bottom: 0cm;">
+  Description Scheme
+</p>
+</li>
+<li><p style="margin-bottom: 0cm;">
+  DDL – Description Definition<br /> Language
+</p>
+</li>
+<li><p style="margin-bottom: 0cm;">
+  System Tool
+</p></li>
+</ul>
+<p style="margin-bottom: 0cm;">
+  I metadati di un oggetto multimediale saranno descritti usando i &#8216;Description Tools&#8217;.<br /> I &#8216;Description Tools&#8217; a loro volta fanno uso del &#8216;Description Definition Language&#8217; (DDL) che è una estensione di XML Schema proprio per Mpeg-7.<br /> I &#8216;System Tool&#8217; non riguardano la definizione di metadati, ma la loro rappresentazione e trasmissione. Quindi il file XML è prodotto utilizzando solo &#8216;Description Tools&#8217; e &#8216;DDL&#8217;, e poi questo file XML può essere diffuso utilizzando le tecniche dei &#8216;System Tools&#8217;.
+</p>
+
+<h3 id="Description-Definition-Language-DDL-western"><a href="#Description-Definition-Language-DDL-western" class="headerlink" title="Description Definition Language (DDL) {.western}"></a>Description Definition Language (DDL) {.western}</h3><p style="margin-bottom: 0cm;">
+  Il DDL è basato su XML Schema Language e ne rappresenta una sorta di estensione orientata al multimedia. In particolare XML Schema non è stato progettato per le descrizioni di contenuti audio/video e necessita quindi di tipi di dato per array e matrici, e tipo di dato per gestire il tempo (BasicTimePoint e BasicDuration).
+</p>
+
+<p style="margin-bottom: 0cm;">
+  Ad esempio la definizione di TimeType è:
+</p>
+
+<pre lang="XML">&lt;!-- Definition of Time datatype --&gt;
+&lt;complexType name="TimeType"&gt;
+ &lt;sequence&gt;
+ &lt;choice&gt;
+ &lt;element name="TimePoint" type="mpeg7:TimePointType" /&gt;
+ &lt;element name="RelTimePoint" type="mpeg7:RelTimePointType" /&gt;
+ &lt;element name="RelIncrTimePoint" type="mpeg7:RelIncrTimePointType" /&gt;
+ &lt;/choice&gt;
+ &lt;choice minOccurs="0"&gt;
+ &lt;element name="Duration" type="mpeg7:durationType" /&gt;
+ &lt;element name="IncrDuration" type="mpeg7:IncrDurationType" /&gt;
+ &lt;/choice&gt;
+ &lt;/sequence&gt;
+&lt;/complexType&gt;
+
+&lt;!-- Definition of TimePoint datatype --&gt;
+&lt;simpleType name="TimePointType"&gt;
+ &lt;restriction base="mpeg7:basicTimePointType"&gt;
+ &lt;pattern
+ value="(\-?\d+(\-\d{2}(\-\d{2})?)?)?(T\d{2}(:\d{2}(:\d{2} (:\d+)?)?)?)?(F\d+)?(\-|\+\d{2}:\d{2})?" /&gt;
+ &lt;/restriction&gt;
+&lt;/simpleType&gt;
+
+&lt;!-- Definition of duration datatype --&gt;
+&lt;simpleType name="durationType"&gt;
+ &lt;restriction base="mpeg7:basicDurationType"&gt;
+ &lt;pattern
+ value="\-?P(\d+D)?(T(\d+H)?(\d+M)
+ ?(\d+S)?(\d+N)?)?( \d+F)?((\-|\+)\d{2}:\d{2}Z)?" /&gt;
+ &lt;/restriction&gt;
+&lt;/simpleType&gt;</pre>
+
+<p style="margin-bottom: 0cm;">
+  Usando queste definizioni di tipo contenute nella DDL, siamo in grado di descrivere il fatto che un certo filmato rappresenta un evento iniziato il 16 ottobre 2002 alle ore 17:00 in un paese con GTM+1, e dura 10 giorni, con questo codice:
+</p>
+
+<pre lang="XML">&lt;Time&gt;
+  &lt;TimePoint&gt;2002-10-16T17:00+01:00&lt;/TimePoint&gt;
+  &lt;Duration&gt;P10D&lt;/Duration&gt;
+&lt;/Time&gt;</pre>
+
+<p style="margin-bottom: 0cm;">
+  Ovviamente il DDL, oltre ai tipi qui introdotti (TimeType, TimePointType, e durationType), contiene molte altre definizioni che per brevità non tratteremo.
+</p>
+
+<h3 id="Description-Tools-western"><a href="#Description-Tools-western" class="headerlink" title="Description Tools {.western}"></a>Description Tools {.western}</h3><p style="margin-bottom: 0cm;">
+  I Description Tools comprendono &#8216;Descriptor&#8217; e &#8216;Descriptor Schemes&#8217; che preferisco non distinguere e trattarli insieme, raggruppandoli in base alle loro funzionalità:
+</p>
+
+<ul>
+<li><p style="margin-bottom: 0cm;">
+  <strong>Schema and Basic Elements</strong>:<br /> forniscono tutti i tipi di dato utilizzati nelle descrizioni, e la<br /> loro corrispondenza con i tag utilizzati in Mpeg-7;
+</p>
+</li>
+<li><p style="margin-bottom: 0cm;">
+  <strong>Content Description</strong>:<br /> rappresentazione dell&#8217;informazione audio/video sia a livello<br /> strutturale (basso livello), sia a livello semantico (alto livello);
+</p>
+</li>
+<li><p style="margin-bottom: 0cm;">
+  <strong>Content Management</strong>:<br /> permette di descrivere caratteristiche come creazione, formato, ed<br /> uso del materiale multimediale;
+</p>
+</li>
+<li><p style="margin-bottom: 0cm;">
+  <strong>Content Organization</strong>:<br /> Permette di gestire collezioni di materiale multimediale: si possono<br /> usare questi tool per implementare una base di dati XML di<br /> informazioni su materiale multimediale;
+</p>
+</li>
+<li><p style="margin-bottom: 0cm;">
+  <strong>Navigation and Access</strong>:<br /> aiutano l&#8217;accessibilità al file multimediale;
+</p>
+</li>
+<li><p style="margin-bottom: 0cm;">
+  <strong>User Interaction</strong>:<br /> permettono di memorizzare le preferenze dell&#8217;utente.
+</p></li>
+</ul>
+<p>Con i Description Tools siamo in grado di produrre due tipi di descrizioni Mpeg-7 valide: le &#8220;Complete Descriptions&#8221; che descrivono interamente un materiale multimediale come un video (l&#8217;esempio di file xml Mpeg-7 di questo articolo corrisponde ad una Complete Description perchè descrive completamente il video), e le &#8220;Descriptions Units&#8221; che non sono descrizioni intere ma dei componenti che possono far parte di una Complete Description.</p>
+<h2 id="Conclusioni-western"><a href="#Conclusioni-western" class="headerlink" title="Conclusioni {.western}"></a>Conclusioni {.western}</h2><p style="margin-bottom: 0cm;">
+  Non si è trattata la parte dei System Tools, inoltre della parte dei Description Tool si è data una semplice descrizione generale. I Description Tool sono la parte più corposa dello standard Mpeg-7, e studiarli tutti può richiedere tempo. Si suggerisce a tal proposito di utilizzare i documenti ufficiali dello standard o l&#8217;utilissima guida di Chiariglione all&#8217;indirizzo http://www.chiariglione.org/mpeg/ .
+</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/mpeg-7/" rel="tag"># mpeg-7</a>
+              <a href="/tags/xml/" rel="tag"># xml</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2009/10/26/very-brief-introduction-to-xml/" rel="prev" title="Very brief introduction to XML">
+      <i class="fa fa-chevron-left"></i> Very brief introduction to XML
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2009/10/29/xquery-queries-in-java/" rel="next" title="XQuery queries in Java">
+      XQuery queries in Java <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Metadati-western"><span class="nav-number">1.</span> <span class="nav-text">Metadati {.western}</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Componenti-di-Mpeg-7-western"><span class="nav-number">2.</span> <span class="nav-text">Componenti di Mpeg-7 {.western}</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Description-Definition-Language-DDL-western"><span class="nav-number">2.1.</span> <span class="nav-text">Description Definition Language (DDL) {.western}</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Description-Tools-western"><span class="nav-number">2.2.</span> <span class="nav-text">Description Tools {.western}</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conclusioni-western"><span class="nav-number">3.</span> <span class="nav-text">Conclusioni {.western}</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Saverio Ferrara"
+      src="/images/logo/logo.png">
+  <p class="site-author-name" itemprop="name">Saverio Ferrara</p>
+  <div class="site-description" itemprop="description">Hello, my name is Saverio and I’m a software engineer and a passionate software developer. Addicted to the Linux operating system, I love learning new things and working with all the open source technologies.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">43</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">106</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/fsferrara" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;fsferrara" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/fsferrara" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;fsferrara" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/fsferrara" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;fsferrara" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Saverio Ferrara</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://fsferrara.github.io/2009/10/27/describing-media-with-xml-and-mpeg-7/";
+    this.page.identifier = "2009/10/27/describing-media-with-xml-and-mpeg-7/";
+    this.page.title = "Describing media with XML and MPEG-7";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://fsferrara.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

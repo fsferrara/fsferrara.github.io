@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"fsferrara.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Relazione sull’articolo: “Intelligence without representation”Rodney A. Brooks Il campo dell’intelligenza artificiale partì con l’intento di replicare l’intelligenza umana in una macchina, ma negli an">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Relation - Intelligence without representation">
+<meta property="og:url" content="http://fsferrara.github.io/2007/09/08/relation-intelligence-without-representation/index.html">
+<meta property="og:site_name" content="fsferrara">
+<meta property="og:description" content="Relazione sull’articolo: “Intelligence without representation”Rodney A. Brooks Il campo dell’intelligenza artificiale partì con l’intento di replicare l’intelligenza umana in una macchina, ma negli an">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2007-09-07T22:00:00.000Z">
+<meta property="article:modified_time" content="2024-06-16T13:00:09.693Z">
+<meta property="article:author" content="Saverio Ferrara">
+<meta property="article:tag" content="ai">
+<meta property="article:tag" content="artificial-intelligence">
+<meta property="article:tag" content="computer-science">
+<meta property="article:tag" content="brooks">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://fsferrara.github.io/2007/09/08/relation-intelligence-without-representation/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Relation - Intelligence without representation | fsferrara</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">fsferrara</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/fsferrara" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://fsferrara.github.io/2007/09/08/relation-intelligence-without-representation/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/logo/logo.png">
+      <meta itemprop="name" content="Saverio Ferrara">
+      <meta itemprop="description" content="Hello, my name is Saverio and I’m a software engineer and a passionate software developer. Addicted to the Linux operating system, I love learning new things and working with all the open source technologies.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fsferrara">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Relation - Intelligence without representation
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2007-09-08 00:00:00" itemprop="dateCreated datePublished" datetime="2007-09-08T00:00:00+02:00">2007-09-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-06-16 15:00:09" itemprop="dateModified" datetime="2024-06-16T15:00:09+02:00">2024-06-16</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/history/" itemprop="url" rel="index"><span itemprop="name">history</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Relazione-sull’articolo-“Intelligence-without-representation”"><a href="#Relazione-sull’articolo-“Intelligence-without-representation”" class="headerlink" title="Relazione sull’articolo: “Intelligence without representation”"></a>Relazione sull’articolo: “Intelligence without representation”</h1><p>Rodney A. Brooks</p>
+<p>Il campo dell’intelligenza artificiale partì con l’intento di replicare l’intelligenza umana in una macchina, ma negli anni a seguire sono stati fatti pochi progressi. Nessuno parla di replicare l’intelligenza umana interamente, ma si sono specializzati vari campi come quello della rappresentazione della conoscenza, e la comprensione del linguaggio naturale; i sognatori specializzati nel campo dell’intelligenza artificiale sperano che in futuro tutti questi campi di studio si fondino creando così dei sistemi veramente intelligenti. Brooks non crede che l’intelligenza umana sia completamente replicabile poiché troppo complessa; bisognerebbe decomporla in vari sottomoduli, tutti interconnessi tra loro: Brooks usa proprio questo approccio per studiare creature semplici.</p>
+<span id="more"></span>
+
+<p>In questo articolo, risultato di una ricerca effettuata al M.I.T., Brooks illustra il suo approccio di costruire creature intelligenti non basate sulla rappresentazione, capaci di operare in modo autonomo (senza supervisione) nel proprio ambiente. Queste creature sono state costruite in modo incrementale, aggiungendo capacità nuove gradualmente; i vantaggi di questo approccio sono:</p>
+<ul>
+<li>Avere un sistema intelligente già dalle prime fasi;</li>
+<li>Concentrarsi solo sulla funzionalità (modulo) che si sta progettando;</li>
+<li>Semplicità di interconnettere i moduli tra loro mediante interfacce.</li>
+</ul>
+<p>Brooks inoltre osserva come gli essere viventi sulla terra si sono evoluti. In particolare pone in risalto il fatto che per molto tempo la terra è stata popolata da organismi “poco” intelligenti, e solo ultimamente si sono evoluti. In un certo senso paragona lo studio dell’intelligenza artificiale a come si sono realmente evoluti gli esseri viventi; c’è un lungo tempo iniziale impiegato a costruire le fondamenta dell’intelligenza, susseguito da un’improvvisa evoluzione. Durante la storia dell’intelligenza artificiale, essa è stata capace di risolvere vari problemi con appositi algoritmi, ma il più delle volte sono stati dei “successi” negati all’AI perché ritenuti problemi non strettamente legati all’intelligenza artificiale. D’altro canto non si è mai parlato di gravi “fallimenti” nell’intelligenza artificiale.</p>
+<p>Brooks pensa che i ricercatori di intelligenza artificiale si ingannano da soli non usando bene l’astrazione. Ad esempio una sedia può essere considerata come un semplice oggetto dove qualcuno di può sedere. Possono anche essere considerate la dimensione, il colore, la consistenza, e tantissime altre particolarità: la scelta delle caratteristiche “importanti” è data all’astrazione. Così che i sistemi di intelligenza artificiali hanno in input un insieme limitato di asserzioni che rappresentano il mondo esterno e lo stato interno; queste asserzioni però non riescono a descrivere il mondo nei minimi particolari, e il sistema intelligente lavora in un ambiente che non riproduce, dunque, il mondo reale alla perfezione. Il livello di dettaglio è dettato appunto dall’astrazione fatta dal costruttore del sistema.</p>
+<h2 id="Intelligenza-incrementale"><a href="#Intelligenza-incrementale" class="headerlink" title="Intelligenza incrementale"></a>Intelligenza incrementale</h2><p>Nel costruire le sue “creature”, Brooks non si basa sul comportamento degli umani (anche se afferma che gli umani, assieme agli altri esseri viventi, sono interessanti oggetti di studio), ma da via libera alla sua immaginazione. In particolare definisce un approccio ingegneristico per costruire le sue creature tenendo presente quattro punti fondamentali:</p>
+<ol>
+<li>Una creatura deve saper far fronte, in modo ragionevole, i cambiamenti del suo ambiente (dinamico);</li>
+<li>Una creatura deve essere robusta rispetto al suo ambiente: un piccolo cambiamento del suo “mondo” non deve portare ad un totale collasso del suo comportamento;</li>
+<li>Una creatura può avere più scopi da perseguire, ed in base alle circostanze sceglie quale perseguire;</li>
+<li>Una creatura deve avere almeno uno scopo da perseguire.</li>
+</ol>
+<p>Per rispettare questi quattro punti, c’è bisogno di decomporre un sistema complesso in più parti, e per fare ciò si possono seguire due strade: decomposizione in base alle funzioni, e decomposizione in base alle attività.</p>
+<h2 id="Decomposizione-in-base-alle-funzioni"><a href="#Decomposizione-in-base-alle-funzioni" class="headerlink" title="Decomposizione in base alle funzioni"></a>Decomposizione in base alle funzioni</h2><p>La decomposizione in base alle funzioni il tipo di decomposizione tradizionale, con un sistema centrale che prende in input una descrizione simbolica del mondo da moduli percettivi, e effettua azioni mediante moduli di azione. E’ chiaro che il sistema centrale non è altro che un elaboratore simbolico. La costruzione dei moduli percettivi è quella del sistema centrale, e quella dei moduli di azione è fatta spesso da gruppi di ricerca diversi, spesso anche in diversi laboratori.</p>
+<p>Il sistema centrale è a sua volta suddiviso in piccole parti, ad esempio “rappresentazione della conoscenza”, learning”, “ragionamento”, ed altri. Un gruppo di lavoro lavoro ad uno di questi moduli specificando gli input e gli output richiesti dal modulo stesso.</p>
+<p>Brooks non pensa che questo tipo di decomposizione sia ottimale per vari motivi, tra i più evidenti:</p>
+<ul>
+<li>C’è poca speranza per un modulo costruito indipendentemente di trovare posto in un sistema intelligente completo;</li>
+<li>L’azione scatenata da una percezione è connessa da una lunga catena di moduli interconnessi;</li>
+<li>Per testare l’effettivo funzionamento di un modulo abbiamo bisogno di tutti gli altri, e sarà difficile individuare malfunzionamenti.</li>
+</ul>
+<h2 id="Decomposizione-in-base-alle-attivita"><a href="#Decomposizione-in-base-alle-attivita" class="headerlink" title="Decomposizione in base alle attività"></a>Decomposizione in base alle attività</h2><p>Un altro modo di decomporre un sistema complesso è in base alle attività; questo modo di operare non prevede distinzione tra moduli periferici e sistema centrale. Ogni modulo (anche chiamato “strato” - layer) collega direttamente una percezione all’azione: uno strato in effetti descrive un modello di interazione con il mondo esterno.</p>
+<p>La maggior parte di questo articolo si basa proprio su questo approccio, in quanto ha il vantaggio di costruire sistemi (creature) in modo incrementale, aggiungendo nuovi strati agli strati già presenti. Si fa l’esempio di una creatura molto semplice, capace di evitare oggetti lanciati, e di non “inciampare” su ostacoli imprevisti. Una possibile scomposizione in attività di questa creatura è di avere due strati, uno che provvede ad evitare gli oggetti, ed un altro che riesce ad evitare ostacoli imprevisti. Il fatto di avere più stati fa si che variazioni del mondo esterno non portino ad un totale collasso del sistema.</p>
+<p>La chiave di questo approccio è che non c’è una fonte centrale di rappresentazione! Ogni strato è indipendente e persegue il suo obiettivo, e nel complesso un sistema può avere più obiettivi. Un osservatore esterno vede che la creatura si comporta in modo coerente, ma in realtà il suo comportamento è il risultato di insieme di varie interazioni tra gli strati. Minsky da un simile descrizione di come è generato il comportamento degli umani.<br>Per costruire le sue creature Brooks usa una precisa metodologia della quale risalta i punti più importanti:</p>
+<ul>
+<li>Mai semplificare i dettagli del mondo: anche se in futuro si pensa di adattare la creatura nel mondo reale, ci può essere qualche strato che si basa sulle ipotesi semplificate;</li>
+<li>Testare sempre ogni strato accuratamente, e per un lungo periodo nel mondo reale degli umani;</li>
+<li>Quando aggiungiamo un nuovo strato, trovare un errore è più semplice; infatti i vecchi strati sono tutti ben testati, quindi l’errore si trova nel nuovo stato oppure nel modo in cui esso interagisce con gli altri.</li>
+</ul>
+<h2 id="Limiti-dell’approccio-descritto"><a href="#Limiti-dell’approccio-descritto" class="headerlink" title="Limiti dell’approccio descritto"></a>Limiti dell’approccio descritto</h2><p>Seguendo questi punti chiave sono state costruite quattro creature (robot), che riescono ad operare nel mondo reale con gli umani. Queste creature hanno un massimo di tre strati; nelle simulazioni si è riusciti ad avere fino a sei strati paralleli, ma quanti strati si possono realmente avere? Il prossimo obiettivo è costruire una creatura capace di riconoscere le lattine vuote sulle scrivanie degli uffici, e riportarle in un deposito centrale. Per fare ciò si ha bisogno di molti strati: una possibile scomposizione è “evitare oggetti”, “seguire le pareti”, “riconoscere e usare le porte”, “riconoscere le scrivanie”, “riconoscere le lattine”, ed altri. Ovviamente tutti questi strati devono essere coordinati senza l’ausilio di un sistema di controllo centrale.</p>
+<p>Un altro punto interrogativo in questo approccio è riuscire ad avere sistemi con funzioni ad alto livello come l’apprendimento. Per adesso si è trovata una strada per aggiungere al sistema uno strato capace di “imparare dall’istinto” come ad esempio una farfalla riesce a distinguere un fiore dagli altri, ma è ancora poco.</p>
+<h2 id="Conclusioni"><a href="#Conclusioni" class="headerlink" title="Conclusioni"></a>Conclusioni</h2><p>La rappresentazione è stato il nodo centrale dell’intelligenza artificiale per almeno quindici anni; durante questa ricerca si è giunto ad un inaspettato risultato: nei modelli semplici di intelligenza la rappresentazione esplicita fa funzionare il sistema, ma non è l’astrazione giusta per costruire la parte portante del sistema intelligente. La decomposizione in base alle attività e l’approccio incrementale rappresentano il giusto approccio? I risultati si vedranno con il tempo e i risultati degli esperimenti nel mondo reale.</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/ai/" rel="tag"># ai</a>
+              <a href="/tags/artificial-intelligence/" rel="tag"># artificial-intelligence</a>
+              <a href="/tags/computer-science/" rel="tag"># computer-science</a>
+              <a href="/tags/brooks/" rel="tag"># brooks</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2006/11/17/linux-2_6-features/" rel="prev" title="Principali caratteristiche di un sistema Linux con kernel aggiornato alla versione 2.6.X">
+      <i class="fa fa-chevron-left"></i> Principali caratteristiche di un sistema Linux con kernel aggiornato alla versione 2.6.X
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2007/09/20/relation-on-representations-of-problems-of-reasoning-about-actions/" rel="next" title="Relation - On Representations of Problems of Reasoning about Actions">
+      Relation - On Representations of Problems of Reasoning about Actions <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Relazione-sull%E2%80%99articolo-%E2%80%9CIntelligence-without-representation%E2%80%9D"><span class="nav-number">1.</span> <span class="nav-text">Relazione sull’articolo: “Intelligence without representation”</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Intelligenza-incrementale"><span class="nav-number">1.1.</span> <span class="nav-text">Intelligenza incrementale</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Decomposizione-in-base-alle-funzioni"><span class="nav-number">1.2.</span> <span class="nav-text">Decomposizione in base alle funzioni</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Decomposizione-in-base-alle-attivita"><span class="nav-number">1.3.</span> <span class="nav-text">Decomposizione in base alle attività</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Limiti-dell%E2%80%99approccio-descritto"><span class="nav-number">1.4.</span> <span class="nav-text">Limiti dell’approccio descritto</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conclusioni"><span class="nav-number">1.5.</span> <span class="nav-text">Conclusioni</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Saverio Ferrara"
+      src="/images/logo/logo.png">
+  <p class="site-author-name" itemprop="name">Saverio Ferrara</p>
+  <div class="site-description" itemprop="description">Hello, my name is Saverio and I’m a software engineer and a passionate software developer. Addicted to the Linux operating system, I love learning new things and working with all the open source technologies.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">43</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">106</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/fsferrara" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;fsferrara" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/fsferrara" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;fsferrara" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/fsferrara" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;fsferrara" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Saverio Ferrara</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://fsferrara.github.io/2007/09/08/relation-intelligence-without-representation/";
+    this.page.identifier = "2007/09/08/relation-intelligence-without-representation/";
+    this.page.title = "Relation - Intelligence without representation";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://fsferrara.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

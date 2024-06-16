@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"fsferrara.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="In un sistema operativo, una shell (o terminale) è un programma che permette agli utenti di comunicare con il sistema e di avviare altri programmi. È una delle componenti principali di un sistema oper">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Windows-Linux commands cheat-sheet">
+<meta property="og:url" content="http://fsferrara.github.io/2009/07/01/windows-linux-commands-cheat-sheet/index.html">
+<meta property="og:site_name" content="fsferrara">
+<meta property="og:description" content="In un sistema operativo, una shell (o terminale) è un programma che permette agli utenti di comunicare con il sistema e di avviare altri programmi. È una delle componenti principali di un sistema oper">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2009-06-30T22:00:00.000Z">
+<meta property="article:modified_time" content="2024-06-16T13:00:09.697Z">
+<meta property="article:author" content="Saverio Ferrara">
+<meta property="article:tag" content="unix">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="dos">
+<meta property="article:tag" content="ms-dos">
+<meta property="article:tag" content="shell">
+<meta property="article:tag" content="windows">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://fsferrara.github.io/2009/07/01/windows-linux-commands-cheat-sheet/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Windows-Linux commands cheat-sheet | fsferrara</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">fsferrara</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/fsferrara" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://fsferrara.github.io/2009/07/01/windows-linux-commands-cheat-sheet/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/logo/logo.png">
+      <meta itemprop="name" content="Saverio Ferrara">
+      <meta itemprop="description" content="Hello, my name is Saverio and I’m a software engineer and a passionate software developer. Addicted to the Linux operating system, I love learning new things and working with all the open source technologies.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fsferrara">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Windows-Linux commands cheat-sheet
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2009-07-01 00:00:00" itemprop="dateCreated datePublished" datetime="2009-07-01T00:00:00+02:00">2009-07-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-06-16 15:00:09" itemprop="dateModified" datetime="2024-06-16T15:00:09+02:00">2024-06-16</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/system-administration/" itemprop="url" rel="index"><span itemprop="name">system administration</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>In un sistema operativo, una shell (o terminale) è un programma che permette agli utenti di comunicare con il sistema e di avviare altri programmi. È una delle componenti principali di un sistema operativo, insieme al kernel. La shell è l&#8217;ambiente di lavoro attraverso il quale è possibile impartire al computer comandi, richiedendo l&#8217;esecuzione di programmi.</p>
+<p>Esistono molti tipi di shell; quando si parla semplicemente di &#8220;shell&#8221;, o anche di &#8220;terminale&#8221;, si intende di solito una shell testuale con cui l&#8217;utente interagisce attraverso un terminale o un emulatore di terminale.</p>
+<span id="more"></span>
+
+
+
+<p>Una shell testuale è un programma dotato di un&#8217;interfaccia a riga di comando, che viene eseguito all&#8217;interno di un terminale testuale. L&#8217;utente digita un comando, ovvero richiede l&#8217;esecuzione di un programma, e il programma eseguito può interagire con l&#8217;utente e&#x2F;o mostrare dati sul terminale.</p>
+<p>Una delle più note shell testuali è il tradizionale &#8220;prompt dei comandi&#8221;, ben noto a quanti hanno familiarità con i sistemi operativi DOS (MS-DOS, DR-DOS, FreeDOS). Per gli utenti di MS-DOS e di alcuni dei sistemi Microsoft Windows la shell è il programma command.com. Anche i sistemi della famiglia Windows NT dispongono di una shell testuale, il programma cmd.exe.</p>
+<p>Nei sistemi operativi Unix e Unix-like esistono diverse shell testuali; tra le più note vi sono sicuramente Bash (Bourne-Again Shell) e la Korn shell, ma ne esistono altre come la C shell, con un insieme di funzionalità e caratteristiche di base in comune.</p>
+<p>Sono inoltre presenti potenti strumenti per collegare tra loro diversi programmi per svolgere compiti complessi, come le pipe e la redirezione. I programmi Unix più propensi ad essere collegati in questo modo sono detti filtri.</p>
+<p>Le moderne shell testuali posseggono diverse funzionalità ergonomiche, tra le quali:</p>
+<ul>
+<li><p>la cronologia dei comandi eseguiti (o command history), che permette di ripetere gli ultimi comandi digitati;</p>
+</li>
+<li><p>il completamento dei comandi (o completion), che permette di completare automaticamente nomi di programmi e di file</p>
+</li>
+<li><p>il job control, che permette di avviare in background più programmi o di sospenderli temporaneamente.</p>
+</li>
+</ul>
+<p>Le shell testuali dei sistemi Unix integrano un linguaggio di scripting con il quale è possibile scrivere veri e propri programmi che possono ad esempio automatizzare le operazioni di amministrazione di sistema, semplificandola. La sintassi di tale linguaggio è un&#8217;estensione di quella usata interattivamente, per cui chi è familiare con l&#8217;uso interattivo della shell trova facile e naturale creare degli script.</p>
+<p>Alcune delle funzionalità delle shell dei sistemi Unix sono state riprese in varia misura anche dalle shell testuali per i sistemi Microsoft Windows&#8230; Un utente che passa a Linux ha spesso bisogno di &#8220;tradurre&#8221; i comandi ms-dos in comandi per la shell bash. Bene&#8230; a me è capitato l&#8217;inverso, dopo 5 anni di utilizzo della shell Linux mi è capitato di gestire un server Windows 2003, e non conoscevo i comandi!!!</p>
+<p>Per questo ho letto un manuale, ed ho scoperto che possiamo trovare comandi simili nei due ambienti; eccoli riportati in tabella:</p>
+<table border="1" width="100%" cellspacing="1" cellpadding="1">
+  <tr align="center">
+    <td>
+      <strong>Descrizione</strong>
+    </td>
+
+<pre><code>&lt;td&gt;
+  &lt;strong&gt;Windows/Dos&lt;/strong&gt;
+&lt;/td&gt;
+
+&lt;td&gt;
+  &lt;strong&gt;Linux&lt;/strong&gt;
+&lt;/td&gt;
+</code></pre>
+  </tr>
+
+  <tr>
+    <td>
+      Listato dettagliato dei file della directory corrente
+    </td>
+
+<pre><code>&lt;td&gt;
+  DIR
+&lt;/td&gt;
+
+&lt;td&gt;
+  ls -l
+&lt;/td&gt;
+</code></pre>
+  </tr>
+
+  <tr>
+    <td>
+      Listato dei file della directory corrente
+    </td>
+
+<pre><code>&lt;td&gt;
+  DIR /W
+&lt;/td&gt;
+
+&lt;td&gt;
+  ls
+&lt;/td&gt;
+</code></pre>
+  </tr>
+
+  <tr>
+    <td>
+      Crea una directory Pippo
+    </td>
+
+<pre><code>&lt;td&gt;
+  MD Pippo
+&lt;/td&gt;
+
+&lt;td&gt;
+  mkdir Pippo
+&lt;/td&gt;
+</code></pre>
+  </tr>
+
+  <tr>
+    <td>
+      Cambia la directory corrente in ./Pippo
+    </td>
+
+<pre><code>&lt;td&gt;
+  CD Pippo
+&lt;/td&gt;
+
+&lt;td&gt;
+  cd Pippo
+&lt;/td&gt;
+</code></pre>
+  </tr>
+
+  <tr>
+    <td>
+      Rimuove la directory Pippo (solo se vuota)
+    </td>
+
+<pre><code>&lt;td&gt;
+  RD Pippo
+&lt;/td&gt;
+
+&lt;td&gt;
+  rmdir Pippo
+&lt;/td&gt;
+</code></pre>
+  </tr>
+
+  <tr>
+    <td>
+      Copia tutti i file nella directory Prova
+    </td>
+
+<pre><code>&lt;td&gt;
+  COPY *.* \Prova
+&lt;/td&gt;
+
+&lt;td&gt;
+  cp * /Prova
+&lt;/td&gt;
+</code></pre>
+  </tr>
+
+  <tr>
+    <td>
+      Copia ricorsivamente tutti i file nella directory Prova
+    </td>
+
+<pre><code>&lt;td&gt;
+  XCOPY *.* \PROVA /E /S
+&lt;/td&gt;
+
+&lt;td&gt;
+  cp -dpR * /prova
+&lt;/td&gt;
+</code></pre>
+  </tr>
+
+  <tr>
+    <td>
+      Rinomina Atricolo in Lettera
+    </td>
+
+<pre><code>&lt;td&gt;
+  REN Articolo Lettera
+&lt;/td&gt;
+
+&lt;td&gt;
+  mv Articolo Lettera
+&lt;/td&gt;
+</code></pre>
+  </tr>
+
+  <tr>
+    <td>
+      Muove tutti i file nella directory Prova
+    </td>
+
+<pre><code>&lt;td&gt;
+  MOVE *.* \PROVA
+&lt;/td&gt;
+
+&lt;td&gt;
+  mv * /prova
+&lt;/td&gt;
+</code></pre>
+  </tr>
+
+  <tr>
+    <td>
+      Cancella il file Articolo
+    </td>
+
+<pre><code>&lt;td&gt;
+  DEL Articolo
+&lt;/td&gt;
+
+&lt;td&gt;
+  rm Articolo
+&lt;/td&gt;
+</code></pre>
+  </tr>
+
+  <tr>
+    <td>
+      Cancella ricorsivamente una directory (non incluso in windows xp e 2003)
+    </td>
+
+<pre><code>&lt;td&gt;
+  DELTREE Temp
+&lt;/td&gt;
+
+&lt;td&gt;
+  rm -R Temp
+&lt;/td&gt;
+</code></pre>
+  </tr>
+
+  <tr>
+    <td>
+      Visualizza il contenuto di Lettera
+    </td>
+
+<pre><code>&lt;td&gt;
+  TYPE Lettera
+&lt;/td&gt;
+
+&lt;td&gt;
+  cat Lettera
+&lt;/td&gt;
+</code></pre>
+  </tr>
+
+  <tr>
+    <td>
+      Visualizza il contenuto di Lettera dividendolo per schermate
+    </td>
+
+<pre><code>&lt;td&gt;
+  TYPE LETTERA | MORE
+&lt;/td&gt;
+
+&lt;td&gt;
+  cat lettera | more
+&lt;/td&gt;
+</code></pre>
+  </tr>
+
+  <tr>
+    <td>
+      Aiuto sui comandi
+    </td>
+
+<pre><code>&lt;td&gt;
+  HELP HELP
+&lt;/td&gt;
+
+&lt;td&gt;
+  man man
+&lt;/td&gt;
+</code></pre>
+  </tr>
+
+  <tr>
+    <td>
+      Formatta un floppy
+    </td>
+
+<pre><code>&lt;td&gt;
+  FORMAT A: /N:18 /T:80
+&lt;/td&gt;
+
+&lt;td&gt;
+  fdformat /dev/fd0u1440
+&lt;/td&gt;
+</code></pre>
+  </tr>
+
+  <tr>
+    <td>
+      Copia un floppy in un altro usando due drive
+    </td>
+
+<pre><code>&lt;td&gt;
+  DISKCOPY A: B:
+&lt;/td&gt;
+
+&lt;td&gt;
+  cp /dev/fd0 /dev/fd1
+&lt;/td&gt;
+</code></pre>
+  </tr>
+
+  <tr>
+    <td>
+      Copia un floppy in un altro usando un solo drive
+    </td>
+
+<pre><code>&lt;td&gt;
+  DISKCOPY A: A:
+&lt;/td&gt;
+
+&lt;td&gt;
+  cp /dev/fd0 /tmp/pippo ; cp /tmp/pippo /dev/fd0
+&lt;/td&gt;
+</code></pre>
+  </tr>
+
+  <tr>
+    <td>
+      Carica le impostazione della tastiera italiana
+    </td>
+
+<pre><code>&lt;td&gt;
+  KEYB IT
+&lt;/td&gt;
+
+&lt;td&gt;
+  loadkeys it
+&lt;/td&gt;
+</code></pre>
+  </tr>
+
+  <tr>
+    <td>
+      Pulisce lo schermo
+    </td>
+
+<pre><code>&lt;td&gt;
+  CLS
+&lt;/td&gt;
+
+&lt;td&gt;
+  clear
+&lt;/td&gt;
+</code></pre>
+  </tr>
+
+  <tr>
+    <td>
+      Cerca la stringa &#8220;saluti&#8221; nel file Primo.doc
+    </td>
+
+<pre><code>&lt;td&gt;
+  FIND &amp;#8220;saluti&amp;#8221; Primo.doc
+&lt;/td&gt;
+
+&lt;td&gt;
+  grep &amp;#8220;saluti&amp;#8221; Primo.doc
+&lt;/td&gt;
+</code></pre>
+  </tr>
+
+  <tr>
+    <td>
+      Partizionare e gestire i dischi
+    </td>
+
+<pre><code>&lt;td&gt;
+  DiskPart
+&lt;/td&gt;
+
+&lt;td&gt;
+  [c]fdisk
+&lt;/td&gt;
+</code></pre>
+  </tr>
+
+  <tr>
+    <td>
+      Formattare le partizioni
+    </td>
+
+<pre><code>&lt;td&gt;
+  FORMAT
+&lt;/td&gt;
+
+&lt;td&gt;
+  mkfs.(tipo-fs)
+&lt;/td&gt;
+</code></pre>
+  </tr>
+
+  <tr>
+    <td>
+      Cerca la stringa &#8220;saluti&#8221; in tutti i dile .doc
+    </td>
+
+<pre><code>&lt;td&gt;
+  FOR %A IN (*.DOC) DO&lt;br /&gt; FIND &amp;#8220;saluti&amp;#8221; %A
+&lt;/td&gt;
+
+&lt;td&gt;
+  grep &amp;#8220;saluti&amp;#8221; *.doc
+&lt;/td&gt;
+</code></pre>
+  </tr>
+
+  <tr>
+    <td>
+      Visualizza le variabili di ambiente
+    </td>
+
+<pre><code>&lt;td&gt;
+  SET
+&lt;/td&gt;
+
+&lt;td&gt;
+  env
+&lt;/td&gt;
+</code></pre>
+  </tr>
+
+  <tr>
+    <td>
+      Setta una variabile d&#8217;ambiente temporanea
+    </td>
+
+<pre><code>&lt;td&gt;
+  SET Var=Value
+&lt;/td&gt;
+
+&lt;td&gt;
+  export Var=Value
+&lt;/td&gt;
+</code></pre>
+  </tr>
+
+  <tr>
+    <td>
+      Cancella una variabile d&#8217;ambiente temporanea
+    </td>
+
+<pre><code>&lt;td&gt;
+  SET Var=
+&lt;/td&gt;
+
+&lt;td&gt;
+  unset Var
+&lt;/td&gt;
+</code></pre>
+  </tr>
+
+  <tr>
+    <td>
+      Elenca i driver caricati nel sistema
+    </td>
+
+<pre><code>&lt;td&gt;
+  DRIVERQUERY
+&lt;/td&gt;
+
+&lt;td&gt;
+  lsmod (non solo per i driver)
+&lt;/td&gt;
+</code></pre>
+  </tr>
+
+  <tr>
+    <td>
+      Visualizza il tempo di funzionamento del sistema
+    </td>
+
+<pre><code>&lt;td&gt;
+  SYSTEMINFO
+&lt;/td&gt;
+
+&lt;td&gt;
+  uptime
+&lt;/td&gt;
+</code></pre>
+  </tr>
+
+  <tr>
+    <td>
+      Visualizza lo stato della memoria RAM
+    </td>
+
+<pre><code>&lt;td&gt;
+  MEM
+&lt;/td&gt;
+
+&lt;td&gt;
+  free
+&lt;/td&gt;
+</code></pre>
+  </tr>
+
+  <tr>
+    <td>
+      Schedulare processi in modo automatico.<br /> Notare che questo è un modo per far eseguire a windows processi in background
+    </td>
+
+<pre><code>&lt;td&gt;
+  schtasks&lt;br /&gt; at
+&lt;/td&gt;
+
+&lt;td&gt;
+  cron
+&lt;/td&gt;
+</code></pre>
+  </tr>
+</table>
+
+<p>La lista non finisce qua, questi sono solo i comandi più importanti :-) , con la quale potete tradurre comandi per DOS in comandi per Linux, e comandi per Linux in comandi per DOS. Se sei un nuovo utente, ti consiglio la shell di Linux, molto più espressiva e personalizzabile!</p>
+<p>Se conoscete altri comandi utili alla gestione dei sistemi, commentate pure questo articolo. CIAO!!!</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/unix/" rel="tag"># unix</a>
+              <a href="/tags/linux/" rel="tag"># linux</a>
+              <a href="/tags/dos/" rel="tag"># dos</a>
+              <a href="/tags/ms-dos/" rel="tag"># ms-dos</a>
+              <a href="/tags/shell/" rel="tag"># shell</a>
+              <a href="/tags/windows/" rel="tag"># windows</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2009/06/27/web-and-privacy/" rel="prev" title="The Web and the problem of Privacy">
+      <i class="fa fa-chevron-left"></i> The Web and the problem of Privacy
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2009/07/03/multidimensional-arrays-in-c/" rel="next" title="Multidimensional Arrays in C">
+      Multidimensional Arrays in C <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Saverio Ferrara"
+      src="/images/logo/logo.png">
+  <p class="site-author-name" itemprop="name">Saverio Ferrara</p>
+  <div class="site-description" itemprop="description">Hello, my name is Saverio and I’m a software engineer and a passionate software developer. Addicted to the Linux operating system, I love learning new things and working with all the open source technologies.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">43</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">106</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/fsferrara" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;fsferrara" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/fsferrara" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;fsferrara" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/fsferrara" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;fsferrara" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Saverio Ferrara</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://fsferrara.github.io/2009/07/01/windows-linux-commands-cheat-sheet/";
+    this.page.identifier = "2009/07/01/windows-linux-commands-cheat-sheet/";
+    this.page.title = "Windows-Linux commands cheat-sheet";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://fsferrara.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>
