@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"fsferrara.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="La nascita dell&#8217;informatica. Il primo kernel Linux è stato pubblicato nel 1991, l’annuncio del primo sistema operativo della famiglia Windows risale al 1983, la nascita dell&#8217;informatica co">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Birth of Computer Science">
+<meta property="og:url" content="http://fsferrara.github.io/2013/10/20/the-birth-of-computer-science/index.html">
+<meta property="og:site_name" content="fsferrara">
+<meta property="og:description" content="La nascita dell&#8217;informatica. Il primo kernel Linux è stato pubblicato nel 1991, l’annuncio del primo sistema operativo della famiglia Windows risale al 1983, la nascita dell&#8217;informatica co">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2013-10-19T22:00:00.000Z">
+<meta property="article:modified_time" content="2024-08-11T13:04:04.825Z">
+<meta property="article:author" content="Saverio Ferrara">
+<meta property="article:tag" content="computer-science">
+<meta property="article:tag" content="turing">
+<meta property="article:tag" content="frege">
+<meta property="article:tag" content="gödel">
+<meta property="article:tag" content="hilbert">
+<meta property="article:tag" content="kant">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://fsferrara.github.io/2013/10/20/the-birth-of-computer-science/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>The Birth of Computer Science | fsferrara</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">fsferrara</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/fsferrara" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://fsferrara.github.io/2013/10/20/the-birth-of-computer-science/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/logo/logo.png">
+      <meta itemprop="name" content="Saverio Ferrara">
+      <meta itemprop="description" content="Hello, my name is Saverio and I'm a software engineer and a passionate software developer. Addicted to the Linux operating system, I love learning new things and working with all the open source technologies.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fsferrara">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          The Birth of Computer Science
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2013-10-20 00:00:00" itemprop="dateCreated datePublished" datetime="2013-10-20T00:00:00+02:00">2013-10-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-08-11 15:04:04" itemprop="dateModified" datetime="2024-08-11T15:04:04+02:00">2024-08-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/history/" itemprop="url" rel="index"><span itemprop="name">history</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>La nascita dell&#8217;informatica.</p>
+<p>Il primo kernel Linux è stato pubblicato nel 1991, l’annuncio del primo sistema operativo della famiglia Windows risale al 1983, la nascita dell&#8217;informatica come disciplina scientifica risale al 1953, il primo calcolatore programmabile digitale al 1941 (Z3 di Zuse); in realtà tutto scaturisce da una storia molto più lunga che parte dagli studi di Leibniz quando non esistevano i calcolatori digitali, e coinvolge grandi studiosi come Frege, Gödel, e Turing.</p>
+<span id="more"></span>
+
+<h2 id="Gottfried-Wilhelm-von-Leibniz"><a href="#Gottfried-Wilhelm-von-Leibniz" class="headerlink" title="Gottfried Wilhelm von Leibniz"></a>Gottfried Wilhelm von Leibniz</h2><p>Leibniz (Lipsia, 21 giugno 1646 – Hannover, 14 novembre 1716), è stato un filosofo, matematico, e logico tedesco. Ai suoi tempi la logica era quella Aristotelica, quindi del tipo soggetto-predicato.</p>
+<p>Leibniz fu il primo ad intuire l’<em style="mso-bidi-font-style: normal;">elaborazione simbolica</em> con il suo progetto della <strong>Characteristica Universalis</strong>. L’idea alla base della Cu (Characteristica Universalis) era quella di creare un linguaggio universale per migliorare le comunicazioni politiche, religiose, e commerciali; quindi la Cu doveva essere un linguaggio in grado di guidare ogni sorta di ragionamento.</p>
+<p>Il progetto della Cu prevedeva:</p>
+<ol>
+<li><!-- [if !supportLists]-->Una
+
+<strong>Lista</strong> dei concetti primitivi e simboli corrispondenti</li>
+<li><!-- [if !supportLists]--></li>
+</ol>
+<pre><code>&lt;!--[endif]--&gt;Un’
+
+**Arte Combinatoria** utile a combinare i concetti primitivi:
+  1. &lt;!-- [if !supportLists]--&gt;
+
+    &lt;!--[endif]--&gt;
+
+    &lt;span style=&quot;text-decoration: underline;&quot;&gt;Ars Iudicandi&lt;/span&gt;: procedura di decisione della verità
+  2. &lt;!--[endif]--&gt;
+
+    &lt;span style=&quot;text-decoration: underline;&quot;&gt;Ars Invenendi&lt;/span&gt;: procedura di decisione generativa
+</code></pre>
+<p>Notiamo che l’Ars Iudicandi e l’Ars Invenendi <em>prevedevano l’introduzione nel sistema della Cu di due procedure effettive</em>, ovvero ci doveva essere un procedimento preciso (algoritmo) sia per decidere la verità di una sentenza del linguaggio (Ars Iudicandi), sia per ottenere altre verità dalle verità che già conosciamo (Ars Invenendi).</p>
+<p>I concetti di <strong>Procedura Effettiva</strong> e <strong>Calcolo Simbolico</strong> sono dunque nati da quest’idea di Leibniz.</p>
+<p>Purtroppo il programma di sviluppare questo linguaggio è solo un progetto di Leibniz che non è mai stato sviluppato. Abbiamo solo dei documenti e schizzi a riguardo, che saranno poi usati da Frege.</p>
+<p>Qui notiamo che l’Ars Iudicandi prevede una sorta di predicato dim(x,y), vero quando x è (il numero di) una dimostrazione della formula (di numero) y. Quindi è quasi un esempio compiuto di <strong>Sistema Formale</strong>.</p>
+<h2 id="Immanuel-Kant"><a href="#Immanuel-Kant" class="headerlink" title="Immanuel Kant"></a>Immanuel Kant</h2><p>Kant (Königsberg, 22 aprile 1724 – Königsberg, 12 febbraio 1804) è stato un filosofo tedesco. Egli scrive un’opera alla fine del ‘700 nella quale diceva: “_La matematica è una cosa certa, e noi dobbiamo studiare solo come arrivare a questa certezza. Inoltre ci si può chiedere: perché la matematica è certa? Qual è il suo fondamento?_”.</p>
+<p>Frege proverà a rispondere a questa domanda.</p>
+<h2 id="Friedrich-Ludwig-Gottlob-Frege"><a href="#Friedrich-Ludwig-Gottlob-Frege" class="headerlink" title="Friedrich Ludwig Gottlob Frege"></a>Friedrich Ludwig Gottlob Frege</h2><p>Frege (Wismar, 8 novembre 1848 – Bad Kleinen, 26 luglio 1925) è stato un matematico, logico e filosofo tedesco, padre della logica matematica moderna.</p>
+<p>Frege voleva rispondere alla domanda posta da Kant (<em>“Perché la matematica è certa?”</em>), usando l’intuizione che aveva avuto Leibniz nella sua Characteristica Universalis.</p>
+<p>Qui è introdotta la <strong>Tesi Logicista</strong> (o <strong>Programma Logicista</strong>):</p>
+<p align="center">
+  “La Matematica è riconducibile alla Logica”
+</p>
+
+<p>Si afferma che la matematica è logica! Per portare avanti il Programma Logicista, Frege introduce la logica del primo e del secondo ordine come la conosciamo attualmente. Lui la chiamava <em>Ideografia</em>.</p>
+<p>Nel 1879 Frege propose l’<em style="mso-bidi-font-style: normal;">Ideografia</em> un “linguaggio in formule del pensiero puro, a imitazione di quello aritmetico” in cui dice: il modo più sicuro di condurre una dimostrazione è quello puramente logico, il quale astrae dalla natura particolare delle cose e si basa soltanto sulle leggi sulle quali si fonda ogni conoscenza.</p>
+<p>A supporto della Tesi Logicista, fu introdotto il primo esempio compiuto di <strong>Sistema Formale</strong>, ovvero un sistema che vincola il processo dimostrativo in modo tale che è sempre possibile riconoscere mediante un procedimento algoritmico se una qualsiasi configurazione di simboli è una dimostrazione oppure no.</p>
+<p>Questo <em>sistema formale</em> prevedeva:</p>
+<ol>
+<li><!-- [if !supportLists]-->Insieme Finito di</li>
+</ol>
+<pre><code>**Assiomi Logici**.
+</code></pre>
+<ol start="2">
+<li><!-- [if !supportLists]--></li>
+</ol>
+<pre><code>&lt;!--[endif]--&gt;Insieme Finito di
+
+**Regole di Inferenza** che, senza introdurre conoscenza implicita, ci permettano di dedurre gli assiomi della Matematica dall’insieme di _Assiomi Logici_.
+</code></pre>
+<p>Inoltre ci sono due importanti <strong>Condizioni di Effettività</strong> che specificano un <em>Sistema Formale</em>:</p>
+<ul>
+<li><!-- [if !supportLists]-->L’insieme degli Assiomi Logici è
+
+<strong>Effettivamente Decidibile</strong></li>
+<li>L’insieme delle Dimostrazioni Logiche è <strong>Effettivamente Decidibile</strong></li>
+</ul>
+<p>In quest’ultima richiesta si intravede qualcosa del teorema di Gödel; si chiede che il predicato dim(x,y) sia effettivamente decidibile!</p>
+<p>Come in Leibniz, anche questa volta ci deve essere un procedimento formale (Algoritmo) che ci assicuri le condizioni di effettività. Ma questa volta le condizioni di effettività sono espressamente richieste.</p>
+<p>Inoltre Leibniz e Frege hanno obiettivi diversi, il primo vuole un linguaggio universale, mentre il secondo vuole verificare la certezza della matematica (un problema più piccolo rispetto alla definizione di una lingua universale); entrambi usano la logica come strumento per raggiungere il proprio fine epistemologico.</p>
+<h2 id="Bertrand-Arthur-William-Russell"><a href="#Bertrand-Arthur-William-Russell" class="headerlink" title="Bertrand Arthur William Russell"></a>Bertrand Arthur William Russell</h2><p>Frege prosegue con il suo programma logicista puntando a dimostrare gli assiomi della matematica (gli assiomi di Peano) partendo solo dagli <em>assiomi logici</em>. Nel sistema formale definito da Frege si possono individuare:</p>
+<ul>
+<li>Il principio di <strong>Coestensione</strong>: “data una proprietà P, esiste l’insieme y di tutti gli x che godono della proprietà P”</li>
+<li><!-- [if !supportLists]-->Il principio del
+
+<strong>Terzo Escluso</strong>: almeno uno tra <em>x</em> e <em>not</em> <em>x</em> deve essere vero.</li>
+</ul>
+<p>Russell (Trellech, 18 maggio 1872 – Penrhyndeudraeth, 2 febbraio 1970), è stato un filosofo, logico e matematico gallese. Si interessò al lavoro di Frege, e formulò il famoso Paradosso di Russell, causa della caduta del Programma Logicista.</p>
+<p><span style="text-decoration: underline;">Paradosso di Russell</span>: Supponiamo la proprietà: <em>not</em><em>(x appartiene ad x)</em></p>
+<p>Un elemento che gode di questa proprietà non appartiene a se stesso. Per il principio della coestensione c’è l’insieme di tutti gli elementi che godono di questa proprietà. Quindi diciamo y l’insieme di tutti gli elementi che non appartengono a se stessi. Adesso ci chiediamo: y appartiene a se stesso?</p>
+<ul>
+<li><!-- [if !supportLists]-->Se y appartiene a se stesso allora gode della proprietà di non appartenere a se stesso.
+</li>
+<li><!-- [if !supportLists]-->Se y non appartiene a se stesso allora per come è definito deve appartenere a se stesso</li>
+</ul>
+<p>In entrambi i casi, grazie al principio del terzo escluso, giungiamo ad una contraddizione (questa è un’<strong>antinomia</strong>).</p>
+<p>Russell nel 1901 formulò il paradosso e si rese conto delle conseguenze che avrebbe avuto per il programma logicista. Non esitò a mettersi in contatto con Frege con una lettera nell&#8217;estate del 1902 in cui illustra il paradosso.</p>
+<p>Frege prese atto delle conseguenze distruttive per il sistema che aveva costruito in quegli anni e decise di scrivere un&#8217;appendice ai suoi Principî in cui confessava il fallimento della sua opera.</p>
+<p>Siamo davanti ad una scelta:</p>
+<p class="MsoListParagraph">
+  <!-- [if !supportLists]-->&#8211;
+
+<p>  <em> rinunciare al principio del terzo escluso</em>: e quindi rinunciare alla logica classica</p>
+</p>
+
+<p>oppure</p>
+<p class="MsoListParagraph">
+  <!-- [if !supportLists]-->&#8211;
+
+<p>  <em> rinunciare al principio di coestensione</em>: ma in questo caso non si riescono più a derivare gli assiomi della matematica</p>
+</p>
+
+<p>Qui il Programma Logicista, e sorge il <span style="text-decoration: underline;">problema della certezza della matematica</span>.</p>
+<p>A seguire ci saranno due programmi che puntano a risolvere il problema della certezza della matematica: Il <strong>Programma Intuizionista</strong>, ed il <strong>Programma di Hilbert</strong>.</p>
+<h2 id="Luitzen-Egbertus-Jan-Brouwer"><a href="#Luitzen-Egbertus-Jan-Brouwer" class="headerlink" title="Luitzen Egbertus Jan Brouwer"></a>Luitzen Egbertus Jan Brouwer</h2><p>Brouwer (Overschie, 27 febbraio 1881 – Blaricum, 2 dicembre 1966) è stato un matematico olandese. Fondò la <strong>Scuola Intuizionista (o costruttivista)</strong>, nella quale dubitò</p>
+<p>del <em>principio del terzo escluso</em>.</p>
+<p>I requisiti del Programma Intuizionista erano:</p>
+<ol>
+<li><!--[endif]-->Eliminazione del Principio del Terzo Escluso su totalità infinite.
+</li>
+<li><p>Interpretazione delle dimostrazioni in modo Costruttivista: cioè una dimostrazione di “esiste x tale che P(x)” deve effettivamente esibire un elemento y per il quale è vero P(y).</p>
+</li>
+</ol>
+<p>Quindi gli intuizionisti puntano a limitare la matematica, eliminando l’uso di proposizioni ideali, come l’infinito in atto (o infinito attuale), che hanno permesso alla matematica di raggiungere ottimi risultati.</p>
+<h2 id="David-Hilbert"><a href="#David-Hilbert" class="headerlink" title="David Hilbert"></a>David Hilbert</h2><p>Hilbert (Königsberg, 23 gennaio 1862 – Gottinga, 14 febbraio 1943) è stato un matematico tedesco. Rispose agli intuizionisti con il cosiddetto <strong>Programma di Hilbert</strong>.</p>
+<p>Al contrario di Frege che voleva dimostrare gli assiomi matematici patendo dagli assiomi logici, Hilbert voleva formalizzare la matematica con degli assiomi e poi verificare la coerenza delle teorie matematiche formalizzate.</p>
+<p>Quindi:</p>
+<ol>
+<li><!-- [if !supportLists]--></li>
+</ol>
+<pre><code>&lt;!--[endif]--&gt;Formalizzare tutte le teorie matematiche
+
+_“T”_ con sistemi formali T
+</code></pre>
+<ol start="2">
+<li><!-- [if !supportLists]--></li>
+</ol>
+<pre><code>&lt;!--[endif]--&gt;Dimostrare la coerenza di tali sistemi T con
+
+&lt;span style=&quot;text-decoration: underline;&quot;&gt;metodi matematici finitisti&lt;/span&gt;.
+</code></pre>
+<p>Si comincio con la più semplice delle teorie, ossia con l’Aritmetica Elementare. I <em>metodi matematici finitisti</em> non sono mai stati definiti da Hilbert con precisione. Di sicuro sono metodi matematici in cui vengono chiesti i requisiti intuizionisti: quindi no al terzo escluso su totalità infinite e interpretazione costruttivista delle dimostrazioni. Molti concordano che i metodi finitisti sono inclusi nell’aritmetica Primitiva Ricorsiva dove valgono gli assiomi di Peano che descrivono l’aritmetica elementare.</p>
+<p>Nasce la meta-matematica, ossia la parte della matematica che consente di studiare la matematica da punti di vista generali. Stiamo cioè usando la matematica stessa per risolvere il <span style="text-decoration: underline;">problema della certezza della matematica</span>.</p>
+<p>Nella metamatematica possiamo studiare varie proprietà dei sistemi formali, ad esempio:</p>
+<ul>
+<li><!-- [if !supportLists]-->
+
+<strong>Coerenza</strong>: se T dimostra A allora non può dimostrare not A</li>
+<li><!-- [if !supportLists]-->
+
+<strong>Correttezza</strong>: se T dimostra A allora A è vero nella teoria <em style="mso-bidi-font-style: normal;">“T”</em></li>
+<li><strong>Completezza</strong>: se A è vero nella teoria <em>“T”</em> allora T dimostra A</li>
+</ul>
+<p>Notiamo che la correttezza di un sistema formale T implica la sua coerenza.</p>
+<p>Ricapitolando Hilbert con il suo <strong>Programma della Coerenza</strong> (che è solo una parte del <strong>Programma di Hilbert</strong>) vuole dimostrare la coerenza della matematica utilizzando la matematica stessa.</p>
+<h2 id="Principia-Mathematica-PM"><a href="#Principia-Mathematica-PM" class="headerlink" title="Principia Mathematica (PM)"></a>Principia Mathematica (PM)</h2><p>I Principia Mathematica, scritti da Russell e Whitehead tra il 1910 e il 1913, rappresentano un’importante tentativo di formalizzare la matematica con la logica. Traggono origine dal lavoro di Frege.</p>
+<p>Chiameremo PM il sistema formale formalizzato in questo lavoro.</p>
+<h2 id="Kurt-Godel"><a href="#Kurt-Godel" class="headerlink" title="Kurt Gödel"></a>Kurt Gödel</h2><p>Gödel (Brno, 28 aprile 1906 – Princeton, 14 gennaio 1978) è stato un matematico, logico e filosofo statunitense di origine austro-ungarica, noto soprattutto per i suoi lavori sull&#8217;incompletezza delle teorie matematiche. Gödel è ritenuto uno dei più grandi logici di tutti i tempi insieme a Frege e Aristotele.</p>
+<p>Gödel si interessa al Programma di Hilbert, e formula il suo <strong>primo teorema di incompletezza</strong>:</p>
+<p style="margin-left: 35.4pt;">
+  <em>Se PM è coerente, allora esiste una formula G nel linguaggio L(PM) tale che G è vera e non è dimostrabile in PM ne G ne not G</em>
+</p>
+
+<p>Ne segue come corollario il <strong>secondo teorema di incompletezza</strong>:</p>
+<p style="margin-left: 35.4pt;">
+  <em>Se PM è coerente, e dato che la coerenza di PM è esprimibile all’interno di PM stesso (consis(PM) appartiene a L(PM)) allora in PM non è dimostrabile consis(PM)</em>
+</p>
+
+<p>Il <strong>secondo teorema di incompletezza</strong> è quello che fa cadere il <strong>Programma di Hilbert</strong> poiché afferma che non possiamo dimostrare la coerenza di PM all’interno di PM stesso,</p>
+<p>cioè non possiamo dimostrare la coerenza della matematica all’interno della matematica stessa.</p>
+<p>Però i teoremi di incompletezza si riferiscono al <strong>Sistema Formale</strong> PM. Per far cadere definitivamente il Programma di Hilbert bisognava generalizzare i teoremi di incompletezza a qualsiasi <strong>Sistema Formale</strong> che contiene l’aritmetica elementare.</p>
+<h2 id="Generalizzazione-dei-Teoremi-di-Incompletezza"><a href="#Generalizzazione-dei-Teoremi-di-Incompletezza" class="headerlink" title="Generalizzazione dei Teoremi di Incompletezza"></a>Generalizzazione dei Teoremi di Incompletezza</h2><p>Vogliamo generalizzare i teoremi di incompletezza in questo modo:</p>
+<p><em>Per ogni sistema formale S tale che:</em></p>
+<ol>
+<li><!-- [if !supportLists]--></li>
+</ol>
+<pre><code>_S contiene P (Aritmetica di Peano)_
+</code></pre>
+<ol start="2">
+<li><!-- [if !supportLists]--></li>
+</ol>
+<pre><code>_S soddisfa la **condizioni di effettività** di Frege_
+  * &lt;!-- [if !supportLists]--&gt;
+
+     _a) L’insieme degli assiomi è effettivamente decidibile_
+  * &lt;!-- [if !supportLists]--&gt;
+
+    _b) L’insieme delle dimostrazioni è effettivamente decidibile_
+</code></pre>
+<ol start="3">
+<li><!-- [if !supportLists]-->
+
+<em>S è coerente</em></li>
+</ol>
+<p><em>Allora per S valgono i teoremi di incompletezza</em></p>
+<p>Le ipotesi 1 e 3 sono ben precise. L’ipotesi 2.a e 2.b invece no! Infatti esse chiedono di avere due funzioni <strong>effettivamente calcolabili</strong> f(x) e g(Y) le quali ci decidano rispettivamente le formule ben formate di S e le dimostrazioni di S.</p>
+<p>Questo è il punto di snodo tra i fondamenti della matematica e la nascita dell’informatica. Infatti una funzione è effettivamente calcolabile se esiste un algoritmo per essa.</p>
+<p>Ma quale’è il concetto di algoritmo? Quali sono le funzioni calcolabili mediante un procedimento di calcolo (algoritmo)?</p>
+<p>Tutt’ora non esiste un concetto di algoritmo preciso. La classe di tutti gli algoritmi è delineata con la tesi di Church-Turing, la quale essendo una tesi non può essere dimostrata.</p>
+<h2 id="Alan-Mathison-Turing"><a href="#Alan-Mathison-Turing" class="headerlink" title="Alan Mathison Turing"></a>Alan Mathison Turing</h2><p>Turing (Londra, 23 giugno 1912 – Wilmslow, 7 giugno 1954) è stato un matematico, logico e crittanalista britannico, considerato uno dei padri dell&#8217;informatica.</p>
+<p>Lavorò alla generalizzazione del teorema di Gödel, tentando di rispondere alla domanda: <em>“che cos’è una funzione parzialmente calcolabile mediante un procedimento di calcolo (algoritmo)?”</em>.</p>
+<p>Church a quei tempi lavorava alla stessa domanda definendo la classe delle funzioni matematiche PRF, per poi arrivare ad un procedimento di calcolo (λ-calcolo).</p>
+<p>Turing invece cominciò questo lavoro cominciando a definire il procedimento di calcolo (definito dalla <strong>Macchina di Turing</strong>), per poi arrivare alla classe di tutte le funzioni calcolabili da una <strong>Macchina di Turing</strong>.</p>
+<p>Per definire la sua Macchia di Turing (d’ora in poi MdT), Turing osservo il comportamento di un essere umano che calcola. Quindi individua una serie di restrizioni:</p>
+<ol>
+<li><!-- [if !supportLists]-->L’umano effettua dei calcoli aiutandosi con un foglio. Nel caso di una macchina possiamo pensare ad un nastro potenzialmente infinito fatto di caselle contigue. In ogni casella possiamo</li>
+</ol>
+<pre><code>scrivere un simbolo appartenente ad un alfabeto.
+</code></pre>
+<ol start="2">
+<li><!-- [if !supportLists]-->Limiti all’uso del nastro
+
+<ul>
+<li><!-- [if !supportLists]-->a.
+
+<!--[endif]-->Limite Percettivo: c’è un limite superiore B al numero di caselle contigue osservabili in un istante (questo implica che ci si può spostare sul nastro per vedere le prossime B caselle).
+</li>
+<li><!-- [if !supportLists]-->b.
+
+<!--[endif]-->Limite di Memoria: l’alfabeto dei simboli scrivibili sul nastro è finito poiché l’essere umano non riesce a distinguere e ricordareinfiniti simboli.</li>
+</ul>
+</li>
+<li><!-- [if !supportLists]-->Il comportamento dipende dallo stato mentale (stato di memoria) dell’essere umano. Questo stato mentale dipende dalle azioni fatte precedentemente. Senza indagare molto sul cervello umano, imponiamo che questi stati siano in numero finito (deciso a priori).
+</li>
+<li><!-- [if !supportLists]-->Limitiamo il comportamento dell’essere umano che calcola, senza perdita di generalità, al compimento di un’azione per volta:
+
+<ul>
+<li><!-- [if !supportLists]-->a.
+
+<!--[endif]-->Si può cambiare il contenuto solo delle caselle osservate
+</li>
+<li><!-- [if !supportLists]-->b.
+
+<!--[endif]-->Ci si può spostare di un numero L di caselle per volta
+</li>
+<li><!-- [if !supportLists]-->c.
+
+<!--[endif]-->Si può cambiare lo stato mentale</li>
+</ul>
+</li>
+<li><!-- [if !supportLists]-->Il calcolo è fatto in maniera Deterministica, dato lo stesso input otteniamo sempre lo stesso output</li>
+</ol>
+<p>Ma come imponiamo la condizione di determinismo?</p>
+<p>Consideriamo tutte le possibili azioni che può fare l’essere umano durante il calcolo. Diciamo C l’insieme di tutte le possibili coppie &lt;stato mentale, configurazione dei simboli osservati&gt;. Per ogni elemento di C si può scegliere di fare un’azione a scelta contenuta nell’insieme possibili di azioni A (scrittura di un simbolo, spostamento a destra, spostamento a sinistra, cambiamento di stato mentale). Definiamo l’insieme di tutte le possibili istruzioni I&#x3D;CxA. L’insieme delle istruzioni come definito contiene delle istruzioni che definiscono un algoritmo <strong>non deterministico</strong>, poiché a parità di stato mentale e configurazioni di simboli osservati, possiamo trovare istruzioni che effettuano azioni diverse. Poniamo qui una condizione di <strong>determinismo</strong>, chiedendo di avere come insieme di istruzioni solo un sottoinsieme di I nel quale non compaiano istruzioni che possono essere applicate nello stesso stato del calcolo.</p>
+<p>Questa è l’analisi dell’essere umano che calcola.</p>
+<p>Adesso definiamo una macchina che simulerà il comportamento di calcolo dell’essere umano. Questa macchina avrà delle configurazioni interne q, che corrispondono agli stati mentali dell’umano. Lavora su un nastro osservando ad ogni nastro un numero B di caselle contigue, e può spostarsi di un numero L di caselle a destra o a sinistra. Può usare i simboli dell’alfabeto per scrivere sulla porzione di nastro osservata, e può cambiare la sua configurazione interna. Questa macchina riproduce il comportamento di calcolo di un essere umano.</p>
+<p>Ponendo i vincoli B&#x3D;1 e L&#x3D;1 abbiamo proprio la definizione di <strong>Macchina di Turing</strong> (MdT). Chiamiamo classe delle funzioni Turing calcolabili (o T-calcolabili), la classe delle funzioni calcolabili con una MdT.</p>
+<p>Turing arriva a formulare la seguente tesi:</p>
+<p align="center">
+  “Ogni funzione calcolabile da un essere umano mediante algoritmo è una funzione T-calcolabile”
+</p>
+
+<p>Notiamo che questa tesi è però ristretta alle funzioni calcolate da un essere umano, e non da un qualsiasi agente di calcolo (come un calcolatore). Proviamo ad estendere questa tesi in questo modo:</p>
+<p align="center">
+  “Ogni funzione calcolabile da un calcolatore mediante algoritmo è una funzione T-calcolabile”
+</p>
+
+<p>Per arrivare alla tesi di Church-Turing, osserviamo che i limiti B ed L sono soggetti ai limiti della fisica: la teoria delle relatività ci vieta di oltrepassare la velocità della luce. Inoltre in una singola cella di nastro possiamo registrarci un simbolo preso da un alfabeto finito, perché assumiamo che la materia (del nastro) abbia un vincolo di atomicità, ma su questo non è ancora stata formulata alcuna teoria scientifica.</p>
+<p>Considerando i limiti della fisica possiamo riscrivere la tesi ed ottenere finalmente la <strong>Tesi di Church-Turing</strong>:</p>
+<p align="center">
+  “Ogni funzione calcolabile da un algoritmo è una funzione T-calcolabile”
+</p>
+
+<p>Con questa tesi sono stati generalizzati i teoremi di incompletezza di Gödel, chiedendo che le funzioni f(x) e g(Y) siano T-calcolabili. Cade definitivamente il <strong>Programma di Hilbert</strong>,</p>
+<p>e il suo tentativo di verificare la certezza della matematica.</p>
+<h2 id="Sviluppi-futuri"><a href="#Sviluppi-futuri" class="headerlink" title="Sviluppi futuri"></a>Sviluppi futuri</h2><p>Quindi dal problema della matematica è nata la MdT, e Turing stesso definì la <strong>Macchina di Turing Universale</strong>, la quale è programmabile proprio come un moderno calcolatore digitale.</p>
+<p>Da questo nasce il ramo dell’Intelligenza Artificiale (IA), e più in generale dell’Informatica.</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/computer-science/" rel="tag"># computer-science</a>
+              <a href="/tags/turing/" rel="tag"># turing</a>
+              <a href="/tags/frege/" rel="tag"># frege</a>
+              <a href="/tags/godel/" rel="tag"># gödel</a>
+              <a href="/tags/hilbert/" rel="tag"># hilbert</a>
+              <a href="/tags/kant/" rel="tag"># kant</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2010/07/11/c-recursive-implementation-of-heap-sort-algorithm/" rel="prev" title="Recursive implementation of Heap sort algorithm">
+      <i class="fa fa-chevron-left"></i> Recursive implementation of Heap sort algorithm
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2013/10/20/early-development-of-artificial-intelligence/" rel="next" title="Early development of Artificial Intelligence">
+      Early development of Artificial Intelligence <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Gottfried-Wilhelm-von-Leibniz"><span class="nav-number">1.</span> <span class="nav-text">Gottfried Wilhelm von Leibniz</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Immanuel-Kant"><span class="nav-number">2.</span> <span class="nav-text">Immanuel Kant</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Friedrich-Ludwig-Gottlob-Frege"><span class="nav-number">3.</span> <span class="nav-text">Friedrich Ludwig Gottlob Frege</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bertrand-Arthur-William-Russell"><span class="nav-number">4.</span> <span class="nav-text">Bertrand Arthur William Russell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Luitzen-Egbertus-Jan-Brouwer"><span class="nav-number">5.</span> <span class="nav-text">Luitzen Egbertus Jan Brouwer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#David-Hilbert"><span class="nav-number">6.</span> <span class="nav-text">David Hilbert</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Principia-Mathematica-PM"><span class="nav-number">7.</span> <span class="nav-text">Principia Mathematica (PM)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Kurt-Godel"><span class="nav-number">8.</span> <span class="nav-text">Kurt Gödel</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Generalizzazione-dei-Teoremi-di-Incompletezza"><span class="nav-number">9.</span> <span class="nav-text">Generalizzazione dei Teoremi di Incompletezza</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Alan-Mathison-Turing"><span class="nav-number">10.</span> <span class="nav-text">Alan Mathison Turing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sviluppi-futuri"><span class="nav-number">11.</span> <span class="nav-text">Sviluppi futuri</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Saverio Ferrara"
+      src="/images/logo/logo.png">
+  <p class="site-author-name" itemprop="name">Saverio Ferrara</p>
+  <div class="site-description" itemprop="description">Hello, my name is Saverio and I'm a software engineer and a passionate software developer. Addicted to the Linux operating system, I love learning new things and working with all the open source technologies.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">43</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">106</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/fsferrara" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;fsferrara" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/fsferrara" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;fsferrara" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Saverio Ferrara</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://fsferrara.github.io/2013/10/20/the-birth-of-computer-science/";
+    this.page.identifier = "2013/10/20/the-birth-of-computer-science/";
+    this.page.title = "The Birth of Computer Science";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://fsferrara.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

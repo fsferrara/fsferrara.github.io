@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"fsferrara.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="This guide shows the most common procedures usually performed by SVN users, but using GIT.&lt;br &#x2F;&gt; Why this guide should be better than the others already on-line? There isn&#39;t a particular rea">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GIT explained for Subversion users">
+<meta property="og:url" content="http://fsferrara.github.io/2013/11/03/git-explained-subversion-users/index.html">
+<meta property="og:site_name" content="fsferrara">
+<meta property="og:description" content="This guide shows the most common procedures usually performed by SVN users, but using GIT.&lt;br &#x2F;&gt; Why this guide should be better than the others already on-line? There isn&#39;t a particular rea">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2013-11-02T23:00:00.000Z">
+<meta property="article:modified_time" content="2024-08-11T13:04:04.819Z">
+<meta property="article:author" content="Saverio Ferrara">
+<meta property="article:tag" content="git">
+<meta property="article:tag" content="subversion">
+<meta property="article:tag" content="svn">
+<meta property="article:tag" content="versioning">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://fsferrara.github.io/2013/11/03/git-explained-subversion-users/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>GIT explained for Subversion users | fsferrara</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">fsferrara</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/fsferrara" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://fsferrara.github.io/2013/11/03/git-explained-subversion-users/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/logo/logo.png">
+      <meta itemprop="name" content="Saverio Ferrara">
+      <meta itemprop="description" content="Hello, my name is Saverio and I'm a software engineer and a passionate software developer. Addicted to the Linux operating system, I love learning new things and working with all the open source technologies.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fsferrara">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          GIT explained for Subversion users
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2013-11-03 00:00:00" itemprop="dateCreated datePublished" datetime="2013-11-03T00:00:00+01:00">2013-11-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-08-11 15:04:04" itemprop="dateModified" datetime="2024-08-11T15:04:04+02:00">2024-08-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">programming</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><code>This guide shows the most common procedures usually performed by SVN users, but using GIT.&lt;br /&gt; Why this guide should be better than the others already on-line? There isn&#39;t a particular reason ;) . I&#39;m now a SVN user and I&#39;m just migrating to GIT, so I&#39;m going to find a way to perform with GIT all the operations that I usually do with Subversion: this will be useful for Subversion users who want to start using GIT quickly.</code></p>
+<span id="more"></span>
+
+<p>Git is a distributed revision control (DVCS) and source code management (SCM) system with an emphasis on speed. As a distributed VCS, every Git working directory is a full-fledged repository with complete history and full version tracking capabilities, not dependent on network access or a central server.</p>
+<p>This is the most substantial difference with SVN where there is a central repository. With subversion, the developers working in a team used continuously exchange their code. This is deeply different with GIT because there is no a main central repository; so developer should use a given remote repository, and use it as the central one.</p>
+<p>No more talk, I don&#8217;t like to talk: let&#8217;s start with GIT by examples.</p>
+<p>We have two developers, obviously their user-names are Alice and Bob.</p>
+<h2 id="GIT-8211-Create-a-repository"><a href="#GIT-8211-Create-a-repository" class="headerlink" title="GIT &#8211; Create a repository"></a>GIT &#8211; Create a repository</h2><p>Alice wants to create a new project named &#8220;lemon&#8221;. She simply creates an empty directory and then launch the command &#8216;git init&#8217;:</p>
+<pre lang="bash">[~/alice]$ mkdir lemon
+[~/alice]$ cd lemon
+[~/alice/lemon]$ git init
+Initialized empty Git repository in /Users/fferrara/alice/lemon/.git/
+[master][~/alice/lemon]$
+</pre>
+
+<p>That&#8217;s all! Alice has now a brand new repository locally (note that this is more than a working copy). The main branch is called &#8220;master&#8221;. The shell prompt has the capability to detect and print the name of the current branch (this is the zsh shell default behaviour).</p>
+<h2 id="GIT-8211-Your-first-commit"><a href="#GIT-8211-Your-first-commit" class="headerlink" title="GIT &#8211; Your first commit"></a>GIT &#8211; Your first commit</h2><p>Let&#8217;s prepare our first file commit. Lemon has one simple file &#8216;hello.js&#8217; containing the source code.</p>
+<pre lang="javascript">var prompt = require('prompt');
+
+prompt.start();
+
+prompt.get(['fruit'], function(err, result) {
+
+    if (result) {
+        console.log('Hey fruit ' + result.fruit);
+        if ('lemon' == result.fruit) {
+            console.log('I like yellow things :) ');
+        };
+    }
+});</pre>
+
+<p>Also we have a package.json configuration file.</p>
+<pre lang="javascript">{
+  "dependencies": {
+    "prompt": "0.2.11"
+  }
+}
+</pre>
+
+<p>As many of you know, in this type of application, we have to ignore the node_modules directory. So we have to create the .gitignore file containing the ignore-list.</p>
+<pre lang="bash">*[master][~/alice/lemon]$ echo "node_modules" &gt; .gitignore
+</pre>
+
+<p>To see the status of our branch, you should use the command &#8216;git status&#8217;</p>
+<pre lang="bash">*[master][~/alice/lemon]$ git status
+# On branch master
+#
+# Initial commit
+#
+# Untracked files:
+#   (use "git add ..." to include in what will be committed)
+#
+#   .gitignore
+#   hello.js
+#   package.json
+nothing added to commit but untracked files present (use "git add" to track)
+</pre>
+
+<p>The file for now are all in the &#8216;untracked&#8217; status, that is the first state. To track these files we have to add them to the repository index.</p>
+<pre lang="bash">*[master][~/alice/lemon]$ git add .gitignore package.json hello.js
+</pre>
+
+<p>Check the status again</p>
+<pre lang="bash">*[master][~/alice/lemon]$ git status
+# On branch master
+#
+# Initial commit
+#
+# Changes to be committed:
+#   (use "git rm --cached ..." to unstage)
+#
+#   new file:   .gitignore
+#   new file:   hello.js
+#   new file:   package.json
+#
+</pre>
+
+<p>The added files are now ready to be committed (aka tracked-file). The commit command resembles that of SVN.</p>
+<pre lang="bash">*[master][~/alice/lemon]$ git commit -m "my first git commit"
+[master (root-commit) 7046414] my first git commit
+ 3 files changed, 19 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 hello.js
+ create mode 100644 package.json
+</pre>
+
+<p>Note that the number &#8216;7046414&#8217; is equivalent of the SVN revision number. Actually it is a commit hash and in this context is truncated to the first 7 characters. To see the entire commit identified we can print the commit log.</p>
+<p>Use the &#8216;git log&#8217; command to see this:</p>
+<pre lang="bash">commit 7046414d2c9d3407f421987449c92877718248f9
+Author: alice
+Date:   Fri Nov 1 16:44:31 2013 +0100
+     my first git commit
+(END)
+</pre>
+
+<h2 id="GIT-8211-Share-your-commit-with-the-team"><a href="#GIT-8211-Share-your-commit-with-the-team" class="headerlink" title="GIT &#8211; Share your commit with the team"></a>GIT &#8211; Share your commit with the team</h2><p>What about the remote repository? Actually GIT doesn&#8217;t need a main remote repository, but can track several distributed repositories.</p>
+<p>For this example I&#8217;m borrowing to Alice this remote <a target="_blank" rel="noopener" href="https://github.com/fsferrara/lemon.git">https://github.com/fsferrara/lemon.git</a> repository. She should set this uri in her local repository, and then verify with the command &#8216;git remote -v&#8217;.</p>
+<pre lang="bash">[master][~/alice/lemon]$ git remote -v
+[master][~/alice/lemon]$ git remote add origin https://github.com/fsferrara/lemon.git
+[master][~/alice/lemon]$ git remote -v
+origin  https://github.com/fsferrara/lemon.git (fetch)
+origin  https://github.com/fsferrara/lemon.git (push)
+</pre>
+
+<p>Nice&#8230; a remote (by default called &#8216;origin&#8217;) to share our branch!</p>
+<p>Yes, you&#8217;ve got it right. With GIT we always share branches. Alice now have to push her master branch to the origin repository.</p>
+<pre lang="bash">[master][~/alice/lemon]$ git push -u origin master
+Counting objects: 5, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 514 bytes, done.
+Total 5 (delta 0), reused 0 (delta 0)
+To https://github.com/fsferrara/lemon.git
+ * [new branch]      master -&gt; master
+Branch master set up to track remote branch master from origin.
+</pre>
+
+<p>In a team, were developer used to often share their code with SVN, this operation should be performed after every commit.</p>
+<p>Only the first time we share a branch we should use the -u flag, in order to set the upstream. In a nutshell an upstream is a tracking reference, in order to set Alice&#8217;s master branch to track the remote master branch (we can refer to it as origin&#x2F;master or remotes&#x2F;origin&#x2F;master).</p>
+<p>The &#8216;git branch -a&#8217; command prints out the entire lists of branches.</p>
+<pre lang="bash">[master][~/alice/lemon]$ git branch -a
+* master
+  remotes/origin/master
+</pre>
+
+<h2 id="GIT-8211-Create-a-branch"><a href="#GIT-8211-Create-a-branch" class="headerlink" title="GIT &#8211; Create a branch"></a>GIT &#8211; Create a branch</h2><p>Now Alice want to write down a killer feature&#8230; maybe it can be a custom message not only for lemons, but also for all kinds of citrus fruit. The first thing to do is to create a branch&#8230;</p>
+<pre lang="bash">[master][~/alice/lemon]$ git branch citrus
+[master][~/alice/lemon]$ git branch -a
+  citrus
+* master
+  remotes/origin/master
+</pre>
+
+<p>The branch citrus is created only locally. That means that the origin (aka remote repository) doesn&#8217;t have this branch. Alice can share this branch with others by pushing it to origin.</p>
+<pre lang="bash">[master][~/alice/lemon]$ git push -u origin citrus
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/fsferrara/lemon.git
+ * [new branch]      citrus -&gt; citrus
+Branch citrus set up to track remote branch citrus from origin.
+[master][~/alice/lemon]$ git branch -a
+  citrus
+* master
+  remotes/origin/citrus
+  remotes/origin/master
+</pre>
+
+<h2 id="GIT-8211-Switch-to-a-branch"><a href="#GIT-8211-Switch-to-a-branch" class="headerlink" title="GIT &#8211; Switch to a branch"></a>GIT &#8211; Switch to a branch</h2><p>But Alice can&#8217;t start working because is still using the master branch. The &#8216;git checkout&#8217; command is launched to change the current branch.</p>
+<p>Yes poor SVN users&#8230; with GIT the checkout command doesn&#8217;t means &#8216;create a brand new working copy&#8217;, but has now a new meaning: now checkout is used to switch branch or revert a modified file or directory.</p>
+<p>Let&#8217;s start by simply change the current branch:</p>
+<pre lang="bash">[master][~/alice/lemon]$ git checkout citrus
+Switched to branch 'citrus'
+[citrus][~/alice/lemon]$ git branch -a
+* citrus
+  master
+  remotes/origin/citrus
+  remotes/origin/master
+</pre>
+
+<h2 id="GIT-8211-Clone-an-existing-repository"><a href="#GIT-8211-Clone-an-existing-repository" class="headerlink" title="GIT &#8211; Clone an existing repository"></a>GIT &#8211; Clone an existing repository</h2><p>Bob, a team mate of Alice, awakens, and start working at the project lemon. The first thing is to clone an existing repository by using the given uri.</p>
+<pre lang="bash">[~/bob]$ git clone https://github.com/fsferrara/lemon.git lemon
+Cloning into 'lemon'...
+remote: Counting objects: 5, done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 5 (delta 0), reused 5 (delta 0)
+Unpacking objects: 100% (5/5), done.
+[~/bob]$ cd lemon
+[master][~/bob/lemon]$ git branch -a
+* master
+  remotes/origin/HEAD -&gt; origin/master
+  remotes/origin/citrus
+  remotes/origin/master
+</pre>
+
+<h2 id="GIT-8211-Share-a-commit-on-an-existing-file"><a href="#GIT-8211-Share-a-commit-on-an-existing-file" class="headerlink" title="GIT &#8211; Share a commit on an existing file"></a>GIT &#8211; Share a commit on an existing file</h2><p>Ops&#8230; there is a minor bug! The &#8216;hello&#8217; string doesn&#8217;t contains the point. Bob choose to treat it as a hot bugfix, and to commit this change directly on the master branch.</p>
+<p>He first edit the hello.js file, and then:</p>
+<pre lang="bash">*[master][~/bob/lemon]$ git status
+# On branch master
+# Changes not staged for commit:
+#   (use "git add ..." to update what will be committed)
+#   (use "git checkout -- ..." to discard changes in working directory)
+#
+#   modified:   hello.js
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+*[master][~/bob/lemon]$ git add hello.js
+*[master][~/bob/lemon]$ git commit -m "hot bugfix"
+[master c6538cc] hot bugfix
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master][~/bob/lemon]$ git push origin master
+Counting objects: 5, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 346 bytes, done.
+Total 3 (delta 1), reused 0 (delta 0)
+To https://github.com/fsferrara/lemon.git
+   7046414..c6538cc  master -&gt; master
+[master][~/bob/lemon]$
+</pre>
+
+<h2 id="GIT-8211-Create-a-tag"><a href="#GIT-8211-Create-a-tag" class="headerlink" title="GIT &#8211; Create a tag"></a>GIT &#8211; Create a tag</h2><p>Bob want to freeze the current master version to a given tag. We&#8217;re familiar with tags since we currently are SVN users :) but in the GIT case there isn&#8217;t a folder that contains all the tag. Tags are treated like commits, and refers to a snapshot of the source code.</p>
+<p>The &#8216;git tag&#8217; command is used here. After the tag is created, there is need to push it in order to share it with the team.</p>
+<pre lang="bash">[master][~/bob/lemon]$ git tag -l
+[master][~/bob/lemon]$ git tag -a v0.1.0 -m "Released on `date`"
+[master][~/bob/lemon]$ git tag -l
+v0.1.0
+[master][~/bob/lemon]$ git push --tags origin master
+Counting objects: 1, done.
+Writing objects: 100% (1/1), 184 bytes, done.
+Total 1 (delta 0), reused 0 (delta 0)
+To https://github.com/fsferrara/lemon.git
+ * [new tag]         v0.1.0 -&gt; v0.1.0
+</pre>
+
+<h2 id="GIT-8211-Check-if-a-branch-is-rebased"><a href="#GIT-8211-Check-if-a-branch-is-rebased" class="headerlink" title="GIT &#8211; Check if a branch is rebased"></a>GIT &#8211; Check if a branch is rebased</h2><p>Alice is working on branch &#8216;citrus&#8217; and in the meanwhile Bob committed a fix on the master branch. How Alice can check if the branch she is currently working on has to be rebased? The first thing to do is to &#8216;fetch&#8217; updates from origin.</p>
+<pre lang="bash">[citrus][~/alice/lemon]$ git fetch
+remote: Counting objects: 6, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 4 (delta 1), reused 4 (delta 1)
+Unpacking objects: 100% (4/4), done.
+From https://github.com/fsferrara/lemon
+   7046414..c6538cc  master     -&gt; origin/master
+ * [new tag]         v0.1.0     -&gt; v0.1.0
+</pre>
+
+<p>Now Alice&#8217;s repository has information about Bob&#8217;s commits and tags. In order to know if the current branch is rebased with master Alice can use the &#8216;git cherry&#8217; command. Another option are the more powerful commands:</p>
+<p>gitk citrus..origin&#x2F;master</p>
+<p>git log citrus..origin&#x2F;master</p>
+<p>The range notation &#8220;citrus..master&#8221; means &#8220;show everything that is included in master but is not included in citrus&#8221;.</p>
+<pre lang="bash">[citrus][~/alice/lemon]$ git cherry citrus origin/master
++ c6538cc3b3fed65bd5c9cfe708961f1f5f2e1616</pre>
+
+<h2 id="GIT-8211-Rebase-a-branch-with-master"><a href="#GIT-8211-Rebase-a-branch-with-master" class="headerlink" title="GIT &#8211; Rebase a branch with master"></a>GIT &#8211; Rebase a branch with master</h2><p>Expected surprise! There is a commit (c6538cc3b3fed65bd5c9cfe708961f1f5f2e1616) not included in the current branch. Now is very important to note all the branches present in Alice&#8217;s repository:</p>
+<pre lang="bash">[citrus][~/alice/lemon]$ git branch -a
+* citrus
+  master
+  remotes/origin/citrus
+  remotes/origin/master
+</pre>
+
+<p>There are two local branches (citrus and master), and two remote tracked branches (origin&#x2F;citrus and origin&#x2F;master). At the moment origin&#x2F;master is updated, but master isn&#8217;t updated yet. That&#8217;s because &#8216;git fetch&#8217; only download new information but doesn&#8217;t perform any merge operation.</p>
+<p>The choice is to work with remote branches, or update local branches and work with locals. Alice choose to work with the remote ones.</p>
+<pre lang="bash">[citrus][~/alice/lemon]$ git rebase origin/master citrus
+First, rewinding head to replay your work on top of it...
+Fast-forwarded citrus to origin/master.
+[citrus][~/alice/lemon]$ git status
+# On branch citrus
+# Your branch is ahead of 'origin/citrus' by 1 commit.
+#
+nothing to commit (working directory clean)
+[citrus][~/alice/lemon]$ git push origin citrus
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/fsferrara/lemon.git
+   7046414..c6538cc  citrus -&gt; citrus
+[citrus][~/alice/lemon]$ git status
+# On branch citrus
+nothing to commit (working directory clean)
+</pre>
+
+<p>Examining the log (with git log or gitk) we can see that now citrus and origin&#x2F;citrus branches have exactly the commit c6538cc3b3fed65bd5c9cfe708961f1f5f2e1616 in their log. That means that this commit is now in common with the master branch.</p>
+<h2 id="GIT-8211-Reintegrate-a-branch"><a href="#GIT-8211-Reintegrate-a-branch" class="headerlink" title="GIT &#8211; Reintegrate a branch"></a>GIT &#8211; Reintegrate a branch</h2><p>Alice worked hard on her branch, and a the end commits the killer feature.</p>
+<pre lang="bash">[citrus][~/alice/lemon]$ vim hello.js
+*[citrus][~/alice/lemon]$ git add hello.js
+*[citrus][~/alice/lemon]$ git commit -m "Add the killer feature"
+[citrus b306b5c] Add the killer feature
+ 1 file changed, 3 insertions(+)
+[citrus][~/alice/lemon]$ git push origin citrus
+Counting objects: 5, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 447 bytes, done.
+Total 3 (delta 1), reused 0 (delta 0)
+To https://github.com/fsferrara/lemon.git
+   c6538cc..b306b5c  citrus -&gt; citrus
+</pre>
+
+<p>Ops&#8230; she forgot something :( . Another commit is necessary:</p>
+<pre lang="bash">[citrus][~/alice/lemon]$ vim hello.js
+*[citrus][~/alice/lemon]$ git add hello.js
+*[citrus][~/alice/lemon]$ git commit -m "This actually add the killer feature"
+[citrus ae073c3] This actually add the killer feature
+ 1 file changed, 3 insertions(+)
+[citrus][~/alice/lemon]$ git push origin citrus
+Counting objects: 5, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 370 bytes, done.
+Total 3 (delta 1), reused 0 (delta 0)
+To https://github.com/fsferrara/lemon.git
+   b306b5c..ae073c3  citrus -&gt; citrus
+</pre>
+
+<p>Bob wants now to integrate Alice&#8217;s commits in the master branch. So the first thing to do is to fetch the updates.</p>
+<pre lang="bash">[master][~/bob/lemon]$ git fetch
+remote: Counting objects: 8, done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 6 (delta 2), reused 5 (delta 1)
+Unpacking objects: 100% (6/6), done.
+From https://github.com/fsferrara/lemon
+   7046414..ae073c3  citrus     -&gt; origin/citrus
+</pre>
+
+<p>Now Bob has to merge all the Alice&#8217;s commit in the master branch. The following command &#8216;squash&#8217; these commits into one commit, and add the change-set to the GIT index:</p>
+<pre lang="bash">[master][~/bob/lemon]$ git merge --squash origin/citrus
+Updating c6538cc..ae073c3
+Fast-forward
+Squash commit -- not updating HEAD
+ hello.js | 6 ++++++
+ 1 file changed, 6 insertions(+)
+</pre>
+
+<p>The working branch of Bob now has all the changes introduced by Alice. To see the difference Bob should use the command &#8216;git diff &#8211;staged&#8217;.</p>
+<p>Finally to reintegrate the branch:</p>
+<pre lang="bash">*[master][~/bob/lemon]$ git commit -m "Reintegrate branch citrus into master"
+[master cd84dc7] Reintegrate branch citrus into master
+ 1 file changed, 6 insertions(+)
+[master][~/bob/lemon]$ git push origin master
+Counting objects: 5, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 538 bytes, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/fsferrara/lemon.git
+   c6538cc..cd84dc7  master -&gt; master
+</pre>
+
+<h2 id="GIT-8211-Delete-a-branch"><a href="#GIT-8211-Delete-a-branch" class="headerlink" title="GIT &#8211; Delete a branch"></a>GIT &#8211; Delete a branch</h2><p>At the end Bob can delete the branch he previously integrated on master. The &#8216;git branch -d&#8217; command is used.</p>
+<pre lang="bash">[master][~/bob/lemon]$ git branch -d citrus
+warning: deleting branch 'citrus' that has been merged to
+ 'refs/remotes/origin/citrus', but not yet merged to HEAD.
+Deleted branch citrus (was ae073c3).
+[master][~/bob/lemon]$ git push --delete origin citrus
+To https://github.com/fsferrara/lemon.git
+ - [deleted]         citrus
+</pre>
+
+<p>Note that the command &#8216;git branch -d&#8217; ensures that the changes in the citrus branch are already in the current branch. If not, you should use the option -D instead.</p>
+<h2 id="What-8217-s-next-8230"><a href="#What-8217-s-next-8230" class="headerlink" title="What&#8217;s next&#8230;"></a>What&#8217;s next&#8230;</h2><p>Time is over :&#x2F; . Next operation I usually perform with SVN are:</p>
+<ul>
+<li>GIT &#8211; Return to a revision</li>
+<li>GIT &#8211; Return to a tag</li>
+<li>GIT &#8211; Reverse merge</li>
+<li>GIT &#8211; Undo a wrong commit (or a list&#8230; remeber the order)</li>
+<li>GIT &#8211; Create a diff-file and perform a patch</li>
+<li>GIT &#8211; Stash</li>
+<li>GIT &#8211; Export</li>
+</ul>
+<p>Asap I&#8217;ll write about these operation. In the meanwhile I suggest you these manual page: &#8216;man gittutorial&#8217; and the very interesting &#8216;man gittutorial-2&#8217;</p>
+<p>Goodbye and happy versioning :)</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/git/" rel="tag"># git</a>
+              <a href="/tags/subversion/" rel="tag"># subversion</a>
+              <a href="/tags/svn/" rel="tag"># svn</a>
+              <a href="/tags/versioning/" rel="tag"># versioning</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2013/10/21/luppolo/" rel="prev" title="Luppolo the Drinking Game">
+      <i class="fa fa-chevron-left"></i> Luppolo the Drinking Game
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2013/11/15/git-branching-model-for-medium-size-companies/" rel="next" title="A GIT branching model for medium-size companies">
+      A GIT branching model for medium-size companies <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#GIT-8211-Create-a-repository"><span class="nav-number">1.</span> <span class="nav-text">GIT – Create a repository</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GIT-8211-Your-first-commit"><span class="nav-number">2.</span> <span class="nav-text">GIT – Your first commit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GIT-8211-Share-your-commit-with-the-team"><span class="nav-number">3.</span> <span class="nav-text">GIT – Share your commit with the team</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GIT-8211-Create-a-branch"><span class="nav-number">4.</span> <span class="nav-text">GIT – Create a branch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GIT-8211-Switch-to-a-branch"><span class="nav-number">5.</span> <span class="nav-text">GIT – Switch to a branch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GIT-8211-Clone-an-existing-repository"><span class="nav-number">6.</span> <span class="nav-text">GIT – Clone an existing repository</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GIT-8211-Share-a-commit-on-an-existing-file"><span class="nav-number">7.</span> <span class="nav-text">GIT – Share a commit on an existing file</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GIT-8211-Create-a-tag"><span class="nav-number">8.</span> <span class="nav-text">GIT – Create a tag</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GIT-8211-Check-if-a-branch-is-rebased"><span class="nav-number">9.</span> <span class="nav-text">GIT – Check if a branch is rebased</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GIT-8211-Rebase-a-branch-with-master"><span class="nav-number">10.</span> <span class="nav-text">GIT – Rebase a branch with master</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GIT-8211-Reintegrate-a-branch"><span class="nav-number">11.</span> <span class="nav-text">GIT – Reintegrate a branch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GIT-8211-Delete-a-branch"><span class="nav-number">12.</span> <span class="nav-text">GIT – Delete a branch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#What-8217-s-next-8230"><span class="nav-number">13.</span> <span class="nav-text">What’s next…</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Saverio Ferrara"
+      src="/images/logo/logo.png">
+  <p class="site-author-name" itemprop="name">Saverio Ferrara</p>
+  <div class="site-description" itemprop="description">Hello, my name is Saverio and I'm a software engineer and a passionate software developer. Addicted to the Linux operating system, I love learning new things and working with all the open source technologies.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">43</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">106</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/fsferrara" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;fsferrara" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/fsferrara" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;fsferrara" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Saverio Ferrara</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://fsferrara.github.io/2013/11/03/git-explained-subversion-users/";
+    this.page.identifier = "2013/11/03/git-explained-subversion-users/";
+    this.page.title = "GIT explained for Subversion users";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://fsferrara.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

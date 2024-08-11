@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"fsferrara.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Relazione sull’articolo: “Programs With Common Sense”.John McCharty Nel 1959, quando si parlava pochissimo di “intelligenza artificiale”, John McCharty con l’articolo “Programs with common sense”, int">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Relation - Programs With Common Sense">
+<meta property="og:url" content="http://fsferrara.github.io/2007/09/27/relation-programs-with-common-sense/index.html">
+<meta property="og:site_name" content="fsferrara">
+<meta property="og:description" content="Relazione sull’articolo: “Programs With Common Sense”.John McCharty Nel 1959, quando si parlava pochissimo di “intelligenza artificiale”, John McCharty con l’articolo “Programs with common sense”, int">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2007-09-26T22:00:00.000Z">
+<meta property="article:modified_time" content="2024-08-11T13:04:04.824Z">
+<meta property="article:author" content="Saverio Ferrara">
+<meta property="article:tag" content="ai">
+<meta property="article:tag" content="artificial-intelligence">
+<meta property="article:tag" content="computer-science">
+<meta property="article:tag" content="mccharty">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://fsferrara.github.io/2007/09/27/relation-programs-with-common-sense/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Relation - Programs With Common Sense | fsferrara</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">fsferrara</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/fsferrara" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://fsferrara.github.io/2007/09/27/relation-programs-with-common-sense/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/logo/logo.png">
+      <meta itemprop="name" content="Saverio Ferrara">
+      <meta itemprop="description" content="Hello, my name is Saverio and I'm a software engineer and a passionate software developer. Addicted to the Linux operating system, I love learning new things and working with all the open source technologies.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fsferrara">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Relation - Programs With Common Sense
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2007-09-27 00:00:00" itemprop="dateCreated datePublished" datetime="2007-09-27T00:00:00+02:00">2007-09-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-08-11 15:04:04" itemprop="dateModified" datetime="2024-08-11T15:04:04+02:00">2024-08-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/history/" itemprop="url" rel="index"><span itemprop="name">history</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Relazione-sull’articolo-“Programs-With-Common-Sense”"><a href="#Relazione-sull’articolo-“Programs-With-Common-Sense”" class="headerlink" title="Relazione sull’articolo: “Programs With Common Sense”."></a>Relazione sull’articolo: “Programs With Common Sense”.</h1><p>John McCharty</p>
+<p>Nel 1959, quando si parlava pochissimo di “intelligenza artificiale”, John McCharty con l’articolo “Programs with common sense”, introduce un programma che ha buonsenso (common sense).</p>
+<span id="more"></span>
+
+<p>L’articolo esaminato parla di come un programma può risolvere problemi mediante la manipolazione di un linguaggio formale accettato dal computer, che contiene i più comuni costrutti utilizzati anche nel linguaggio naturale. Lo scopo è di far svolgere alla macchina un ragionamento verbale elementare, ma con delle facilitazioni: essa è collegata ad un display video per “parlare” e l’umano userà una tastiera per interagire. Il programma introdotto da McCharty è chiamato “Advice Taker” e può eseguire azioni al suo interno (ad esempio muovere una frase, o espressione formale, nelle sue liste) e dare conclusioni (stampare frasi dichiarative o imperative).</p>
+<p>La differenza tra l’Advice Taker ed altri programmi proposti all’epoca sta nel fatto che mentre gli altri programmi contenevano le euristiche di valutazione all’interno della procedura di deduzione, nell’Advice Taker le euristiche sono state descritte nel linguaggio formale stesso, in modo da avere una maggiore flessibilità. Si potrà cambiare il comportamento dell’Advice Taker; possiamo istruirlo sull’ambiente nel quale lavora, e sullo scopo che deve perseguire, il tutto in tempo relativamente breve: infatti, istruire l’Advice Taker richiede poca familiarità con il programma e con le conoscenze passate. L’aggettivo common sense si basa sul fatto che più il programma è istruito, più ha buonsenso: questo concetto ha molto in comune con il “buonsenso” degli umani.</p>
+<p>Prima di introdurre il funzionamento del programma, McCharty illustra cinque caratteristiche (non pienamente condivise da Marvin Minsky, altro studioso dell’intelligenza artificiale) che un sistema deve avere per essere capace di sviluppare intelligenza paragonabile a quella degli umani:</p>
+<ol>
+<li>Ogni comportamento deve essere rappresentabile nel sistema;</li>
+<li>Un cambiamento nel comportamento deve essere esprimibile semplicemente;</li>
+<li>Tutti gli aspetti del comportamento devono essere migliorabili;</li>
+<li>Oltre al successo e al fallimento, la macchina deve comprendere il concetto di successo parziale;</li>
+<li>Il sistema deve essere in grado di programmarsi da solo automi o subroutine che potrà poi eseguire.</li>
+</ol>
+<p>Certo un sistema con queste caratteristiche è molto difficile da implementare, specialmente nell’anno in cui l’articolo è stato scritto. McCharty, infatti, nella progettazione dell’Advice Taker si concentra solo sulla seconda caratteristica, cercando un modo semplice ed intelligente per rappresentare cambiamenti di comportamento.</p>
+<p>Per far pensare la macchina, sono preferite preposizioni dichiarative anziché preposizioni imperative. Di fatto le preposizioni imperative non badano a conoscenze precedenti, e rappresentano solo ordini da eseguire, mentre le preposizioni dichiarative sfruttano le conoscenze precedenti, hanno conseguenze logiche, e lo stato del sistema non è sconvolto dall’effetto che una proposizione può avere. Inoltre, siccome l’ordine di presentazione delle proposizione dichiarative non è rilevante, la macchina può avere ripensamenti.</p>
+<p>I tre componenti principali dell’Advice Taker sono:</p>
+<p>Espressioni regolari: Il nome “Advice Taker” si riferisce a qualcosa che accetta consigli (advice). Questi consigli sono dati dall’umano alla macchina sotto forma di espressioni regolari, di conseguenza l’Advice Taker deve essere in grado di rappresentare e memorizzare al suo interno espressioni di questo tipo. Un’espressione può essere ad esempio una proposizione dichiarativa o un nome di entità, e ad ognuna di esse è associata una precisa regola di inferenza data dalla combinazione del modus ponens con la sostituzione di variabili; con un insieme iniziali di espressioni, mediante un’apposita procedura di deduzione, si può immediatamente dedurre un insieme di conclusioni. Oltre alle espressioni regolari, si possono memorizzare anche individui, funzioni, e programmi. L’insieme di tutte le espressioni memorizzate all’interno dell’Advice Taker rappresenta la sua conoscenza.</p>
+<p>Procedura di deduzione: La procedura di deduzione non userà un’euristica di carattere semantico! Questo rende l’euristica stessa non dipendente dall’argomento trattato, quindi si punta a risolvere qualsiasi problema, senza legarsi ad un tipo specifico.  Applicare simultaneamente la procedura di deduzione su tutta la conoscenza dell’Advice Taker può essere molto oneroso computazionalmente, e renderà lenta la reazione della macchina. A questo proposito ci saranno alcune procedure che in base al problema da risolvere preleveranno dalla conoscenza l’insieme di tutte le espressioni interessanti al problema stesso, per poi applicare la procedura di deduzione solo su questo sottoinsieme. E’ evidente che la procedura di deduzione immediata non conterrà l’intelligenza dell’Advice Taker, ma essa sarà inglobata nelle procedure atte a formare le liste su cui operare.</p>
+<p>Oggetti e liste di attributi: Tutte le espressioni che rappresentano il nome di un’entità hanno associate ad esse una lista di attributi contenente le proprietà dell’entità stessa. Può capitare che un’entità non abbia aggiuntivi, ma solo informazioni ricavabili dal nome stesso; in questo caso per l’entità non sarà presente una lista di proprietà. Un esempio è rappresentato del numero 3812 il quale ci offre tutte le informazioni dal nome stesso. Le liste di attributi hanno anche una seconda utilità: se per dedurre un’informazione dell’entità è stato particolarmente costoso, questa informazione si può registrare all’interno della lista.</p>
+<p>Il funzionamento del programma prevede di svolgere ciclicamente i seguenti cinque passi:</p>
+<p><strong>Passo 1</strong>: Si parte da una lista di premesse (espressioni regolari) e d’individui.<br><strong>Passo 2</strong>: Alla lista si applica la procedura di deduzione, e abbiamo in output una lista di conclusioni.<br><strong>Passo 3</strong>: Dalla lista di conclusioni estrapoliamo tutte le proposizioni imperative dedotte.<br><strong>Passo 4</strong>: Gli imperativi sono ubbiditi.<br><strong>Passo 5</strong>: Tra gli imperativi c’è la procedura che deduce e ubbidisce, e questo rende ciclico il funzionamento del programma.</p>
+<p>Com’esempio è considerato il problema “Come raggiungere l’aeroporto se mi trovo alla scrivania nella mia casa”. La prima cosa da fare è istruire il programma sull’ambiente e sul problema da risolvere, mediante l’introduzione di espressioni regolari.</p>
+<p>Il primo predicato introdotto è</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">at(x,y)</span><br></pre></td></tr></table></figure>
+
+<p>che è una formalizzazione di “x is at y”, quindi dire</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">at(io,scrivania)</span><br></pre></td></tr></table></figure>
+
+<p>significa che io mi trovo alla scrivania.</p>
+<p>Di questo predicato è possibile esprimere la proprietà transitiva in questo modo:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">at(x,y), at(y,z)  -&gt;  at(x,z)</span><br></pre></td></tr></table></figure>
+
+<p>In questo modo sono inserite tutte le conoscenze utili all’Advice Taker per risolvere il problema, come le seguenti proprietà:</p>
+<ul>
+<li>“raggiungibilità di un luogo a piedi”,</li>
+<li>“raggiungibilità di un luogo con l’auto”,</li>
+<li>“andare in un luogo”,</li>
+<li>“possibilità di andare in un luogo”.</li>
+</ul>
+<p>Infine la proprietà dalla quale parte il processo di deduzione:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">want(at(io,aeroporto))</span><br></pre></td></tr></table></figure>
+
+<p>Quest’ultima esprime l’obiettivo (goal) che la macchina deve perseguire. A questo punto ci sono due importanti problemi da risolvere:</p>
+<ol>
+<li>Estrapolare dalla conoscenza le premesse utili a risolvere il problema;</li>
+<li>Applicare il processo di deduzione alle premesse estrapolate.</li>
+</ol>
+<p>Questi due problemi non trovano soluzione nell’articolo di McCharty.</p>
+<p>Sicuramente l’Advice Taker parte con due premesse; la prima è in(io,scrivania) che è dedotta dalla domanda “Dove mi trovo?”, mentre la seconda è quella che esprime il goal da perseguire: want(at(io,aeroporto)). Quest’ultima è inserita in una lista principale L, e in base al contenuto di questa lista è creata una lista ausiliaria (chiamata “observation of the main list”). Questa lista ausiliaria, insieme ad un’altra lista delle “azioni da compiere” sono utilizzate dalla procedura di deduzione per perseguire lo scopo.</p>
+<p>McCharty non s’inoltra troppo nei dettagli della soluzione, in effetti, questo articolo ha lo scopo di introdurre le liste, di espressioni formali o di proprietà, e di chiarire la sistemazione delle regole euristiche.</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/ai/" rel="tag"># ai</a>
+              <a href="/tags/artificial-intelligence/" rel="tag"># artificial-intelligence</a>
+              <a href="/tags/computer-science/" rel="tag"># computer-science</a>
+              <a href="/tags/mccharty/" rel="tag"># mccharty</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2007/09/20/relation-on-representations-of-problems-of-reasoning-about-actions/" rel="prev" title="Relation - On Representations of Problems of Reasoning about Actions">
+      <i class="fa fa-chevron-left"></i> Relation - On Representations of Problems of Reasoning about Actions
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2009/05/20/loop-unrolling-technique/" rel="next" title="Loop-Unrolling Technique">
+      Loop-Unrolling Technique <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Relazione-sull%E2%80%99articolo-%E2%80%9CPrograms-With-Common-Sense%E2%80%9D"><span class="nav-number">1.</span> <span class="nav-text">Relazione sull’articolo: “Programs With Common Sense”.</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Saverio Ferrara"
+      src="/images/logo/logo.png">
+  <p class="site-author-name" itemprop="name">Saverio Ferrara</p>
+  <div class="site-description" itemprop="description">Hello, my name is Saverio and I'm a software engineer and a passionate software developer. Addicted to the Linux operating system, I love learning new things and working with all the open source technologies.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">43</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">106</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/fsferrara" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;fsferrara" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/fsferrara" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;fsferrara" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Saverio Ferrara</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://fsferrara.github.io/2007/09/27/relation-programs-with-common-sense/";
+    this.page.identifier = "2007/09/27/relation-programs-with-common-sense/";
+    this.page.title = "Relation - Programs With Common Sense";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://fsferrara.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

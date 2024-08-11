@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"fsferrara.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="My MacOS Monterey SetupI think you are supposing I am a macOS fan… but I am not! Linux is my favourite OS, so why I spent time customizing macOS? I am also a software developer and, like many others,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="My MacOS Monterey Setup">
+<meta property="og:url" content="http://fsferrara.github.io/2022/12/30/my-macos-monterey-setup/index.html">
+<meta property="og:site_name" content="fsferrara">
+<meta property="og:description" content="My MacOS Monterey SetupI think you are supposing I am a macOS fan… but I am not! Linux is my favourite OS, so why I spent time customizing macOS? I am also a software developer and, like many others,">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-12-29T23:00:00.000Z">
+<meta property="article:modified_time" content="2024-08-11T13:04:04.823Z">
+<meta property="article:author" content="Saverio Ferrara">
+<meta property="article:tag" content="productivity">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://fsferrara.github.io/2022/12/30/my-macos-monterey-setup/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>My MacOS Monterey Setup | fsferrara</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">fsferrara</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/fsferrara" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://fsferrara.github.io/2022/12/30/my-macos-monterey-setup/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/logo/logo.png">
+      <meta itemprop="name" content="Saverio Ferrara">
+      <meta itemprop="description" content="Hello, my name is Saverio and I'm a software engineer and a passionate software developer. Addicted to the Linux operating system, I love learning new things and working with all the open source technologies.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fsferrara">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          My MacOS Monterey Setup
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-12-30 00:00:00" itemprop="dateCreated datePublished" datetime="2022-12-30T00:00:00+01:00">2022-12-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-08-11 15:04:04" itemprop="dateModified" datetime="2024-08-11T15:04:04+02:00">2024-08-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/writing/" itemprop="url" rel="index"><span itemprop="name">writing</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="My-MacOS-Monterey-Setup"><a href="#My-MacOS-Monterey-Setup" class="headerlink" title="My MacOS Monterey Setup"></a>My MacOS Monterey Setup</h1><p>I think you are supposing I am a macOS fan… but I am not! Linux is my favourite OS, so why I spent time customizing macOS? I am also a software developer and, like many others, I have been asked to use macOS.</p>
+<p>The experience was very frustrating at the beginning and I suspect the main issue was the entire Mission Control system. Typical questions: “Where is the window I opened a moment ago?”, “Why the order of the spaces keeps changing?”, “Do I really need those fancy animations?”.<br>Then I spent a couple of days in macOS customization and I’d like to thank the other blogger who shared their configs. The result is a Windows&#x2F;Linux-like desktop setup, that tries to leverage default macOS behaviour as much as possible. In the specific, I mean a setup that is fast, keyboard-centric and without distractions.<br>Now, let’s describe the setup in detail following a recipe-style format so I (and you) can re-execute the same recipe if I’ll need it.</p>
+<span id="more"></span>
+
+<h2 id="1-Spaces"><a href="#1-Spaces" class="headerlink" title="1. Spaces"></a>1. Spaces</h2><h3 id="1-1-Create-9-spaces"><a href="#1-1-Create-9-spaces" class="headerlink" title="1.1 Create 9 spaces."></a>1.1 Create 9 spaces.</h3><p>Spaces in macOS are what other OSs call virtual desktops or just desktops. I use a fixed number of spaces (9), avoiding creating&#x2F;destroying them.<br>Personally, I use spaces more than full-screen apps. This setup works with full-screen apps too, though.</p>
+<h3 id="1-2-The-space-order-should-not-change"><a href="#1-2-The-space-order-should-not-change" class="headerlink" title="1.2 The space order should not change"></a>1.2 The space order should not change</h3><p>The nice Mission Control thinks it knows which is the optimal space order for us. And keeps changing the order as you switch apps. Probably this is good for the average user… but we’re power users, right? To disable this:</p>
+<ul>
+<li>Open System Preferences &gt; Mission Control<ul>
+<li>Uncheck “Automatically rearrange Spaces based on most recent use”</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-3-Use-a-shortcut-to-change-space"><a href="#1-3-Use-a-shortcut-to-change-space" class="headerlink" title="1.3 Use a shortcut to change space"></a>1.3 Use a shortcut to change space</h3><p>Shortcuts are convenient to use with a fixed spaces number&#x2F;order. To enable them:</p>
+<ul>
+<li>Open System Preferences &gt; Keyboard &gt; Shortcuts &gt; Mission Control<ul>
+<li>Select ^1 to ^9 to switch to the related desktop (note: <code>^</code> is the CTRL key)</li>
+</ul>
+</li>
+</ul>
+<p>BTW this is the reason I suggest creating 9 spaces. You can’t assign a shortcut to a space if it doesn’t exist. At this point, you may delete and re-create the spaces and MacOS will remember the shortcut.</p>
+<h3 id="1-4-Make-it-clear-which-is-the-current-space"><a href="#1-4-Make-it-clear-which-is-the-current-space" class="headerlink" title="1.4 Make it clear which is the current space"></a>1.4 Make it clear which is the current space</h3><p>I find it useful to have a space indicator. <a target="_blank" rel="noopener" href="https://github.com/dshnkao/SpaceId/releases">SpaceID</a> (<code>brew install --cask spaceid</code>) shows the desktop number in the menu bar. In the preferences, I choose to have one “Icon per Space”, so that it displays an array of 9 spaces. And yes, it works with a multimonitor setup as well.</p>
+<h2 id="2-Disable-desktop-feature"><a href="#2-Disable-desktop-feature" class="headerlink" title="2. Disable desktop feature"></a>2. Disable desktop feature</h2><h3 id="2-1-No-desktop-icons"><a href="#2-1-No-desktop-icons" class="headerlink" title="2.1 No desktop icons"></a>2.1 No desktop icons</h3><p>The desktop icons are an outdated concept. Do we really need to create that mess on the screen?<br>macOS allows disabling the desktop feature. But not by default… we need an app to customize this behaviour.</p>
+<ul>
+<li>Install <a target="_blank" rel="noopener" href="http://www.bresink.com/osx/TinkerTool.html">TinkerTool</a>. It is an application to access selected preference settings of your personal user account which are not visible in System Preferences.</li>
+<li>Open TinkerTool &gt; Finder<ul>
+<li>check “disable desktop feature”.</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-2-Use-a-plain-desktop-background"><a href="#2-2-Use-a-plain-desktop-background" class="headerlink" title="2.2 Use a plain desktop background"></a>2.2 Use a plain desktop background</h3><p>Pretty pictures are nice. Using them as a desktop background is distracting and keeps you more time at your desk.<br>MacOS provides by default single-colour desktop pictures. In the system preferences, go to:</p>
+<ul>
+<li>Desktop &amp; Screen Saver<ul>
+<li>Desktop<ul>
+<li>Apple &gt; Colors<ul>
+<li>select a single colour as desktop wallpaper.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Use them to stay focused when you work.<br>An option would be to pick a different colour for each space. This may help you give meaning to the spaces.</p>
+<h2 id="3-Window-manager"><a href="#3-Window-manager" class="headerlink" title="3. Window manager"></a>3. Window manager</h2><h3 id="3-1-Install-an-additional-window-manager"><a href="#3-1-Install-an-additional-window-manager" class="headerlink" title="3.1 Install an additional window manager"></a>3.1 Install an additional window manager</h3><p>MacOS already has a built-in window manager that helps organise several windows in a space. This embedded window manager can be enhanced by installing additional software that will add additional features on top of the existing ones.</p>
+<p>At this point, one can go all-in and drastically change the default macOS behaviour with a tiling window manager like <a target="_blank" rel="noopener" href="https://ianyh.com/amethyst/">Amethyst</a> (<code>brew install --cask amethyst</code>). In this case, I would configure it to enable 10px window margins and resize windows using the mouse.</p>
+<p>I am not that kind of engineer, though. Personally, I picked a lighter option which is <a target="_blank" rel="noopener" href="https://rectangleapp.com/">Rectangle</a> (<code>brew install --cask rectangle</code>). It just works and doesn’t conflict with the existing macOS window manager.</p>
+<h3 id="3-2-Reduce-motion-and-transparency"><a href="#3-2-Reduce-motion-and-transparency" class="headerlink" title="3.2 Reduce motion and transparency"></a>3.2 Reduce motion and transparency</h3><p>The fancy animations are cool, I know. But they are slow and distracting.<br>We can live without them. In system preferences, go to:</p>
+<ul>
+<li>Accessibility<ul>
+<li>Display<ul>
+<li>Check “Reduce motion”: the space switch animation is now quicker</li>
+<li>Check “Reduce transparency”: it also looks better with a single-color wallpaper</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-3-Switch-between-windows"><a href="#3-3-Switch-between-windows" class="headerlink" title="3.3 Switch between windows"></a>3.3 Switch between windows</h3><p>That is what I really dislike about macOS, at least until Monterey. Whan an application creates more than one window, it is not direct to select a specific window using the keyboard.<br>I mean, you can do it… but it sucks. In detail, first, you have to select the app with the <code>Command + tab</code>, then press <code>arrow down</code>, and then select the app window. If you already have that app focus, you may use <code>Command + </code>, but I still don’t like it!</p>
+<p>I suggest using <a target="_blank" rel="noopener" href="https://alt-tab-macos.netlify.app/">AltTab</a> (<code>brew install --cask alt-tab</code>), which brings the power of Windows’s “alt-tab” window switcher to macOS. Nothing revolutionary, really!<br>I did a little step further and configured AltTab to be activated with <code>Command</code> instead of <code>Alt</code> for two reasons. The first one is that <code>Alt</code> is the default <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Compose_key">compose key</a>. The second reason is to completely replace the macOS app switcher that, at this point, is not needed anymore. To do that, right-click the AltTab menubar icon and:</p>
+<ul>
+<li>Preferences<ul>
+<li>Controls<ul>
+<li>Shortcut 1<ul>
+<li>Use <code>command+tab</code> as activating shortcut</li>
+</ul>
+</li>
+<li>Shortcut 2<ul>
+<li>Use <code>command+`</code> as activating shortcut</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>If you’d like to have a minimalist and faster AltTab, you may hide the window thumbnail preview feature.</p>
+<h2 id="4-Dock"><a href="#4-Dock" class="headerlink" title="4. Dock"></a>4. Dock</h2><h3 id="4-1-Mimic-other-OSes-window-minimization"><a href="#4-1-Mimic-other-OSes-window-minimization" class="headerlink" title="4.1 Mimic other OSes window minimization"></a>4.1 Mimic other OSes window minimization</h3><p>Usually, in Linux&#x2F;Windows the windows are minimized in the original app icon that is visible in the main bar. The dock can behave in a similar way, just go to the system preferences and select:</p>
+<ul>
+<li>Dock &amp; Menu Bar<ul>
+<li>Check “Minimize windows into application icon”.</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-2-Assign-apps-to-spaces"><a href="#4-2-Assign-apps-to-spaces" class="headerlink" title="4.2 Assign apps to spaces"></a>4.2 Assign apps to spaces</h3><p>MacOS allows the assignment of an app to a specific space. This is a valuable feature if you usually open a set of apps at a start-up (I think everyone does it) and want them to be opened in the space you want. To select a space for an app:</p>
+<ul>
+<li>Open the app in the space you use for it<ul>
+<li>right click on the app dock icon<ul>
+<li>select: option &gt; assign to “this Desktop”.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>I don’t think other desktop environments have this feature. It is extremely useful, though.</p>
+<h3 id="4-3-Launching-apps"><a href="#4-3-Launching-apps" class="headerlink" title="4.3 Launching apps"></a>4.3 Launching apps</h3><p>Spotlight is great to launch apps. But there is another launcher that is even cooler: it is <a target="_blank" rel="noopener" href="https://www.alfredapp.com/">Alfred</a> (<code>brew install --cask alfred</code>).<br>Like I did with AltTab, I configured Alfred to be activated with <code>Command</code> key in order to completely replace Spotlight. To do that, go to the:</p>
+<ul>
+<li>Preferences<ul>
+<li>General<ul>
+<li>Configure <code>command+space</code> as a shortcut: it will replace Spotlight</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Hint: using an app launcher will allow you to autohide the dock (<code>Option+Command+D</code>). You won’t need it.</p>
+<h2 id="5-Other-utilities"><a href="#5-Other-utilities" class="headerlink" title="5. Other utilities"></a>5. Other utilities</h2><h3 id="5-1-Clipboard-history"><a href="#5-1-Clipboard-history" class="headerlink" title="5.1 Clipboard history"></a>5.1 Clipboard history</h3><p><a target="_blank" rel="noopener" href="https://github.com/Clipy/Clipy">Clipy</a> (<code>brew install --cask clipy</code>) is a clipboard extension app for macOS. It keeps the clipboard history in plain text like my beloved <a target="_blank" rel="noopener" href="https://userbase.kde.org/Klipper">Klipper</a>.</p>
+<h3 id="5-2-Keep-the-menubar-tidy"><a href="#5-2-Keep-the-menubar-tidy" class="headerlink" title="5.2 Keep the menubar tidy"></a>5.2 Keep the menubar tidy</h3><p>In this post, I tried to keep out whatever is related to the look and feel because everyone has different tastes. But MacOS menubar often has lots of tray icons on the right and, at least for some apps, several menu items on the left. Those two sets may meet in the mid-ish and some icons may be impacted.<br><a target="_blank" rel="noopener" href="https://github.com/Mortennn/Dozer">Dozer</a> (<code>brew install --cask dozer</code>) doesn’t solve this issue but reduces it by hiding the menubar icons that are not always necessary. In my specific setup, I configured:</p>
+<ul>
+<li><code>clipy</code> and <code>spaceid</code> icons to be always visible.  </li>
+<li>To automatically hide the other menubar icons after 10 seconds</li>
+</ul>
+<h2 id="6-The-terminal-is-your-friend"><a href="#6-The-terminal-is-your-friend" class="headerlink" title="6. The terminal is your friend"></a>6. The terminal is your friend</h2><p>Whenever possible, I prefer using terminal-based apps as opposed to GUI apps. I am not covering here the several apps, but for sure you need a great terminal emulator to do that. MacOS default terminal app isn’t that bad at all. A powerful alternative would be <a target="_blank" rel="noopener" href="https://iterm2.com/">iTerm2</a>: as per its documentation, it “brings the terminal into the modern age with features you never knew you always wanted” and I agree. For sure, it has a very cool keyboard shortcuts that will speed up your work.</p>
+<h3 id="6-1-Display-function-keys-on-the-Touch-Bar"><a href="#6-1-Display-function-keys-on-the-Touch-Bar" class="headerlink" title="6.1 Display function keys on the Touch Bar"></a>6.1 Display function keys on the Touch Bar</h3><p>It is convenient to always display function keys on the Touch Bar for the terminal app.<br>This configuration is per app. I did it for the <code>Terminal</code> app:</p>
+<ol>
+<li>Go to Apple &gt; System Preferences</li>
+<li>Select the Keyboard preference pane</li>
+<li>Click on the Shortcuts tab</li>
+<li>In the left sidebar, select the Function Keys option</li>
+<li>On the right-hand side click on the plus + button</li>
+<li>Select the <code>Terminal</code> app</li>
+<li>Add the app</li>
+</ol>
+<p>Now the MacOS default terminal always displays the function keys. You can have the same preferences for other apps (iTerm, IDE, etc).</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/productivity/" rel="tag"># productivity</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/09/05/cherry-picking-git-commits-amongst-different-repositories/" rel="prev" title="Cherry-picking git commits amongst different repositories">
+      <i class="fa fa-chevron-left"></i> Cherry-picking git commits amongst different repositories
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/02/03/error-budget-burn-rate-alerts-for-major-outages-on-medium/" rel="next" title="Error budget burn rate alerts for major outages - Medium">
+      Error budget burn rate alerts for major outages - Medium <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#My-MacOS-Monterey-Setup"><span class="nav-number">1.</span> <span class="nav-text">My MacOS Monterey Setup</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Spaces"><span class="nav-number">1.1.</span> <span class="nav-text">1. Spaces</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-Create-9-spaces"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1 Create 9 spaces.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-The-space-order-should-not-change"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2 The space order should not change</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-Use-a-shortcut-to-change-space"><span class="nav-number">1.1.3.</span> <span class="nav-text">1.3 Use a shortcut to change space</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-Make-it-clear-which-is-the-current-space"><span class="nav-number">1.1.4.</span> <span class="nav-text">1.4 Make it clear which is the current space</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Disable-desktop-feature"><span class="nav-number">1.2.</span> <span class="nav-text">2. Disable desktop feature</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-No-desktop-icons"><span class="nav-number">1.2.1.</span> <span class="nav-text">2.1 No desktop icons</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-Use-a-plain-desktop-background"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.2 Use a plain desktop background</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Window-manager"><span class="nav-number">1.3.</span> <span class="nav-text">3. Window manager</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-Install-an-additional-window-manager"><span class="nav-number">1.3.1.</span> <span class="nav-text">3.1 Install an additional window manager</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-Reduce-motion-and-transparency"><span class="nav-number">1.3.2.</span> <span class="nav-text">3.2 Reduce motion and transparency</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-Switch-between-windows"><span class="nav-number">1.3.3.</span> <span class="nav-text">3.3 Switch between windows</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Dock"><span class="nav-number">1.4.</span> <span class="nav-text">4. Dock</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-Mimic-other-OSes-window-minimization"><span class="nav-number">1.4.1.</span> <span class="nav-text">4.1 Mimic other OSes window minimization</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-Assign-apps-to-spaces"><span class="nav-number">1.4.2.</span> <span class="nav-text">4.2 Assign apps to spaces</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-Launching-apps"><span class="nav-number">1.4.3.</span> <span class="nav-text">4.3 Launching apps</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Other-utilities"><span class="nav-number">1.5.</span> <span class="nav-text">5. Other utilities</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-Clipboard-history"><span class="nav-number">1.5.1.</span> <span class="nav-text">5.1 Clipboard history</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-Keep-the-menubar-tidy"><span class="nav-number">1.5.2.</span> <span class="nav-text">5.2 Keep the menubar tidy</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-The-terminal-is-your-friend"><span class="nav-number">1.6.</span> <span class="nav-text">6. The terminal is your friend</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-Display-function-keys-on-the-Touch-Bar"><span class="nav-number">1.6.1.</span> <span class="nav-text">6.1 Display function keys on the Touch Bar</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Saverio Ferrara"
+      src="/images/logo/logo.png">
+  <p class="site-author-name" itemprop="name">Saverio Ferrara</p>
+  <div class="site-description" itemprop="description">Hello, my name is Saverio and I'm a software engineer and a passionate software developer. Addicted to the Linux operating system, I love learning new things and working with all the open source technologies.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">43</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">106</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/fsferrara" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;fsferrara" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/fsferrara" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;fsferrara" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Saverio Ferrara</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://fsferrara.github.io/2022/12/30/my-macos-monterey-setup/";
+    this.page.identifier = "2022/12/30/my-macos-monterey-setup/";
+    this.page.title = "My MacOS Monterey Setup";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://fsferrara.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>
