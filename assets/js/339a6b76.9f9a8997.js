@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocusaurus=self.webpackChunkdocusaurus||[]).push([[5820],{5346:a=>{a.exports=JSON.parse('{"tag":{"label":"docker","permalink":"/b/tags/docker","allTagsPath":"/b/tags","count":1,"unlisted":false},"listMetadata":{"permalink":"/b/tags/docker","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

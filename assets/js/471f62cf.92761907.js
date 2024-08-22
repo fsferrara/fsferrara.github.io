@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocusaurus=self.webpackChunkdocusaurus||[]).push([[5706],{8898:a=>{a.exports=JSON.parse('{"tag":{"label":"g\xf6del","permalink":"/b/tags/godel","allTagsPath":"/b/tags","count":1,"unlisted":false},"listMetadata":{"permalink":"/b/tags/godel","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
