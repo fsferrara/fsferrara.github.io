@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocusaurus=self.webpackChunkdocusaurus||[]).push([[7161],{8618:a=>{a.exports=JSON.parse('{"tag":{"label":"turing","permalink":"/b/tags/turing","allTagsPath":"/b/tags","count":2,"unlisted":false},"listMetadata":{"permalink":"/b/tags/turing","page":1,"postsPerPage":10,"totalPages":1,"totalCount":2,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

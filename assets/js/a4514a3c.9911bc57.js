@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocusaurus=self.webpackChunkdocusaurus||[]).push([[21],{1579:a=>{a.exports=JSON.parse('{"tag":{"label":"tuning","permalink":"/b/tags/tuning","allTagsPath":"/b/tags","count":2,"unlisted":false},"listMetadata":{"permalink":"/b/tags/tuning","page":1,"postsPerPage":10,"totalPages":1,"totalCount":2,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
