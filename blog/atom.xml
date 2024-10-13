@@ -353,8 +353,8 @@ Here is <a href="https://app.aperian.com/share/profile/5ede44a0-ba48-49ae-bee5-4
     </entry>
     <entry>
         <title type="html"><![CDATA[How Do I Get Things Done]]></title>
-        <id>https://fsferrara.github.io/blog/2023/how-do-I-get-things-done/how-do-I-get-things-done</id>
-        <link href="https://fsferrara.github.io/blog/2023/how-do-I-get-things-done/how-do-I-get-things-done"/>
+        <id>https://fsferrara.github.io/blog/2023/gtd/how-do-I-get-things-done</id>
+        <link href="https://fsferrara.github.io/blog/2023/gtd/how-do-I-get-things-done"/>
         <updated>2023-08-07T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Almost everyone knows GTD. It is the acronym of "Getting Things Done" which is a productivity framework introduced by David Allen in his book "Getting Things Done (2002) - The Art of Stress-Free Productivity".]]></summary>
         <content type="html"><![CDATA[<p>Almost everyone knows GTD. It is the acronym of "Getting Things Done" which is a productivity framework introduced by David Allen in his book "Getting Things Done (2002) - The Art of Stress-Free Productivity".<br>
@@ -362,12 +362,12 @@ Here is <a href="https://app.aperian.com/share/profile/5ede44a0-ba48-49ae-bee5-4
 <p>I became a GTD user during a period in which I was so full of things to do that I couldn't work well. Just keeping the task list in mind completely occupied my brain and I could no longer concentrate on the task in progress.<br>
 <!-- -->I GTD love it since it keeps track of my tasks and allows me to focus on each one of them individually. Also, it allows me to work on several workstreams (or projects) during the same period (e.g. a quarter).</p>
 <p>I'd like to recap in this post how I applied the framework. My main goals were to keep the entire procedure lightweight, portable, and almost paperless.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-tools">The tools<a href="https://fsferrara.github.io/blog/2023/how-do-I-get-things-done/how-do-I-get-things-done#the-tools" class="hash-link" aria-label="Direct link to The tools" title="Direct link to The tools">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-tools">The tools<a href="https://fsferrara.github.io/blog/2023/gtd/how-do-I-get-things-done#the-tools" class="hash-link" aria-label="Direct link to The tools" title="Direct link to The tools">​</a></h2>
 <p>Let's get straight to what everyone wants to know: the tool/software I adopted.</p>
 <p>The first tool is a digital calendar. I don't suggest a specific calendar over another since they are all similar and I bet you already have one. In my calendar, I keep track of ticklers, recurring tasks, and, of course, meetings.</p>
 <p>Another tool is... a notebook! Even if I can easily replace it with a digital solution, I can't stop using paper and pen.</p>
 <p>The last tool is a Trello Board.</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="gtd-trello-board">GTD Trello Board<a href="https://fsferrara.github.io/blog/2023/how-do-I-get-things-done/how-do-I-get-things-done#gtd-trello-board" class="hash-link" aria-label="Direct link to GTD Trello Board" title="Direct link to GTD Trello Board">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="gtd-trello-board">GTD Trello Board<a href="https://fsferrara.github.io/blog/2023/gtd/how-do-I-get-things-done#gtd-trello-board" class="hash-link" aria-label="Direct link to GTD Trello Board" title="Direct link to GTD Trello Board">​</a></h3>
 <p>The reasons I chose Trello are several, I can list some from my top of mind:</p>
 <ul>
 <li>a board allows you to have a quick look at all your lists,</li>
@@ -377,7 +377,7 @@ Here is <a href="https://app.aperian.com/share/profile/5ede44a0-ba48-49ae-bee5-4
 <p>I shared <a href="https://trello.com/b/JD7ituj7/my-gtd-template" target="_blank" rel="noopener noreferrer">my Trello Board Template for GTD</a>. It is ready to use and contains useful instructions in the right place to reduce friction during its usage.</p>
 <p><img decoding="async" loading="lazy" alt="GTD Board Teamplate" src="https://fsferrara.github.io/assets/images/my-gtd-template-ed81fda0ae5d5e2421af2f114eeff45b.png" width="1898" height="452" class="img_ev3q"></p>
 <p>In the next sections, each list of this board is described.</p>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="horizons-of-focus">Horizons of Focus<a href="https://fsferrara.github.io/blog/2023/how-do-I-get-things-done/how-do-I-get-things-done#horizons-of-focus" class="hash-link" aria-label="Direct link to Horizons of Focus" title="Direct link to Horizons of Focus">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="horizons-of-focus">Horizons of Focus<a href="https://fsferrara.github.io/blog/2023/gtd/how-do-I-get-things-done#horizons-of-focus" class="hash-link" aria-label="Direct link to Horizons of Focus" title="Direct link to Horizons of Focus">​</a></h4>
 <p>I like to start top-down and define what is my purpose first. Keeping it in mind allows me to define priorities for each task and discard what is not useful to pursue the purpose.</p>
 <p>Allen suggests working on the big picture thinking with 5 increasingly top-down horizons:</p>
 <ul>
@@ -390,11 +390,11 @@ Here is <a href="https://app.aperian.com/share/profile/5ede44a0-ba48-49ae-bee5-4
 <p>In my GTD implementation, I defined a Trello list "Horizons of Focus" containing a card for each horizon from H5 (i.e. Horizon 5) to H2 (i.e. Horizon 2). In those cards, there is just a textual description of the related horizon.</p>
 <p>The Horizon 1 is an exception since it is simplistic to describe it in a single card, especially if you are keeping track of multiple workstreams. For H1 (i.e. Horizon 1) I defined a dedicated list named "Workstreams".</p>
 <p>The "Ground" for those horizons are the tasks/actions at the core of getting things done. They are all the cards contained in the lists: "Later", "This Week", "Today", and "Completed".</p>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="workstreams">Workstreams<a href="https://fsferrara.github.io/blog/2023/how-do-I-get-things-done/how-do-I-get-things-done#workstreams" class="hash-link" aria-label="Direct link to Workstreams" title="Direct link to Workstreams">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="workstreams">Workstreams<a href="https://fsferrara.github.io/blog/2023/gtd/how-do-I-get-things-done#workstreams" class="hash-link" aria-label="Direct link to Workstreams" title="Direct link to Workstreams">​</a></h4>
 <p>The Workstreams (that are Projects and Outcomes) are listed here. I have one card for each of them containing a description and split into several milestones. If needed, in the workstream card I can define the list of tasks using a "Checklist". Trello allows me to convert a checklist item into a new card so that I can pull tasks from the workstream when I need them.</p>
 <p>I suggest reviewing the "Workstream" list monthly. It is good to keep in mind what are the current activities and what is their status.</p>
 <p>A note about acquiring new skills. Learning is something everyone should continue doing with constancy. In some cases, it is essential to continue being employable. I use a dedicated workstream to keep track of this activity and be sure to dedicate to it a portion of my time.</p>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="inbox">Inbox<a href="https://fsferrara.github.io/blog/2023/how-do-I-get-things-done/how-do-I-get-things-done#inbox" class="hash-link" aria-label="Direct link to Inbox" title="Direct link to Inbox">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="inbox">Inbox<a href="https://fsferrara.github.io/blog/2023/gtd/how-do-I-get-things-done#inbox" class="hash-link" aria-label="Direct link to Inbox" title="Direct link to Inbox">​</a></h4>
 <p>The "Inbox" list is where I stockpile everything. I'm careful not to leave stuff on this list for too long. I usually review this list once or twice a day following the Step 1-2-3 procedure described below.</p>
 <p><strong>Step 1: Stockpile</strong></p>
 <p>Stockpiling is "Step 1" to enter in my GTD system and means capturing all your outstanding stuff. It's a vital step because anything that doesn't get in your GTD system will stay on your mind. And anything that stays on your mind eats energy and kills creativity.</p>
@@ -424,20 +424,20 @@ I may have other stuff in my physical notebook. At the end of the day, I store a
 <li>If it is something urgent, then I'll move the card to the "Today" or "This Week" list. It depends on how much urgent is it.</li>
 <li>Trashing what's left. The entire stockpile-clarify-organize process allows us to detect activities that are not important.</li>
 </ul>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="later">Later<a href="https://fsferrara.github.io/blog/2023/how-do-I-get-things-done/how-do-I-get-things-done#later" class="hash-link" aria-label="Direct link to Later" title="Direct link to Later">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="later">Later<a href="https://fsferrara.github.io/blog/2023/gtd/how-do-I-get-things-done#later" class="hash-link" aria-label="Direct link to Later" title="Direct link to Later">​</a></h4>
 <p>In the "Later" list there are the cards I have to execute. Each week, I review this list and define the week's scope by moving the cards I want to execute during that week to the "This Week" list.
 If a card is in the "Later" list for a long time, you may want to move it to the "Someday/Maybe" list.</p>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="this-week">This Week<a href="https://fsferrara.github.io/blog/2023/how-do-I-get-things-done/how-do-I-get-things-done#this-week" class="hash-link" aria-label="Direct link to This Week" title="Direct link to This Week">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="this-week">This Week<a href="https://fsferrara.github.io/blog/2023/gtd/how-do-I-get-things-done#this-week" class="hash-link" aria-label="Direct link to This Week" title="Direct link to This Week">​</a></h4>
 <p>In the "This Week" list there are the cards part of the current week's scope. Each morning, when I plan the activity for the day, I move some cards from the "This Week" list to the "Today" list.</p>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="today">Today<a href="https://fsferrara.github.io/blog/2023/how-do-I-get-things-done/how-do-I-get-things-done#today" class="hash-link" aria-label="Direct link to Today" title="Direct link to Today">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="today">Today<a href="https://fsferrara.github.io/blog/2023/gtd/how-do-I-get-things-done#today" class="hash-link" aria-label="Direct link to Today" title="Direct link to Today">​</a></h4>
 <p>The "Today" list contains the cards that are in the scope of the day.
 Here is where my notebook comes into play. I don't particularly appreciate stating at this digital list all day long. For this reason, I copy the card titles on paper (like a task list) and then execute them.
 At the end of the day, the done cards will be moved into the "Completed" list.</p>
 <p>If you want to go completely paperless, then this list can be used instead of the notebook.</p>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="somedaymaybe">Someday/Maybe<a href="https://fsferrara.github.io/blog/2023/how-do-I-get-things-done/how-do-I-get-things-done#somedaymaybe" class="hash-link" aria-label="Direct link to Someday/Maybe" title="Direct link to Someday/Maybe">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="somedaymaybe">Someday/Maybe<a href="https://fsferrara.github.io/blog/2023/gtd/how-do-I-get-things-done#somedaymaybe" class="hash-link" aria-label="Direct link to Someday/Maybe" title="Direct link to Someday/Maybe">​</a></h4>
 <p>The "Someday/Maybe" list contains outcomes or actions you may like to take one day, under different circumstances.
 Each quarter, or when I start a new workstream, I review the entire GTD board. On this occasion, I may re-organize the cards by moving them around. During this review, you can trash the cards that are in the "Someday/Maybe" list that are no more relevant.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="are-you-using-gtd">Are you using GTD?<a href="https://fsferrara.github.io/blog/2023/how-do-I-get-things-done/how-do-I-get-things-done#are-you-using-gtd" class="hash-link" aria-label="Direct link to Are you using GTD?" title="Direct link to Are you using GTD?">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="are-you-using-gtd">Are you using GTD?<a href="https://fsferrara.github.io/blog/2023/gtd/how-do-I-get-things-done#are-you-using-gtd" class="hash-link" aria-label="Direct link to Are you using GTD?" title="Direct link to Are you using GTD?">​</a></h2>
 <p>In conclusion, implementing the GTD framework has transformed my productivity and focus. With a digital calendar, trusty notebook, and Trello board, I've achieved a lightweight, organized, and almost paperless workflow.</p>
 <p>The Horizons of Focus provided clarity on my purpose, goals, and priorities, while Trello streamlined task management from "Inbox" to "Completed."</p>
 <p>If you're willing to use GTD, as you embrace it, I suggest you to customize it to fit your needs. Embrace stress-free productivity and enjoy a fulfilling life with purpose and efficiency.</p>
