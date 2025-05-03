@@ -1,7 +1,6 @@
 ---
 title: "Sending and receiving TCP/UDP packets using Netcat"
 date: 2020-08-02
-authors: [fsferrara]
 tags:
   - devops
   - macos

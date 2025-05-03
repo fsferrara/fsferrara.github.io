@@ -1,7 +1,6 @@
 ---
 title: "Windows-Linux commands cheat-sheet"
 date: 2009-07-01
-authors: [fsferrara]
 tags:
   - system administration
   - dos

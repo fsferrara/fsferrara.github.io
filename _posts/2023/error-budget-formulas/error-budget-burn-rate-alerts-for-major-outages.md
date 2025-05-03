@@ -1,7 +1,6 @@
 ---
 title: "Error budget burn rate alerts for major outages"
 date: 2023-02-03
-authors: [fsferrara]
 tags:
   - devops
   - reliability

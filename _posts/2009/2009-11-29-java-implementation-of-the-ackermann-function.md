@@ -1,7 +1,6 @@
 ---
 title: "Java implementation of the Ackermann function"
 date: 2009-11-29
-authors: [fsferrara]
 tags:
   - programming
   - ackermann

@@ -1,7 +1,6 @@
 ---
 title: "Getting Started With GraphQL"
 date: 2017-12-10
-authors: [fsferrara]
 tags:
   - programming
   - api

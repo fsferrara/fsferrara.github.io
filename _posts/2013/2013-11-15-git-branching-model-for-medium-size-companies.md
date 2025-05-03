@@ -1,7 +1,6 @@
 ---
 title: "A GIT branching model for medium-size companies"
 date: 2013-11-15
-authors: [fsferrara]
 tags:
   - programming
   - branching-model

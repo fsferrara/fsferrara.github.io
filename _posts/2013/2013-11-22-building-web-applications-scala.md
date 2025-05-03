@@ -1,7 +1,6 @@
 ---
 title: "Building web applications with Scala"
 date: 2013-11-22
-authors: [fsferrara]
 tags:
   - programming
   - java

@@ -1,7 +1,6 @@
 ---
 title: "Recursive implementation of Heap sort algorithm"
 date: 2010-07-11
-authors: [fsferrara]
 tags:
   - programming
   - c

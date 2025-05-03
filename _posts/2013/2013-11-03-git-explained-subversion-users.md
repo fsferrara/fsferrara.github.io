@@ -1,7 +1,6 @@
 ---
 title: "GIT explained for Subversion users"
 date: 2013-11-03
-authors: [fsferrara]
 tags:
   - programming
   - git

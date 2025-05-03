@@ -1,7 +1,6 @@
 ---
 title: "ISDN Technology"
 date: 2010-01-09
-authors: [fsferrara]
 tags:
   - system administration
   - asterisk

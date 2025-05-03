@@ -1,7 +1,6 @@
 ---
 title: "C implementation of Quicksort algorithm"
 date: 2009-07-07
-authors: [fsferrara]
 tags:
   - programming
   - algorithm

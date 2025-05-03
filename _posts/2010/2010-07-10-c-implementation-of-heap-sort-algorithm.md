@@ -1,7 +1,6 @@
 ---
 title: "C implementation of Heap sort algorithm"
 date: 2010-07-10
-authors: [fsferrara]
 tags:
   - programming
   - c

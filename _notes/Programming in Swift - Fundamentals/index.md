@@ -1,7 +1,6 @@
 ---
 title: "Programming in Swift - Fundamentals"
 date: 2024-06-02
-authors: [fsferrara]
 tags:
   - course
 ---

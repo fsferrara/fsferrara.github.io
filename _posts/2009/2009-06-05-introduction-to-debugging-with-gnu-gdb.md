@@ -1,7 +1,6 @@
 ---
 title: "Introduction to debugging with GNU GDB"
 date: 2009-06-05
-authors: [fsferrara]
 tags:
   - programming
   - c

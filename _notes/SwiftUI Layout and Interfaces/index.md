@@ -1,8 +1,6 @@
 ---
 title: "SwiftUI Layout and Interfaces"
 date: 2024-06-12
-authors:
-  - fsferrara
 tags:
   - course
 ---

@@ -1,7 +1,6 @@
 ---
 title: "Matrix types and Storage methods"
 date: 2009-09-02
-authors: [fsferrara]
 tags:
   - programming
   - array

@@ -1,7 +1,6 @@
 ---
 title: "Blogging with Octopress and Jekyll"
 date: 2018-01-05
-authors: [fsferrara]
 tags:
   - blog
   - ruby

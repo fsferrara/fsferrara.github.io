@@ -1,7 +1,6 @@
 ---
 title: "Isolate services using the command pattern"
 date: 2018-08-26
-authors: [fsferrara]
 tags:
   - programming
   - java

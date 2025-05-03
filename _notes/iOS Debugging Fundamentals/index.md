@@ -1,8 +1,6 @@
 ---
 title: "iOS Debugging Fundamentals"
 date: 2024-06-26
-authors:
-  - fsferrara
 tags:
   - course
 ---

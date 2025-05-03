@@ -1,7 +1,6 @@
 ---
 title: "My Work Profile - by Aperian"
 date: 2023-11-15
-authors: [fsferrara]
 tags:
   - course
 ---

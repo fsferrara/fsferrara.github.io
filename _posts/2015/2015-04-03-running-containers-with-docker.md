@@ -1,7 +1,6 @@
 ---
 title: "Running containers with Docker"
 date: 2015-04-03
-authors: [fsferrara]
 tags:
   - devops
   - boot2docker

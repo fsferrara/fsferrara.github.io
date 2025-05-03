@@ -1,7 +1,6 @@
 ---
 title: "Planning a Cluster for Hadoop BigData"
 date: 2014-02-21
-authors: [fsferrara]
 tags:
   - system administration
   - big-data

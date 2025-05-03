@@ -1,7 +1,6 @@
 ---
 title: "Principali caratteristiche di un sistema Linux con kernel aggiornato alla versione 2.6.X"
 date: 2006-11-17
-authors: [fsferrara]
 tags:
   - talks
 ---

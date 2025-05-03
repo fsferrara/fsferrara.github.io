@@ -1,7 +1,6 @@
 ---
 title: "XQuery queries in Java"
 date: 2009-10-29
-authors: [fsferrara]
 tags:
   - programming
   - basex

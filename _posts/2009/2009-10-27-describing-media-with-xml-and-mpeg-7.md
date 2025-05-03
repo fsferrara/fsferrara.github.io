@@ -1,7 +1,6 @@
 ---
 title: "Describing media with XML and MPEG-7"
 date: 2009-10-27
-authors: [fsferrara]
 tags:
   - programming
   - mpeg-7

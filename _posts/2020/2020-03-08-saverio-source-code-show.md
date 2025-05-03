@@ -1,7 +1,6 @@
 ---
 title: "Saverio's Source Code channel on Twitch"
 date: 2020-03-08
-authors: [fsferrara]
 tags:
   - programming
   - learning

@@ -1,7 +1,6 @@
 ---
 title: "Working Together in a Global Company"
 date: 2019-05-04
-authors: [fsferrara]
 tags:
   - writing
   - remote-working

@@ -1,7 +1,6 @@
 ---
 title: "How Do I Get Things Done"
 date: 2023-08-07
-authors: [fsferrara]
 tags:
   - productivity
   - gtd

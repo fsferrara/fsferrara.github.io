@@ -1,7 +1,6 @@
 ---
 title: "Programming in Swift - Functions and Types"
 date: 2024-06-15
-authors: [fsferrara]
 tags:
   - course
 ---

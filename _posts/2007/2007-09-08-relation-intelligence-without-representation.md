@@ -1,7 +1,6 @@
 ---
 title: "Summary - Intelligence without representation"
 date: 2007-09-08
-authors: [fsferrara]
 tags:
   - history
   - computer-science

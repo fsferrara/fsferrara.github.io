@@ -1,7 +1,6 @@
 ---
 title: "Loop-Unrolling Technique"
 date: 2009-05-20
-authors: [fsferrara]
 tags:
   - programming
   - algorithm

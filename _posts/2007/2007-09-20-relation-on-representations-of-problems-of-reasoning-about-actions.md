@@ -1,7 +1,6 @@
 ---
 title: "Summary - On Representations of Problems of Reasoning about Actions"
 date: 2007-09-20
-authors: [fsferrara]
 tags:
   - history
   - computer-science

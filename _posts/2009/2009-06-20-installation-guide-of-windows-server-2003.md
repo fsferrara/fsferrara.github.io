@@ -1,7 +1,6 @@
 ---
 title: "Installation guide of Windows Server 2003"
 date: 2009-06-20
-authors: [fsferrara]
 tags:
   - system administration
   - tuning

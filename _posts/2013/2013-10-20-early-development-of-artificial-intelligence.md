@@ -1,7 +1,6 @@
 ---
 title: "Early development of Artificial Intelligence"
 date: 2013-10-20
-authors: [fsferrara]
 tags:
   - history
   - ai

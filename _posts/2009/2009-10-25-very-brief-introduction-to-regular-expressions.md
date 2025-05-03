@@ -1,7 +1,6 @@
 ---
 title: "Very brief introduction to Regular Expressions"
 date: 2009-10-25
-authors: [fsferrara]
 tags:
   - programming
   - regex

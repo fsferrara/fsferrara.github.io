@@ -1,7 +1,6 @@
 ---
 title: "The Birth of Computer Science"
 date: 2013-10-20
-authors: [fsferrara]
 tags:
   - history
   - computer-science

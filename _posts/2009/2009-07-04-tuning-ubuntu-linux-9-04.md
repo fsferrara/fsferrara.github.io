@@ -1,7 +1,6 @@
 ---
 title: "Tuning Ubuntu Linux 9.04"
 date: 2009-07-04
-authors: [fsferrara]
 tags:
   - system administration
   - linux

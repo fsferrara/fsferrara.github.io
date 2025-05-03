@@ -1,7 +1,6 @@
 ---
 title: "Very brief introduction to XML"
 date: 2009-10-26
-authors: [fsferrara]
 tags:
   - programming
   - data-structures

@@ -1,7 +1,6 @@
 ---
 title: "Da REST a GraphQL in 90 minuti"
 date: 2017-12-21
-authors: [fsferrara]
 tags:
   - talks
   - meetup

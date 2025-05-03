@@ -1,7 +1,6 @@
 ---
 title: "The Web and the problem of Privacy"
 date: 2009-06-27
-authors: [fsferrara]
 tags:
   - security and privacy
   - p3p

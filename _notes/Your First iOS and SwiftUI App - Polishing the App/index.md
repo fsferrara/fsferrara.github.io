@@ -1,7 +1,6 @@
 ---
 title: "Your First iOS and SwiftUI App - Polishing the App"
 date: 2024-05-24
-authors: [fsferrara]
 tags:
   - course
 ---

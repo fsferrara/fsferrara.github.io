@@ -1,7 +1,6 @@
 ---
 title: "Summary - Programs With Common Sense"
 date: 2007-09-27
-authors: [fsferrara]
 tags:
   - history
   - computer-science

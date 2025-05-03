@@ -1,7 +1,6 @@
 ---
 title: "Cherry-picking git commits amongst different repositories"
 date: 2021-09-05
-authors: [fsferrara]
 tags:
   - programming
   - git

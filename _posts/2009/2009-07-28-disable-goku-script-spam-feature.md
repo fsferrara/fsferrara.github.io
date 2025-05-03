@@ -1,7 +1,6 @@
 ---
 title: "Disable Goku Script spam feature"
 date: 2009-07-28
-authors: [fsferrara]
 tags:
   - internet
   - chat

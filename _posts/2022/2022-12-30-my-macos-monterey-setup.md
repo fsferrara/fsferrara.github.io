@@ -1,7 +1,6 @@
 ---
 title: "My MacOS Monterey Setup"
 date: 2022-12-30
-authors: [fsferrara]
 tags:
   - writing
   - productivity

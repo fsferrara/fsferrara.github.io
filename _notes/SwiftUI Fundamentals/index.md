@@ -1,7 +1,6 @@
 ---
 title: "SwiftUI Fundamentals"
 date: 2024-06-05
-authors: [fsferrara]
 tags:
   - course
 ---

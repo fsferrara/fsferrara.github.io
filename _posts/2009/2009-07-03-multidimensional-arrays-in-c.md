@@ -1,7 +1,6 @@
 ---
 title: "Multidimensional Arrays in C"
 date: 2009-07-03
-authors: [fsferrara]
 tags:
   - programming
   - array

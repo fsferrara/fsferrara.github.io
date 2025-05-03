@@ -1,7 +1,6 @@
 ---
 title: "Your First iOS and SwiftUI App - An App from Scratch"
 date: 2024-05-16
-authors: [fsferrara]
 tags:
   - course
 ---
