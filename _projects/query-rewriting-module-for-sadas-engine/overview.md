@@ -1,5 +1,6 @@
 ---
 title: "Query rewriting module for SADAS Engine"
+date: 2010-03-01
 ---
 **SADAS Engine** is a columnar DBMS specifically designed in order to achieve outstanding performances in Data warehouse environments.
 
@@ -9,7 +10,7 @@ I worked on the design and implementation of the SADAS View-Rewriting module, in
 
 As far as I know Advanced Systems is the only Italian company in this field and it was a pleasure to work with a team so great.
 
-![SADAS DBMS](timeline/sadas_db.jpg)
+![SADAS DBMS](../sadas_db.jpg)
 
 _Position_: Trainee at [Advanced Systems](http://www.advancedsystems.it/ "Advanced Systems")  
 _Technologies_: C++

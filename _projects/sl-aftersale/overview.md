@@ -1,5 +1,6 @@
 ---
 title: "SL AfterSale"
+date: 2011-05-01
 ---
 **SL AfterSale** created as a tool used by operators in the automotive sector to ensure that, after sale, the restoration of all the features of the vehicle in case of failure.
 
@@ -7,7 +8,7 @@ Once you have bought the vehicle in fact, the customer will be contacted directl
 
 During this project I wrote my first WordPress plugin. It allows the management of customers, car, and damage. The plugin contains both the part related to the user, and the back-office reserved for consultants.
 
-![SL AfterSale](timeline/slaftersale.jpg)
+![SL AfterSale](../slaftersale.jpg)
 
 _Position_: Freelancer for [SL AfterSale](http://www.slaftersale.com/ "SL AfterSale")  
 _Technologies_: PHP, HTML, CSS, WordPress, WordPress plugin writing, MySql

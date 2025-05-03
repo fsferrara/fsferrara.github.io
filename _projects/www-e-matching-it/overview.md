@@ -1,5 +1,6 @@
 ---
 title: "www.e-matching.it"
+date: 2008-03-01
 ---
 **e-Matching.it** is an excellent opportunity to develop new business relations.
 
@@ -9,7 +10,7 @@ Matching is based on the arrangement of meetings between participants, and I rea
 
 I also worked to the porting of the entire front-end layer from Python/Zope technology to Java/JBoss-Seam.
 
-![e-Matching](timeline/e-matching-it_2008.jpg)
+![e-Matching](../e-matching-it_2008.jpg)
 
 _Position_: Consultant at [Reply](http://www.reply.it/ "Reply")  
 _Technologies_: Java, JBoss, JBoss Seam Framework, RedHat Linux cluster, High-reliability PostgreSQL cluster, Python, Zope.

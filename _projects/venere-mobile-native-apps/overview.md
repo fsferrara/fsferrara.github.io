@@ -1,5 +1,6 @@
 ---
 title: "Venere Mobile Native Apps"
+date: 2014-03-01
 ---
 **Venere.com** (an Expedia Inc. company), is the Italian leader in the online hotel reservations market. Venere.com features real-time rates, availability, special offers and the best deals on the web.
 
@@ -7,7 +8,7 @@ I looked after the mobile part of the business. First by enhancing the existing 
 
 In the end I designed and implemented a prototype of a new Venere App based on Hybrid Technologies.
 
-![Venere Mobile Apps](timeline/venere-mobile-apps.png)
+![Venere Mobile Apps](../venere-mobile-apps.png)
 
 _Position_: Software Dev Engineer I at [Venere.com](http://www.venere.com/ "Venere.com")  
 **Technologies**  

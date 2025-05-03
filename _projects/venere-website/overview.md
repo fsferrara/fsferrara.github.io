@@ -1,11 +1,12 @@
 ---
 title: "Venere Website"
+date: 2011-06-01
 ---
 **Venere.com** (an Expedia Inc. company), is the Italian leader in the online hotel reservations market. Venere.com features real-time rates, availability, special offers and the best deals on the web.
 
 I spent several years contributing to the success of this amazing company.
 
-![Venere](./timeline/venere.jpg)
+![Venere](../venere.jpg)
 
 _Position_: Associate Software Dev Eng at [Venere.com](http://www.venere.com/ "Venere.com")  
 **Technologies**  

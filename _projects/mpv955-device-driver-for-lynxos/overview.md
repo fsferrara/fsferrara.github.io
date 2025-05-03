@@ -1,5 +1,6 @@
 ---
 title: "MPV955 Device Driver for LynxOS"
+date: 2005-05-01
 ---
 I wrote the **MPV955 Device Driver for LynxOS**, a Unix-like real-time operating system from LynuxWorks (sometimes known as the Lynx Operating System). LynxOS features are: full POSIX conformance and Linux compatibility.
 
@@ -11,7 +12,7 @@ The Virgo detector for gravitational waves consists mainly in a Michelson laser 
 
 I was really lucky to join this experiment and look after such an interesting activity.
 
-![MPV955 Device Driver](timeline/mpv955.png)
+![MPV955 Device Driver](../mpv955.png)
 
 _Position_: Trainee at [VIRGO Lab (INFN), Department of Physical Sciences](https://www.virgo.infn.it/ "Virgo INFN")  
 **Technologies**  
