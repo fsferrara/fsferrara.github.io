@@ -18,16 +18,16 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Saverio
+title: fsferrara.github.io
 repository: fsferrara/fsferrara.github.io
 author: Saverio Ferrara
 # email: fsferrara@users.noreply.github.com
 description: >- # this means to ignore newlines until "baseurl:"
-  💻 Software Engineer 🇮🇹
+  💻 Software Engineer 🇮🇹 Projects, Resume, Learnings
 baseurl: "" # the subpath of your site, e.g. /blog
 domain: "fsferrara.github.io"
 url: "https://fsferrara.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-github_username:  fsferrara
+# github_username:  fsferrara
 # linkedin_username: fsferrara
 # twitter_username: fsferrara
 # dribbble_username: fsferrara
@@ -39,36 +39,77 @@ github_username:  fsferrara
 # youtube_username: fsferrara
 # googleplus_username: +fsferrara
 
-header_pages:
-  - about/about.markdown
-  - projects/projects.markdown
-
-
 # rss: rss
 show_excerpts: false # set to true to show excerpts on the homepage
 
 # Build settings
+markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
+
+permalink: pretty
+
+collections:
+  projects:
+    output: true
+    sort_by: date
+    permalink: /:collection/:path/
+  notes:
+    output: true
+    sort_by: date
+    permalink: /:collection/:path/
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "notes"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "page"
+
+# Menu settings
+header_pages:
+  - about/index.md
+  - resume/index.md
+  - notes.md
+  - projects.md
+
+# Include in processing.
+include:
+  - _pageszzzz
 
 # Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
+# Every file or directory beginning with the following characters: ., _ , # or ~ in
+# the source directory will not be included in the destination folder.
 #
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+exclude:
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - LICENSE
+  - README.md
+  - Makefile

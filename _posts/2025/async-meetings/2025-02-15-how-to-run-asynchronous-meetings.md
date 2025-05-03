@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "How to Run Asynchronous Meetings"
 date: 2025-02-15
 authors: [fsferrara]

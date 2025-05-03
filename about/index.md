@@ -1,0 +1,31 @@
+---
+title: "About"
+---
+
+/about/
+- Short bio, photo
+- Skills/stack logos
+- Link to GitHub, LinkedIn, X/Twitter, Dev.to, etc.
+
+**Hello,** 👋  
+my name is Saverio and I'm a software engineer and a passionate software developer.  
+Addicted to the Linux operating system, I love learning new things and working with all the open source technologies.
+
+![Saverio Ferrara](/assets/img/social-card.jpg)
+
+**Want to know more?**
+
+- 📄 Résumé [[english]](/timeline/) or [[italian]](/downloads/fsferrara-cv-it.pdf)
+- 🐙 [GitHub](https://github.com/fsferrara)
+- 💼 [LinkedIn](https://www.linkedin.com/in/fsferrara)
+- 🐦‍⬛ [X](https://twitter.com/fsferrara)
+- 🎬 [YouTube](https://www.youtube.com/@fferrara)
+- 📚 [Stack Overflow](https://stackoverflow.com/users/729079/saverio-ferrara)
+- 📍 Rome, Italy
+
+
+
+/contact/
+- Email
+- LinkedIn (with “Open to Work” if applicable)
+- Optional: form with Netlify / Formspree
