@@ -1,8 +1,8 @@
 ---
 title: "Your First iOS and SwiftUI App - An App from Scratch"
 date: 2024-05-16
-tags:
-  - course
+categories:
+  - courses
 ---
 
 Learning Platform: [Kodeko](https://www.kodeco.com/)
@@ -10,7 +10,7 @@ Course: [Your First iOS & SwiftUI App: An App from Scratch](https://www.kodeco.c
 
 <!-- truncate -->
 
-![Icon](certificate-your-first-ios-and-swiftui-app-an-app-from-scratch.png)
+![Icon](../certificate-your-first-ios-and-swiftui-app-an-app-from-scratch.png)
 
 ## Learning path
 

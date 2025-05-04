@@ -1,15 +1,15 @@
 ---
 title: "Programming in Swift - Fundamentals"
 date: 2024-06-02
-tags:
-  - course
+categories:
+  - courses
 ---
 Learning Platform: [Kodeko](https://www.kodeco.com/)
 Course: [Programming in Swift: Fundamentals](https://www.kodeco.com/28092971-programming-in-swift-fundamentals)
 
 <!-- truncate -->
 
-![Icon](certificate-programming-in-swift-fundamentals.png.png)
+![Icon](../certificate-programming-in-swift-fundamentals.png.png)
 
 ## Learning path
 

@@ -1,15 +1,15 @@
 ---
 title: "Your First iOS and SwiftUI App - Polishing the App"
 date: 2024-05-24
-tags:
-  - course
+categories:
+  - courses
 ---
 Learning Platform: [Kodeko](https://www.kodeco.com/)
 Course: [Your First iOS & SwiftUI App: Polishing the App](https://www.kodeco.com/38052670-your-first-ios-swiftui-app-polishing-the-app)
 
 <!-- truncate -->
 
-![Icon](certificate-your-first-ios-and-swiftui-app-polishing-the-app.png)
+![Icon](../certificate-your-first-ios-and-swiftui-app-polishing-the-app.png)
 
 ## Learning path
 

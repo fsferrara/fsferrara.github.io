@@ -4,6 +4,8 @@ date: 2017-12-21
 tags:
   - talks
   - meetup
+categories:
+  - talks
 ---
 
 # Da REST a GraphQL in 90 minuti

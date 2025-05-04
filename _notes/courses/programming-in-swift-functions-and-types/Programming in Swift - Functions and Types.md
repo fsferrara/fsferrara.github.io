@@ -1,15 +1,15 @@
 ---
 title: "Programming in Swift - Functions and Types"
 date: 2024-06-15
-tags:
-  - course
+categories:
+  - courses
 ---
 Learning Platform: [Kodeko](https://www.kodeco.com/)
 Course: [Programming in Swift: Functions & Types](https://www.kodeco.com/28433240-programming-in-swift-functions-types)
 
 <!-- truncate -->
 
-![Icon](certificate-programming-in-swift-functions-and-types.png)
+![Icon](../certificate-programming-in-swift-functions-and-types.png)
 
 ## Learning path
 

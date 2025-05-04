@@ -1,15 +1,15 @@
 ---
 title: "SwiftUI Layout and Interfaces"
 date: 2024-06-12
-tags:
-  - course
+categories:
+  - courses
 ---
 Learning Platform: [Kodeko](https://www.kodeco.com/)
 Course: [SwiftUI: Layout & Interfaces](https://www.kodeco.com/28684964-swiftui-layout-interfaces)
 
 <!-- truncate -->
 
-![Icon](certificate-swiftui-layout-and-interfaces.png)
+![Icon](../certificate-swiftui-layout-and-interfaces.png)
 
 ## Learning path
 

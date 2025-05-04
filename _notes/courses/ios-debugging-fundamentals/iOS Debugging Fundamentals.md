@@ -1,15 +1,15 @@
 ---
 title: "iOS Debugging Fundamentals"
 date: 2024-06-26
-tags:
-  - course
+categories:
+  - courses
 ---
 Learning Platform: [Kodeko](https://www.kodeco.com/)
 Course: [iOS Debugging Fundamentals](https://www.kodeco.com/18770184-ios-debugging-fundamentals)
 
 <!-- truncate -->
 
-![](certificate-ios-debugging-fundamentals.png)
+![](../certificate-ios-debugging-fundamentals.png)
 ## Learning path
 
 This is part of the **iOS IDEs & Tools** learning path. [View path](https://www.kodeco.com/ios/paths/iostools).

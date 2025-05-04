@@ -1,15 +1,15 @@
 ---
 title: "Active listening skills with empathy and emotional intelligence"
 date: 2024-05-24
-tags:
-  - course
+categories:
+  - certifications
 ---
 Learning Platform: [Udemy](https://www.udemy.com/)
 Course: [Active listening skills with empathy and emotional intelligence. Give and take feedback at work and personal life](https://www.udemy.com/course/active-listening-skills)
 
 <!-- truncate -->
 
-![certificate](UC-7289db6f-2618-4078-86e3-711f579a1497.jpg)
+![certificate](../UC-7289db6f-2618-4078-86e3-711f579a1497.jpg)
 
 This course focuses on transforming everyday listening into a powerful skill for building stronger relationships, handling feedback, and improving professional and personal outcomes.
 

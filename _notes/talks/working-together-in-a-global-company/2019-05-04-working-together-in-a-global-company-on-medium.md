@@ -7,6 +7,8 @@ tags:
   - global-workforce
   - distributed-teams
   - collaboration
+categories:
+  - talks
 ---
 I still remember when I joined the Hotels.com™ (part of Expedia Group™) technology team and how excited I was to start such a new challenge. Since the very early days, I noticed that working in a global company is quite different from working in the same building. That is obvious, I know, but it wasn't easy to get used to the new way of working.
 

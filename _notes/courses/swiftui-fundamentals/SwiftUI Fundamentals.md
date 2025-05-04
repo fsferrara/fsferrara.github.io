@@ -1,15 +1,15 @@
 ---
 title: "SwiftUI Fundamentals"
 date: 2024-06-05
-tags:
-  - course
+categories:
+  - courses
 ---
 Learning Platform: [Kodeko](https://www.kodeco.com/)
 Course: [SwiftUI Fundamentals](https://www.kodeco.com/37678937-swiftui-fundamentals)
 
 <!-- truncate -->
 
-![Icon](certificate-swiftui-fundamentals.png)
+![Icon](../certificate-swiftui-fundamentals.png)
 
 ## Learning path
 
