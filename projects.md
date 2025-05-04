@@ -1,5 +1,5 @@
 ---
-title: Projects
+title: "Projects"
 ---
 {% assign sorted = site.projects | sort: "date" | reverse %}
 <ul>
