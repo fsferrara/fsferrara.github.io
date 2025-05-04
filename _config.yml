@@ -23,7 +23,7 @@ repository: fsferrara/fsferrara.github.io
 author: Saverio Ferrara
 # email: fsferrara@users.noreply.github.com
 description: >- # this means to ignore newlines until "baseurl:"
-  💻 Software Engineer 🇮🇹 Projects, Resume, Learnings
+  Software Engineer 💻 🐧 🇮🇹 Projects, Resume, Learnings
 baseurl: "" # the subpath of your site, e.g. /blog
 domain: "fsferrara.github.io"
 url: "https://fsferrara.github.io" # the base hostname & protocol for your site, e.g. http://example.com
