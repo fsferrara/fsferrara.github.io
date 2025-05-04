@@ -6,6 +6,9 @@ tags:
   - ackermann
   - computability
   - java
+categories:
+  - programming
+  - algorithms
 ---
 Wilhelm Friedrich Ackermann (29/3/1896 – 24/12/1962) was a German mathematician best known for the Ackermann function, an important example in the theory of computation.
 

@@ -8,6 +8,8 @@ tags:
   - distributed-teams
   - collaboration
   - productivity
+categories:
+  - management
 ---
 **How often have you sat through a meeting thinking, "This could have been an email?"** If you're like many, the answer is likely more than once. On average, employees spend a significant amount of time in unproductive meetings each month. For teams collaborating across multiple time zones, unproductive meetings are not an option. International companies can learn from completely remote teams: the key difference between running meetings in remote versus non-remote teams is asynchronous communication. Here’s how to conduct asynchronous meetings effectively to boost efficiency, enhance productivity, and reduce boredom.
 

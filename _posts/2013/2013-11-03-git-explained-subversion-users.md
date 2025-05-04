@@ -7,6 +7,8 @@ tags:
   - subversion
   - svn
   - versioning
+categories:
+  - tools
 ---
 `This guide shows the most common procedures usually performed by SVN users, but using GIT.  
 

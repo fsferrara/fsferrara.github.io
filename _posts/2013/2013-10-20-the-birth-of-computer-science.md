@@ -9,6 +9,8 @@ tags:
   - hilbert
   - kant
   - turing
+categories:
+  - learning
 ---
 La nascita dell'informatica.
 

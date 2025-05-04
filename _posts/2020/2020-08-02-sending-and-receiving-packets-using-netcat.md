@@ -9,6 +9,8 @@ tags:
   - tcp
   - udp
   - statsd
+categories:
+  - tools
 ---
 
 This story will show you how to use Netcat to send and receive TCP/UDP packets.

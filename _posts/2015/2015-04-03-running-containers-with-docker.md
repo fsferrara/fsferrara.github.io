@@ -6,6 +6,8 @@ tags:
   - boot2docker
   - devops
   - docker
+categories:
+  - tools
 ---
 
 **Docker** is an open platform for developers and sysadmins to build, ship, and run distributed applications. Consisting of **Docker Engine**, a portable, _lightweight runtime and packaging tool_, and **Docker Hub**, a _cloud service for sharing applications and automating workflows_, Docker enables apps to be quickly assembled from components and eliminates the friction between development, QA, and production environments. As a result, IT can ship faster and run the same app, unchanged, on laptops, data center VMs, and any cloud.

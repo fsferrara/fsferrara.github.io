@@ -6,6 +6,8 @@ tags:
   - linux
   - tuning
   - ubuntu
+categories:
+  - system
 ---
 Sulla rete ci sono parecchie guide sul come fare il tuning di ubuntu (cioè come alleggerire ubuntu) ma ho deciso di raggruppare il tutto in questa guida.
 

@@ -5,6 +5,8 @@ tags:
   - programming
   - c
   - sort
+categories:
+  - programming
 ---
 L' heapsort è un algoritmo di ordinamento iterativo ed in-place proposto da Williams nel 1964, che si basa su strutture dati ausiliarie.
 

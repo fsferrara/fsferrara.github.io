@@ -7,6 +7,8 @@ tags:
   - artificial-intelligence
   - ai
   - brooks
+categories:
+  - learning
 ---
 
 # Relazione sull'articolo: "Intelligence without representation"

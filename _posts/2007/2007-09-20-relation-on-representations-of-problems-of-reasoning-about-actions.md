@@ -7,6 +7,8 @@ tags:
   - artificial-intelligence
   - ai
   - amarel
+categories:
+  - learning
 ---
 
 # Relazione sull'articolo: "On Representations of Problems of Reasoning about Actions".

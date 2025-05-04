@@ -9,6 +9,8 @@ tags:
   - shell
   - unix
   - windows
+categories:
+  - system
 ---
 In un sistema operativo, una shell (o terminale) è un programma che permette agli utenti di comunicare con il sistema e di avviare altri programmi. È una delle componenti principali di un sistema operativo, insieme al kernel. La shell è l'ambiente di lavoro attraverso il quale è possibile impartire al computer comandi, richiedendo l'esecuzione di programmi.
 

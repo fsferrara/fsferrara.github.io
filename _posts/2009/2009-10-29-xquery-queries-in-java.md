@@ -7,6 +7,8 @@ tags:
   - java
   - xml
   - xquery
+categories:
+  - programming
 ---
 <p>
   XQuery, una abbrevazione per XML Query Language, è un linguaggio di programmazione specificato dal W3C e destinato ad interrogare documenti e basi di dati XML. Questo perché XML si sta proponendo come la tecnologia per rimpiazzare i vecchi DBMS relazionali :-)

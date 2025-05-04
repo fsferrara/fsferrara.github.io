@@ -7,6 +7,8 @@ tags:
   - hystrix
   - metrics
   - command-pattern
+categories:
+  - programming
 ---
 
 Using microservices is mainstream nowadays and them bring several challenges for the software engineers: operations and infrastructure, security, monitoring, caching, fault-tolerance, and so on.  

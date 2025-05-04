@@ -4,6 +4,9 @@ date: 2009-05-20
 tags:
   - programming
   - algorithm
+categories:
+  - programming
+  - algorithm
 ---
 Lo "srotolamento" del ciclo consistente nel modificare il controllo del ciclo e nel replicare opportunamente le istruzioni all'interno del ciclo viene detto "tecnica di LOOP UNROLLING".
 

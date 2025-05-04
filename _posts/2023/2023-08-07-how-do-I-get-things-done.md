@@ -7,6 +7,8 @@ tags:
   - tasks
   - workstreams
   - projects
+categories:
+  - productivity
 ---
 Almost everyone knows GTD. It is the acronym of "Getting Things Done" which is a productivity framework introduced by David Allen in his book "Getting Things Done (2002) - The Art of Stress-Free Productivity".  
 The key reason to have a such framework is that our mind is great at creating stuff, but it's terrible at tracking it. And yet there's a good chance you're tracking tons of stuff in your head right now. Stuff that drains your energy and clogs your creativity.

@@ -6,6 +6,8 @@ tags:
   - asterisk
   - isdn
   - pbx
+categories:
+  - system
 ---
 Integrated Services Digital Network, o ISDN, è una rete digitale che dà supporto a molti servizi di voce e dati. La definizione tecnica dell'ISDN, che investe diverse componenti delle reti, risale alle raccomandazioni ITU-T della serie I del 1984 e comprende numerose altre pubblicazioni dello stesso ITU-T e dell'ETSI (European Telecommunications Standard Institute) fatte negli anni successivi.
 

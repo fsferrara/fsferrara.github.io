@@ -8,6 +8,8 @@ tags:
   - devops
   - git
   - teams
+categories:
+  - programming
 ---
 This article explains how a medium size company, which has several teams, can adopt GIT for the source code management. As a software configuration management, GIT serves two different functions. The first one is the management support for controlling changes to software products, and the second one is merely development support for coordinating file changes among product developers. In particular here I want to talk about the branching model.
 

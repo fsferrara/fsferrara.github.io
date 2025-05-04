@@ -7,6 +7,8 @@ tags:
   - artificial-intelligence
   - ai
   - mccharty
+categories:
+  - learning
 ---
 
 # Relazione sull'articolo: "Programs With Common Sense".

@@ -6,6 +6,8 @@ tags:
   - array
   - c
   - pointers
+categories:
+  - programming
 ---
 Questo articolo tratta la gestione delle stringhe e, in generale, dei vettori multidimensionali nel linguaggio C.
 

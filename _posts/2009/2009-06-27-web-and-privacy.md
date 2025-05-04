@@ -5,6 +5,8 @@ tags:
   - security and privacy
   - p3p
   - privacy
+categories:
+  - system
 ---
 ## Introduzione alla problema della privacy
 

@@ -5,6 +5,8 @@ tags:
   - programming
   - regex
   - regular-expression
+categories:
+  - tools
 ---
 Le espressioni regolari sono utili per descrivere la validità di valori, come ad esempio valori di attributi, dati caratteri, e qualsiasi tipo di valore esprimibile con un certo alfabeto.
 

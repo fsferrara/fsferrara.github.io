@@ -7,6 +7,8 @@ tags:
   - artificial-intelligence
   - computer-science
   - turing
+categories:
+  - learning
 ---
 Primi sviluppi dell'Intelligenza Artificiale.
 

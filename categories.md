@@ -4,22 +4,21 @@ permalink: /categories.html
 ---
 
 - programming
-    - languages: Posts about specific programming languages (e.g., Swift, Python, C++).
+    - languages: Posts about specific programming languages.
     - algorithms: Topics on algorithms and data structures.
-- development
-    - tools: Posts about tools and frameworks (e.g., GNU GDB, Jekyll).
     - techniques: Software design, debugging, and development techniques.
 - system
     - low-level: Topics like device drivers, operating systems, and system programming.
+- tools: Posts about tools and frameworks.
 - learning
     - certifications: Posts about certifications and courses.
     - books: Notes and learnings from books.
     - courses: Courses I took
-- projects
-    - case-studies: Posts discussing specific projects or case studies.
+- projects: Posts discussing specific projects or case studies.
+- productivity
 - management
     - leadership: Topics on team management, mentoring, and leadership skills.
-    - processes: Posts about agile methodologies, scrum practices, and process improvements.
+    - processes: Posts about agile methodologies, scrum practices, and process improvements
 - misc
     - general: Posts that don't fit into the above categories.
     - thoughts: Personal reflections and ideas.

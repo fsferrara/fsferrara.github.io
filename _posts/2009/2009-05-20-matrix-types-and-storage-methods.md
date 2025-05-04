@@ -5,6 +5,8 @@ tags:
   - programming
   - array
   - data structures
+categories:
+  - programming
 ---
 In mathematics, a matrix (plural matrices) is a rectangular array of numbers, symbols, or expressions, arranged in rows and columns. The individual items in a matrix are called its elements or entries.
 

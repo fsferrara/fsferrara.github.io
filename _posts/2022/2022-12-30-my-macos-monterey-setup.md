@@ -4,6 +4,8 @@ date: 2022-12-30
 tags:
   - writing
   - productivity
+categories:
+  - productivity
 ---
 # My MacOS Monterey Setup
 

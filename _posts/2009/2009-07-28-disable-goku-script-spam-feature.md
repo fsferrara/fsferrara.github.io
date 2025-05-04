@@ -5,6 +5,8 @@ tags:
   - internet
   - chat
   - irc
+categories:
+  - projects
 ---
 Eliminare lo spam dal goku script
 

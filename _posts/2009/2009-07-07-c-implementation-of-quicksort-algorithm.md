@@ -6,6 +6,8 @@ tags:
   - algorithm
   - c
   - sort
+categories:
+  - programming
 ---
 Quicksort è un ottimo algoritmo di ordinamento ricorsivo in place che, come merge sort, si basa sul paradigma divide et impera. La base del suo funzionamento è l'utilizzo ricorsivo della procedura partition: preso un elemento da una struttura dati (es. array) si pongono gli elementi minori a sinistra rispetto a questo e gli elementi maggiori a destra.
 

@@ -8,6 +8,8 @@ tags:
   - rest
   - sbt
   - scala
+categories:
+  - programming
 ---
 Scala is general purpose programming language very popular for building web application. But why? At the moment I really don't know why :) , I'm just reading about it and sharing my thoughts with you.
 

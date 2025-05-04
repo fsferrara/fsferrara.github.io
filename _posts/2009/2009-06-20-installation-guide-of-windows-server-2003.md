@@ -5,6 +5,8 @@ tags:
   - system administration
   - tuning
   - windows server
+categories:
+  - system
 ---
 Successore di Windows 2000, Microsoft Windows Server 2003 (Nome in codice Whistler Server, o anche Windows NT 5.2 o ancora Windows .NET Server) (2003) è una tappa della evoluzione della serie server dei sistemi operativi di Microsoft. Il lancio è avvenuto il 24 aprile 2003.
 

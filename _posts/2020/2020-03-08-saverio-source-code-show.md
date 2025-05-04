@@ -8,6 +8,8 @@ tags:
   - show
   - gaming
   - twitch
+categories:
+  - programming
 ---
 Do you have fun while programming? Maybe you do think it is quite strange... Well, it's not! Just think of [competitive programming](https://en.wikipedia.org/wiki/Competitive_programming), that is defined as _"mind sport"_. An example is [Code Wars](https://www.codewars.com/), a website that provides a large collection of coding challenges submitted and edited by their the community. But it is not the only one, there are a lot of [other examples](https://www.freecodecamp.org/news/the-10-most-popular-coding-challenge-websites-of-2016-fb8a5672d22f/).
 

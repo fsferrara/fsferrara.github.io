@@ -6,6 +6,8 @@ tags:
   - c
   - debug
   - gdb
+categories:
+  - programming
 ---
 GNU debugger (talvolta chiamato semplicemente GDB) è il nome di un programma libero sviluppato da GNU. È il debugger predefinito del software GNU, gira su molte piattaforme (tra cui i sistemi Unix-like e Microsoft Windows) ed è capace di analizzare numerosi linguaggi di programmazione, tra cui Ada, C, C++ e Fortran.
 

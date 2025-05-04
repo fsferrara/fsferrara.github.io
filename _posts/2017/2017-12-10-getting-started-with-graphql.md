@@ -6,6 +6,8 @@ tags:
   - api
   - graphql
   - rest
+categories:
+  - programming
 ---
 <div>
   What is GraphQL? The <a href="http://facebook.github.io/graphql/October2016/">draft RFC specification</a> (October 2016), defines it as "a query language created by Facebook in 2012 for describing the capabilities and requirements of data models for client‐server applications". More simply, GraphQL is a language specification for API. It defines in which way the client should query the server, and in which way the server should execute those queries.

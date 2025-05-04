@@ -5,6 +5,8 @@ tags:
   - programming
   - data-structures
   - XML
+categories:
+  - tools
 ---
 Il linguaggio XML è diventato uno degli elementi fondamentali per la realizzazione di sistemi informativi, indipendentemente dalla tecnologia usata.
 

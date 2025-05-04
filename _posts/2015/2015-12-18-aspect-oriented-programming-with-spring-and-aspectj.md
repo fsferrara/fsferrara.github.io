@@ -8,6 +8,8 @@ tags:
   - aspectj
   - crosscutting
   - spring
+categories:
+  - programming
 ---
 **Aspect-Oriented Programming** (_AOP_) powerfully complements **Object-Oriented Programming** (_OOP_) by providing another way of thinking about program structure.
 
