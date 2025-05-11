@@ -1,10 +1,16 @@
 ---
-title: "Notes"
+title: "Résumé"
 ---
+# Saverio Ferrara
+**Software Engineer** / **Engineering Manager**
 
-{% assign sorted = site.notes | sort: "date" | reverse %}
-{% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-{% assign categories = "talks,certifications,courses" | split: "," %}
+🔗 [www.linkedin.com/in/fsferrara](https://www.linkedin.com/in/fsferrara/)  
+📄 [Download CV](/assets/downloads/resume/fsferrara-cv-it.pdf)
+
+
+{% assign sorted = site.resume | sort: "date" | reverse %}
+{% assign date_format = site.minima.dayless_date_format | default: "%B, %Y" %}
+{% assign categories = "experience,education" | split: "," %}
 {% for category in categories %}
 <div id="#{{ category | slugize }}">
 <hr />

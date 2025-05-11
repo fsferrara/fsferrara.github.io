@@ -2,6 +2,9 @@
 title: "SL AfterSale"
 date: 2011-05-01
 ---
+💻 **Project** • _May 2011 → May 2011_  
+📍 _@remote_
+
 **SL AfterSale** created as a tool used by operators in the automotive sector to ensure that, after sale, the restoration of all the features of the vehicle in case of failure.
 
 Once you have bought the vehicle in fact, the customer will be contacted directly by one of our consultants, who from that time became his only point of reference for any type of problem on the vehicle, offering safety, reliability and timeliness in resolving problems which up to that time had necessarily to manage the showroom.
@@ -14,3 +17,5 @@ _Position_: Freelancer for [SL AfterSale](http://www.slaftersale.com/ "SL AfterS
 _Technologies_: PHP, HTML, CSS, WordPress, WordPress plugin writing, MySql
 
 [<i class="fa fa-external-link" aria-hidden="true"></i>&nbsp;www.slaftersale.com](http://www.slaftersale.com/)
+
+tags: `#html` `#css` `#mysql` `#php` `#wordpress` `#wordpress-plugin`

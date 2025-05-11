@@ -2,28 +2,17 @@
 title: "👋 Hello everyone!"
 ---
 
-I'm a software engineer 👨🏻 and a passionate software developer 💻 living in Rome 🇮🇹. Addicted to the Linux 🐧 operating system, I love working with all the open source technologies.  
-In my spare time, I like do mountain biking 🚴 and playing casual video games 🕹️.
+I'm a software engineer 💻 living in Rome 🇮🇹 [...more](/about/index.md)
 
-
-- Brief intro (name, role, short pitch)
-- Featured project(s)
-- Links to key sections: Resume, Projects, Notes
-
----
-
-<h1>Recent Posts</h1>
+## Recent Posts
 
 <ul class="post-list">
     {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
     {% for post in site.posts limit:2 %}
     <li>
-    <span class="post-meta">{{ post.date | date: date_format }}</span>
-    <h3>
-        <a class="post-link" href="{{ post.url | relative_url }}">
-        {{ post.title | escape }}
-        </a>
-    </h3>
+        <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        <span class="post-meta"> - {{ post.date | date: date_format }}</span>
+        {{ post.excerpt }}
     {% if site.minima.show_excerpts %}
         {{ post.excerpt }}
     {% endif %}
@@ -31,11 +20,24 @@ In my spare time, I like do mountain biking 🚴 and playing casual video games 
     {% endfor %}
 
     <li>
-    <span class="post-meta">Past Posts</span>
-    <h3>
-        <a class="post-link" href="/archive">
-        Archive
-        </a>
-    </h3>
+        <a href="/archive">...see older posts</a>
+        <span class="post-meta"> - archive</span>
+    </li>
+</ul>
+
+## Recent Notes
+
+{% assign sorted = site.notes | sort: "date" | reverse %}
+{% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+<ul>
+  {% for entry in sorted %}
+    <li>
+      <a href="{{ entry.url | relative_url }}">{{ entry.title | escape }}</a>
+      <span class="post-meta"> in {{ entry.categories[0] | escape }} – {{ entry.date | date: date_format }}</span>
+    </li>
+  {% endfor %}
+      <li>
+        <a href="/notes">...more</a>
+        <span class="post-meta"> - notes</span>
     </li>
 </ul>

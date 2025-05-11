@@ -1,7 +1,10 @@
 ---
-title: "TradurreAntico"
+title: "TradurreAntico.it"
 date: 2011-05-01
 ---
+💻 **Project** • _May 2011_  
+📍 _@remote_
+
 **TradurreAntico.it** is a website primarily intended for high school students. Allows the sharing of translations of ancient texts written originally in Latin and ancient greek.
 
 All translations are supervised by a professional translator.
@@ -19,3 +22,5 @@ _Position_: Freelancer for [TradurreAntico.it](http://www.tradurreantico.it/ "Tr
 _Technologies_: PHP, HTML, CSS, Joomla!, Wordpress, MySql
 
 [<i class="fa fa-external-link" aria-hidden="true"></i>&nbsp;www.tradurreantico.it](http://www.tradurreantico.it/)
+
+tags: `#html` `#css` `#mysql` `wordpress` `#joomla!` `#php`

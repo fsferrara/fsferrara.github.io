@@ -17,3 +17,17 @@ _Technologies_: C++
 
 [<i class="fa fa-external-link" aria-hidden="true"></i>&nbsp;www.sadasdb.com](http://www.sadasdb.com/)  
 [<i class="fa fa-download" aria-hidden="true"></i>&nbsp;download thesis](/downloads/master_query_rewrinting.pdf)
+
+---
+
+### Italian Version
+
+Titolo: Lavoro di tesi in Basi di Dati e Sistemi Informativi
+Azienda: Advanced Systems
+Location: Naples Area, Italy
+
+
+Descrizione:
+
+Progettazione e implementazione di un modulo di riscrittura delle query per SADAS, un database 
+management system specializzato per ambienti di Data Warehousing.

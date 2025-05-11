@@ -8,8 +8,13 @@ title: "About"
 - Link to GitHub, LinkedIn, X/Twitter, Dev.to, etc.
 
 **Hello,** 👋  
-my name is Saverio and I'm a software engineer and a passionate software developer.  
-Addicted to the Linux operating system, I love learning new things and working with all the open source technologies.
+my name is Saverio and I'm a software engineer and a passionate software developer 💻 living in Rome 🇮🇹.  
+Adaptable, proactive, creative and addicted to the Linux 🐧 operating system.  
+I love learning new things and working with all the open-source technologies.  
+
+In my spare time, I like do mountain biking 🚴 and playing casual video games 🕹️.
+
+
 
 ![Saverio Ferrara](/assets/img/social-card.jpg)
 

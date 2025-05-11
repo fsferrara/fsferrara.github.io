@@ -45,6 +45,8 @@ show_excerpts: false # set to true to show excerpts on the homepage
 # Build settings
 markdown: kramdown
 theme: minima
+minima:
+  dayless_date_format: "%B, %Y"
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
@@ -58,6 +60,10 @@ collections:
     sort_by: date
     permalink: /:collection/:path/
   notes:
+    output: true
+    sort_by: date
+    permalink: /:collection/:path/
+  resume:
     output: true
     sort_by: date
     permalink: /:collection/:path/
@@ -82,13 +88,18 @@ defaults:
       type: "projects"
     values:
       layout: "page"
+  - scope:
+      path: ""
+      type: "resume"
+    values:
+      layout: "page"
 
 # Menu settings
 header_pages:
   - about/index.md
-  - resume/index.md
-  - notes.md
   - projects.md
+  - notes.md
+  - resume.md
 
 # Include in processing.
 include:
