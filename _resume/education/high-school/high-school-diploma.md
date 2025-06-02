@@ -7,6 +7,7 @@ categories:
 ### **High School Diploma** @ **ITC "Luigi Amabile"**
 🎓 **Education** • _September 1997 → July 2002_  
 📍 _Avellino Area, Italy_
+🔗 [www.iteamabile.it](https://www.iteamabile.it/)
 
 High School Diploma in Accounting and Business/Management, specialization in Programming.
 This five-year program provided a foundation in accounting and business operations, including commercial, legal, and social aspects, combined with in-depth studies in computer science.
@@ -19,8 +20,7 @@ The Computer Science topics covered are programming (Basic, Fortran), database d
 - Grade: 81/100
 - Description:
 - Subjects: Business Administration; Law and Economics; Computer Science; Mathematics; Science; Italian Language and Literature; English Language; French Language; History
-
-🔗 [www.iteamabile.it](https://www.iteamabile.it/)
+- Activities: 
 
 ---
 
@@ -33,3 +33,4 @@ The Computer Science topics covered are programming (Basic, Fortran), database d
 - Attività: 
 - Descrizione:
 - Materie: Economia aziendale; Diritto ed Economia; Informatica; Matematica; Scienze integrate; Lingua e letteratura Italiana; Lingua Inglese; Lingua Francese; Storia
+- Attività: 

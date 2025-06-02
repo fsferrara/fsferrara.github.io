@@ -6,7 +6,7 @@ install:
 	bundle install
 
 serve:
-	bundle exec jekyll serve --baseurl=""
+	bundle exec jekyll serve --incremental --baseurl=""
 
 clean:
 	rm -rf _site .jekyll-cache .sass-cache .jekyll-metadata

@@ -101,17 +101,16 @@ header_pages:
   - notes.md
   - resume.md
 
-# Include in processing.
-include:
-  - _pageszzzz
-
-# Exclude from processing.
 # Every file or directory beginning with the following characters: ., _ , # or ~ in
 # the source directory will not be included in the destination folder.
 #
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
-#
+# Include in processing.
+include:
+  - _pages
+
+# Exclude from processing.
 exclude:
   - gemfiles/
   - Gemfile

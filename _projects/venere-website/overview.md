@@ -1,6 +1,8 @@
 ---
 title: "Venere Website"
 date: 2011-06-01
+categories:
+  - projects
 ---
 **Venere.com** (an Expedia Inc. company), is the Italian leader in the online hotel reservations market. Venere.com features real-time rates, availability, special offers and the best deals on the web.
 
@@ -13,4 +15,4 @@ _Position_: Associate Software Dev Eng at [Venere.com](http://www.venere.com/ "V
 _Front-end_: Javascript, HTML, CSS, RESTful web services.  
 _Back-end_: PHP, Javascript/Node.js, Java, Spring Framework, SOA architectures, Sybase, MySQL, spymemcached, Couchbase.
 
-[<i class="fa fa-external-link" aria-hidden="true"></i>&nbsp;www.venere.com](http://www.venere.com/)
+[🔗 www.venere.com](http://www.venere.com/)

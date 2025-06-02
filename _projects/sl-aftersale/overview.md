@@ -1,6 +1,8 @@
 ---
 title: "SL AfterSale"
 date: 2011-05-01
+categories:
+  - projects
 ---
 💻 **Project** • _May 2011 → May 2011_  
 📍 _@remote_
@@ -16,6 +18,6 @@ During this project I wrote my first WordPress plugin. It allows the management 
 _Position_: Freelancer for [SL AfterSale](http://www.slaftersale.com/ "SL AfterSale")  
 _Technologies_: PHP, HTML, CSS, WordPress, WordPress plugin writing, MySql
 
-[<i class="fa fa-external-link" aria-hidden="true"></i>&nbsp;www.slaftersale.com](http://www.slaftersale.com/)
+[🔗 www.slaftersale.com](http://www.slaftersale.com/)
 
 tags: `#html` `#css` `#mysql` `#php` `#wordpress` `#wordpress-plugin`

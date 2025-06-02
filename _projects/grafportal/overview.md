@@ -1,6 +1,8 @@
 ---
 title: "GrafPortal"
 date: 2011-03-01
+categories:
+  - projects
 ---
 **GrafPortal** allows you to print your books! With the best printing technology, you can print high-quality books, both small and large production runs. A team of experts will follow you and advise you in all phases of your product. Create and print a book, a catalog, a brochure or a thesis will be easy.
 

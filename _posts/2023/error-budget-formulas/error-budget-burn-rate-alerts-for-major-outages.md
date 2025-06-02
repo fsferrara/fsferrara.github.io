@@ -126,7 +126,7 @@ Answer: having an alert with a burn rate of 16 will warn us in case we’ll expe
 Other resources available:
 
 - [The story is available on Medium](https://medium.com/@fsferrara/error-budget-burn-rate-alerts-for-major-outages-3e999f8a200d?source=friends_link&sk=117fc8435eeb3deed664c177efcf697e).
-- [<i class="fa fa-download" aria-hidden="true"></i> Error budget formulas cheat-sheet](/downloads/error-budget-formulas.pdf).
+- [💾 Error budget formulas cheat-sheet](/downloads/error-budget-formulas.pdf).
 
 ## Appendix: Error Budget Formulas
 

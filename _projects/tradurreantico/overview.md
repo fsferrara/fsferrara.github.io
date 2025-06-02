@@ -1,6 +1,8 @@
 ---
 title: "TradurreAntico.it"
 date: 2011-05-01
+categories:
+  - projects
 ---
 💻 **Project** • _May 2011_  
 📍 _@remote_
@@ -21,6 +23,6 @@ This is the Wordpress version:
 _Position_: Freelancer for [TradurreAntico.it](http://www.tradurreantico.it/ "TradurreAntico.it")  
 _Technologies_: PHP, HTML, CSS, Joomla!, Wordpress, MySql
 
-[<i class="fa fa-external-link" aria-hidden="true"></i>&nbsp;www.tradurreantico.it](http://www.tradurreantico.it/)
+[🔗 www.tradurreantico.it](http://www.tradurreantico.it/)
 
 tags: `#html` `#css` `#mysql` `wordpress` `#joomla!` `#php`

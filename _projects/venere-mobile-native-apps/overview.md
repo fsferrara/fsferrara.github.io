@@ -1,6 +1,8 @@
 ---
 title: "Venere Mobile Native Apps"
 date: 2014-03-01
+categories:
+  - projects
 ---
 **Venere.com** (an Expedia Inc. company), is the Italian leader in the online hotel reservations market. Venere.com features real-time rates, availability, special offers and the best deals on the web.
 
@@ -16,4 +18,4 @@ _Front-end_: Javascript, HTML, CSS, RESTful web services, requirejs, Backbone, h
 _Apps_ Java, ADK, Cordova  
 _Back-end_: PHP, Javascript/Node.js, Parse
 
-[<i class="fa fa-external-link" aria-hidden="true"></i>&nbsp;www.venere.com](http://www.venere.com/)
+[🔗 www.venere.com](http://www.venere.com/)

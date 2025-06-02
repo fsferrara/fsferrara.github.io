@@ -36,6 +36,6 @@ HCOM Tech Rome è lieta di invitarvi nella sede di HOTELS.COM che gentilmente ci
 
 La Registrazione è OBBLIGATORIA per garantirvi l'accesso allo stabile e per consentirci di organizzare il tutto in maniera adeguata.
 
-[<i class="fa fa-code" aria-hidden="true"></i> source code](https://github.com/fsferrara/from-rest-to-graphql-meetup)
-[<i class="fa fa-download" aria-hidden="true"></i> slides](/downloads/talks/da-rest-a-graphql-in-90-minuti.pdf)
-[<i class="fa fa-info-circle" aria-hidden="true"></i> meetup page](https://www.meetup.com/Rome-Software-Discussion/events/245282496/?eventId=245282496)
+[📄 source code](https://github.com/fsferrara/from-rest-to-graphql-meetup)
+[💾 slides](/downloads/talks/da-rest-a-graphql-in-90-minuti.pdf)
+[🔗 meetup page](https://www.meetup.com/Rome-Software-Discussion/events/245282496/?eventId=245282496)

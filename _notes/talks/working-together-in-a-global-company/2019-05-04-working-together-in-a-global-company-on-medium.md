@@ -100,9 +100,9 @@ If someone helps me in some way, then I use mentions in order to highlight it a
 
 Other resources available:
 
-[<i class="fa fa-download" aria-hidden="true"></i> Slide Deck](/downloads/talks/working-together-in-a-global-company.pdf) is available for download.
+[💾 Slide Deck](/downloads/talks/working-together-in-a-global-company.pdf) is available for download.
 <!--
-[<i class="fab fa-youtube" aria-hidden="true"></i> Presentation](https://www.youtube.com/watch?v=ebPIWp0NIOk) that can be used for a "brown bag" session.
+[🔗 Presentation](https://www.youtube.com/watch?v=ebPIWp0NIOk) that can be used for a "brown bag" session.
 -->
 
 Thank you!

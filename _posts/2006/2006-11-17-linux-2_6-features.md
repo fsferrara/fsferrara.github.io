@@ -28,5 +28,5 @@ Il materiale è relativo ad un seminario tenuto per il corso di _Sistemi Operati
 
 ## Slides
 
-[<i class="fa fa-download" aria-hidden="true"></i> slides](/downloads/talks/linux-2_6-features.pdf)
-[<i class="fa fa-info-circle" aria-hidden="true"></i> slides player](https://slideplayer.it/slide/7567/)
+[💾 slides](/downloads/talks/linux-2_6-features.pdf)
+[🔗 slides player](https://slideplayer.it/slide/7567/)

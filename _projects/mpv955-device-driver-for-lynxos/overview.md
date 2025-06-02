@@ -1,6 +1,8 @@
 ---
 title: "MPV955 Device Driver for LynxOS"
 date: 2005-05-01
+categories:
+  - projects
 ---
 I wrote the **MPV955 Device Driver for LynxOS**, a Unix-like real-time operating system from LynuxWorks (sometimes known as the Lynx Operating System). LynxOS features are: full POSIX conformance and Linux compatibility.
 
@@ -19,5 +21,5 @@ _Position_: Trainee at [VIRGO Lab (INFN), Department of Physical Sciences](https
 _Driver_: C, Shell scripting.  
 _User Interface_: Java, Swing.
 
-[<i class="fa fa-github" aria-hidden="true"></i>&nbsp;https://github.com/fsferrara/mpv955](https://github.com/fsferrara/mpv955)  
-[<i class="fa fa-download" aria-hidden="true"></i>&nbsp;download thesis](/downloads/bachelor_mpv955.pdf)
+[🔗 https://github.com/fsferrara/mpv955](https://github.com/fsferrara/mpv955)  
+[💾&nbsp;download thesis](/downloads/bachelor_mpv955.pdf)

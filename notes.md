@@ -4,7 +4,7 @@ title: "Notes"
 
 {% assign sorted = site.notes | sort: "date" | reverse %}
 {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-{% assign categories = "talks,certifications,courses" | split: "," %}
+{% assign categories = "talks,books,courses" | split: "," %}
 {% for category in categories %}
 <div id="#{{ category | slugize }}">
 <hr />

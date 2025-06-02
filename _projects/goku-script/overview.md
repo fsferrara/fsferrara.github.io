@@ -1,6 +1,8 @@
 ---
 title: "Goku Script"
 date: 2000-09-01
+categories:
+  - projects
 ---
 💻 **Project** • _September 2000 → July 2001_  
 📍 _@remote_
@@ -11,6 +13,6 @@ I realized the **Goku Script** when I was just a kid. It was a great success, an
 
 _Technologies_: mIRC scripting language
 
-[<i class="fa fa-download" aria-hidden="true"></i> download](/downloads/goku4.zip)
+[💾 download](/downloads/goku4.zip)
 
 tags: `#irc` `#mirc` `#mirc-script`
