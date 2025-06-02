@@ -18,7 +18,7 @@ _Position_: Trainee at [Advanced Systems](http://www.advancedsystems.it/ "Advanc
 _Technologies_: C++
 
 [🔗 www.sadasdb.com](http://www.sadasdb.com/)  
-[💾&nbsp;download thesis](/downloads/master_query_rewrinting.pdf)
+[💾 download thesis](/downloads/master_query_rewrinting.pdf)
 
 ---
 

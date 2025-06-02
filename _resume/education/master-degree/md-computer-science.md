@@ -4,12 +4,25 @@ date: 2011-03-01
 categories:
   - education
 ---
-### **Master's degree** @ **UniNa 'Federico II'**
-🎓 **Education** • _May 2006 → March 2011_  
-> Computer Science
-📍 _Naples Area, Italy_
+## University of Naples Federico II
 
-Software Engineering I and II; Logic; Artificial Intelligence; Databases and Information Systems II; Computability and Complexity; Security and privacy; Information Retrieval; Web technologies; Mind and Machines; Operational Research and Combinatorial Optimization.
+🎓 **Education** • _May 2006 → March 2011_  
+📚 Computer Science  
+📍 _Naples Area, Italy_  
+
+- School: 
+- Degree 
+- Field of study: 
+- Grade: 
+- Description:
+- Subjects:
+  - Software Engineering I and II; Logic; Artificial Intelligence; Databases and Information Systems II; Computability and Complexity; Security and privacy; Information Retrieval; Web technologies; Mind and Machines; Operational Research and Combinatorial Optimization.
+- Activities:
+  - 
+- Skills:
+  -
+
+
 
 Projects:
 * 💻 [Connect Four](https://github.com/fsferrara/connect-four)
@@ -28,7 +41,7 @@ tags: `#dbms` `#object-oriented` `#uml` `#java` `#c++` `#xml` `#xquery` `#xpath`
 
 ### Italian Version
 
-Istituto: Università degli Studi di Napoli 'Federico II'
+Istituto: Università degli Studi di Napoli "Federico II" (UniNa)
 Titolo: Laurea Magistrale
 Campo di studio: Informatica
 Voto: 110/110 e lode
