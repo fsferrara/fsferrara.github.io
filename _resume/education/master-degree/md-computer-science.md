@@ -51,5 +51,14 @@ Thesis work in Databases and Information Systems:
 
 ### Skills
 
-- Skills: Object-Oriented software design with UML, Java, C++, XML, XQuery, XPath, XSL, CSS, Lisp, Prolog.
-tags: `#dbms` `#object-oriented` `#uml` `#java` `#c++` `#xml` `#xquery` `#xpath` `#xsl` `#css` `#lisp` `#prolog`
+- Object-Oriented software design with UML
+- Java
+- C++
+- XML
+- XQuery
+- XPath
+- XSL
+- CSS
+- Lisp
+- Prolog
+- DBMS
