@@ -15,6 +15,14 @@ categories:
 Graduated with honors in Computer Science. Specialized in Database Management System, demonstrated by a thesis work in which I wrote a query rewriting module for a columnar DBMS.
 
 
+### Thesis
+
+Thesis internship in Databases and Information Systems at Advanced Systems. The company own SADAS Engine, a columnar DBMS optimized for data warehouse environments.  
+I designed and implemented of a query rewriting module for SADAS that enhances query performance by leveraging materialized views to reduce response times.
+
+- 💻 [Query rewriting module for SADAS Engine](projects/query-rewriting-module-for-sadas-engine/overview/)
+
+
 ### Subjects
 
 - Software Engineering I and II
@@ -27,14 +35,6 @@ Graduated with honors in Computer Science. Specialized in Database Management Sy
 - Web technologies
 - Mind and Machines
 - Operational Research and Combinatorial Optimization.
-
-
-### Thesis
-
-Thesis internship in Databases and Information Systems at Advanced Systems. The company own SADAS Engine, a columnar DBMS optimized for data warehouse environments.  
-I designed and implemented of a query rewriting module for SADAS that enhances query performance by leveraging materialized views to reduce response times.
-
-- 💻 [Query rewriting module for SADAS Engine](projects/query-rewriting-module-for-sadas-engine/overview/)
 
 
 ### Activities

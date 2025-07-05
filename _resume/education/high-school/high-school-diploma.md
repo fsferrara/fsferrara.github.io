@@ -46,6 +46,5 @@ The Computer Science topics covered are programming (QBasic, Fortran), database 
 - Information Technology
 - Databases
 - Accounting
-- Multilingual Communication
-- Qbasic
+- QBasic
 - Fortran

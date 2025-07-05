@@ -15,6 +15,13 @@ categories:
 Graduated with honors in Computer Science. Specialized in systems programming and operating systems, demonstrated by a thesis on device driver development for LynxOS.
 
 
+### Thesis
+
+Thesis internship in Operating Systems at VIRGO Lab (INFN), Department of Physical Sciences. I designed and tested a real-time control system using the VME bus. I particular, I wrote the MVP955 device driver for LynxOS.
+
+- 💻 [MPV955 Device Driver for LynxOS](/projects/mpv955-device-driver-for-lynxos/overview/)
+
+
 ### Subjects
 
 - Calculus I
@@ -33,13 +40,6 @@ Graduated with honors in Computer Science. Specialized in systems programming an
 - Computer Networks
 - Human-Machine Interaction
 - Probability and Mathematical Statistics.
-
-
-### Thesis
-
-Thesis internship in Operating Systems at VIRGO Lab (INFN), Department of Physical Sciences. I designed and tested a real-time control system using the VME bus. I particular, I wrote the MVP955 device driver for LynxOS.
-
-- 💻 [MPV955 Device Driver for LynxOS](/projects/mpv955-device-driver-for-lynxos/overview/)
 
 
 ### Activities
