@@ -11,7 +11,7 @@ The result is interesting to share and compare. Here is mine.
 
 <!-- truncate -->
 
-![My GlobaSmart Profile](./my-globesmart-profile.png)
+![My GlobaSmart Profile](/assets/img/aperian/my-globesmart-profile.png)
 
 ## You are Interdependent.
 
@@ -80,6 +80,5 @@ In contrast, those who are Task oriented tend to:
 ## Any Thoughts?
 
 What do you think? Do you think there is a perfect mix everyone should aim to, or a team should have mixed work profiles?
-Here is [my sharable profile](https://app.aperian.com/share/profile/5ede44a0-ba48-49ae-bee5-47e0923e218a) to know more. 👋 
 
-📄 [download](./saverio-ferrara-globesmart-profile.pdf)
+📄 [download](/assets/downloads/aperian/saverio-ferrara-globesmart-profile.pdf)

@@ -10,7 +10,6 @@ tags:
 categories:
   - tools
 ---
-
 Nowadays, most blogs are powered by _Wordpress_. I am a Wordpress users too and I have to admit it is really a great for blogs.  
 As others CMS, Wordpress requires a database and PHP in order to process the **dynamic** pages server-side.
 _Jekyll_ is a static site generator. With it I can generate all my blog pages in on my computer and then publish the entire website on a static hosting server.

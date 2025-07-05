@@ -1,5 +1,5 @@
 ---
-title: "Summary - Intelligence without representation"
+title: "Relazione sull'articolo: Intelligence without representation - Rodney A. Brooks"
 date: 2007-09-08
 tags:
   - history
@@ -10,10 +10,6 @@ tags:
 categories:
   - learning
 ---
-
-# Relazione sull'articolo: "Intelligence without representation"
-Rodney A. Brooks
-
 Il campo dell'intelligenza artificiale partì con l'intento di replicare l'intelligenza umana in una macchina, ma negli anni a seguire sono stati fatti pochi progressi. Nessuno parla di replicare l'intelligenza umana interamente, ma si sono specializzati vari campi come quello della rappresentazione della conoscenza, e la comprensione del linguaggio naturale; i sognatori specializzati nel campo dell'intelligenza artificiale sperano che in futuro tutti questi campi di studio si fondino creando così dei sistemi veramente intelligenti. Brooks non crede che l'intelligenza umana sia completamente replicabile poiché troppo complessa; bisognerebbe decomporla in vari sottomoduli, tutti interconnessi tra loro: Brooks usa proprio questo approccio per studiare creature semplici.
 
 <!-- truncate -->

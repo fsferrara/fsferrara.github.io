@@ -1,5 +1,6 @@
 ---
 title: "Categories"
+layout: base
 permalink: /categories.html
 ---
 

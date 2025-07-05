@@ -1,9 +1,14 @@
 ---
 title: "Résumé"
+image: /assets/img/social-card.jpg
+layout: page
 ---
 # Saverio Ferrara
 **Software Engineer** / **Engineering Manager**  
-🔗 [www.linkedin.com/in/fsferrara](https://www.linkedin.com/in/fsferrara/)  
+[GitHub](https://github.com/fsferrara) | [LinkedIn](https://www.linkedin.com/in/fsferrara) | 📍 Rome, Italy
+
+I work as a **Software Engineer**: adaptable, proactive, and creative. I enjoy solving problems, **collaborating** within teams, and **leading** the way on technical challenges.
+
 
 {% assign sorted = site.resume | sort: "date" | reverse %}
 {% assign date_format = site.minima.dayless_date_format | default: "%B, %Y" %}

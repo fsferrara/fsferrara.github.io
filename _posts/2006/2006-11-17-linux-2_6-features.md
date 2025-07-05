@@ -7,9 +7,6 @@ categories:
   - system
   - low-level
 ---
-
-# Principali caratteristiche di un sistema Linux con kernel aggiornato alla versione 2.6.X
-
 _17 Novembre 2006, Università degli studi di Napoli "Federico II"
 Corso di Laurea in Informatica_
 

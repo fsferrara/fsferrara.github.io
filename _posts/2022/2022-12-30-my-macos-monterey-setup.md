@@ -7,8 +7,6 @@ tags:
 categories:
   - productivity
 ---
-# My MacOS Monterey Setup
-
 I think you are supposing I am a macOS fan... but I am not! Linux is my favourite OS, so why I spent time customizing macOS? I am also a software developer and, like many others, I have been asked to use macOS.
 
 The experience was very frustrating at the beginning and I suspect the main issue was the entire Mission Control system. Typical questions: "Where is the window I opened a moment ago?", "Why the order of the spaces keeps changing?", "Do I really need those fancy animations?".

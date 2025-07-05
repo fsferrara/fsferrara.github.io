@@ -1,5 +1,5 @@
 ---
-title: "The Web and the problem of Privacy"
+title: "Il Web e il problema della Privacy"
 date: 2009-06-27
 tags:
   - security and privacy
@@ -8,8 +8,6 @@ tags:
 categories:
   - system
 ---
-## Introduzione alla problema della privacy
-
 Tempo fa il problema della privacy non era sentito perché dovevamo fidarci solo di un insieme ristretto di persone; con Internet, e le moderne tecnologie, è diventato facilissimo raccogliere, scambiare, e trasferire informazione.
 
 C'è perdita di controllo su _cosa è raccolto_ e soprattutto _come è utilizzato_.

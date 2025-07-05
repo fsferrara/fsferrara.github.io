@@ -10,7 +10,6 @@ tags:
 categories:
   - programming
 ---
-
 Using microservices is mainstream nowadays and them bring several challenges for the software engineers: operations and infrastructure, security, monitoring, caching, fault-tolerance, and so on.  
 In particular, having under control the communication between microservices is the key to build reliable reliable services.
 

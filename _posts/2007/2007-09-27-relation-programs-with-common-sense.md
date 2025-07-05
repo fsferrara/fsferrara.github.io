@@ -1,5 +1,5 @@
 ---
-title: "Summary - Programs With Common Sense"
+title: "Relazione sull'articolo: Programs With Common Sense - John McCharty"
 date: 2007-09-27
 tags:
   - history
@@ -10,10 +10,6 @@ tags:
 categories:
   - learning
 ---
-
-# Relazione sull'articolo: "Programs With Common Sense".
-John McCharty
-
 Nel 1959, quando si parlava pochissimo di "intelligenza artificiale", John McCharty con l'articolo "Programs with common sense", introduce un programma che ha buonsenso (common sense).
 
 <!-- truncate -->

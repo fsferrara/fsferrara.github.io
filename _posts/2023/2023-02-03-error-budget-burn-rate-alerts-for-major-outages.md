@@ -29,7 +29,7 @@ The error budget is the amount of not “good events” derived from an SLO’s 
 
 Google introduced the concept of **burn rate** which is a number which represents how fast, relative to the SLO, the service consumes the error budget. It is defined as:
 
-![burn rate](01-burn-rate.png)
+![burn rate](./01-burn-rate.png)
 
 By definition, a burn rate of 1 means that the service is consuming the error budget at a rate that leaves you with exactly 0 budget at the end of the budget window.  
 A burn rate of 2 means that the service is consuming the error budget twice as fast as a burn rate of 1.

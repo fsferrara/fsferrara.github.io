@@ -1,5 +1,5 @@
 ---
-title: "Summary - On Representations of Problems of Reasoning about Actions"
+title: "Relazione sull'articolo: On Representations of Problems of Reasoning about Actions"
 date: 2007-09-20
 tags:
   - history
@@ -10,8 +10,6 @@ tags:
 categories:
   - learning
 ---
-
-# Relazione sull'articolo: "On Representations of Problems of Reasoning about Actions".
 Saul Amarel - RCA Laboratories Princeton, N.J.
 
 In questo articolo Saul Amarel parla dei problemi di "ragionamento sulle azioni" (reasoning about action), ossia dei problemi che trattano l'individuazione delle azioni da compiere per avere un certo risultato. In questa categoria cadono problemi di tipo industriale/militare, e sicuramente li abbiamo incontrati nella nostra vita, quando ad esempio organizziamo una cena tra amici.

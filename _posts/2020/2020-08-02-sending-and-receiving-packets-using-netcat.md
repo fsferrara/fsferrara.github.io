@@ -12,7 +12,6 @@ tags:
 categories:
   - tools
 ---
-
 This story will show you how to use Netcat to send and receive TCP/UDP packets.
 We'll focus on a specific example... we'll simulate a Statsd client/server.
 
