@@ -7,19 +7,31 @@ categories:
 ## University of Naples Federico II
 
 🎓 **Education** • _May 2006 → March 2011_  
+🏫 [University of Naples Federico II](http://www.unina.it/)  
 📚 Computer Science  
+📜 [Master's degree](../20110323-master-degree.jpg) (110/110 cum laude)  
 📍 _Naples Area, Italy_  
-🔗 [www.unina.it/](http://www.unina.it/)  
 
-- School: University of Naples Federico II
-- Degree: [Master's degree](../20110323-master-degree.jpg)
-- Field of study: Computer Science
-- Grade: 110/110 cum laude
-- Subjects: Software Engineering I and II; Logic; Artificial Intelligence; Databases and Information Systems II; Computability and Complexity; Security and privacy; Information Retrieval; Web technologies; Mind and Machines; Operational Research and Combinatorial Optimization.
-- Activities:
-  - Participated in the Linux Day hosted by IrLug (Irpinia Linux User Group) in Avellino, as a Linux system installer
-- Skills:
-  - Object-Oriented software design with UML, Java, C++, XML, XQuery, XPath, XSL, CSS, Lisp, Prolog.
+Description
+
+
+### Subjects
+
+- Software Engineering I and II
+- Logic
+- Artificial Intelligence
+- Databases and Information Systems II
+- Computability and Complexity
+- Security and privacy
+- Information Retrieval
+- Web technologies
+- Mind and Machines
+- Operational Research and Combinatorial Optimization.
+
+
+### Activities
+
+- Participated in the Linux Day hosted by IrLug (Irpinia Linux User Group) in Avellino, as a Linux system installer
 
 
 ### Thesis
@@ -36,4 +48,8 @@ Thesis work in Databases and Information Systems:
 * 💻 [Videoshots](https://github.com/fsferrara/videoshots)
 * 💻 [Turing](https://github.com/fsferrara/turing-machines)
 
+
+### Skills
+
+- Skills: Object-Oriented software design with UML, Java, C++, XML, XQuery, XPath, XSL, CSS, Lisp, Prolog.
 tags: `#dbms` `#object-oriented` `#uml` `#java` `#c++` `#xml` `#xquery` `#xpath` `#xsl` `#css` `#lisp` `#prolog`
