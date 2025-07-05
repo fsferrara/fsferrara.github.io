@@ -25,9 +25,9 @@ I'm a software engineer 💻 living in Rome 🇮🇹 [...more](/about/index.m
     </li>
 </ul>
 
-## Recent Notes
+## Recent Learnings
 
-{% assign sorted = site.notes | sort: "date" | reverse %}
+{% assign sorted = site.learnings | sort: "date" | reverse %}
 {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
 <ul>
   {% for entry in sorted %}
@@ -37,7 +37,7 @@ I'm a software engineer 💻 living in Rome 🇮🇹 [...more](/about/index.m
     </li>
   {% endfor %}
       <li>
-        <a href="/notes">...more</a>
-        <span class="post-meta"> - notes</span>
+        <a href="/learnings">...more</a>
+        <span class="post-meta"> - learnings</span>
     </li>
 </ul>

@@ -2,11 +2,8 @@
 title: "Résumé"
 ---
 # Saverio Ferrara
-**Software Engineer** / **Engineering Manager**
-
+**Software Engineer** / **Engineering Manager**  
 🔗 [www.linkedin.com/in/fsferrara](https://www.linkedin.com/in/fsferrara/)  
-📄 [Download CV](/assets/downloads/resume/fsferrara-cv-it.pdf)
-
 
 {% assign sorted = site.resume | sort: "date" | reverse %}
 {% assign date_format = site.minima.dayless_date_format | default: "%B, %Y" %}

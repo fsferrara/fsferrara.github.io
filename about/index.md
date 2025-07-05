@@ -5,10 +5,10 @@ title: "About"
 /about/
 - Short bio, photo
 - Skills/stack logos
-- Link to GitHub, LinkedIn, X/Twitter, Dev.to, etc.
+- Link to GitHub, LinkedIn,
 
 **Hello,** 👋  
-my name is Saverio and I'm a software engineer and a passionate software developer 💻 living in Rome 🇮🇹.  
+my name is Saverio and I work as software engineer and a passionate software developer 💻 living in Rome 🇮🇹.  
 Adaptable, proactive, creative and addicted to the Linux 🐧 operating system.  
 I love learning new things and working with all the open-source technologies.  
 

@@ -21,7 +21,7 @@ Active listening skills with empathy and emotional intelligence. Give and take f
 ## Covered concepts
 
 This course focuses on transforming everyday listening into a powerful skill for building stronger relationships, handling feedback, and improving professional and personal outcomes.
-It was for me an addition to my previous knowledge acquired as Technical Leader. Related to [The Little Guide to Empathetic Technical Leadership](../../../../notes/books/the-little-guide-to-empathetic-technical-leadership/overview/).
+It was for me an addition to my previous knowledge acquired as Technical Leader. Related to [The Little Guide to Empathetic Technical Leadership](../../../../learnings/books/the-little-guide-to-empathetic-technical-leadership/overview/).
 
 ### 🎯 Active Listening Fundamentals
 - Learn to listen with full attention, understanding, and intention.

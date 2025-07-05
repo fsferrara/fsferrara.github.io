@@ -1,8 +1,8 @@
 ---
-title: "Notes"
+title: "Learnings"
 ---
 
-{% assign sorted = site.notes | sort: "date" | reverse %}
+{% assign sorted = site.learnings | sort: "date" | reverse %}
 {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
 {% assign categories = "talks,books,courses" | split: "," %}
 {% for category in categories %}

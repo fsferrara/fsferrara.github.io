@@ -18,23 +18,22 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: fsferrara.github.io
+title: Code, Learn, Repeat
 repository: fsferrara/fsferrara.github.io
 author: Saverio Ferrara
 # email: fsferrara@users.noreply.github.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Software Engineer 💻 🐧 🇮🇹 Projects, Resume, Learnings
+  Fueled by coffee ☕ and Linux 🐧
 baseurl: "" # the subpath of your site, e.g. /blog
 domain: "fsferrara.github.io"
 url: "https://fsferrara.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-# github_username:  fsferrara
+github_username:  fsferrara
 # linkedin_username: fsferrara
 # twitter_username: fsferrara
 # dribbble_username: fsferrara
 # facebook_username: fsferrara
 # flickr_username: fsferrara
 # instagram_username: fsferrara
-# linkedin_username: fsferrara
 # pinterest_username: fsferrara
 # youtube_username: fsferrara
 # googleplus_username: +fsferrara
@@ -59,7 +58,7 @@ collections:
     output: true
     sort_by: date
     permalink: /:collection/:path/
-  notes:
+  learnings:
     output: true
     sort_by: date
     permalink: /:collection/:path/
@@ -80,7 +79,7 @@ defaults:
       layout: "post"
   - scope:
       path: ""
-      type: "notes"
+      type: "learnings"
     values:
       layout: "page"
   - scope:
@@ -96,9 +95,8 @@ defaults:
 
 # Menu settings
 header_pages:
-  - about/index.md
   - projects.md
-  - notes.md
+  - learnings.md
   - resume.md
 
 # Every file or directory beginning with the following characters: ., _ , # or ~ in
