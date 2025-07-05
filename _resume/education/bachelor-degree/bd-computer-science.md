@@ -12,8 +12,7 @@ categories:
 📜 [Bachelor's degree](../20060509-bachelor-degree.jpg) (110/110 cum laude)  
 📍 _Naples Area, Italy_  
 
-Graduated with honors in Computer Science from the University of Naples Federico II. Specialized in systems programming and operating systems, demonstrated by a thesis on device driver development for LynxOS.
-Thesis internship in Operating Systems at VIRGO Lab (INFN), Department of Physical Sciences. I designed and tested a real-time control system using the VME bus. I particular, I wrote the MVP955 device driver for LynxOS.
+Graduated with honors in Computer Science. Specialized in systems programming and operating systems, demonstrated by a thesis on device driver development for LynxOS.
 
 
 ### Subjects
@@ -36,15 +35,16 @@ Thesis internship in Operating Systems at VIRGO Lab (INFN), Department of Physic
 - Probability and Mathematical Statistics.
 
 
-### Activities
-
-- Participated in the Linux Day hosted by IgLug (Linux User Group) in Casalnuovo, Naples, as a Linux system installer
-
-
 ### Thesis
 
-Thesis internship in Operating Systems at VIRGO Lab (INFN), Department of Physical Sciences:
+Thesis internship in Operating Systems at VIRGO Lab (INFN), Department of Physical Sciences. I designed and tested a real-time control system using the VME bus. I particular, I wrote the MVP955 device driver for LynxOS.
+
 - 💻 [MPV955 Device Driver for LynxOS](/projects/mpv955-device-driver-for-lynxos/overview/)
+
+
+### Activities
+
+- Participation in the Linux Day hosted by IgLug (Linux User Group) in Casalnuovo di Napoli, as a Linux system installer
 
 
 ### Projects (academic and personal)
