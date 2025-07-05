@@ -1,0 +1,18 @@
+Laureato con lode in Informatica presso l’Università degli Studi di Napoli Federico II. Specializzato in programmazione di sistema e sistemi operativi, con una tesi sullo sviluppo di un driver di dispositivo per LynxOS. Coinvolto in numerosi progetti software di natura accademica e personale.
+
+- Istituto: Università degli Studi di Napoli "Federico II" (UniNa)
+- Titolo: Laurea Triennale
+- Campo di studio: Informatica
+- Voto: 110/110 con lode
+- Descrizione: Laurea di primo livello in Informatica
+- Materie:
+  - Analisi matematica I; Programmazione; Algebra; Architettura degli elaboratori; Geometria; Calcolo numerico; Calcolo scientifico; Linguaggi di programmazione I e II; Algoritmi e strutture dati; Fisica generale; Sistemi operativi I e II; Economia ed organizzazione aziendale; Basi di dati e sistemi informativi; Sistemi per l'elaborazione delle informazioni: Reti di calcolatori; Interazione uomo-macchina; Calcolo delle probabilità e statistica matematica.
+- Attività:
+  - Partecipazione al Linux Day organizzato da IgLug (Linux User Group) a Casalnuovo (Napoli), come installatore di sistemi Linux
+- Competenze:
+  - Sviluppo Software; Sistemi Operativi; Algoritmi; Strutture Dati; Tecnologie Web; Turbo Pascal; C; PHP/MySQL (piattaforma LAMP); Matlab; Shell Scripting.
+
+Lavoro di tesi in Sistemi Operativi presso VIRGO Lab (INFN), Dipartimento di Scienze Fisiche.
+Progettazione realizzazione e test di un sistema di controllo real-time basato su bus VME.
+Scrittura di un device driver per il sistema operativo LynxOS.
+Conoscenza approfondita della struttura e delle caratteristiche del bus VME.

@@ -1,0 +1,10 @@
+Istituto: Università degli Studi di Napoli "Federico II" (UniNa)
+Titolo: Laurea Magistrale
+Campo di studio: Informatica
+Voto: 110/110 e lode
+Attività: Partecipazione al Linux Day del LUG di Avellino IrLug come installatore di sistemi linux
+Descrizione:
+
+Ricerca operativa e Ottimizzazione Combinatoria - Ingegneria del software I e II - Tecnologie Web - Basi di Dati e Sistemi Informativi II - Sicurezza e Privatezza - Intelligenza artificiale - Logica - Calcolabilità e Complessità - Information Retrieval - Mente e Macchine.
+
+Capacità tecniche acquisite durante gli studi: progettazione software Object-Oriented con UML, Java, C++, XML, XQuery, XPath, XSL, CSS, Lisp, Prolog.

@@ -1,0 +1,13 @@
+- Istituto: ITC "Luigi Amabile"
+- Titolo: Diploma di Maturità
+- Campo di studio: Ragioniere e perito commerciale - indirizzo programmatore
+- Voto: 81/100
+- Attività: 
+- Descrizione:
+- Materie:
+  - Economia aziendale; Diritto ed Economia; Informatica; Matematica; Scienze integrate; Lingua e letteratura Italiana; Lingua Inglese; Lingua Francese; Storia
+- Attività:
+  - IG Students 2000/2001
+  - INPS: stage di orientamento e formazione
+- Competenze:
+  - Programmazione informatica; Tecnologie dell'informazione; Basi di dati; Contabilità; Comunicazione multilingue; QBasic; Fortran
