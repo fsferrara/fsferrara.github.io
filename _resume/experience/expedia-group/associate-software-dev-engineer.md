@@ -32,4 +32,4 @@ Projects:
 * 💻 [Venere Website](/projects/venere-website/overview/)
 
 tags: `#php` `#mysql` `#java` `#javascript` `#node` `#spring`
-🔗 [www.venere.com](https://www.venere.com)
+🔗 [www.venere.com](https://www.venere.com)  

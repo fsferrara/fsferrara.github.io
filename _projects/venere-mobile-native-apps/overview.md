@@ -27,7 +27,10 @@ In the end I designed and implemented a prototype of a new Venere App based on H
   - requirejs
   - Backbone
   - handlebars
-- Apps
+  - Backbone
+  - Bower
+  - Mustache
+- Native Apps
   - Java
   - ADK
   - Cordova  
@@ -35,7 +38,7 @@ In the end I designed and implemented a prototype of a new Venere App based on H
   - PHP
   - Javascript
   - Node.js
-  - Parse
+  - Grunt
 
 
 ## Resources

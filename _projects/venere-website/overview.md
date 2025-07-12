@@ -17,21 +17,32 @@ I spent several years contributing to the success of this amazing company.
 
 ### Skills
 
-- Front-end
-  - Javascript
-  - HTML
-  - CSS
-  - RESTful Web Services
-- Back-end
-  - PHP
-  - Javascript/Node.js
-  - Java
-  - Spring Framework
-  - SOA architectures
-  - Sybase
-  - MySQL
-  - spymemcached
-  - Couchbase
+
+- Java
+- J2EE
+- Spring Framework
+- SOA architectures
+- Sybase
+- MySQL
+- spymemcached
+- Couchbase
+- PHP
+- JQuery
+- HTML/CSS
+- Spring
+- RESTful Web Services
+- Tomcat
+- Sybase
+- MySQL
+- Couchbase
+- Eclipse
+- Netbeans
+- Maven
+- JMeter
+- SVN
+- Linux
+- Git
+- Javascript
 
 
 ## Resources
