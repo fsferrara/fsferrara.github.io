@@ -4,8 +4,9 @@ date: 2011-05-01
 categories:
   - projects
 ---
-💻 **Project** • _May 2011_  
-📍 _@remote_
+💻 **Work Project** • _May 2011_  
+🏢 Freelancer for TradurreAntico.it  
+📍 _@remote_  
 
 **TradurreAntico.it** is a website primarily intended for high school students. Allows the sharing of translations of ancient texts written originally in Latin and ancient greek.
 
@@ -20,9 +21,17 @@ This is the Wordpress version:
 
 ![TradurreAntico Wordpress](../tradurreantico-wordpress.png)
 
-_Position_: Freelancer for [TradurreAntico.it](http://www.tradurreantico.it/ "TradurreAntico.it")  
-_Technologies_: PHP, HTML, CSS, Joomla!, Wordpress, MySql
 
-[🔗 www.tradurreantico.it](http://www.tradurreantico.it/)
+### Skills
 
-tags: `#html` `#css` `#mysql` `wordpress` `#joomla!` `#php`
+- PHP
+- HTML
+- CSS
+- Joomla!
+- Wordpress
+- MySQL
+
+
+## Resources
+
+[🔗 www.tradurreantico.it/](https://www.tradurreantico.it/)  

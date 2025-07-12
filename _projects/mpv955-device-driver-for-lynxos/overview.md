@@ -4,6 +4,11 @@ date: 2005-05-01
 categories:
   - projects
 ---
+💻 **Academic Project** • _September 2004 → May 2005_  
+🏫 [Bachelor’s Student]({{ site.data.links.education.bachelor-degree.page }})  
+🏢 Intern at [VIRGO Lab (INFN), Department of Physical Sciences](https://www.virgo-gw.eu/)  
+📍 _Naples Area, Italy_  
+
 I wrote the **MPV955 Device Driver for LynxOS**, a Unix-like real-time operating system from LynuxWorks (sometimes known as the Lynx Operating System). LynxOS features are: full POSIX conformance and Linux compatibility.
 
 LynxOS is mostly used in real-time embedded systems, in applications for avionics, aerospace, the military, industrial process control and telecommunications.
@@ -16,12 +21,16 @@ I was really lucky to join this experiment and look after such an interesting ac
 
 ![MPV955 Device Driver](../mpv955.png)
 
-_Position_: Thesis Student at [VIRGO Lab (INFN), Department of Physical Sciences](https://www.virgo-gw.eu/)  
-**Technologies**  
-_Driver_: C, Shell Scripting.  
-_User Interface_: Java, Swing.
 
-[🔗 https://github.com/fsferrara/mpv955](https://github.com/fsferrara/mpv955)  
-[💾 download thesis](/downloads/bachelor_mpv955.pdf)
+### Skills
 
-tags: `#c` `#driver` `#java` `#swing` `#lynxos` `#unix`
+- C (Driver)
+- Java Swing (User Interface)
+- Shell Scripting
+- LynxOS
+
+
+## Resources
+
+[🧑‍💻 https://github.com/fsferrara/mpv955](https://github.com/fsferrara/mpv955)  
+[💾 download thesis](/assets/downloads/bachelor_mpv955.pdf)  

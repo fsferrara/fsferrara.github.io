@@ -1,0 +1,9 @@
+Titolo: Lavoro di tesi in Basi di Dati e Sistemi Informativi
+Azienda: Advanced Systems
+Location: Naples Area, Italy
+
+
+Descrizione:
+
+Progettazione e implementazione di un modulo di riscrittura delle query per SADAS, un database 
+management system specializzato per ambienti di Data Warehousing.

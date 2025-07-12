@@ -1,0 +1,58 @@
+profile:
+  github: https://github.com/fsferrara
+  linkedin: https://www.linkedin.com/in/fsferrara
+  youtube: https://www.youtube.com/@fferrara
+  stack-overflow: https://stackoverflow.com/users/729079/saverio-ferrara
+projects:
+  goku-script:
+    page: /projects/goku-script/overview/
+    download: /assets/downloads/goku4.zip
+  grafportal:
+    page: /projects/grafportal/overview/
+  mpv955-device-driver-for-lynxos:
+    page: /projects/mpv955-device-driver-for-lynxos/overview/
+  query-rewriting-module-for-sadas-engine:
+    page: /projects/query-rewriting-module-for-sadas-engine/overview/
+  sl-aftersale:
+    page: /projects/sl-aftersale/overview/
+  tradurreantico:
+    page: /projects/tradurreantico/overview/
+  venere-mobile-native-apps:
+    page: /projects/venere-mobile-native-apps/overview/
+  venere-website:
+    page: /projects/venere-website/overview/
+  www-e-matching-it:
+    page: /projects/www-e-matching-it/overview/
+certifications:
+  active-listening-skills-with-empathy-and-emotional-intelligence:
+    page: /resume/certifications/udemy/active-listening/active-listening-skills-with-empathy-and-emotional-intelligence/
+  shenker-lower-certificate:
+    page: /resume/certifications/shenker/lower-certificate/shenker-method-lower-certificate/
+education:
+  bachelor-degree:
+    page: /resume/education/bachelor-degree/bd-computer-science/
+  high-school:
+    page: /resume/education/high-school/high-school-diploma/
+  master-degree:
+    page: /resume/education/master-degree/md-computer-science/
+experience:
+  advanced-systems-research-intern:
+    page: /resume/experience/advanced-systems/research-intern/
+  advanced-systems-web-developer:
+    page: /resume/experience/advanced-systems/web-developer/
+  deda-digital-system-administrator:
+    page: /resume/experience/deda-digital/system-administrator/
+  expedia-group-associate-software-dev-engineer:
+    page: /resume/experience/expedia-group/associate-software-dev-engineer/
+  expedia-group-senior-software-development-engineer:
+    page: /resume/experience/expedia-group/senior-software-development-engineer/
+  expedia-group-software-dev-engineer-1:
+    page: /resume/experience/expedia-group/software-dev-engineer-1/
+  expedia-group-software-dev-engineer-2:
+    page: /resume/experience/expedia-group/software-dev-engineer-2/
+  expedia-group-technology-lead:
+    page: /resume/experience/expedia-group/technology-lead/
+  meetweb-system-administrator:
+    page: /resume/experience/meetweb/system-administrator/
+  reply-consultant:
+    page: /resume/experience/reply/consultant/

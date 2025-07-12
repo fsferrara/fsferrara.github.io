@@ -4,8 +4,9 @@ date: 2011-05-01
 categories:
   - projects
 ---
-💻 **Project** • _May 2011 → May 2011_  
-📍 _@remote_
+💻 **Work Project** • _May 2011 → May 2011_  
+🏢 Freelancer for SL AfterSale  
+📍 _@remote_  
 
 **SL AfterSale** created as a tool used by operators in the automotive sector to ensure that, after sale, the restoration of all the features of the vehicle in case of failure.
 
@@ -15,9 +16,17 @@ During this project I wrote my first WordPress plugin. It allows the management 
 
 ![SL AfterSale](../slaftersale.jpg)
 
-_Position_: Freelancer for [SL AfterSale](http://www.slaftersale.com/ "SL AfterSale")  
-_Technologies_: PHP, HTML, CSS, WordPress, WordPress plugin writing, MySql
 
-[🔗 www.slaftersale.com](http://www.slaftersale.com/)
+### Skills
 
-tags: `#html` `#css` `#mysql` `#php` `#wordpress` `#wordpress-plugin`
+- PHP
+- WordPress
+- WordPress Plugin Development
+- HTML
+- CSS
+- MySQL
+
+
+## Resources
+
+[🔗 www.slaftersale.com](#)  

@@ -1,5 +1,5 @@
 ---
-title: "Active Listening With Empathy"
+title: "Active listening skills with empathy and emotional intelligence"
 date: 2024-04-14
 categories:
   - certifications

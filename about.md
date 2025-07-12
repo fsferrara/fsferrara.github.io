@@ -9,6 +9,6 @@ Based in Rome, I'm also a proud father of two. In my spare time, you'll find me 
 
 ![Saverio Ferrara](/assets/img/social-card.jpg)
 
-🐙 [GitHub](https://github.com/fsferrara) | 💼 [LinkedIn](https://www.linkedin.com/in/fsferrara) | 🎬 [YouTube](https://www.youtube.com/@fferrara) | 📚 [Stack Overflow](https://stackoverflow.com/users/729079/saverio-ferrara)
+🐙 [GitHub]({{ site.data.links.profile.github }}) | 💼 [LinkedIn]({{ site.data.links.profile.linkedin }}) | 🎬 [YouTube]({{ site.data.links.profile.youtube }}) | 📚 [Stack Overflow]({{ site.data.links.profile.stack-overflow }})
 
 I work as a **Software Engineer**: adaptable, proactive, and creative. I enjoy solving problems, **collaborating** within teams, and **leading** the way on [...more](/resume.md)

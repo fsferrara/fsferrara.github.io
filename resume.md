@@ -5,7 +5,7 @@ layout: page
 ---
 # Saverio Ferrara
 **Software Engineer** / **Engineering Manager**  
-[GitHub](https://github.com/fsferrara) | [LinkedIn](https://www.linkedin.com/in/fsferrara) | 📍 Rome, Italy
+[GitHub]({{ site.data.links.profile.github }}) | [LinkedIn]({{ site.data.links.profile.linkedin }}) | 📍 Rome, Italy
 
 I work as a **Software Engineer**: adaptable, proactive, and creative. I enjoy solving problems, **collaborating** within teams, and **leading** the way on technical challenges.
 
