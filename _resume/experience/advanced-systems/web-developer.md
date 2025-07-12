@@ -13,7 +13,7 @@ Web application developing, with:
 -	JPA and MySQL.
 
 Projects:
-* 💻 [GrafPortal](/timeline/grafportal)
+* 💻 [GrafPortal](/projects/grafportal/overview/)
 
 tags: `#java` `#java-ee` `#gwt` `#smart-gwt` `#jpa` `#mysql`
 🔗 [www.advancedsystems.it](https://www.advancedsystems.it)

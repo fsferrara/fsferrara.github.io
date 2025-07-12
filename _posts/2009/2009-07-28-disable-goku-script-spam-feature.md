@@ -10,7 +10,7 @@ categories:
 ---
 Eliminare lo spam dal goku script
 
-Il goku script è uno script per mIRC realizzato nell'anno 2001 e tutt'oggi è considerato uno degli script più completi in circolazione. Lo script è [scaricabile a questo link](/timeline/goku-script/).
+Il goku script è uno script per mIRC realizzato nell'anno 2001 e tutt'oggi è considerato uno degli script più completi in circolazione.
 
 Purtroppo nella sua distribuzione sono stati lasciati attivi i messaggi di spam (messaggi usati per pubblicizzare lo script stesso).
 

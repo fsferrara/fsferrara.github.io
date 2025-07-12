@@ -7,16 +7,14 @@ I'm a passionate Developer who loves all things Linux 🐧 and just about anythi
 
 ## Recent Posts
 
-<ul class="post-list">
+<ul>
     {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-    {% for post in site.posts limit:2 %}
+    {% for post in site.posts limit:10 %}
     <li>
         <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
         <span class="post-meta"> - {{ post.date | date: date_format }}</span>
-        {{ post.excerpt }}
     </li>
     {% endfor %}
-
     <li>
         <a href="/archive">...see older posts</a>
         <span class="post-meta"> - archive</span>

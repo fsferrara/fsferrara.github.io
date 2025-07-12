@@ -29,7 +29,7 @@ Supporting team member with solid grasp of software engineering principles, cont
 5. Business awareness and goal alignment
 
 Projects:
-* 💻 [Venere Website](/timeline/venere-website)
+* 💻 [Venere Website](/projects/venere-website/overview/)
 
 tags: `#php` `#mysql` `#java` `#javascript` `#node` `#spring`
 🔗 [www.venere.com](https://www.venere.com)

@@ -30,7 +30,7 @@ Consistent performer applying software engineering principles to business needs,
 5. Cross-team collaboration and systems thinking
 
 Projects:
-* 💻 [Venere Mobile Area](/timeline/venere-mobile-area)
+* 💻 [Venere Mobile Area](/projects/venere-mobile-native-apps/overview/)
 
 tags: `#android` `#cordova` `#hybrid-app` `#mobile` `#java`
 🔗 [www.venere.com](https://www.venere.com)
