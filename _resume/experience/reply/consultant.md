@@ -7,6 +7,14 @@ categories:
 💼 **Position** • _March 2008 → September 2008_  
 📍 _Milan Area, Italy_
 
+Open Reply s.r.l.
+
+Web application developing, with:
+- Java;
+- Framework JBoss Seam on a RedHat Linux cluster;
+- High-reliability PostgreSQL cluster (RedHat Linux).
+Maintenance of web applications written in Python/Zope.
+
 Web application developing, with Java and Framework JBoss Seam on a RedHat Linux cluster; High-reliability PostgreSQL cluster (RedHat Linux). Maintenance of web applications written in Python/Zope.
 
 Projects:
