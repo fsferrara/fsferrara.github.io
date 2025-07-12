@@ -1,11 +1,13 @@
 ---
-title: "System Administrator @ Agorà Med"
+title: "System Administrator @ Deda Digital"
 date: 2007-06-01
 categories:
   - experience
 ---
 💼 **Position** • _June 2007 → February 2008_  
 📍 _Naples Area, Italy_
+
+Agorà Med s.r.l.
 
 Installation and maintenance of mixed systems (Windows 2003, Debian Linux); Managing the mail system with qmail, postfix, and courier; Managing Linux Sophos anti-spam system; Installation and maintenance of a VoIP-based PBX TrixBox/Asterisk; Streaming on Windows.
 

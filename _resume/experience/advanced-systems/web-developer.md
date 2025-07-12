@@ -7,7 +7,10 @@ categories:
 💼 **Position** • _March 2011 → May 2011_  
 📍 _Naples Area, Italy_
 
-Web application developing, with Java EE, Google Web Toolkit (GWT), SmartGwt, JPA and MySQL.
+Web application developing, with:
+-	Java EE; 
+-	Google Web Toolkit (GWT), SmartGwt;
+-	JPA and MySQL.
 
 Projects:
 * 💻 [GrafPortal](/timeline/grafportal)
