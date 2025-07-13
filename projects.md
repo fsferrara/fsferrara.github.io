@@ -19,10 +19,11 @@ title: "Projects"
 
 <ul>
 {% assign repos_sorted = site.github.public_repositories | sort: "updated_at" | reverse %}
+{% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
 {% for repo in repos_sorted %}
   <li>
     <a href="{{ repo.html_url }}">{{ repo.name }}</a>
-    <span class="post-meta"> – Last updated: {{ repo.updated_at | date: "%b %d, %Y" }}</span>
+    <span class="post-meta"> – Last updated: {{ repo.updated_at | date: date_format }}</span>
   </li>
 {% endfor %}
 </ul>
