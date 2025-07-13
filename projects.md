@@ -15,10 +15,10 @@ title: "Projects"
   {% endfor %}
 </ul>
 
-## Github Feed
+## Playgrounds
 
 <ul>
-{% for repo in site.github.public_repositories %}
+{% for repo in site.github.public_repositories reversed %}
   <li>
     <a href="{{ repo.html_url }}">{{ repo.name }}</a>
     <span class="post-meta"> – Last updated: {{ repo.updated_at | date: "%b %d, %Y" }}</span>
