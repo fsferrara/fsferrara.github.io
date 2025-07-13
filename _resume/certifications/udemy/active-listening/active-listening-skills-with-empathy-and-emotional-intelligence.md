@@ -9,11 +9,11 @@ categories:
 🏛️ [Udemy](https://www.udemy.com/)  
 📚 [Active Listening With Empathy: Soft Skills To Take Feedback](https://www.udemy.com/course/active-listening-skills)  
 📜 [Certificate](https://www.udemy.com/certificate/UC-7289db6f-2618-4078-86e3-711f579a1497/)  
-📍 _@remote_  
+📍 _Online Course_  
 
 ---
 
-![certificate](../UC-7289db6f-2618-4078-86e3-711f579a1497.jpg)
+![Statement](../UC-7289db6f-2618-4078-86e3-711f579a1497.jpg)
 
 ---
 

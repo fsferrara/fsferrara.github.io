@@ -13,7 +13,7 @@ categories:
 
 ---
 
-![certificate](../20080901-shenker-lower-certificate.png)
+![Statement](../20080901-shenker-lower-certificate.png)
 
 ---
 
