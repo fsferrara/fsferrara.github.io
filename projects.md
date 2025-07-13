@@ -18,7 +18,8 @@ title: "Projects"
 ## Playgrounds
 
 <ul>
-{% for repo in site.github.public_repositories reversed %}
+{% assign repos_sorted = site.github.public_repositories | sort: "updated_at" | reverse %}
+{% for repo in repos_sorted %}
   <li>
     <a href="{{ repo.html_url }}">{{ repo.name }}</a>
     <span class="post-meta"> – Last updated: {{ repo.updated_at | date: "%b %d, %Y" }}</span>
