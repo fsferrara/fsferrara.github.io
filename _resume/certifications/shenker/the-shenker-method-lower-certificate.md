@@ -5,15 +5,16 @@ categories:
   - certifications
   - courses
 ---
+{%- assign statement = page.relative_path |  split: '/' | last | split: '.md' | first | append: '.png' | prepend: '../' -%}
 🎓 **Certification** • _April 2008 → September 2008_  
 🏛️ [Shenker](https://shenker.com/)  
 📚 Level 25 of 100 - Lower Certificate  
-📜 [Certificate](../20080901-shenker-lower-certificate.png)  
+📜 [Certificate]({{ statement }})  
 📍 _Via Cerva, 23, 20122 - Milan, Italy_  
 
 ---
 
-![Statement](../20080901-shenker-lower-certificate.png)
+![Statement]({{ statement }})
 
 ---
 
@@ -31,5 +32,5 @@ The Shenker Lower Certificate is the first level of a structured English learnin
 
 ## Resources
 
-[💾 download](../20080901-shenker-lower-certificate.png)  
+[💾 download]({{ statement }})  
 [🔗 shenker.com](https://shenker.com/)  
