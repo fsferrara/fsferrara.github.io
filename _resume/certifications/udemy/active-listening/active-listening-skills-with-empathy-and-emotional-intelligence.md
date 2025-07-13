@@ -1,44 +1,37 @@
 ---
-title: "Active listening skills with empathy and emotional intelligence"
+title: "Active Listening With Empathy: Soft Skills To Take Feedback"
 date: 2024-04-14
 categories:
   - certifications
+  - courses
 ---
-## Active Listening With Empathy: Soft Skills To Take Feedback
-
-Active listening skills with empathy and emotional intelligence. Give and take feedback at work and personal life
-
+🎓 **Certification** • _April 2025_  
 🏛️ [Udemy](https://www.udemy.com/)  
-📚 [Active listening skills with empathy and emotional intelligence. Give and take feedback at work and personal life](https://www.udemy.com/course/active-listening-skills)  
-📜 [Certificate](https://www.udemy.com/certificate/UC-7289db6f-2618-4078-86e3-711f579a1497/) • _April 2025_  
-💾 [Download](../UC-7289db6f-2618-4078-86e3-711f579a1497.pdf)  
+📚 [Active Listening With Empathy: Soft Skills To Take Feedback](https://www.udemy.com/course/active-listening-skills)  
+📜 [Certificate](https://www.udemy.com/certificate/UC-7289db6f-2618-4078-86e3-711f579a1497/)  
 📍 _@remote_  
 
 ---
 
 ![certificate](../UC-7289db6f-2618-4078-86e3-711f579a1497.jpg)
 
-## Covered concepts
+---
 
-This course focuses on transforming everyday listening into a powerful skill for building stronger relationships, handling feedback, and improving professional and personal outcomes.
-It was for me an addition to my previous knowledge acquired as Technical Leader. Related to [The Little Guide to Empathetic Technical Leadership](../../../../learnings/books/the-little-guide-to-empathetic-technical-leadership/overview/).
+This course on Active Listening explores the foundations of empathetic and emotionally intelligent communication. It provides practical tools for improving professional and personal interactions, with a focus on feedback, trust-building, and conflict resolution.
 
-### 🎯 Active Listening Fundamentals
-- Learn to listen with full attention, understanding, and intention.
-- Go beyond passive listening. Engage creatively and empathetically in conversations.
+For me, it was a complement to [The Little Guide to Empathetic Technical Leadership](../../../../../learnings/books/the-little-guide-to-empathetic-technical-leadership/overview/) book.
 
-### 💬 Mastering Difficult Conversations
-- Use the **Situation-Behavior-Impact (SBI)** model to give and receive feedback effectively.
-- Stay calm, manage emotions, and steer tough conversations toward positive outcomes.
 
-### 🧠 Emotional Intelligence in Listening
-- Read body language, tone, and emotional cues.
-- Use empathy and self-awareness to build trust and connection.
+### Topics and Competencies
 
-### 🧏 Empathetic & Reflective Listening
-- Suspend judgment and biases to understand others deeply.
-- Reflect on what people feel—not just what they say.
+- Practicing active and empathetic listening
+- Applying emotional intelligence in conversations
+- Giving and receiving feedback using the SBI model
+- Managing difficult conversations with calm and clarity
+- Recognizing emotional cues and responding with empathy
+- Strengthening relationships through reflective listening
 
-### 💼 Practical Workplace Applications
-- Handle critical feedback, resolve conflicts, and connect better with teams and clients.
-- Especially useful for leaders, managers, and those in collaborative roles.
+
+## Resources
+
+[💾 download](../UC-7289db6f-2618-4078-86e3-711f579a1497.pdf)  

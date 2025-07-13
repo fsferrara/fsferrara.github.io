@@ -26,12 +26,7 @@ Text
 
 ## Resources
 
-[📄 sorce](#)
-[🔗 github](#)
-[💾 download](#)
-[🔗 link](#)
-
-
-## References
-
-- [My reference](#)
+[📄 sorce](#)  
+[🧑‍💻 github](#)  
+[💾 download](#)  
+[🔗 link](#)  
