@@ -1,9 +1,12 @@
 ---
-title: "Hello World 👋"
+title: "Saverio Ferrara"
 image: /assets/img/social-card.jpg
 layout: page
 ---
-I'm a passionate Developer who loves all things Linux 🐧 and just about anything a computer [...more](/about.md)
+**Software Engineer & Technical Lead**  
+_Full Stack • Generalist • Technical Partner_
+
+I help ambitious software developers grow into skilled, pragmatic technical leaders by sharing hands-on experience in code, process, and mentorship[...read more](/about.md)
 
 ## Recent Posts
 
