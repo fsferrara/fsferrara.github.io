@@ -1,11 +1,11 @@
 ---
-title: "Learnings"
+title: "Work"
 ---
 
 
 ## Featured
 
-{% assign sorted = site.learnings | sort: "date" | reverse %}
+{% assign sorted = site.work | sort: "date" | reverse %}
 {% assign date_format = "%Y" %}
 {% assign categories = "projects" | split: "," %}
 {% for category in categories %}
@@ -53,9 +53,9 @@ title: "Learnings"
     </li>
 </ul>
 
-## Recent Learnings
+## Recent Work
 
-{% assign sorted = site.learnings | sort: "date" | reverse %}
+{% assign sorted = site.work | sort: "date" | reverse %}
 {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
 <ul>
   {% for entry in sorted %}
@@ -65,14 +65,14 @@ title: "Learnings"
     </li>
   {% endfor %}
       <li>
-        <a href="/learnings">...more</a>
-        <span class="post-meta"> - learnings</span>
+        <a href="/work">...more</a>
+        <span class="post-meta"> - work</span>
     </li>
 </ul>
 
 ## Learnings
 
-{% assign sorted = site.learnings | sort: "date" | reverse %}
+{% assign sorted = site.work | sort: "date" | reverse %}
 {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
 {% assign categories = "talks,books,courses" | split: "," %}
 {% for category in categories %}

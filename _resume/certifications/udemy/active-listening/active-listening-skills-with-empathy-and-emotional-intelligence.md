@@ -20,7 +20,7 @@ categories:
 
 This course on Active Listening explores the foundations of empathetic and emotionally intelligent communication. It provides practical tools for improving professional and personal interactions, with a focus on feedback, trust-building, and conflict resolution.
 
-For me, it was a complement to [The Little Guide to Empathetic Technical Leadership](/learnings/books/the-little-guide-to-empathetic-technical-leadership/) book.
+For me, it was a complement to [The Little Guide to Empathetic Technical Leadership](/work/books/the-little-guide-to-empathetic-technical-leadership/) book.
 
 
 ### Topics and Competencies

@@ -1,5 +1,5 @@
 ---
-title: "Résumé"
+title: "Resume"
 image: /assets/img/social-card.jpg
 layout: page
 ---

@@ -54,7 +54,7 @@ plugins:
 permalink: pretty
 
 collections:
-  learnings:
+  work:
     output: true
     sort_by: date
     permalink: /:collection/:path/
@@ -75,7 +75,7 @@ defaults:
       layout: "post"
   - scope:
       path: ""
-      type: "learnings"
+      type: "work"
     values:
       layout: "page"
   - scope:
@@ -87,8 +87,8 @@ defaults:
 # Menu settings
 header_pages:
   - about.md
-  - learnings.md
   - resume.md
+  - work.md
   - contact.md
 
 # Every file or directory beginning with the following characters: ., _ , # or ~ in

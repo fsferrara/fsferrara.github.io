@@ -83,6 +83,6 @@ By following these guidelines, you can improve your asynchronous meetings to be 
 
 ## References
 
-- [Notes about Asynchronous Meetings](https://fsferrara.github.io/learnings/Productivity/Communication/Asynchronous%20Meeting)
-- [Asynchronous Meeting Template](https://fsferrara.github.io/learnings/Productivity/Communication/Asynchronous%20Meeting%20Template)
+- [Notes about Asynchronous Meetings](https://fsferrara.github.io/work/Productivity/Communication/Asynchronous%20Meeting)
+- [Asynchronous Meeting Template](https://fsferrara.github.io/work/Productivity/Communication/Asynchronous%20Meeting%20Template)
 - [Running Asynchronous Meetings: The Right Way](https://www.youtube.com/watch?v=kNny-2wzfGM)
