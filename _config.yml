@@ -54,10 +54,6 @@ plugins:
 permalink: pretty
 
 collections:
-  projects:
-    output: true
-    sort_by: date
-    permalink: /:collection/:path/
   learnings:
     output: true
     sort_by: date
@@ -84,20 +80,16 @@ defaults:
       layout: "page"
   - scope:
       path: ""
-      type: "projects"
-    values:
-      layout: "page"
-  - scope:
-      path: ""
       type: "resume"
     values:
       layout: "page"
 
 # Menu settings
 header_pages:
-  - projects.md
+  - about.md
   - learnings.md
   - resume.md
+  - contact.md
 
 # Every file or directory beginning with the following characters: ., _ , # or ~ in
 # the source directory will not be included in the destination folder.
