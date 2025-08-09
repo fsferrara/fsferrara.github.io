@@ -3,12 +3,28 @@ title: "Resume"
 image: /assets/img/social-card.jpg
 layout: page
 ---
-# Saverio Ferrara
-**Software Engineer** / **Engineering Manager**  
-[GitHub]({{ site.data.links.profile.github }}) | [LinkedIn]({{ site.data.links.profile.linkedin }}) | 📍 Rome, Italy
+## Saverio Ferrara
+**Software Engineer & Technology Lead**  
+_Full Stack • Generalist • Mentor_
 
-I work as a **Software Engineer**: adaptable, proactive, and creative. I enjoy solving problems, **collaborating** within teams, and **leading** the way on technical challenges.
 
+📞 +39 340 511 4184  
+✉️ fsferrara@gmail.com  
+🔗 https://www.linkedin.com/in/fsferrara  
+📍 Rome, Italy
+
+Collaborative and innovative full stack software engineer passionate about solving complex challenges and mentoring developers into pragmatic technical leaders. Skilled at shaping product strategy, guiding architecture, and delivering scalable, maintainable solutions. Adapts quickly to change, leveraging data and best practices to drive lasting impact. Brings energy and leadership to every project, inspiring teams to build reliable, high-quality software.
+
+---
+
+## Main Skills
+
+- Full stack development with Java, Swift, C++, PHP
+- REST and GraphQL API design and integration
+- Containerization and orchestration using Docker, Kubernetes, Helm
+- AWS cloud deployment and management
+- Mentoring developers to become effective technical leaders
+- Clear communication with stakeholders and cross-functional teams
 
 {% assign sorted = site.resume | sort: "date" | reverse %}
 {% assign date_format = site.minima.dayless_date_format | default: "%B, %Y" %}

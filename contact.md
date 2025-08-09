@@ -9,5 +9,5 @@ The best way to reach me is via LinkedIn.
 
 Alternatively, you can reach me at:
 
-**Phone:** +39 340 511 4184  
-**Email:** fsferrara@gmail.com
+📞 +39 340 511 4184  
+✉️ fsferrara@gmail.com
