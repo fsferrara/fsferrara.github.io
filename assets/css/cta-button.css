@@ -1,0 +1,18 @@
+/* Add your custom styles here */
+.cta-button {
+  border-width: 2px;
+  border-style: solid;
+  border-color: black;
+  background-color: transparent;
+
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.85rem;
+  line-height: normal;
+
+  letter-spacing: .24em;
+  padding: 21px 34px;
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+}

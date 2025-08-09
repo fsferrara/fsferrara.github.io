@@ -1,24 +1,13 @@
 ---
 title: "Contact"
 ---
+I'm always happy to connect with fellow professionals, collaborators, or anyone interested in my work.  
+The best way to reach me is via LinkedIn.
 
-<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/cta-button.css">
+[Connect on LinkedIn]({{ site.data.links.profile.linkedin }}){: .cta-button}
 
-I'm always open to connecting with new people. If you have any questions, comments, or just want to say hi, please feel free to reach out to me using the form below.  
-You can also find me on [LinkedIn](https://www.linkedin.com/in/fsferrara).
+Alternatively, you can reach me at:
 
-<form action="https://formspree.io/f/mwpqnadp" method="POST">
-  <label for="name">Name:
-  <input type="text" id="name" name="name" required>
-  </label>
-  <br />
-  <label for="email">Email:
-  <input type="email" id="email" name="_replyto" required>
-  </label>
-  <br />
-  <label for="message">Message:
-  <textarea id="message" name="message" required></textarea>
-  </label>
-  <br />
-  <button type="submit">Send</button>
-</form>
+**Phone:** +39 340 511 4184  
+**Email:** fsferrara@gmail.com

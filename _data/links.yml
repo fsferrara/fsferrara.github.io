@@ -1,8 +1,6 @@
 profile:
   github: https://github.com/fsferrara
   linkedin: https://www.linkedin.com/in/fsferrara
-  youtube: https://www.youtube.com/@fferrara
-  stack-overflow: https://stackoverflow.com/users/729079/saverio-ferrara
 projects:
   goku-script:
     page: /projects/goku-script/overview/

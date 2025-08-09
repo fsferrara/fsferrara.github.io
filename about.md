@@ -9,6 +9,8 @@ Based in Rome, I'm also a proud father of two. In my spare time, you'll find me 
 
 ![Saverio Ferrara](/assets/img/social-card.jpg)
 
-🐙 [GitHub]({{ site.data.links.profile.github }}) | 💼 [LinkedIn]({{ site.data.links.profile.linkedin }}) | 🎬 [YouTube]({{ site.data.links.profile.youtube }}) | 📚 [Stack Overflow]({{ site.data.links.profile.stack-overflow }})
-
 I work as a **Software Engineer**: adaptable, proactive, and creative. I enjoy solving problems, **collaborating** within teams, and **leading** the way on [...more](/resume.md)
+
+
+<link rel="stylesheet" href="/assets/css/cta-button.css">
+[View my Resume](/resume.md){: .cta-button}
