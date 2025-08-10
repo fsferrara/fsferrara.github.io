@@ -15,11 +15,11 @@ I’m a Full Stack **Software Engineer** and **Technology Lead** with a generali
 
 I help ambitious software developers grow into skilled, pragmatic technical leaders by sharing hands-on experience in code, process, and mentorship
 
-- _Life-long learner_ – I’m always curious and open to growth, both professionally and personally.
-- _Problem solver_ – I approach challenges with critical thinking and aim to find the most effective solutions.
-- _Positive mindset_ – I believe positivity is essential for strong teamwork and leadership.
-- _Get-it-done attitude_ – I focus on progress and always look ahead to what’s next.
-- _Accountable_ – I take full ownership of my work and follow through to completion.
+- _Life-long learner_ - I’m always curious and open to growth, both professionally and personally.
+- _Problem solver_ - I approach challenges with critical thinking and aim to find the most effective solutions.
+- _Positive mindset_ - I believe positivity is essential for strong teamwork and leadership.
+- _Get-it-done attitude_ - I focus on progress and always look ahead to what’s next.
+- _Accountable_ - I take full ownership of my work and follow through to completion.
 
 <link rel="stylesheet" href="/assets/css/cta-button.css">
 [View my Resume](/resume.md){: .cta-button}
