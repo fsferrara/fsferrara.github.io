@@ -3,6 +3,9 @@ title: "Resume"
 image: /assets/img/social-card.jpg
 layout: page
 ---
+<link rel="stylesheet" href="/assets/css/headshot.css">
+![Saverio Ferrara](/assets/img/headshot/profile-pic-round.png){: .headshot}
+
 ## Saverio Ferrara
 **Software Engineer & Technology Lead**  
 _Full Stack • Generalist • Mentor_
