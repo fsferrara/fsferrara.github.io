@@ -1,5 +1,8 @@
 /* Add your custom styles here */
 .cta-button {
+  margin-top: 40px !important;
+  margin-bottom: 40px !important;
+
   border-width: 2px;
   border-style: solid;
   border-color: black;
