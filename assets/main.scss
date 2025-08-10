@@ -1,0 +1,17 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@import "minima";
+
+// Use grey background for code
+pre, code, .highlighter-rouge .highlight { background-color: #f8f8f8; }
+
+// Logo
+.site-title::before {
+	content: url("/assets/logo/logo-mini.png");
+	display: inline-block;
+	position: relative;
+	width: 42px;
+	top: 8px;
+}
