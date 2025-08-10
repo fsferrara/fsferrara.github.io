@@ -5,11 +5,9 @@ title: "Work"
 
 {% assign sorted = site.work | sort: "date" | reverse %}
 {% assign date_format = "%Y" %}
-{% assign categories = "projects" | split: "," %}
-{% for category in categories %}
 <ul>
   {% for entry in sorted %}
-    {% if entry.categories contains category %}
+    {% if entry.categories contains "projects" %}
     <li>
       <a href="{{ entry.url | relative_url }}">{{ entry.title | escape }}</a>
       <span class="post-meta"> – {{ entry.date | date: date_format }}</span>
@@ -17,7 +15,6 @@ title: "Work"
     {% endif %}
   {% endfor %}
 </ul>
-{% endfor %}
 
 ## Playgrounds
 
