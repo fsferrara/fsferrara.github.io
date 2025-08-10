@@ -1,9 +1,7 @@
 ---
 title: "Work"
 ---
-
-
-## Featured
+## Featured Projects
 
 {% assign sorted = site.work | sort: "date" | reverse %}
 {% assign date_format = "%Y" %}
@@ -11,10 +9,12 @@ title: "Work"
 {% for category in categories %}
 <ul>
   {% for entry in sorted %}
+    {% if entry.categories contains category %}
     <li>
       <a href="{{ entry.url | relative_url }}">{{ entry.title | escape }}</a>
       <span class="post-meta"> – {{ entry.date | date: date_format }}</span>
     </li>
+    {% endif %}
   {% endfor %}
 </ul>
 {% endfor %}
