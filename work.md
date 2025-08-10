@@ -16,6 +16,7 @@ title: "Work"
   {% endfor %}
 </ul>
 
+
 ## Playgrounds
 
 <ul>
@@ -34,6 +35,22 @@ title: "Work"
 </ul>
 
 
+## Learnings
+
+{% assign sorted = site.work | sort: "date" | reverse %}
+{% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+<ul>
+  {% for entry in sorted %}
+    {% unless entry.categories contains "projects" %}
+    <li>
+      <a href="{{ entry.url | relative_url }}">{{ entry.title | escape }}</a>
+      <span class="post-meta"> in {{ entry.categories[0] | escape }}</span>
+    </li>
+    {% endunless %}
+  {% endfor %}
+</ul>
+
+
 ## Posts
 
 <ul>
@@ -48,19 +65,4 @@ title: "Work"
         <a href="/archive">...see older posts</a>
         <span class="post-meta"> - archive</span>
     </li>
-</ul>
-
-## Learnings
-
-{% assign sorted = site.work | sort: "date" | reverse %}
-{% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-<ul>
-  {% for entry in sorted %}
-    {% unless entry.categories contains "projects" %}
-    <li>
-      <a href="{{ entry.url | relative_url }}">{{ entry.title | escape }}</a>
-      <span class="post-meta"> in {{ entry.categories[0] | escape }}</span>
-    </li>
-    {% endunless %}
-  {% endfor %}
 </ul>

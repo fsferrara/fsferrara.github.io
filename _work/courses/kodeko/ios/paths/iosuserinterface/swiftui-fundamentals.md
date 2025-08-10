@@ -2,7 +2,6 @@
 title: "SwiftUI Fundamentals"
 date: 2024-06-05
 categories:
-  - certifications
   - courses
 ---
 {%- assign statement = page.relative_path |  split: '/' | last | split: '.md' | first | append: '.png' | prepend: '../' -%}

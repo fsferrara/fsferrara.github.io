@@ -2,7 +2,6 @@
 title: "Your First iOS and SwiftUI App - An App from Scratch"
 date: 2024-05-16
 categories:
-  - certifications
   - courses
 ---
 {%- assign statement = page.relative_path |  split: '/' | last | split: '.md' | first | append: '.png' | prepend: '../' -%}

@@ -3,7 +3,6 @@ title: "Write a Mini Reservation Application with Kotlin"
 date: 2021-12-27
 categories:
   - certifications
-  - courses
 ---
 {%- assign statement = page.relative_path |  split: '/' | last | split: '.md' | first | append: '.png' | prepend: '../' -%}
 🎓 **Certification** • _December 2021_  

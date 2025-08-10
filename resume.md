@@ -31,7 +31,7 @@ Collaborative and innovative full stack software engineer passionate about solvi
 
 {% assign sorted = site.resume | sort: "date" | reverse %}
 {% assign date_format = site.minima.dayless_date_format | default: "%B, %Y" %}
-{% assign categories = "experience,education,certifications" | split: "," %}
+{% assign categories = "experience,education" | split: "," %}
 {% for category in categories %}
 <div id="#{{ category | slugize }}">
 <hr />

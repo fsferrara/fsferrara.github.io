@@ -2,7 +2,6 @@
 title: "Programming in Swift - Functions and Types"
 date: 2024-06-15
 categories:
-  - certifications
   - courses
 ---
 {%- assign statement = page.relative_path |  split: '/' | last | split: '.md' | first | append: '.png' | prepend: '../' -%}

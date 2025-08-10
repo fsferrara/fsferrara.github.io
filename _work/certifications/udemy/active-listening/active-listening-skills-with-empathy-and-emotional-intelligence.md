@@ -3,7 +3,6 @@ title: "Active Listening With Empathy: Soft Skills To Take Feedback"
 date: 2024-04-14
 categories:
   - certifications
-  - courses
 ---
 {%- assign statement = page.relative_path |  split: '/' | last | split: '.md' | first | append: '.jpg' | prepend: '../' -%}
 🎓 **Certification** • _April 2025_  

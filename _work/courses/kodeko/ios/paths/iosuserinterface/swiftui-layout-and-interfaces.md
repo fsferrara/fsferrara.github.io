@@ -2,7 +2,6 @@
 title: "SwiftUI Layout and Interfaces"
 date: 2024-06-12
 categories:
-  - certifications
   - courses
 ---
 {%- assign statement = page.relative_path |  split: '/' | last | split: '.md' | first | append: '.png' | prepend: '../' -%}

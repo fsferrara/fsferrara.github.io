@@ -2,7 +2,6 @@
 title: "Your First iOS and SwiftUI App - Polishing the App"
 date: 2024-05-24
 categories:
-  - certifications
   - courses
 ---
 {%- assign statement = page.relative_path |  split: '/' | last | split: '.md' | first | append: '.png' | prepend: '../' -%}

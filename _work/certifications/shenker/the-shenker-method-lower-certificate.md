@@ -3,7 +3,6 @@ title: "The Shenker Method - Lower Certificate"
 date: 2008-09-01
 categories:
   - certifications
-  - courses
 ---
 {%- assign statement = page.relative_path |  split: '/' | last | split: '.md' | first | append: '.png' | prepend: '../' -%}
 🎓 **Certification** • _April 2008 → September 2008_  
