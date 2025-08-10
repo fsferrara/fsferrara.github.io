@@ -5,21 +5,20 @@ layout: page
 ---
 ![Saverio Ferrara](/assets/img/social-card.jpg)
 
-## Saverio Ferrara
-
-Born in a quiet countryside town, I had the opportunity to study Computer Scienze in a prestigiuos italian university. Now thriving in Rome as a **Software Engineer**, I am passionate **Developer** who loves all things Linux 🐧 and just about anything a computer can handle 💻.  
-Whether I’m **coding** or **mentoring** teammates, I bring curiosity, creativity, and a positive attitude to everything I do.
+Hey 👋, I'm **Saverio**. Born and raised in a quiet countryside town, I had the opportunity to study **Computer Scienze** in a prestigiuos italian university. Now based in Rome, I am passionate **Developer** who loves all things Linux 🐧 and just about anything a computer 💻 can handle.  
+Whether I’m **Coding** or **Mentoring** teammates, I bring curiosity, creativity, and a positive attitude to everything I do.
 
 ## Work-wise
 
-**Software Engineer & Technology Lead**  
-_Full Stack • Generalist • Mentor_
+I’m a Full Stack **Software Engineer** and **Technology Lead** with a generalist mindset and a passion for mentoring. I combine strong technical skills with soft skills that help me collaborate effectively with stakeholders, set clear expectations, communicate plans, and support the growth of fellow engineers.
 
-- _Life-long learner_ – I am a Generalist, I don’t know it all. Always happy to learn and acquire new skills.  
-- _Problem solver_ – I enjoy solving problems, **collaborating** within teams, and **leading** the way on technical challenges.  
-- _Get-it-done attitude_ – Risk-oriented, I prefer rapid decision-making and quick results, valuing speed over thoroughness
-- _Accountable_ - I take full ownership of my work and see it through to the finish line. 
-- _Collaborative_ – Interdependent, Egalitarian, Relationship-oriented. I personally think this is a key part of being a good team player and a leader. 
+I help ambitious software developers grow into skilled, pragmatic technical leaders by sharing hands-on experience in code, process, and mentorship
+
+- _Life-long learner_ – I’m always curious and open to growth, both professionally and personally.
+- _Problem solver_ – I approach challenges with critical thinking and aim to find the most effective solutions.
+- _Positive mindset_ – I believe positivity is essential for strong teamwork and leadership.
+- _Get-it-done attitude_ – I focus on progress and always look ahead to what’s next.
+- _Accountable_ – I take full ownership of my work and follow through to completion.
 
 <link rel="stylesheet" href="/assets/css/cta-button.css">
 [View my Resume](/resume.md){: .cta-button}
