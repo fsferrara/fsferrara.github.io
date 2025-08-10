@@ -1,7 +1,7 @@
 ---
 title: "Work"
 ---
-## Featured Projects
+## Featured
 
 {% assign sorted = site.work | sort: "date" | reverse %}
 {% assign date_format = "%Y" %}
@@ -34,7 +34,7 @@ title: "Work"
 </ul>
 
 
-## Recent Posts
+## Posts
 
 <ul>
     {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
