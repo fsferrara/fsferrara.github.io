@@ -50,43 +50,17 @@ title: "Work"
     </li>
 </ul>
 
-## Recent Work
-
-{% assign sorted = site.work | sort: "date" | reverse %}
-{% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-<ul>
-  {% for entry in sorted %}
-    <li>
-      <a href="{{ entry.url | relative_url }}">{{ entry.title | escape }}</a>
-      <span class="post-meta"> in {{ entry.categories[0] | escape }} – {{ entry.date | date: date_format }}</span>
-    </li>
-  {% endfor %}
-      <li>
-        <a href="/work">...more</a>
-        <span class="post-meta"> - work</span>
-    </li>
-</ul>
-
 ## Learnings
 
 {% assign sorted = site.work | sort: "date" | reverse %}
 {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-{% assign categories = "talks,books,courses" | split: "," %}
-{% for category in categories %}
-<div id="#{{ category | slugize }}">
-<hr />
-<h2>
-  <a name="{{ category | slugize }}"></a>{{ category | capitalize }}
-</h2>
 <ul>
   {% for entry in sorted %}
-    {% if entry.categories contains category %}
+    {% unless entry.categories contains "projects" %}
     <li>
       <a href="{{ entry.url | relative_url }}">{{ entry.title | escape }}</a>
-      <span class="post-meta"> – {{ entry.date | date: date_format }}</span>
+      <span class="post-meta"> in {{ entry.categories[0] | escape }}</span>
     </li>
-    {% endif %}
+    {% endunless %}
   {% endfor %}
 </ul>
-</div>
-{% endfor %}
