@@ -1,38 +1,6 @@
 profile:
   github: https://github.com/fsferrara
   linkedin: https://www.linkedin.com/in/fsferrara
-projects:
-  goku-script:
-    page: /projects/goku-script/overview/
-    download: /assets/downloads/goku4.zip
-  grafportal:
-    page: /projects/grafportal/overview/
-  mpv955-device-driver-for-lynxos:
-    page: /projects/mpv955-device-driver-for-lynxos/overview/
-  query-rewriting-module-for-sadas-engine:
-    page: /projects/query-rewriting-module-for-sadas-engine/overview/
-  sl-aftersale:
-    page: /projects/sl-aftersale/overview/
-  tradurreantico:
-    page: /projects/tradurreantico/overview/
-  venere-mobile-native-apps:
-    page: /projects/venere-mobile-native-apps/overview/
-  venere-website:
-    page: /projects/venere-website/overview/
-  www-e-matching-it:
-    page: /projects/www-e-matching-it/overview/
-certifications:
-  active-listening-skills-with-empathy-and-emotional-intelligence:
-    page: /resume/certifications/udemy/active-listening/active-listening-skills-with-empathy-and-emotional-intelligence/
-  shenker-lower-certificate:
-    page: /resume/certifications/shenker/the-shenker-method-lower-certificate/
-education:
-  bachelor-degree:
-    page: /resume/education/bachelor-degree/bd-computer-science/
-  high-school:
-    page: /resume/education/high-school/high-school-diploma/
-  master-degree:
-    page: /resume/education/master-degree/md-computer-science/
 experience:
   advanced-systems-research-intern:
     page: /resume/experience/advanced-systems/research-intern/
@@ -54,3 +22,36 @@ experience:
     page: /resume/experience/meetweb/system-administrator/
   reply-consultant:
     page: /resume/experience/reply/consultant/
+projects:
+  goku-script:
+    page: /work/projects/goku-script/
+    download: /assets/downloads/goku4.zip
+  grafportal:
+    page: /work/projects/grafportal/
+  mpv955-device-driver-for-lynxos:
+    page: /work/projects/mpv955-device-driver-for-lynxos/
+  query-rewriting-module-for-sadas-engine:
+    page: /work/projects/query-rewriting-module-for-sadas-engine/
+  sl-aftersale:
+    page: /work/projects/sl-aftersale/
+  tradurreantico:
+    page: /work/projects/tradurreantico/
+  venere-mobile-native-apps:
+    page: /work/projects/venere-mobile-native-apps/
+  venere-website:
+    page: /work/projects/venere-website/
+  e-matching:
+    page: /work/projects/e-matching/
+  expedia-group-ios-mobile-native-apps:
+    page: /work/projects/expedia-group-ios-mobile-native-apps/
+  hotels-mobile-native-apps-backend:
+    page: /work/projects/hotels-mobile-native-apps-backend/
+  website-4-all-kids-red-cross:
+    page: /work/projects/website-4-all-kids-red-cross/
+education:
+  bachelor-degree:
+    page: /resume/education/bachelor-degree/bd-computer-science/
+  high-school:
+    page: /resume/education/high-school/high-school-diploma/
+  master-degree:
+    page: /resume/education/master-degree/md-computer-science/
