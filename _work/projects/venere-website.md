@@ -1,5 +1,5 @@
 ---
-title: "Venere Website"
+title: "Venere.com Website"
 date: 2011-06-01
 categories:
   - projects

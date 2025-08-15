@@ -1,5 +1,5 @@
 ---
-title: "Venere Mobile Native Apps"
+title: "Venere.com Mobile Native Apps"
 date: 2014-03-01
 categories:
   - projects
