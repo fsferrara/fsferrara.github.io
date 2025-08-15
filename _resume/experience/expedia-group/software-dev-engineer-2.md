@@ -1,10 +1,15 @@
 ---
-title: "Software Dev Engineer II @ Hotels.com"
+title: "Software Dev Engineer II"
+org: "Hotels.com"
 date: 2015-07-01
 categories:
   - experience
 ---
+## {{page.org}}
+
 💼 **Position** • _July 2015 → February 2017_  
+🏢 [Expedia Group](https://www.expediagroup.com/)  
+🔗 [www.hotels.com](https://www.hotels.com/)  
 📍 _Rome Area, Italy_
 
 I worked in the mobile application area as a member of the API team which is in charge of the development of back-end services targeted to support the mobile native applications for iOS and Android. We were focused on the implementation of REST web-services, using the Java programming language and other open source technologies such as Jersey, Spring, Maven, Docker, and so on. As an agile team, we were using the Kanban process model.
@@ -26,4 +31,13 @@ High-performing individual contributor, mentor to junior engineers, leads comple
 4. Debugging, testing, and monitoring at project level
 5. Holistic systems thinking and process improvement
 
-🔗 [www.hotels.com](https://www.hotels.com/)
+
+
+### Projects
+
+- 💻 [Hotels.com Mobile Native Apps Backend]()
+
+
+### Skills
+
+- n/a

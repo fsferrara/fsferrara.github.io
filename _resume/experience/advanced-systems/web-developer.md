@@ -1,10 +1,14 @@
 ---
-title: "Web Developer @ Advanced Systems"
+title: "Web Developer"
+org: "Advanced Systems"
 date: 2011-03-01
 categories:
   - experience
 ---
+## {{page.org}}
+
 💼 **Position** • _March 2011 → May 2011_  
+🏢 [Advanced Systems](https://www.advancedsystems.it/)  
 📍 _Naples Area, Italy_
 
 Web application developing, with:
@@ -12,19 +16,17 @@ Web application developing, with:
 -	Google Web Toolkit (GWT), SmartGwt;
 -	JPA and MySQL.
 
-Projects:
-* 💻 [GrafPortal](/projects/grafportal/overview/)
 
-tags: `#java` `#java-ee` `#gwt` `#smart-gwt` `#jpa` `#mysql`
-🔗 [www.advancedsystems.it](https://www.advancedsystems.it)
+### Projects
 
----
+- 💻 [GrafPortal](/projects/grafportal/overview/)
 
-### Italian Version
 
-Titolo: Sviluppatore Web
-Azienda: Advanced Systems
+### Skills
 
-Descrizione:
-
-Sviluppo di applicazioni web con: Java EE, Google Web Toolkit (GWT), SmartGwt, JPA and MySQL.
+- Java
+- Java EE
+- GWT
+- Smart GWT
+- JPA
+- MySQL

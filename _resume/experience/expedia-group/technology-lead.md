@@ -1,10 +1,15 @@
 ---
-title: "Technology Lead @ Hotels.com"
+title: "Technology Lead"
+org: "Hotels.com"
 date: 2017-03-01
 categories:
   - experience
 ---
+## {{page.org}}
+
 💼 **Position** • _March 2017 → August 2020_  
+🏢 [Expedia Group](https://www.expediagroup.com/)  
+🔗 [www.hotels.com](https://www.hotels.com/)  
 📍 _Rome Area, Italy_ & @remote
 
 Global worker for Hotels.com, an Expedia Inc. company based in London.
@@ -28,4 +33,13 @@ People leader providing direction to a small team, delivering on multiple projec
 5. Technical communication and consulting
 
 
-🔗 [www.hotels.com](https://www.hotels.com/)
+
+
+### Projects
+
+- 💻 [Hotels.com Mobile Native Apps Backend]()
+
+
+### Skills
+
+- n/a

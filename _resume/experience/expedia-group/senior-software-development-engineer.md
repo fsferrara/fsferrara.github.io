@@ -1,10 +1,15 @@
 ---
-title: "Senior Software Development Engineer @ Expedia Group"
+title: "Senior Software Development Engineer"
+org: "Expedia Group"
 date: 2020-09-01
 categories:
   - experience
 ---
+## {{page.org}}
+
 💼 **Position** • _September 2020 → ..._  
+🏢 [Expedia Group](https://www.expediagroup.com/)  
+👥 Marketplace  
 📍 _Rome Area, Italy_ & @remote
 
 Global worker for Expedia Group.
@@ -27,4 +32,12 @@ Influential individual contributor and mentor, leads complex and ambiguous proje
 5. Business acumen and cross-team collaboration
 
 
-🔗 [expediagroup.com](https://expediagroup.com/)
+### Projects
+
+- 💻 [Expedia Group iOS Mobile Native Apps]()
+- 💻 [Website 4 All Kids - Volunteering]()
+
+
+### Skills
+
+- n/a

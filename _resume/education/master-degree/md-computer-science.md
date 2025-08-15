@@ -1,10 +1,11 @@
 ---
-title: "Master's degree"
+title: "Master's degree, Computer Science"
+org: "University of Naples Federico II"
 date: 2011-03-01
 categories:
   - education
 ---
-## University of Naples Federico II
+## {{page.org}}
 
 🎓 **Education** • _May 2006 → March 2011_  
 🏫 [University of Naples Federico II](http://www.unina.it/)  

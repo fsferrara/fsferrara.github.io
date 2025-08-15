@@ -1,10 +1,11 @@
 ---
 title: "High School Diploma"
+org: "ITC Luigi Amabile"
 date: 2002-07-01
 categories:
   - education
 ---
-## ITC "Luigi Amabile"
+## {{page.org}}
 
 🎓 **Education** • _September 1997 → July 2002_  
 🏫 [Technical Commercial Institute "Luigi Amabile"](https://www.iteamabile.it/)  

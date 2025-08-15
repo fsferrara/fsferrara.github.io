@@ -1,10 +1,11 @@
 ---
-title: "Bachelor's degree"
+title: "Bachelor's degree, Computer Science"
+org: "University of Naples Federico II"
 date: 2006-05-01
 categories:
   - education
 ---
-## University of Naples Federico II
+## {{page.org}}
 
 🎓 **Education** • _September 2002 → May 2006_  
 🏫 [University of Naples Federico II](http://www.unina.it/)  

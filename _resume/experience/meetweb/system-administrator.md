@@ -1,23 +1,24 @@
 ---
-title: "System Administrator @ Meetweb"
+title: "System Administrator"
+org: "Meetweb"
 date: 2008-01-01
 categories:
   - experience
 ---
+## {{page.org}}
+
 💼 **Position** • _January 2008 → March 2008_  
+🏢 [Meetweb](http://www.meetweb.it/)   
 📍 _Naples Area, Italy_
 
-Installation and maintenance of Windows Server 2003 systems.
+- Installed and maintained Windows Server 2003 systems.
+- Managed automated tape backup processes.
 
-🔗 [www.meetweb.it](http://www.meetweb.it/)
+### Projects
 
----
+- 💻 n/a
 
-### Italian Version
 
-Titolo: Amministratore di Sistema
-Azienda: Meetweb
+### Skills
 
-Descrizione:
-
-Installazione e manutenzione di sistemi basati su Windows Server 2003.
+- n/a

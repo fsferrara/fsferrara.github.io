@@ -1,10 +1,15 @@
 ---
-title: "Associate Software Dev Engineer @ Venere.com"
+title: "Associate Software Dev Engineer"
+org: "Venere.com"
 date: 2011-06-01
 categories:
   - experience
 ---
+## {{page.org}}
+
 💼 **Position** • _June 2011 → February 2014_  
+🏢 [Expedia Group](https://www.expediagroup.com/)  
+🔗 [www.venere.com](#https://www.venere.com)  
 📍 _Rome Area, Italy_
 
 Venere.com (an Expedia Group company) was the Italian leader in online hotel reservations.
@@ -28,8 +33,17 @@ Supporting team member with solid grasp of software engineering principles, cont
 4. Application of computer science fundamentals
 5. Business awareness and goal alignment
 
-Projects:
-* 💻 [Venere Website](/projects/venere-website/overview/)
 
-tags: `#php` `#mysql` `#java` `#javascript` `#node` `#spring`
-🔗 [www.venere.com](https://www.venere.com)  
+### Projects
+
+- 💻 [Venere Website](/projects/venere-website/overview/)
+
+
+### Skills
+
+- PHP
+- MySQL
+- Java
+- Javascript
+- NodeJS
+- Spring

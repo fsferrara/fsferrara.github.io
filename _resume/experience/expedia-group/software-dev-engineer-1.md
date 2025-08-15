@@ -1,10 +1,15 @@
 ---
-title: "Software Dev Engineer I @ Venere.com"
+title: "Software Dev Engineer I"
+org: "Venere.com"
 date: 2014-03-01
 categories:
   - experience
 ---
+## {{page.org}}
+
 💼 **Position** • _March 2014 → June 2015_  
+🏢 [Expedia Group](https://www.expediagroup.com/)  
+🔗 [www.venere.com](#https://www.venere.com)  
 📍 _Rome Area, Italy_
 
 Venere.com (an Expedia Inc. company) was the Italian leader in online hotel reservations.
@@ -29,8 +34,16 @@ Consistent performer applying software engineering principles to business needs,
 4. Application of design patterns and database design
 5. Cross-team collaboration and systems thinking
 
-Projects:
-* 💻 [Venere Mobile Area](/projects/venere-mobile-native-apps/overview/)
 
-tags: `#android` `#cordova` `#hybrid-app` `#mobile` `#java`
-🔗 [www.venere.com](https://www.venere.com)
+### Projects
+
+- 💻 [Venere Mobile Area](/projects/venere-mobile-native-apps/overview/)
+
+
+### Skills
+
+- Android
+- Cordova
+- Hybrid Apps
+- Mobile
+- Java
