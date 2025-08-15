@@ -36,7 +36,7 @@ Supporting team member with solid grasp of software engineering principles, cont
 
 ### Projects
 
-- 💻 [Venere Website](/projects/venere-website/overview/)
+- 💻 [Venere Website]({{ site.data.links.projects.venere-website.page }})
 
 
 ### Skills

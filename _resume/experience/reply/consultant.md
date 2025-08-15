@@ -17,18 +17,17 @@ categories:
 - Provided maintenance for web applications written in Python/Zope.
 
 
-Projects:
-* 💻 [eMatching.it](/timeline/www-e-matching-it)
-
-tags: `#cluster` `#java` `#jboss` `#jboss-seam` `#postgresql` `#python` `#redhat` `#zope`
-
-
-
 ### Projects
 
-- 💻 n/a
+- 💻 [eMatching.it]({{ site.data.links.projects.e-matching.page }})
 
 
 ### Skills
 
-- n/a
+- Java
+- JBoss
+- JBoss Seam
+- PostgreSQL Cluster
+- Python
+- Red Hat
+- Zope

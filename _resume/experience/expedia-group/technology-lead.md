@@ -37,7 +37,7 @@ People leader providing direction to a small team, delivering on multiple projec
 
 ### Projects
 
-- 💻 [Hotels.com Mobile Native Apps Backend]()
+- 💻 [Hotels.com Mobile Native Apps Backend]({{ site.data.links.projects.hotels-mobile-native-apps-backend.page }})
 
 
 ### Skills

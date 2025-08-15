@@ -19,7 +19,7 @@ Web application developing, with:
 
 ### Projects
 
-- 💻 [GrafPortal](/projects/grafportal/overview/)
+- 💻 [GrafPortal]({{ site.data.links.projects.grafportal.page }})
 
 
 ### Skills

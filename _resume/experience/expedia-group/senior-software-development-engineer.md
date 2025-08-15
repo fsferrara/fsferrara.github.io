@@ -34,8 +34,8 @@ Influential individual contributor and mentor, leads complex and ambiguous proje
 
 ### Projects
 
-- 💻 [Expedia Group iOS Mobile Native Apps]()
-- 💻 [Website 4 All Kids - Volunteering]()
+- 💻 [Expedia Group iOS Mobile Native Apps]({{ site.data.links.projects.expedia-group-ios-mobile-native-appse.page }})
+- 💻 [Website 4 All Kids - Volunteering]({{ site.data.links.projects.website-4-all-kids-red-cross.page }})
 
 
 ### Skills

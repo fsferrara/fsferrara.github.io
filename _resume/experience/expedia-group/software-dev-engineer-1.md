@@ -37,7 +37,7 @@ Consistent performer applying software engineering principles to business needs,
 
 ### Projects
 
-- 💻 [Venere Mobile Area](/projects/venere-mobile-native-apps/overview/)
+- 💻 [Venere Mobile Area]({{ site.data.links.projects.venere-mobile-native-apps.page }})
 
 
 ### Skills

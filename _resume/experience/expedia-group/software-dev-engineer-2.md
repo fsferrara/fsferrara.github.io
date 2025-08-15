@@ -35,7 +35,7 @@ High-performing individual contributor, mentor to junior engineers, leads comple
 
 ### Projects
 
-- 💻 [Hotels.com Mobile Native Apps Backend]()
+- 💻 [Hotels.com Mobile Native Apps Backend]({{ site.data.links.projects.hotels-mobile-native-apps-backend.page }})
 
 
 ### Skills

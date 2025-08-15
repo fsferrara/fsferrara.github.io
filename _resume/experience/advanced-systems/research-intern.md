@@ -18,7 +18,7 @@ Design and implementation of the SADAS view rewriting module. SADAS is a special
 
 ### Projects
 
-- 💻 [Query rewriting module for SADAS Engine](/projects/query-rewriting-module-for-sadas-engine/overview/)
+- 💻 [Query rewriting module for SADAS Engine]({{ site.data.links.projects.query-rewriting-module-for-sadas-engine.page }})
 
 
 ### Skills
