@@ -26,13 +26,6 @@ Supporting team member with solid grasp of software engineering principles, cont
 - Apply software design principles and write clean, maintainable code
 - Report clearly on work status and ask insightful questions
 
-**Top 5 Skills:**
-1. Proficiency in at least one programming language
-2. Understanding of data patterns, storage, and software design
-3. Debugging and basic testing
-4. Application of computer science fundamentals
-5. Business awareness and goal alignment
-
 
 ### Projects
 
@@ -41,9 +34,20 @@ Supporting team member with solid grasp of software engineering principles, cont
 
 ### Skills
 
+**Top 5 Skills:**
+- Proficiency in at least one programming language
+- Understanding of data patterns, storage, and software design
+- Debugging and basic testing
+- Application of computer science fundamentals
+- Business awareness and goal alignment
+
+**Top 5 Technical Skills:**
 - PHP
 - MySQL
 - Java
 - Javascript
 - NodeJS
 - Spring
+
+**Top 5 Soft Skills:**
+- n/a

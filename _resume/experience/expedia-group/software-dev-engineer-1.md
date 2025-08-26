@@ -27,13 +27,6 @@ Consistent performer applying software engineering principles to business needs,
 - Apply design patterns and database knowledge
 - Coordinate stakeholder input and support holistic solutions
 
-**Top 5 Skills:**
-1. Strong programming in primary language, familiarity with others
-2. Integration with data stores and APIs
-3. Testing, monitoring, and debugging
-4. Application of design patterns and database design
-5. Cross-team collaboration and systems thinking
-
 
 ### Projects
 
@@ -42,8 +35,19 @@ Consistent performer applying software engineering principles to business needs,
 
 ### Skills
 
+**Top 5 Skills:**
+- Strong programming in primary language, familiarity with others
+- Integration with data stores and APIs
+- Testing, monitoring, and debugging
+- Application of design patterns and database design
+- Cross-team collaboration and systems thinking
+
+**Top 5 Technical Skills:**
 - Android
 - Cordova
 - Hybrid Apps
 - Mobile
 - Java
+
+**Top 5 Soft Skills:**
+- n/a

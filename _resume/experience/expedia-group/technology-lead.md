@@ -50,12 +50,20 @@ People leader providing direction to a small team, delivering on multiple projec
 - Communicate effectively with technical and non-technical stakeholders
 - Advocate for operational excellence and technical best practices
 
+
+### Projects
+
+- 💻 [Hotels.com Mobile Native Apps Backend]({{ site.data.links.projects.hotels-mobile-native-apps-backend.page }})
+
+
+### Skills
+
 **Top 5 Skills:**
-1. Technical acumen across multiple technologies
-2. Team enablement and mentorship
-3. Resource planning and optimization
-4. Business acumen and product delivery
-5. Technical communication and consulting
+- Technical acumen across multiple technologies
+- Team enablement and mentorship
+- Resource planning and optimization
+- Business acumen and product delivery
+- Technical communication and consulting
 
 **Top 5 Technical Skills:**
 - **Architectural leadership** and technology innovation (HREST Kernel, GraphQL)
@@ -70,12 +78,3 @@ People leader providing direction to a small team, delivering on multiple projec
 - **Proactive problem solving** and initiative
 - **Mentorship** and knowledge sharing (Code Academy)
 - **Adaptability** and advocating for technical change
-
-### Projects
-
-- 💻 [Hotels.com Mobile Native Apps Backend]({{ site.data.links.projects.hotels-mobile-native-apps-backend.page }})
-
-
-### Skills
-
-- n/a

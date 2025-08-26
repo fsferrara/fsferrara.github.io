@@ -49,12 +49,20 @@ High-performing individual contributor, mentor to junior engineers, leads comple
 - Design testable and observable software
 - Identify and solve business problems at the project level
 
+
+### Projects
+
+- 💻 [Hotels.com Mobile Native Apps Backend]({{ site.data.links.projects.hotels-mobile-native-apps-backend.page }})
+
+
+### Skills
+
 **Top 5 Skills:**
-1. Advanced programming in multiple languages/technologies
-2. API design and technology selection
-3. System design and cross-team integration
-4. Debugging, testing, and monitoring at project level
-5. Holistic systems thinking and process improvement
+- Advanced programming in multiple languages/technologies
+- API design and technology selection
+- System design and cross-team integration
+- Debugging, testing, and monitoring at project level
+- Holistic systems thinking and process improvement
 
 **Top 5 Technical Skills:**
 - **High-quality software development** and code review
@@ -69,12 +77,3 @@ High-performing individual contributor, mentor to junior engineers, leads comple
 - **Proactive problem-solving** and optimization
 - Fostering **positive team spirit** and support
 - **Adaptability** and independent decision-making
-
-### Projects
-
-- 💻 [Hotels.com Mobile Native Apps Backend]({{ site.data.links.projects.hotels-mobile-native-apps-backend.page }})
-
-
-### Skills
-
-- n/a

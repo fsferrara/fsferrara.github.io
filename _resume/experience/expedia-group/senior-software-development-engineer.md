@@ -51,12 +51,20 @@ Influential individual contributor and mentor, leads complex and ambiguous proje
 - Collaborate across organizations and lead communities of practice
 - Report on high-level projects and ensure documentation
 
+### Projects
+
+- 💻 [Expedia Group iOS Mobile Native Apps]({{ site.data.links.projects.expedia-group-ios-mobile-native-appse.page }})
+- 💻 [Website 4 All Kids - Volunteering]({{ site.data.links.projects.website-4-all-kids-red-cross.page }})
+
+
+### Skills
+
 **Top 5 Skills:**
-1. Expertise in multiple technologies and languages
-2. Technical leadership and mentoring
-3. System and integration design for complex solutions
-4. Operational excellence (testing, monitoring, SLAs)
-5. Business acumen and cross-team collaboration
+- Expertise in multiple technologies and languages
+- Technical leadership and mentoring
+- System and integration design for complex solutions
+- Operational excellence (testing, monitoring, SLAs)
+- Business acumen and cross-team collaboration
 
 **Top 5 Technical Skills:**
 - **Performance and monitoring** (RUM, TTIL, SLI/SLO)
@@ -71,13 +79,3 @@ Influential individual contributor and mentor, leads complex and ambiguous proje
 - **Effective communication** and influencing (presentations, documentation)
 - **Proactiveness** and innovative problem-solving
 - **Continuous learning** and adaptability to new technologies
-
-### Projects
-
-- 💻 [Expedia Group iOS Mobile Native Apps]({{ site.data.links.projects.expedia-group-ios-mobile-native-appse.page }})
-- 💻 [Website 4 All Kids - Volunteering]({{ site.data.links.projects.website-4-all-kids-red-cross.page }})
-
-
-### Skills
-
-- n/a
