@@ -3,6 +3,7 @@
 all: install serve
 
 install:
+	bundle config set path 'vendor/bundle'
 	bundle install
 
 serve:
@@ -10,6 +11,7 @@ serve:
 
 clean:
 	rm -rf _site .jekyll-cache .sass-cache .jekyll-metadata
+	rm -rf vendor/bundle
 
 update:
 	bundle update github-pages
