@@ -1,11 +1,27 @@
 ---
 title: "Master's degree, Computer Science"
-org: "University of Naples Federico II"
+school: "University of Naples Federico II"
+degree: "Master's degree"
+field-of-study: "Computer Science"
+location: "Naples Area, Italy"
+start-date: 2006-05-01
+end-date: 2011-03-01
+grade: 110/110 cum laude
+skills:
+  - Software Engineering
+  - Object-Oriented Design
+  - Software Architecture
+  - Information Security
+  - Database Management System (DBMS)
+  - C++
+  - Java
+  - Lisp
 date: 2011-03-01
 categories:
   - education
 ---
-## {{page.org}}
+# {{page.title}}
+## {{page.school}}
 
 🎓 **Education** • _May 2006 → March 2011_  
 🏫 [University of Naples Federico II](http://www.unina.it/)  

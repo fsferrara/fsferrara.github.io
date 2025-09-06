@@ -1,4 +1,4 @@
-.PHONY: all install serve clean update tools
+.PHONY: all install serve clean nuke update tools
 
 all: install serve
 
@@ -11,6 +11,8 @@ serve:
 
 clean:
 	rm -rf _site .jekyll-cache .sass-cache .jekyll-metadata
+
+nuke: clean
 	rm -rf vendor/bundle
 
 update:

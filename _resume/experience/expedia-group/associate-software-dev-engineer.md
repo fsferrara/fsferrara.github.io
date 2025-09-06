@@ -1,10 +1,21 @@
 ---
 title: "Associate Software Dev Engineer"
 org: "Venere.com"
+start-date: 2011-06-01
+end-date: 2014-02-01
+employment-type: "Full-time"
+location: "Rome Area, Italy"
+location-type: "On-site"
+description: "n/a"
+highlights:
+  - "n/a"
+skills:
+  - "n/a"
 date: 2011-06-01
 categories:
   - experience
 ---
+# {{page.title}}
 ## {{page.org}}
 
 💼 **Position** • _June 2011 → February 2014_  

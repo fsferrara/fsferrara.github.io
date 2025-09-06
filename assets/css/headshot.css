@@ -1,6 +1,7 @@
 .headshot {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
+  float: right;
   border-radius: 50%;
   border: 6px solid white;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);

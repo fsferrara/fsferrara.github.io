@@ -1,11 +1,29 @@
 ---
 title: "Bachelor's degree, Computer Science"
-org: "University of Naples Federico II"
+school: "University of Naples Federico II"
+degree: "Master's degree"
+field-of-study: "Computer Science"
+location: "Naples Area, Italy"
+start-date: 2002-09-01
+end-date: 2006-05-01
+grade: 110/110 cum laude
+skills:
+  - Software Development
+  - Operating Systems
+  - Algorithms
+  - Data Structures
+  - Web Technologies
+  - Turbo Pascal
+  - C
+  - PHP/MySql (LAMP platform)
+  - Matlab
+  - Shell Scripting.
 date: 2006-05-01
 categories:
   - education
 ---
-## {{page.org}}
+# {{page.title}}
+## {{page.school}}
 
 🎓 **Education** • _September 2002 → May 2006_  
 🏫 [University of Naples Federico II](http://www.unina.it/)  

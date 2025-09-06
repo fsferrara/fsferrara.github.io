@@ -1,10 +1,21 @@
 ---
 title: "Software Dev Engineer I"
 org: "Venere.com"
+start-date: 2014-03-01
+end-date: 2015-06-01
+employment-type: "Full-time"
+location: "Rome Area, Italy"
+location-type: "Hybrid"
+description: "n/a"
+highlights:
+  - "n/a"
+skills:
+  - "n/a"
 date: 2014-03-01
 categories:
   - experience
 ---
+# {{page.title}}
 ## {{page.org}}
 
 💼 **Position** • _March 2014 → June 2015_  

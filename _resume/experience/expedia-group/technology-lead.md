@@ -1,10 +1,21 @@
 ---
 title: "Technology Lead"
 org: "Hotels.com"
+start-date: 2017-03-01
+end-date: 2020-08-01
+employment-type: "Full-time"
+location: "Rome Area, Italy"
+location-type: "Hybrid"
+description: "n/a"
+highlights:
+  - "n/a"
+skills:
+  - "n/a"
 date: 2017-03-01
 categories:
   - experience
 ---
+# {{page.title}}
 ## {{page.org}}
 
 💼 **Position** • _March 2017 → August 2020_  

@@ -1,10 +1,21 @@
 ---
 title: "Research Intern"
 org: "Advanced Systems"
+start-date: 2010-04-01
+end-date: 2011-02-01
+employment-type: "Internship"
+location: "Naples Area, Italy"
+location-type: "On-site"
+description: "n/a"
+highlights:
+  - "n/a"
+skills:
+  - "n/a"
 date: 2011-02-01
 categories:
   - experience
 ---
+# {{page.title}}
 ## {{page.org}}
 
 💼 **Position** • _April 2010 → February 2011_  

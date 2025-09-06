@@ -1,10 +1,21 @@
 ---
 title: "Software Dev Engineer II"
 org: "Hotels.com"
+start-date: 2015-07-01
+end-date: 2017-02-01
+employment-type: "Full-time"
+location: "Rome Area, Italy"
+location-type: "On-site"
+description: "n/a"
+highlights:
+  - "n/a"
+skills:
+  - "n/a"
 date: 2015-07-01
 categories:
   - experience
 ---
+# {{page.title}}
 ## {{page.org}}
 
 💼 **Position** • _July 2015 → February 2017_  

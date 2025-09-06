@@ -82,7 +82,7 @@ defaults:
       path: ""
       type: "resume"
     values:
-      layout: "page"
+      layout: "default"
 
 # Menu settings
 header_pages:

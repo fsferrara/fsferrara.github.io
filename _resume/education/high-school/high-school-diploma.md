@@ -1,10 +1,24 @@
 ---
 title: "High School Diploma"
-org: "ITC Luigi Amabile"
+school: "ITC Luigi Amabile"
+degree: "High School Diploma"
+field-of-study: "Accounting and Business/Management, specialization in Programming"
+location: "Avellino Area, Italy"
+start-date: 1997-09-01
+end-date: 2002-07-01
+grade: 81/100
+skills:
+  - Computer Programming
+  - Information Technology
+  - Databases
+  - Accounting
+  - QBasic
+  - Fortran
 date: 2002-07-01
 categories:
   - education
 ---
+# {{page.title}}
 ## {{page.org}}
 
 🎓 **Education** • _September 1997 → July 2002_  

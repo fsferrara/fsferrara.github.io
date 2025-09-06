@@ -1,10 +1,21 @@
 ---
 title: "IT Consultant"
 org: "Reply"
+start-date: 2006-05-01
+end-date: 2011-03-01
+employment-type: "Full-time"
+location: "Milan Area, Italy"
+location-type: "On-site"
+description: "n/a"
+highlights:
+  - "n/a"
+skills:
+  - "n/a"
 date: 2008-03-01
 categories:
   - experience
 ---
+# {{page.title}}
 ## {{page.org}}
 
 💼 **Position** • _March 2008 → September 2008_  
