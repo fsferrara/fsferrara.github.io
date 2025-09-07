@@ -17,8 +17,7 @@ skills:
   - C
   - PHP/MySql (LAMP platform)
   - Matlab
-  - Shell Scripting.
-date: 2006-05-01
+  - Shell Scripting
 categories:
   - education
 ---

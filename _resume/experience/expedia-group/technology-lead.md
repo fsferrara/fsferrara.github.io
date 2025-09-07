@@ -1,27 +1,36 @@
 ---
 title: "Technology Lead"
-org: "Hotels.com"
+org: "Hotels.com (Expedia Group)"
 start-date: 2017-03-01
 end-date: 2020-08-01
 employment-type: "Full-time"
 location: "Rome Area, Italy"
 location-type: "Hybrid"
-description: "n/a"
 highlights:
   - "n/a"
 skills:
   - "n/a"
-date: 2017-03-01
 categories:
   - experience
 ---
+{% assign date_format = "%B %Y" %}
 # {{page.title}}
 ## {{page.org}}
+💼 **{{ page.employment-type }}** • _{{ page.start-date | date: date_format}} → {{ page.end-date | date: date_format}}_  
+🏢 [{{ page.org }}](https://www.hotels.com/)  
+🔗 [Expedia Group](https://www.expediagroup.com/)  
+📍 _{{ page.location }}_ • <span class="post-meta">{{ page.location-type }}</span>  
 
-💼 **Position** • _March 2017 → August 2020_  
-🏢 [Expedia Group](https://www.expediagroup.com/)  
-🔗 [www.hotels.com](https://www.hotels.com/)  
-📍 _Rome Area, Italy_ & @remote
+
+{% for highlight in page.highlights %}- {{ highlight }}  
+{% endfor %}
+
+
+### Skills
+
+{% for skill in page.skills %}- {{ skill }}  
+{% endfor %}
+
 
 Global worker for Hotels.com, an Expedia Inc. company based in London.
 Team leader of an 8-person team in Rome. In this role, I gained experience in people management, conducting job interviews, and developing talent.
@@ -62,11 +71,6 @@ People leader providing direction to a small team, delivering on multiple projec
 - Advocate for operational excellence and technical best practices
 
 
-### Projects
-
-- 💻 [Hotels.com Mobile Native Apps Backend]({{ site.data.links.projects.hotels-mobile-native-apps-backend.page }})
-
-
 ### Skills
 
 **Top 5 Skills:**
@@ -89,3 +93,9 @@ People leader providing direction to a small team, delivering on multiple projec
 - **Proactive problem solving** and initiative
 - **Mentorship** and knowledge sharing (Code Academy)
 - **Adaptability** and advocating for technical change
+
+
+### Projects
+
+- 💻 [Hotels.com Mobile Native Apps Backend]({{ site.data.links.projects.hotels-mobile-native-apps-backend.page }})
+

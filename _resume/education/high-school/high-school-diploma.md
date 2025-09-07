@@ -14,7 +14,6 @@ skills:
   - Accounting
   - QBasic
   - Fortran
-date: 2002-07-01
 categories:
   - education
 ---

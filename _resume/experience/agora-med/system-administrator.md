@@ -6,7 +6,6 @@ end-date: 2008-02-01
 employment-type: "Contract"
 location: "Naples Area, Italy"
 location-type: "On-site"
-description: "n/a"
 highlights:
   - Installed and maintained mixed environments (Windows Server 2003, Debian Linux).
   - Managed company email systems (qmail, postfix, Sophos for Linux, courier).
@@ -19,34 +18,28 @@ skills:
   - Email System Management (qmail, postfix, courier, Sophos)
   - VoIP PBX Deployment (TrixBox/Asterisk)
   - Web Development (PHP, JSP, ASPX)
-date: 2007-06-01
 categories:
   - experience
 ---
+{% assign date_format = "%B %Y" %}
 # {{page.title}}
 ## {{page.org}}
+💼 **{{ page.employment-type }}** • _{{ page.start-date | date: date_format}} → {{ page.end-date | date: date_format}}_  
+🏢 [{{ page.org }}](#https://www.agoratelematica.it/)  
+📍 _{{ page.location }}_ • <span class="post-meta">{{ page.location-type }}</span>  
 
-💼 **Position** • _June 2007 → February 2008_  
-🏢 [Agorà Med](#https://www.agoratelematica.it/)  
-📍 _Naples Area, Italy_
+
+{% for highlight in page.highlights %}- {{ highlight }}  
+{% endfor %}
 
 
-- Installed and maintained mixed environments (Windows Server 2003, Debian Linux).
-- Managed company email systems (qmail, postfix, Sophos for Linux, courier).
-- Deployed and maintained VoIP PBX (TrixBox/Asterisk).
-- Supported streaming services on Windows platforms.
-- Developed web pages using PHP, JSP, and ASPX.
+### Skills
+
+{% for skill in page.skills %}- {{ skill }}  
+{% endfor %}
 
 
 ### Projects
 
 - 💻 n/a
 
-
-### Skills
-
-- Linux System Administration
-- Windows Server Administration
-- Email System Management (qmail, postfix, courier, Sophos)
-- VoIP PBX Deployment (TrixBox/Asterisk)
-- Web Development (PHP, JSP, ASPX)

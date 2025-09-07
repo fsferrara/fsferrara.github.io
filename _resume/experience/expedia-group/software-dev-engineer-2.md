@@ -1,27 +1,36 @@
 ---
 title: "Software Dev Engineer II"
-org: "Hotels.com"
+org: "Hotels.com (Expedia Group)"
 start-date: 2015-07-01
 end-date: 2017-02-01
 employment-type: "Full-time"
 location: "Rome Area, Italy"
 location-type: "On-site"
-description: "n/a"
 highlights:
   - "n/a"
 skills:
   - "n/a"
-date: 2015-07-01
 categories:
   - experience
 ---
+{% assign date_format = "%B %Y" %}
 # {{page.title}}
 ## {{page.org}}
+💼 **{{ page.employment-type }}** • _{{ page.start-date | date: date_format}} → {{ page.end-date | date: date_format}}_  
+🏢 [{{ page.org }}](https://www.hotels.com/)  
+🔗 [Expedia Group](https://www.expediagroup.com/)  
+📍 _{{ page.location }}_ • <span class="post-meta">{{ page.location-type }}</span>  
 
-💼 **Position** • _July 2015 → February 2017_  
-🏢 [Expedia Group](https://www.expediagroup.com/)  
-🔗 [www.hotels.com](https://www.hotels.com/)  
-📍 _Rome Area, Italy_
+
+{% for highlight in page.highlights %}- {{ highlight }}  
+{% endfor %}
+
+
+### Skills
+
+{% for skill in page.skills %}- {{ skill }}  
+{% endfor %}
+
 
 I worked in the mobile application area as a member of the API team which is in charge of the development of back-end services targeted to support the mobile native applications for iOS and Android. We were focused on the implementation of REST web-services, using the Java programming language and other open source technologies such as Jersey, Spring, Maven, Docker, and so on. As an agile team, we were using the Kanban process model.
 
@@ -61,11 +70,6 @@ High-performing individual contributor, mentor to junior engineers, leads comple
 - Identify and solve business problems at the project level
 
 
-### Projects
-
-- 💻 [Hotels.com Mobile Native Apps Backend]({{ site.data.links.projects.hotels-mobile-native-apps-backend.page }})
-
-
 ### Skills
 
 **Top 5 Skills:**
@@ -88,3 +92,9 @@ High-performing individual contributor, mentor to junior engineers, leads comple
 - **Proactive problem-solving** and optimization
 - Fostering **positive team spirit** and support
 - **Adaptability** and independent decision-making
+
+
+### Projects
+
+- 💻 [Hotels.com Mobile Native Apps Backend]({{ site.data.links.projects.hotels-mobile-native-apps-backend.page }})
+

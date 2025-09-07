@@ -16,7 +16,6 @@ skills:
   - C++
   - Java
   - Lisp
-date: 2011-03-01
 categories:
   - education
 ---

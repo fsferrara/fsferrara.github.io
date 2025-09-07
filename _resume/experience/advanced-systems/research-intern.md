@@ -6,33 +6,34 @@ end-date: 2011-02-01
 employment-type: "Internship"
 location: "Naples Area, Italy"
 location-type: "On-site"
-description: "n/a"
 highlights:
-  - "n/a"
+  - Research Intern - Databases and Information Systems
+  - Design and implementation of the SADAS view rewriting module. SADAS is a specialized database management system for Data Warehousing environments.
 skills:
-  - "n/a"
-date: 2011-02-01
+  - C++
+  - DBMS
 categories:
   - experience
 ---
+{% assign date_format = "%B %Y" %}
 # {{page.title}}
 ## {{page.org}}
+💼 **{{ page.employment-type }}** • _{{ page.start-date | date: date_format}} → {{ page.end-date | date: date_format}}_  
+🏢 [{{ page.org }}](https://www.advancedsystems.it/)  
+📍 _{{ page.location }}_ • <span class="post-meta">{{ page.location-type }}</span>  
 
-💼 **Position** • _April 2010 → February 2011_  
-🏢 [Advanced Systems](https://www.advancedsystems.it/)  
-📍 _Naples Area, Italy_
 
-Research Intern - Databases and Information Systems
+{% for highlight in page.highlights %}- {{ highlight }}  
+{% endfor %}
 
-Design and implementation of the SADAS view rewriting module. SADAS is a specialized database management system for Data Warehousing environments.
+
+### Skills
+
+{% for skill in page.skills %}- {{ skill }}  
+{% endfor %}
 
 
 ### Projects
 
 - 💻 [Query rewriting module for SADAS Engine]({{ site.data.links.projects.query-rewriting-module-for-sadas-engine.page }})
 
-
-### Skills
-
-- C++
-- DBMS

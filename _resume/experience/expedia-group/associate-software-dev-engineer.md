@@ -1,27 +1,36 @@
 ---
 title: "Associate Software Dev Engineer"
-org: "Venere.com"
+org: "Venere.com (Expedia Group)"
 start-date: 2011-06-01
 end-date: 2014-02-01
 employment-type: "Full-time"
 location: "Rome Area, Italy"
 location-type: "On-site"
-description: "n/a"
 highlights:
   - "n/a"
 skills:
   - "n/a"
-date: 2011-06-01
 categories:
   - experience
 ---
+{% assign date_format = "%B %Y" %}
 # {{page.title}}
 ## {{page.org}}
+💼 **{{ page.employment-type }}** • _{{ page.start-date | date: date_format}} → {{ page.end-date | date: date_format}}_  
+🏢 [{{ page.org }}](#https://www.venere.com)  
+🔗 [Expedia Group](https://www.expediagroup.com/)  
+📍 _{{ page.location }}_ • <span class="post-meta">{{ page.location-type }}</span>  
 
-💼 **Position** • _June 2011 → February 2014_  
-🏢 [Expedia Group](https://www.expediagroup.com/)  
-🔗 [www.venere.com](#https://www.venere.com)  
-📍 _Rome Area, Italy_
+
+{% for highlight in page.highlights %}- {{ highlight }}  
+{% endfor %}
+
+
+### Skills
+
+{% for skill in page.skills %}- {{ skill }}  
+{% endfor %}
+
 
 Venere.com (an Expedia Group company) was the Italian leader in online hotel reservations.
 I worked initially of the back-end using the technologies: Spring Framework, Virtual Machine monitoring, SOA architectures, RESTful web services, multithreaded programming, caching policies, advanced logging techniques, Sybase and MySQL RDBMS, spymemcached, Couchbase Document Oriented NoSQL Database.
@@ -36,11 +45,6 @@ Supporting team member with solid grasp of software engineering principles, cont
 - Develop and test standard software applications
 - Apply software design principles and write clean, maintainable code
 - Report clearly on work status and ask insightful questions
-
-
-### Projects
-
-- 💻 [Venere Website]({{ site.data.links.projects.venere-website.page }})
 
 
 ### Skills
@@ -62,3 +66,9 @@ Supporting team member with solid grasp of software engineering principles, cont
 
 **Top 5 Soft Skills:**
 - n/a
+
+
+### Projects
+
+- 💻 [Venere Website]({{ site.data.links.projects.venere-website.page }})
+

@@ -13,7 +13,9 @@ Email: **fsferrara@gmail.com** • Phone: **(+39) 3405114184**
 Location: **Rome, Italy** • LinkedIn: **{{ site.data.links.profile.linkedin }}**
 
 ---
-<br/>
+{% capture newline %}<br/>
+{% endcapture %}
+{{ newline }}
 
 ## Professional Summary
 _Full Stack • Generalist • Mentor_
@@ -21,26 +23,27 @@ _Full Stack • Generalist • Mentor_
 An experienced Full Stack Software Engineer and Technology Lead who excels in guiding technical architecture and delivering scalable, maintainable, and high-quality software solutions. Deeply passionate about mentoring and empowering engineering teams, fostering a culture of curiosity and growth to develop future technical leaders. Combines strong stakeholder communication with a pragmatic problem-solving mindset to take full ownership of projects, driving them from strategic conception through to successful completion.
 
 ---
-<br/>
+{{ newline }}
 
 ## Work Experience
 
-{% assign sorted = site.resume | sort: "date" | reverse %}
-{% assign date_format = site.minima.dayless_date_format | default: "%B, %Y" %}
+{% assign sorted = site.resume | sort: "start-date" | reverse %}
+{% assign date_format = "%b %Y" %}
 {% for entry in sorted %}
 {% if entry.categories contains "experience" %}
-<br/>
-- [**{{ entry.title }}** • {{ entry.org }}]({{ entry.url | relative_url }})
-    - {{ entry.employment-type }}, <span class="post-meta">{{ entry.start-date | date: date_format}} - {{ entry.end-date | date: date_format}}</span>
-    - {{ entry.location}} • <span class="post-meta">{{ entry.location-type}}</span>
-    - {{ entry.description}}{% for highlight in entry.highlights %}
-        - {{ highlight }}{% endfor %}
-    - 💎 {% for skill in entry.skills %}`{{ skill }}` {% endfor %}
+
+- [**{{ entry.title }}** • {{ entry.org }}]({{ entry.url | relative_url }})  
+<span class="post-meta">{{ entry.start-date | date: date_format}} → {{ entry.end-date | date: date_format}} • {{ entry.employment-type }}</span>  
+<span class="post-meta">{{ entry.location}} • {{ entry.location-type}}</span>  
+
+{% for highlight in entry.highlights %}    - {{ highlight }}{{ newline }}{% endfor %}
+  
+  - Skills: {% for skill in entry.skills %}`{{ skill }}` {% endfor %}
 {% endif %}
 {% endfor %}
 
 ---
-<br/>
+{{ newline }}
 
 ## Skills
 
@@ -51,26 +54,38 @@ An experienced Full Stack Software Engineer and Technology Lead who excels in gu
 - **Stakeholder Collaboration**: Excels at communicating with stakeholders to set clear expectations and align on project plans.
 - **Project Ownership**: Demonstrates a strong sense of accountability, driving projects from initial concept to final delivery.
 
+
 ---
-<br/>
+{{ newline }}
+
+## Education
+
+{% assign sorted = site.resume | sort: "start-date" | reverse %}
+{% assign date_format = "%b %Y" %}
+{% for entry in sorted %}
+{% if entry.categories contains "education" %}
+{{ newline }}
+- [**{{ entry.school }}** - {{ entry.degree }}, {{entry.field-of-study}}]({{ entry.url | relative_url }})  
+<span class="post-meta">{{ entry.start-date | date: date_format}} → {{ entry.end-date | date: date_format}}</span>  
+<span class="post-meta">Grade: {{ entry.grade}}</span>  
+  - Skills: {% for skill in entry.skills %}`{{ skill }}` {% endfor %}
+{% endif %}
+{% endfor %}
+
+
+---
+{{ newline }}
+
+## Projects, Certifications, Achievements, Volunteering
+
+These sections, which change frequently, are reported on [the work page](/work.md).
+
+
+---
+{{ newline }}
 
 ## Languages
 
 - **Italian:** Native
 - **English:** Professional working proficiency
 
----
-<br/>
-
-## Education
-{% assign sorted = site.resume | sort: "date" | reverse %}
-{% assign date_format = site.minima.dayless_date_format | default: "%B, %Y" %}
-{% for entry in sorted %}
-{% if entry.categories contains "education" %}
-<br/>
-- **{{ entry.school }}** - {{ entry.degree }}, {{entry.field-of-study}}  
-    - {{ entry.start-date | date: date_format}} - {{ entry.end-date | date: date_format}}  
-    - Grade: {{ entry.grade}}  
-    - 💎 {% for skill in entry.skills %}`{{ skill }}` {% endfor %}
-{% endif %}
-{% endfor %}

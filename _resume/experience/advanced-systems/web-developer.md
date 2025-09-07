@@ -6,38 +6,37 @@ end-date: 2011-05-01
 employment-type: "Contract"
 location: "Naples Area, Italy"
 location-type: "On-site"
-description: "n/a"
 highlights:
-  - "n/a"
+  - Developed a Web application for a client
 skills:
-  - "n/a"
-date: 2011-03-01
+  - Java
+  - Java EE
+  - Google Web Toolkit (GWT)
+  - Smart GWT
+  - JPA
+  - MySQL
 categories:
   - experience
 ---
+{% assign date_format = "%B %Y" %}
 # {{page.title}}
 ## {{page.org}}
+💼 **{{ page.employment-type }}** • _{{ page.start-date | date: date_format}} → {{ page.end-date | date: date_format}}_  
+🏢 [{{ page.org }}](https://www.advancedsystems.it/)  
+📍 _{{ page.location }}_ • <span class="post-meta">{{ page.location-type }}</span>  
 
-💼 **Position** • _March 2011 → May 2011_  
-🏢 [Advanced Systems](https://www.advancedsystems.it/)  
-📍 _Naples Area, Italy_
 
-Web application developing, with:
--	Java EE; 
--	Google Web Toolkit (GWT), SmartGwt;
--	JPA and MySQL.
+{% for highlight in page.highlights %}- {{ highlight }}  
+{% endfor %}
+
+
+### Skills
+
+{% for skill in page.skills %}- {{ skill }}  
+{% endfor %}
 
 
 ### Projects
 
 - 💻 [GrafPortal]({{ site.data.links.projects.grafportal.page }})
 
-
-### Skills
-
-- Java
-- Java EE
-- GWT
-- Smart GWT
-- JPA
-- MySQL

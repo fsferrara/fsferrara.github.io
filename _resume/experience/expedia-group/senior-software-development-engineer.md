@@ -2,26 +2,35 @@
 title: "Senior Software Development Engineer"
 org: "Expedia Group"
 start-date: 2020-09-01
-end-date: "..."
+end-date: "Present"
 employment-type: "Full-time"
 location: "Rome Area, Italy"
 location-type: "Hybrid"
-description: "n/a"
 highlights:
   - "n/a"
 skills:
   - "n/a"
-date: 2020-09-01
 categories:
   - experience
 ---
+{% assign date_format = "%B %Y" %}
 # {{page.title}}
 ## {{page.org}}
-
-💼 **Position** • _September 2020 → ..._  
-🏢 [Expedia Group](https://www.expediagroup.com/)  
+💼 **{{ page.employment-type }}** • _{{ page.start-date | date: date_format}} → {{ page.end-date | date: date_format}}_  
+🏢 [{{ page.org }}](https://www.expediagroup.com/)  
 👥 Marketplace  
-📍 _Rome Area, Italy_ & @remote
+📍 _{{ page.location }}_ • <span class="post-meta">{{ page.location-type }}</span>  
+
+
+{% for highlight in page.highlights %}- {{ highlight }}  
+{% endfor %}
+
+
+### Skills
+
+{% for skill in page.skills %}- {{ skill }}  
+{% endfor %}
+
 
 **Summary:** Highly accomplished Senior Software Development Engineer with a strong track record of **driving significant platform improvements**, **fostering innovation and collaboration**, and **excelling in native application performance and reliability initiatives**. Proven ability to lead complex, cross-functional projects, mentor junior engineers, and communicate effectively across global teams. Actively engaged in technical conversations through RFCs and presentations.
 
@@ -62,12 +71,6 @@ Influential individual contributor and mentor, leads complex and ambiguous proje
 - Collaborate across organizations and lead communities of practice
 - Report on high-level projects and ensure documentation
 
-### Projects
-
-- 💻 [Expedia Group iOS Mobile Native Apps]({{ site.data.links.projects.expedia-group-ios-mobile-native-appse.page }})
-- 💻 [Website 4 All Kids - Volunteering]({{ site.data.links.projects.website-4-all-kids-red-cross.page }})
-
-
 ### Skills
 
 **Top 5 Skills:**
@@ -90,3 +93,9 @@ Influential individual contributor and mentor, leads complex and ambiguous proje
 - **Effective communication** and influencing (presentations, documentation)
 - **Proactiveness** and innovative problem-solving
 - **Continuous learning** and adaptability to new technologies
+
+### Projects
+
+- 💻 [Expedia Group iOS Mobile Native Apps]({{ site.data.links.projects.expedia-group-ios-mobile-native-appse.page }})
+- 💻 [Website 4 All Kids - Volunteering]({{ site.data.links.projects.website-4-all-kids-red-cross.page }})
+
