@@ -7,7 +7,7 @@ employment-type: "Contract"
 location: "Naples Area, Italy"
 location-type: "On-site"
 highlights:
-  - Developed a Web application for a client
+  - Developed a web application for print price estimates, built the user area, and implemented the entire back-office system to support users throughout the online printing process
 skills:
   - Java
   - Java EE
