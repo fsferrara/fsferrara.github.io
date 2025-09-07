@@ -7,9 +7,18 @@ employment-type: "Full-time"
 location: "Rome Area, Italy"
 location-type: "Hybrid"
 highlights:
-  - "n/a"
+  - Spearheaded the Real User Monitoring (RUM) API and Datadog SDK integration, enhancing observability for native apps.
+  - Led the implementation of Performance Tracker across iOS and Android, enabling user-perceived performance metrics.
+  - Mentored and onboarded new iOS developers, fostering independent contributions and cross-timezone collaboration.
+  - Pioneered the Application Hygiene initiative, introducing a scoring system to improve app quality and dependency management.
+  - Drove GraphQL Gateway unification, contributing to a scalable multi-brand UI platform.
 skills:
-  - "n/a"
+  - Performance monitoring (RUM, TTIL, SLI/SLO)
+  - Native app development (Swift, SwiftUI, iOS architecture)
+  - API & microservices (GraphQL, REST)
+  - Global team collaboration
+  - Technical leadership & mentoring
+  - Incident response & on-call operations
 categories:
   - experience
 ---
@@ -30,7 +39,20 @@ categories:
 
 {% for skill in page.skills %}- {{ skill }}  
 {% endfor %}
+- Architectural and platform evolution (Shared UI, HTTP Context)
+- Leading application hygiene and technical debt management
+- Native app development (iOS/Android) and upskilling
+- Providing technical direction and strategic problem-solving
+- Leadership and mentorship for individual and team growth
+- Global team collaboration
+- Effective communication and influencing (presentations, documentation)
+- Cloud infrastructure (AWS migration, configuration frameworks)
+- Continuous learning and adaptability to new technologies
 
+
+---
+
+## Performance Review
 
 **Summary:** Highly accomplished Senior Software Development Engineer with a strong track record of **driving significant platform improvements**, **fostering innovation and collaboration**, and **excelling in native application performance and reliability initiatives**. Proven ability to lead complex, cross-functional projects, mentor junior engineers, and communicate effectively across global teams. Actively engaged in technical conversations through RFCs and presentations.
 
@@ -61,6 +83,16 @@ categories:
 - **Optimized cross-timezone collaboration** by scheduling targeted sessions, anticipating doubts for asynchronous communication, and favoring written updates.
 - **Upskilled significantly in iOS Native App Development**, completing coursework in Swift, SwiftUI, Xcode & Debugging, Saving/Networking/Concurrency, and exploring iOS Design Patterns.
 
+### Projects
+
+- 💻 [Expedia Group iOS Mobile Native Apps]({{ site.data.links.projects.expedia-group-ios-mobile-native-appse.page }})
+- 💻 [Website 4 All Kids - Volunteering]({{ site.data.links.projects.website-4-all-kids-red-cross.page }})
+
+
+---
+
+## Job Description
+
 **Role Summary:**
 Influential individual contributor and mentor, leads complex and ambiguous projects, interfaces with tech leadership, and drives technical excellence.
 
@@ -71,31 +103,9 @@ Influential individual contributor and mentor, leads complex and ambiguous proje
 - Collaborate across organizations and lead communities of practice
 - Report on high-level projects and ensure documentation
 
-### Skills
-
-**Top 5 Skills:**
+**Skills:**
 - Expertise in multiple technologies and languages
 - Technical leadership and mentoring
 - System and integration design for complex solutions
 - Operational excellence (testing, monitoring, SLAs)
 - Business acumen and cross-team collaboration
-
-**Top 5 Technical Skills:**
-- **Performance and monitoring** (RUM, TTIL, SLI/SLO)
-- **Architectural and platform evolution** (HAPI, Loom, Shared-UI, EG Context)
-- Leading **application hygiene** and technical debt management
-- **Native app development** (iOS/Android) and upskilling
-- Providing **technical direction** and strategic problem-solving
-
-**Top 5 Soft Skills:**
-- **Leadership and mentorship** for individual and team growth
-- **Cross-functional and global team collaboration**
-- **Effective communication** and influencing (presentations, documentation)
-- **Proactiveness** and innovative problem-solving
-- **Continuous learning** and adaptability to new technologies
-
-### Projects
-
-- 💻 [Expedia Group iOS Mobile Native Apps]({{ site.data.links.projects.expedia-group-ios-mobile-native-appse.page }})
-- 💻 [Website 4 All Kids - Volunteering]({{ site.data.links.projects.website-4-all-kids-red-cross.page }})
-

@@ -7,9 +7,19 @@ employment-type: "Full-time"
 location: "Rome Area, Italy"
 location-type: "On-site"
 highlights:
-  - "n/a"
+  - Delivered high-quality backend services for mobile apps, including APIs for Destination Recommendation and Property Details.
+  - Reduced onboarding time for new hires by creating a Vagrant VM box and sharing Hbox tools.
+  - Improved team delivery pace by introducing “Elephant Carpaccio” story slicing in the SRLE project.
+  - Released Heat as an open-source component, contributing significantly to the company’s tech ecosystem.
+  - Enhanced development efficiency by tuning the Maven plugin for automatic DTO generation.
 skills:
-  - "n/a"
+  - REST API development
+  - Java & Spring Framework
+  - Docker & Maven
+  - DevOps tooling (Vagrant, Hbox)
+  - Mentorship & onboarding
+  - Cross-functional collaboration
+  - Process improvement & adaptability
 categories:
   - experience
 ---
@@ -21,6 +31,7 @@ categories:
 🔗 [Expedia Group](https://www.expediagroup.com/)  
 📍 _{{ page.location }}_ • <span class="post-meta">{{ page.location-type }}</span>  
 
+I worked in the mobile application area as a member of the API team which is in charge of the development of back-end services targeted to support the mobile native applications for iOS and Android. We were focused on the implementation of REST web-services, using the Java programming language and other open source technologies such as Jersey, Spring, Maven, Docker, and so on. As an agile team, we were using the Kanban process model.
 
 {% for highlight in page.highlights %}- {{ highlight }}  
 {% endfor %}
@@ -30,9 +41,25 @@ categories:
 
 {% for skill in page.skills %}- {{ skill }}  
 {% endfor %}
+- High-quality software development and code review
+- Proposing optimized solutions and new technologies
+- Technical analysis and requirements gathering
+- Contributing to open-source software (HEAT)
+- Emerging leadership and mentorship for junior members
+- Proactive problem-solving and optimization
+- Fostering positive team spirit and support
+- Adaptability and independent decision-making
 
 
-I worked in the mobile application area as a member of the API team which is in charge of the development of back-end services targeted to support the mobile native applications for iOS and Android. We were focused on the implementation of REST web-services, using the Java programming language and other open source technologies such as Jersey, Spring, Maven, Docker, and so on. As an agile team, we were using the Kanban process model.
+### Projects
+
+- 💻 [Hotels.com Mobile Native Apps Backend]({{ site.data.links.projects.hotels-mobile-native-apps-backend.page }})
+
+
+---
+
+## Performance Review
+
 
 **Summary:** A highly skilled and proactive Software Development Engineer known for **delivering high-quality solutions**, **optimizing team productivity**, and **fostering a positive and collaborative environment**. Instrumental in technical analysis, code quality, and process improvements, with a strong focus on mentorship and problem-solving.
 
@@ -59,6 +86,11 @@ I worked in the mobile application area as a member of the API team which is in 
 - **Served as a reference point for younger colleagues**, effectively sharing technical knowledge and investigation outcomes without imposing ideas, and encouraging personal initiative.
 - **Consistently contributed to building and spreading a positive team spirit**, recognizing others' contributions, working effectively with peers, and mediating conflicts.
 
+
+---
+
+## Job Description
+
 **Role Summary:**
 High-performing individual contributor, mentor to junior engineers, leads complex projects, and drives improvements in systems and processes.
 
@@ -69,32 +101,9 @@ High-performing individual contributor, mentor to junior engineers, leads comple
 - Design testable and observable software
 - Identify and solve business problems at the project level
 
-
-### Skills
-
-**Top 5 Skills:**
+**Skills:**
 - Advanced programming in multiple languages/technologies
 - API design and technology selection
 - System design and cross-team integration
 - Debugging, testing, and monitoring at project level
 - Holistic systems thinking and process improvement
-
-**Top 5 Technical Skills:**
-- **High-quality software development** and code review
-- Proposing **optimized solutions** and new technologies
-- **Technical analysis** and requirements gathering
-- Creating **DevOps and onboarding tools** (Vagrant VM)
-- Contributing to **open-source software** (Fibos, HEAT)
-
-**Top 5 Soft Skills:**
-- **Cross-functional collaboration** and communication
-- Emerging **leadership and mentorship** for junior members
-- **Proactive problem-solving** and optimization
-- Fostering **positive team spirit** and support
-- **Adaptability** and independent decision-making
-
-
-### Projects
-
-- 💻 [Hotels.com Mobile Native Apps Backend]({{ site.data.links.projects.hotels-mobile-native-apps-backend.page }})
-

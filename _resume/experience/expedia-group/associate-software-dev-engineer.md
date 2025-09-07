@@ -7,9 +7,19 @@ employment-type: "Full-time"
 location: "Rome Area, Italy"
 location-type: "On-site"
 highlights:
-  - "n/a"
+  - Developed and maintained scalable back-end systems using Spring Framework and multithreaded programming.
+  - Contributed to the mobile-responsive redesign of the website, enhancing user experience across devices.
+  - Implemented caching and logging strategies to improve system performance and traceability.
+  - Gained hands-on experience with both relational (MySQL, Sybase) and NoSQL (Couchbase) databases.
+  - Applied split testing and multivariate testing techniques to optimize user engagement and conversion rates.
 skills:
-  - "n/a"
+  - Spring Framework
+  - JavaScript
+  - MySQL
+  - Node.js
+  - PHP
+  - Technical communication
+  - Business awareness
 categories:
   - experience
 ---
@@ -22,6 +32,11 @@ categories:
 📍 _{{ page.location }}_ • <span class="post-meta">{{ page.location-type }}</span>  
 
 
+Venere.com (an Expedia Group company) was the Italian leader in online hotel reservations.
+I worked initially of the back-end using the technologies: Spring Framework, Virtual Machine monitoring, SOA architectures, RESTful web services, multithreaded programming, caching policies, advanced logging techniques, Sybase and MySQL RDBMS, spymemcached, Couchbase Document Oriented NoSQL Database.
+Then I moved on the development of front-end side, in particular, I worked for the mobile version of the website (responsive). Among the various technologies (JavaScript, Backbone, PHP, RESTful web services, Apache / Nginx, Nodejs) I have gained knowledge on the techniques of user tracking, split testing and multivariate testing.
+
+
 {% for highlight in page.highlights %}- {{ highlight }}  
 {% endfor %}
 
@@ -30,11 +45,20 @@ categories:
 
 {% for skill in page.skills %}- {{ skill }}  
 {% endfor %}
+- Java
+
+**Top 5 Soft Skills:**
+- Goal alignment
 
 
-Venere.com (an Expedia Group company) was the Italian leader in online hotel reservations.
-I worked initially of the back-end using the technologies: Spring Framework, Virtual Machine monitoring, SOA architectures, RESTful web services, multithreaded programming, caching policies, advanced logging techniques, Sybase and MySQL RDBMS, spymemcached, Couchbase Document Oriented NoSQL Database.
-Then I moved on the development of front-end side, in particular, I worked for the mobile version of the website (responsive). Among the various technologies (JavaScript, Backbone, PHP, RESTful web services, Apache / Nginx, Nodejs) I have gained knowledge on the techniques of user tracking, split testing and multivariate testing.
+### Projects
+
+- 💻 [Venere Website]({{ site.data.links.projects.venere-website.page }})
+
+
+---
+
+## Job Description
 
 **Role Summary:**
 Supporting team member with solid grasp of software engineering principles, contributing to projects and engaging in technical discussions.
@@ -46,29 +70,9 @@ Supporting team member with solid grasp of software engineering principles, cont
 - Apply software design principles and write clean, maintainable code
 - Report clearly on work status and ask insightful questions
 
-
-### Skills
-
-**Top 5 Skills:**
+**Skills:**
 - Proficiency in at least one programming language
 - Understanding of data patterns, storage, and software design
 - Debugging and basic testing
 - Application of computer science fundamentals
 - Business awareness and goal alignment
-
-**Top 5 Technical Skills:**
-- PHP
-- MySQL
-- Java
-- Javascript
-- NodeJS
-- Spring
-
-**Top 5 Soft Skills:**
-- n/a
-
-
-### Projects
-
-- 💻 [Venere Website]({{ site.data.links.projects.venere-website.page }})
-

@@ -7,9 +7,19 @@ employment-type: "Full-time"
 location: "Rome Area, Italy"
 location-type: "Hybrid"
 highlights:
-  - "n/a"
+  - Developed RESTful backend services using Java and Spring for hotel reservation systems.
+  - Built hybrid mobile applications across iOS, Android, and Windows Phone using Apache Cordova and JavaScript frameworks.
+  - Contributed to frontend development with Backbone, Handlebars, and RequireJS.
+  - Collaborated in an agile Scrum team, facilitating meetings and supporting team coordination.
+  - Led small projects and supported complex initiatives with cross-team collaboration.
 skills:
-  - "n/a"
+  - Java
+  - Spring Framework
+  - Apache Cordova
+  - Android
+  - Agile Methodologies
+  - Team Facilitation
+  - Cross-functional Collaboration
 categories:
   - experience
 ---
@@ -21,6 +31,10 @@ categories:
 🔗 [Expedia Group](https://www.expediagroup.com/)  
 📍 _{{ page.location }}_ • <span class="post-meta">{{ page.location-type }}</span>  
 
+Venere.com (an Expedia Inc. company) was the Italian leader in online hotel reservations.
+The technologies mainly used by the company are Java and Spring, for the building of RESTful backend web services, and Javascript/Node.js for the frontend layer. We rely on several persistence technologies, both SQL and NoSQL (MySQL, Redis, Couchbase, ...).
+Experience developing hybrid mobile applications (iOS, Android, Windows Phone) using Apache Cordova, Backbone, Handlebars, and RequireJS.
+As an agile company, I belong to a development team using the Scrum Framework, where I gained experience in facilitating meetings and in managing a development team.
 
 {% for highlight in page.highlights %}- {{ highlight }}  
 {% endfor %}
@@ -30,12 +44,21 @@ categories:
 
 {% for skill in page.skills %}- {{ skill }}  
 {% endfor %}
+- Backbone.js
+- Hybrid Apps
+- Mobile
+- Java
+- Cross-team collaboration and systems thinking
 
 
-Venere.com (an Expedia Inc. company) was the Italian leader in online hotel reservations.
-The technologies mainly used by the company are Java and Spring, for the building of RESTful backend web services, and Javascript/Node.js for the frontend layer. We rely on several persistence technologies, both SQL and NoSQL (MySQL, Redis, Couchbase, ...).
-Experience developing hybrid mobile applications (iOS, Android, Windows Phone) using Apache Cordova, Backbone, Handlebars, and RequireJS.
-As an agile company, I belong to a development team using the Scrum Framework, where I gained experience in facilitating meetings and in managing a development team.
+### Projects
+
+- 💻 [Venere Mobile Area]({{ site.data.links.projects.venere-mobile-native-apps.page }})
+
+
+---
+
+## Job Description
 
 **Role Summary:**
 Consistent performer applying software engineering principles to business needs, leading small projects, and supporting complex initiatives.
@@ -47,27 +70,9 @@ Consistent performer applying software engineering principles to business needs,
 - Apply design patterns and database knowledge
 - Coordinate stakeholder input and support holistic solutions
 
-### Skills
-
-**Top 5 Skills:**
+**Skills:**
 - Strong programming in primary language, familiarity with others
 - Integration with data stores and APIs
 - Testing, monitoring, and debugging
 - Application of design patterns and database design
 - Cross-team collaboration and systems thinking
-
-**Top 5 Technical Skills:**
-- Android
-- Cordova
-- Hybrid Apps
-- Mobile
-- Java
-
-**Top 5 Soft Skills:**
-- n/a
-
-
-### Projects
-
-- 💻 [Venere Mobile Area]({{ site.data.links.projects.venere-mobile-native-apps.page }})
-

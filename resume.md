@@ -31,7 +31,7 @@ An experienced Full Stack Software Engineer and Technology Lead who excels in gu
 {% assign date_format = "%b %Y" %}
 {% for entry in sorted %}
 {% if entry.categories contains "experience" %}
-
+{{ newline }}
 - [**{{ entry.title }}** • {{ entry.org }}]({{ entry.url | relative_url }})  
 <span class="post-meta">{{ entry.start-date | date: date_format}} → {{ entry.end-date | date: date_format}} • {{ entry.employment-type }}</span>  
 <span class="post-meta">{{ entry.location}} • {{ entry.location-type}}</span>  
@@ -78,7 +78,7 @@ An experienced Full Stack Software Engineer and Technology Lead who excels in gu
 
 ## Projects, Certifications, Achievements, Volunteering
 
-These sections, which change frequently, are reported on [the work page](/work.md).
+→ [https://fsferrara.github.io/work/](/work.md)
 
 
 ---

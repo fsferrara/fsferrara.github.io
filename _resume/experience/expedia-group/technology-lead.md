@@ -7,9 +7,19 @@ employment-type: "Full-time"
 location: "Rome Area, Italy"
 location-type: "Hybrid"
 highlights:
-  - "n/a"
+  - Spearheaded the adoption of GraphQL, implementing the first hotels.com GraphQL microservice and elevating technical visibility through blog posts and meetups.
+  - Led the evolution of the HREST Kernel framework, accelerating web app development and reducing technical debt across teams.
+  - Successfully managed AWS migration for critical services, consistently meeting deadlines and ensuring operational stability.
+  - Drove the decommissioning of legacy mobile APIs through cross-team collaboration, completing the project ahead of schedule.
+  - Cultivated a fast-learning team culture by organizing Code Academy sessions and mentoring through internal training programs.
 skills:
-  - "n/a"
+  - GraphQL & API Design
+  - Cloud Infrastructure (AWS)
+  - Framework Development (HREST Kernel)
+  - Open Source Contribution
+  - Team Leadership
+  - Stakeholder Communication
+  - Mentorship & Talent Development
 categories:
   - experience
 ---
@@ -21,6 +31,8 @@ categories:
 🔗 [Expedia Group](https://www.expediagroup.com/)  
 📍 _{{ page.location }}_ • <span class="post-meta">{{ page.location-type }}</span>  
 
+Global worker for Hotels.com, an Expedia Group company based in London.
+Team leader of an 8-person team in Rome. In this role, I gained experience in people management, conducting job interviews, and developing talent.
 
 {% for highlight in page.highlights %}- {{ highlight }}  
 {% endfor %}
@@ -30,10 +42,25 @@ categories:
 
 {% for skill in page.skills %}- {{ skill }}  
 {% endfor %}
+- Architectural leadership and technology innovation (HREST Kernel, GraphQL)
+- Leading cloud migration and infrastructure projects
+- Contributing to technical strategy and roadmap execution
+- System maintenance and technical debt reduction
+- Team leadership and empowerment (Epic Leaders, ramp-up support)
+- Cross-functional collaboration and stakeholder management
+- Proactive problem solving and initiative
+- Mentorship and knowledge sharing (Code Academy)
+- Adaptability and advocating for technical change
 
 
-Global worker for Hotels.com, an Expedia Inc. company based in London.
-Team leader of an 8-person team in Rome. In this role, I gained experience in people management, conducting job interviews, and developing talent.
+### Projects
+
+- 💻 [Hotels.com Mobile Native Apps Backend]({{ site.data.links.projects.hotels-mobile-native-apps-backend.page }})
+
+
+---
+
+## Performance Review
 
 **Summary:** Drove significant technical innovations, including **GraphQL adoption** and **core framework development**, while fostering a strong team culture, mentorship, and cross-organizational collaboration. Demonstrated strong decision-making and problem-solving abilities in evolving technical landscapes.
 
@@ -60,6 +87,10 @@ Team leader of an 8-person team in Rome. In this role, I gained experience in pe
 - **Contributed to the ramp-up of new team members**, providing practical and technical support.
 - **Organized and scheduled efforts to release the HEAT framework to the open-source community**, minimizing impact on business activities.
 
+---
+
+## Job Description
+
 **Role Summary:**
 People leader providing direction to a small team, delivering on multiple projects, and ensuring team growth and performance.
 
@@ -70,32 +101,9 @@ People leader providing direction to a small team, delivering on multiple projec
 - Communicate effectively with technical and non-technical stakeholders
 - Advocate for operational excellence and technical best practices
 
-
-### Skills
-
-**Top 5 Skills:**
+**Skills:**
 - Technical acumen across multiple technologies
 - Team enablement and mentorship
 - Resource planning and optimization
 - Business acumen and product delivery
 - Technical communication and consulting
-
-**Top 5 Technical Skills:**
-- **Architectural leadership** and technology innovation (HREST Kernel, GraphQL)
-- Leading **cloud migration** and infrastructure projects
-- Contributing to **technical strategy** and roadmap execution
-- **Open-source contribution** and tooling advocacy (HEAT, GraphQL stack)
-- **System maintenance** and technical debt reduction
-
-**Top 5 Soft Skills:**
-- **Team leadership** and empowerment (Epic Leaders, ramp-up support)
-- **Cross-functional collaboration** and stakeholder management
-- **Proactive problem solving** and initiative
-- **Mentorship** and knowledge sharing (Code Academy)
-- **Adaptability** and advocating for technical change
-
-
-### Projects
-
-- 💻 [Hotels.com Mobile Native Apps Backend]({{ site.data.links.projects.hotels-mobile-native-apps-backend.page }})
-
