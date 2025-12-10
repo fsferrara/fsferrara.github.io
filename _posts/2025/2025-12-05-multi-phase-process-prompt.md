@@ -45,7 +45,9 @@ Here is how you can structure a prompt to guide an AI through creating a technic
 # Goal
 Write a high-quality technical tutorial based on a user-provided topic.
 
-Follow these PHASES IN SEQUENCE.
+Carefully read and execute the instructions in the following files IN SEQUENCE, following their numbered PHASE.  Only proceed to the next PHASE once the previous numbered PHASE has been executed.
+
+PHASES to follow in sequence:
 
 # PHASE 1: Outline & Audience
 Step 1. Ask the user for the topic and target audience level (Beginner, Intermediate, Advanced).

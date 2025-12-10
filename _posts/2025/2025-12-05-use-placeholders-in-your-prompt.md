@@ -98,6 +98,16 @@ Areas for development:
 - Take on cross-team collaboration on the data pipeline project
 ```
 
+## Variants
+
+Some systems are formalizing placeholder syntax further:
+- **Double curly braces**: `{{PLACEHOLDER}}`
+- **Percent signs**: `%PLACEHOLDER%`
+- **Angle brackets**: `<PLACEHOLDER>`
+- etc...
+
+An alternative definition for a prompt with placeholders is **dynamic prompt**.
+
 ## Conclusion
 
 Placeholders transform ad-hoc prompting into a systematic, scalable workflow. Start simple with a few variables, then evolve your templates as you identify patterns in your work. The time invested in building reusable templates pays dividends every time you skip rewriting the same prompt from scratch.
