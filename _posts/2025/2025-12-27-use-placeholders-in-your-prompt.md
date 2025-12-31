@@ -1,6 +1,6 @@
 ---
 title: "Use placeholders in your prompts"
-date: 2025-12-05
+date: 2025-12-27
 tags:
   - prompt-engineering
   - ai

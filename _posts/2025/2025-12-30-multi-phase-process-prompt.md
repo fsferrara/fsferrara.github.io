@@ -1,6 +1,6 @@
 ---
 title: "Multi-phase Process Prompt"
-date: 2025-12-05
+date: 2025-12-30
 tags:
   - prompt-engineering
   - ai
