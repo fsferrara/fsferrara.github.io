@@ -28,7 +28,7 @@ Jekyll site using the **minima** theme with the `github-pages` gem. No custom la
 
 Two custom collections alongside standard `_posts/`:
 
-- **`_resume/`** — Education and work experience entries. Each `.md` has front matter with `title`, `org`, `start-date`, `end-date`, `employment-type`, `location`, `location-type`, `highlights` (list), `skills` (list), and `categories` (either `experience` or `education`). Rendered by `resume.md` using Liquid loops sorted by `start-date` descending.
+- **`_resume/`** — Education and work experience entries. Each `.md` has front matter with `title`, `org`, `start-date`, `end-date`, `employment-type`, `location`, `location-type`, `highlights` (list), `skills` (list), and `categories` (either `experience` or `education`). Rendered by `resume.md` using Liquid loops sorted by `start-date` descending. Skills MUST use the canonical vocabulary defined in `_data/skills.yml`.
 
 - **`_work/`** — Projects, certifications, courses, books, and talks. Each `.md` has `title`, `date`, and `categories` (one of: `projects`, `certifications`, `courses`, `books`, `talks`). Items with category `projects` are listed under "Featured" in `work.md`; all others appear under "Learnings". Binary assets (images, PDFs) sit alongside their `.md` files.
 

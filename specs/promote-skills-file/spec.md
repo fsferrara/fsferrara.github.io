@@ -3,7 +3,7 @@
 ## Overview
 > Move `specs/consolidate-skills/LinkedIn_Skills.md` to `_data/skills.yml` as the project's canonical skill vocabulary, update `AGENTS.md` to reference it, and clean up the old location.
 
-**Status:** `ready`
+**Status:** `done`
 
 ---
 

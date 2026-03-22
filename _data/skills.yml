@@ -1,0 +1,85 @@
+# Canonical skill vocabulary for resume entries.
+# Source of truth aligned with LinkedIn profile skills.
+
+industry_knowledge:
+  - Spec-Driven Development
+  - Software Observability
+  - RUM
+  - IT Operations
+  - Incident Response
+  - Site Reliability Engineering
+  - Performance Engineering
+  - Distributed Team Management
+  - Remote Teamwork
+  - System Administration
+  - Containerization
+  - Continuous Integration and Continuous Delivery (CI/CD)
+  - DevOps
+  - Cloud Computing
+  - Database Management System (DBMS)
+  - Shell Scripting
+  - Talent Development
+  - Technical Leadership
+  - Continuous Process Improvement
+  - Kanban
+  - Data Structures
+  - Full-Stack Development
+  - Software Architecture
+  - Android Development
+  - iOS Development
+  - Mobile Application Development
+  - API Development
+  - Front-End Development
+  - Back-End Development
+  - Engineering Management
+  - Agile
+  - Web Applications
+  - Object Oriented Design
+  - Programming
+  - Agile Methodologies
+  - Software Development
+  - Software Engineering
+  - Algorithms
+  - Testing
+  - Design Patterns
+  - Scrum
+
+tools_and_technologies:
+  - Datadog
+  - Jira
+  - GitHub
+  - Amazon Web Services (AWS)
+  - NoSQL
+  - Python (Programming Language)
+  - Swift (Programming Language)
+  - SwiftUI
+  - GraphQL
+  - Linux
+  - Java
+  - Spring
+  - PHP
+  - MySQL
+  - HTML
+  - XML
+  - JavaScript
+  - UML
+  - Unix
+  - Open Source
+  - Tomcat
+  - jQuery
+  - C
+  - C++
+  - CSS
+  - Databases
+  - REST
+  - Node.js
+  - Subversion
+  - Operating Systems
+  - JSON
+  - SQL
+
+interpersonal_skills:
+  - Facilitation
+  - Communication
+  - Mentoring
+  - Team Leadership

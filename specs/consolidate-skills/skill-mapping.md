@@ -2,7 +2,7 @@
 
 ## Normalization Rules
 
-1. Use exact strings from `specs/consolidate-skills/LinkedIn_Skills.md` unless a non-canonical technology is clearly the defining "star" of the entry.
+1. Use exact strings from `_data/skills.yml` unless a non-canonical technology is clearly the defining "star" of the entry.
 2. Keep each edited entry at 6-7 skills. For most professional roles, order 4 technical items first and 2-3 soft/management items after.
 3. Treat tools/technologies plus engineering disciplines such as `API Development`, `Back-End Development`, `Database Management System (DBMS)`, `Performance Engineering`, `Software Architecture`, `System Administration`, and `Web Applications` as technical.
 4. Treat interpersonal skills plus leadership/process terms such as `Communication`, `Continuous Process Improvement`, `Facilitation`, `Kanban`, `Mentoring`, `Remote Teamwork`, `Scrum`, `Talent Development`, `Team Leadership`, and `Technical Leadership` as the soft/management bucket.

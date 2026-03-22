@@ -15,10 +15,10 @@ Skills are currently defined in the front matter of resume entries:
 
 The website contains specific/dated technologies not on LinkedIn (e.g., `Zope`, `JBoss Seam`, `Smart GWT`, `Google Web Toolkit (GWT)`, `Tape Backup`). LinkedIn has a 100-skill hard limit and has been reviewed to remove obsolete specifics.
 
-Reference file: `specs/consolidate-skills/LinkedIn_Skills.md` contains the canonical skill vocabulary organized into:
-- Industry Knowledge (46 skills)
-- Tools & Technologies (33 skills)
-- Interpersonal Skills (4 skills)
+Reference file: `_data/skills.yml` contains the canonical skill vocabulary organized into:
+- industry_knowledge (41 skills)
+- tools_and_technologies (32 skills)
+- interpersonal_skills (4 skills)
 
 ---
 
@@ -36,7 +36,7 @@ So that recruiters see a coherent professional profile and I stay within LinkedI
 - Update all `_resume/experience/*.md` files to use LinkedIn vocabulary
 - Update all `_resume/education/*.md` files to use LinkedIn vocabulary
 - Produce a skill mapping report (`skill-mapping.md`) documenting old → new transformations
-- Use `LinkedIn_Skills.md` (already in spec folder) as canonical reference
+- Use `_data/skills.yml` as canonical reference
 
 ### Out of Scope
 - Updating LinkedIn profile directly (human task)
@@ -92,7 +92,7 @@ Expected output:
 
 ## Technical Constraints
 
-- MUST use skills from `LinkedIn_Skills.md` vocabulary
+- MUST use skills from `_data/skills.yml` vocabulary
 - MUST preserve 6-7 skills per entry (4 technical, 2-3 soft/management)
 - SHOULD prefer generic skills over specific old technologies
 - SHOULD preserve specific technologies only when they are the "star" of the project

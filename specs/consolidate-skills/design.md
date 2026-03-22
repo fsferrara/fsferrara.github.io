@@ -18,7 +18,7 @@
 | modify   | `_resume/education/high-school/high-school-diploma.md` |
 | modify   | `_resume/education/master-degree/md-computer-science.md` |
 | create   | `specs/consolidate-skills/skill-mapping.md` |
-| read     | `specs/consolidate-skills/LinkedIn_Skills.md` (canonical reference) |
+| read     | `_data/skills.yml` (canonical reference) |
 
 ---
 
@@ -59,5 +59,5 @@ skills:
 
 ## Design References
 
-- Canonical skills: `./LinkedIn_Skills.md`
+- Canonical skills: `_data/skills.yml`
 - Mapping report: `./skill-mapping.md`
