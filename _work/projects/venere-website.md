@@ -1,6 +1,14 @@
 ---
 title: "Venere.com Website"
 date: 2011-06-01
+skills:
+  - Java
+  - Spring
+  - PHP
+  - MySQL
+  - REST
+  - Linux
+  - Web Applications
 categories:
   - projects
 ---
@@ -23,29 +31,11 @@ I spent several years contributing to the success of this amazing company.
 
 ### Skills
 
+{% for skill in page.skills %}- {{ skill }}  
+{% endfor %}
 
-- Java
 - J2EE
-- Spring Framework
 - SOA architectures
-- Sybase
-- MySQL
-- spymemcached
 - Couchbase
-- PHP
-- JQuery
-- HTML/CSS
-- Spring
-- RESTful Web Services
+- jQuery
 - Tomcat
-- Sybase
-- MySQL
-- Couchbase
-- Eclipse
-- Netbeans
-- Maven
-- JMeter
-- SVN
-- Linux
-- Git
-- Javascript

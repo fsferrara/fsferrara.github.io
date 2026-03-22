@@ -1,6 +1,14 @@
 ---
 title: "Expedia Group iOS Mobile Native Apps"
 date: 2022-09-01
+skills:
+  - RUM
+  - Datadog
+  - Swift (Programming Language)
+  - GraphQL
+  - iOS Development
+  - Mobile Application Development
+  - Technical Leadership
 categories:
   - projects
 ---
@@ -14,10 +22,7 @@ categories:
 
 ![Showcase]({{ showcase }})
 
----
-
-n/a
-
 ### Skills
 
-- n/a
+{% for skill in page.skills %}- {{ skill }}  
+{% endfor %}

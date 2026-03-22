@@ -1,6 +1,14 @@
 ---
 title: "Venere.com Mobile Native Apps"
 date: 2014-03-01
+skills:
+  - Java
+  - JavaScript
+  - HTML
+  - CSS
+  - Node.js
+  - REST
+  - Mobile Application Development
 categories:
   - projects
 ---
@@ -25,23 +33,10 @@ In the end I designed and implemented a prototype of a new Venere App based on H
 
 ### Skills
 
-- Front-end
-  - Javascript
-  - HTML
-  - CSS
-  - RESTful Web Services
-  - requirejs
-  - Backbone
-  - handlebars
-  - Backbone
-  - Bower
-  - Mustache
-- Native Apps
-  - Java
-  - ADK
-  - Cordova  
-- Back-end
-  - PHP
-  - Javascript
-  - Node.js
-  - Grunt
+{% for skill in page.skills %}- {{ skill }}  
+{% endfor %}
+
+- Apache Cordova
+- RequireJS
+- Backbone
+- Handlebars

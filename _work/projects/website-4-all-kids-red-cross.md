@@ -1,6 +1,14 @@
 ---
 title: "Website 4 All Kids - Volunteering"
 date: 2020-09-01
+skills:
+  - HTML
+  - CSS
+  - Front-End Development
+  - Web Applications
+  - Remote Teamwork
+  - Communication
+  - Team Leadership
 categories:
   - projects
 ---
@@ -26,7 +34,9 @@ This project exemplifies the power of volunteering and technology to create mean
 
 ### Skills
 
-- WordPress Configuration & Administration
-- Front-end Development
-- Remote Team Collaboration
-- Community Engagement
+{% for skill in page.skills %}- {{ skill }}  
+{% endfor %}
+
+- WordPress multisite configuration
+- Polylang
+- Community engagement

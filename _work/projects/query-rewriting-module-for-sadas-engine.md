@@ -1,6 +1,14 @@
 ---
 title: "Query Rewriting Module for SADAS Engine"
 date: 2010-04-01
+skills:
+  - C++
+  - Database Management System (DBMS)
+  - SQL
+  - Algorithms
+  - Software Engineering
+  - Software Architecture
+  - Object Oriented Design
 categories:
   - projects
 ---
@@ -29,4 +37,7 @@ As far as I know Advanced Systems is the only Italian company in this field and 
 
 ### Skills
 
-- C++
+{% for skill in page.skills %}- {{ skill }}  
+{% endfor %}
+
+- SADAS Engine

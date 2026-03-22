@@ -1,6 +1,14 @@
 ---
 title: "SL AfterSale"
 date: 2011-05-01
+skills:
+  - PHP
+  - HTML
+  - CSS
+  - MySQL
+  - Web Applications
+  - Front-End Development
+  - Back-End Development
 categories:
   - projects
 ---
@@ -25,9 +33,8 @@ During this project I wrote my first WordPress plugin. It allows the management 
 
 ### Skills
 
-- PHP
+{% for skill in page.skills %}- {{ skill }}  
+{% endfor %}
+
 - WordPress
 - WordPress Plugin Development
-- HTML
-- CSS
-- MySQL

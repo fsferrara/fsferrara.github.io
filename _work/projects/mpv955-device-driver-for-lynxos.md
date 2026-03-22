@@ -1,6 +1,14 @@
 ---
 title: "MPV955 Device Driver for LynxOS"
 date: 2005-05-01
+skills:
+  - C
+  - Java
+  - Unix
+  - Operating Systems
+  - Shell Scripting
+  - Software Development
+  - Algorithms
 categories:
   - projects
 ---
@@ -31,7 +39,8 @@ I was really lucky to join this experiment and look after such an interesting ac
 
 ### Skills
 
-- C (Driver)
-- Java Swing (User Interface)
-- Shell Scripting
+{% for skill in page.skills %}- {{ skill }}  
+{% endfor %}
+
 - LynxOS
+- Java Swing (User Interface)

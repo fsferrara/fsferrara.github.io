@@ -1,6 +1,14 @@
 ---
 title: "TradurreAntico.it"
 date: 2011-05-01
+skills:
+  - PHP
+  - HTML
+  - CSS
+  - MySQL
+  - Web Applications
+  - Front-End Development
+  - Back-End Development
 categories:
   - projects
 ---
@@ -24,9 +32,8 @@ Later, I migrated the entire website to Wordpress. I had a lot of fun with the H
 
 ### Skills
 
-- PHP
-- HTML
-- CSS
+{% for skill in page.skills %}- {{ skill }}  
+{% endfor %}
+
 - Joomla!
-- Wordpress
-- MySQL
+- WordPress

@@ -1,6 +1,13 @@
 ---
 title: "Goku Script"
 date: 2000-09-01
+skills:
+  - Programming
+  - Software Development
+  - Algorithms
+  - Data Structures
+  - Shell Scripting
+  - Open Source
 categories:
   - projects
 ---
@@ -20,6 +27,9 @@ I realized the **Goku Script** when I was just a kid. It was a great success, an
 
 
 ### Skills
+
+{% for skill in page.skills %}- {{ skill }}  
+{% endfor %}
 
 - IRC
 - mSL (mIRC Scripting Language)

@@ -1,6 +1,14 @@
 ---
 title: "GrafPortal"
 date: 2011-03-01
+skills:
+  - Java
+  - MySQL
+  - Front-End Development
+  - Back-End Development
+  - Web Applications
+  - Full-Stack Development
+  - Software Development
 categories:
   - projects
 ---
@@ -23,8 +31,10 @@ During this project I worked on the web application form to ask for an estimate 
 
 ### Skills
 
+{% for skill in page.skills %}- {{ skill }}  
+{% endfor %}
+
 - Java EE
 - JPA
 - Google Web Toolkit (GWT)
-- SmartGwt
-- MySQL
+- SmartGWT

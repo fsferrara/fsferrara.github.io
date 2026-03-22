@@ -1,6 +1,14 @@
 ---
 title: "e-Matching.it"
 date: 2008-03-01
+skills:
+  - Java
+  - Python (Programming Language)
+  - Linux
+  - Databases
+  - SQL
+  - Web Applications
+  - Back-End Development
 categories:
   - projects
 ---
@@ -27,10 +35,8 @@ I also worked to the porting of the entire front-end layer from Python/Zope tech
 
 ### Skills
 
-- Java
-- JBoss
+{% for skill in page.skills %}- {{ skill }}  
+{% endfor %}
+
 - JBoss Seam Framework
-- RedHat Linux cluster
-- High-reliability PostgreSQL cluster
-- Python
 - Zope

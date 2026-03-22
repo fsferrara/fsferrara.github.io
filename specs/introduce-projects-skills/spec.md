@@ -3,7 +3,7 @@
 ## Overview
 > Introduce a structured `skills` front matter field for all project pages under `_work/projects/`, using the canonical vocabulary in `_data/skills.yml` and a rendering pattern aligned with the resume entries.
 
-**Status:** `ready`
+**Status:** `done`
 
 ---
 
