@@ -36,3 +36,6 @@ Gemfile.lock
 ### Claude Code ###
 **/.claude/*.local.*
 .claude/worktrees/
+
+### DevContainer ###
+.devcontainer/.devpod-internal/
