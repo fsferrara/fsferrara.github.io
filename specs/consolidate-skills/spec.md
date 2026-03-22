@@ -54,7 +54,7 @@ So that recruiters see a coherent professional profile and I stay within LinkedI
 
 - **GIVEN** a resume education entry
   **WHEN** I view its skills list
-  **THEN** it contains 6-7 skills (4 technical, 2-3 soft/management) using LinkedIn vocabulary
+  **THEN** it contains 6-7 skills (technical) using LinkedIn vocabulary
 
 - **GIVEN** a specific old technology (e.g., `Zope`, `JBoss Seam`)
   **WHEN** it was not the "star" of that project/experience
