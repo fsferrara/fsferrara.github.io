@@ -13,7 +13,7 @@ categories:
   - projects
 ---
 {%- assign showcase = page.relative_path |  split: '/' | last | split: '.md' | first | append: '.png' | prepend: '../' -%}
-💻 **Work Project** • _September 2000 → July 2001_  
+💻 **Work Project** • March 2011 → May 2011_  
 🏢 [Web Developer at Advanced Systems]({{ site.data.links.experience.advanced-systems-web-developer.page }})  
 📍 _Naples Area, Italy_  
 [🔗 http://www.grafportal.it/](#)  

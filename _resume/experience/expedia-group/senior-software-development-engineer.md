@@ -13,10 +13,10 @@ highlights:
   - Pioneered the Application Hygiene initiative, introducing a scoring system to improve app quality and dependency management.
   - Drove GraphQL Gateway unification, contributing to a scalable multi-brand UI platform.
 skills:
-  - RUM
-  - Datadog
-  - Swift (Programming Language)
-  - GraphQL
+  - Spec-Driven Development
+  - Coding Agents
+  - Agent Skills
+  - iOS Development
   - Technical Leadership
   - Mentoring
   - Remote Teamwork
