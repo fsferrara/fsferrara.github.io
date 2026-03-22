@@ -13,13 +13,13 @@ highlights:
   - Released Heat as an open-source component, contributing significantly to the company’s tech ecosystem.
   - Enhanced development efficiency by tuning the Maven plugin for automatic DTO generation.
 skills:
-  - REST API development
-  - Java & Spring Framework
-  - Docker & Maven
-  - DevOps tooling (Vagrant, Hbox)
-  - Mentorship & onboarding
-  - Cross-functional collaboration
-  - Process improvement & adaptability
+  - Java
+  - Spring
+  - API Development
+  - Open Source
+  - Kanban
+  - Mentoring
+  - Continuous Process Improvement
 categories:
   - experience
 ---
@@ -41,6 +41,7 @@ I worked in the mobile application area as a member of the API team which is in 
 
 {% for skill in page.skills %}- {{ skill }}  
 {% endfor %}
+
 - High-quality software development and code review
 - Proposing optimized solutions and new technologies
 - Technical analysis and requirements gathering

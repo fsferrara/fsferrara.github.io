@@ -13,13 +13,12 @@ highlights:
   - Gained hands-on experience with both relational (MySQL, Sybase) and NoSQL (Couchbase) databases.
   - Applied split testing and multivariate testing techniques to optimize user engagement and conversion rates.
 skills:
-  - Spring Framework
-  - JavaScript
-  - MySQL
-  - Node.js
-  - PHP
-  - Technical communication
-  - Business awareness
+  - Java
+  - Spring
+  - Back-End Development
+  - Front-End Development
+  - Communication
+  - Continuous Process Improvement
 categories:
   - experience
 ---
@@ -45,10 +44,6 @@ Then I moved on the development of front-end side, in particular, I worked for t
 
 {% for skill in page.skills %}- {{ skill }}  
 {% endfor %}
-- Java
-
-**Top 5 Soft Skills:**
-- Goal alignment
 
 
 ### Projects

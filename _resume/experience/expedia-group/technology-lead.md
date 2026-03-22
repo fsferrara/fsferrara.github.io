@@ -13,13 +13,13 @@ highlights:
   - Drove the decommissioning of legacy mobile APIs through cross-team collaboration, completing the project ahead of schedule.
   - Cultivated a fast-learning team culture by organizing Code Academy sessions and mentoring through internal training programs.
 skills:
-  - GraphQL & API Design
-  - Cloud Infrastructure (AWS)
-  - Framework Development (HREST Kernel)
-  - Open Source Contribution
+  - GraphQL
+  - Amazon Web Services (AWS)
+  - API Development
+  - Software Architecture
+  - Technical Leadership
   - Team Leadership
-  - Stakeholder Communication
-  - Mentorship & Talent Development
+  - Talent Development
 categories:
   - experience
 ---
@@ -42,6 +42,7 @@ Team leader of an 8-person team in Rome. In this role, I gained experience in pe
 
 {% for skill in page.skills %}- {{ skill }}  
 {% endfor %}
+
 - Architectural leadership and technology innovation (HREST Kernel, GraphQL)
 - Leading cloud migration and infrastructure projects
 - Contributing to technical strategy and roadmap execution

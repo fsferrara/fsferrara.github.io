@@ -9,13 +9,12 @@ end-date: 2011-03-01
 grade: 110/110 cum laude
 skills:
   - Software Engineering
-  - Object-Oriented Design
   - Software Architecture
-  - Information Security
   - Database Management System (DBMS)
+  - Object Oriented Design
+  - Algorithms
+  - SQL
   - C++
-  - Java
-  - Lisp
 categories:
   - education
 ---
@@ -69,11 +68,8 @@ I designed and implemented of a query rewriting module for SADAS that enhances q
 
 ### Skills
 
-- Software Engineering
-- Object-Oriented Design
-- Software Architecture
-- Information Security
-- Database Management System (DBMS)
-- C++
+{% for skill in page.skills %}- {{ skill }}  
+{% endfor %}
+
 - Java
 - Lisp

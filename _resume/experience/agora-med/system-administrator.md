@@ -13,11 +13,12 @@ highlights:
   - Supported streaming services on Windows platforms.
   - Developed web pages using PHP, JSP, and ASPX.
 skills:
-  - Linux System Administration
-  - Windows Server Administration
-  - Email System Management (qmail, postfix, courier, Sophos)
-  - VoIP PBX Deployment (TrixBox/Asterisk)
-  - Web Development (PHP, JSP, ASPX)
+  - System Administration
+  - Linux
+  - IT Operations
+  - Operating Systems
+  - Web Applications
+  - PHP
 categories:
   - experience
 ---

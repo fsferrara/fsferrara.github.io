@@ -10,8 +10,12 @@ highlights:
   - Installed and maintained Windows Server 2003 systems.
   - Managed automated tape backup processes.
 skills:
-  - Windows Server Administration
-  - Tape Backup
+  - System Administration
+  - IT Operations
+  - Operating Systems
+  - Shell Scripting
+  - Programming
+  - DevOps
 categories:
   - experience
 ---

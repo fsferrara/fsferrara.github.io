@@ -8,15 +8,12 @@ start-date: 2002-09-01
 end-date: 2006-05-01
 grade: 110/110 cum laude
 skills:
-  - Software Development
+  - Programming
+  - C
   - Operating Systems
   - Algorithms
   - Data Structures
-  - Web Technologies
-  - Turbo Pascal
-  - C
-  - PHP/MySql (LAMP platform)
-  - Matlab
+  - Database Management System (DBMS)
   - Shell Scripting
 categories:
   - education
@@ -75,6 +72,9 @@ Thesis internship in Operating Systems at VIRGO Lab (INFN), Department of Physic
 
 
 ### Skills
+
+{% for skill in page.skills %}- {{ skill }}  
+{% endfor %}
 
 - Software Development
 - Operating Systems

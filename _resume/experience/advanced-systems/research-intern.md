@@ -11,7 +11,11 @@ highlights:
   - Design and implementation of the SADAS view rewriting module. SADAS is a specialized database management system for Data Warehousing environments.
 skills:
   - C++
-  - DBMS
+  - Database Management System (DBMS)
+  - Algorithms
+  - SQL
+  - Data Structures
+  - Performance Engineering
 categories:
   - experience
 ---

@@ -20,4 +20,6 @@ n/a
 
 ### Skills
 
-- n/a
+- Android
+- iOS
+

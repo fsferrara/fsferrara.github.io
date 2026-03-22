@@ -13,12 +13,13 @@ highlights:
   - Pioneered the Application Hygiene initiative, introducing a scoring system to improve app quality and dependency management.
   - Drove GraphQL Gateway unification, contributing to a scalable multi-brand UI platform.
 skills:
-  - Performance monitoring (RUM, TTIL, SLI/SLO)
-  - Native app development (Swift, SwiftUI, iOS architecture)
-  - API & microservices (GraphQL, REST)
-  - Global team collaboration
-  - Technical leadership & mentoring
-  - Incident response & on-call operations
+  - RUM
+  - Datadog
+  - Swift (Programming Language)
+  - GraphQL
+  - Technical Leadership
+  - Mentoring
+  - Remote Teamwork
 categories:
   - experience
 ---
@@ -39,6 +40,7 @@ categories:
 
 {% for skill in page.skills %}- {{ skill }}  
 {% endfor %}
+
 - Architectural and platform evolution (Shared UI, HTTP Context)
 - Leading application hygiene and technical debt management
 - Native app development (iOS/Android) and upskilling

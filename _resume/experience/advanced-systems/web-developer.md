@@ -10,11 +10,11 @@ highlights:
   - Developed a web application for print price estimates, built the user area, and implemented the entire back-office system to support users throughout the online printing process
 skills:
   - Java
-  - Java EE
-  - Google Web Toolkit (GWT)
-  - Smart GWT
-  - JPA
+  - Front-End Development
+  - Back-End Development
   - MySQL
+  - Web Applications
+  - Full-Stack Development
 categories:
   - experience
 ---

@@ -8,12 +8,12 @@ start-date: 1997-09-01
 end-date: 2002-07-01
 grade: 81/100
 skills:
-  - Computer Programming
-  - Information Technology
+  - Programming
+  - Software Development
   - Databases
-  - Accounting
-  - QBasic
-  - Fortran
+  - Database Management System (DBMS)
+  - Operating Systems
+  - Algorithms
 categories:
   - education
 ---
@@ -55,6 +55,9 @@ The Computer Science topics covered are programming (QBasic, Fortran), database 
 
 
 ### Skills
+
+{% for skill in page.skills %}- {{ skill }}  
+{% endfor %}
 
 - Computer Programming
 - Information Technology

@@ -14,12 +14,12 @@ highlights:
   - Led small projects and supported complex initiatives with cross-team collaboration.
 skills:
   - Java
-  - Spring Framework
-  - Apache Cordova
-  - Android
-  - Agile Methodologies
-  - Team Facilitation
-  - Cross-functional Collaboration
+  - Spring
+  - REST
+  - Mobile Application Development
+  - Scrum
+  - Facilitation
+  - Communication
 categories:
   - experience
 ---
@@ -44,6 +44,7 @@ As an agile company, I belong to a development team using the Scrum Framework, w
 
 {% for skill in page.skills %}- {{ skill }}  
 {% endfor %}
+
 - Backbone.js
 - Hybrid Apps
 - Mobile

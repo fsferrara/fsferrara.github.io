@@ -12,12 +12,12 @@ highlights:
   - Provided maintenance for web applications written in Python/Zope.
 skills:
   - Java
-  - JBoss
-  - JBoss Seam
-  - PostgreSQL Cluster
-  - Python
-  - Red Hat
-  - Zope
+  - Python (Programming Language)
+  - Linux
+  - Databases
+  - SQL
+  - Web Applications
+  - Back-End Development
 categories:
   - experience
 ---
