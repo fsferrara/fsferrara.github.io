@@ -4,10 +4,7 @@ date: 2000-09-01
 skills:
   - Programming
   - Software Development
-  - Algorithms
-  - Data Structures
-  - Shell Scripting
-  - Open Source
+  - Communication
 categories:
   - projects
 ---
