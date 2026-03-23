@@ -6,8 +6,8 @@ categories:
 ---
 {%- assign statement = page.relative_path |  split: '/' | last | split: '.md' | first | append: '.png' | prepend: '../' -%}
 🎓 **Certification** • _March 2026_  
-🏛️ [Udemy](https://www.udemy.com/)  
-📚 [Anthropic courses: Claude Code in Action](https://anthropic.skilljar.com/claude-code-in-action)  
+🏛️ [Skilljar](https://anthropic.skilljar.com)  
+📚 [Claude Code in Action](https://anthropic.skilljar.com/claude-code-in-action)  
 📜 [Certificate](https://verify.skilljar.com/c/vknzrztehtoi)  
 📍 _Online Course_  
 
