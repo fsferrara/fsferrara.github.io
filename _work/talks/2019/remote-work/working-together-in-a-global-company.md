@@ -80,7 +80,7 @@ Do you normally wear a paper bag over your head in the office?
 
 Then why hide your face during an online meeting? Non-verbal communication plays a big role, so don’t be shy and proudly show your face during online meetings.
 
-Besides the meetings, many tools allow you to set a profile picture. Of course, I recommend to upload and/or update your profiles picture with a recent photo of you. This facilitates the association between faces and names.
+Besides the meetings, many tools allow you to set a profile picture. Of course, I recommend to upload and/or update your profile picture with a recent photo of you. This facilitates the association between faces and names.
 
 Unfortunately, I never tried any sort of always-on video portals like [Perch](https://perch.co/), but I would like to have one of those portals in the relax area to enjoy a coffee break with remote colleagues.
 

@@ -83,7 +83,7 @@ To start practicing with **Docker** let's ssh-ing into the running boot2docker v
 
 The Docker Engine consists of two parts: a daemon, a server process that manages all the containers, and a client, which acts as a remote control for the daemon.
 
-If you're loggeg into the boot2docker machine, you can check if the docker daemon is running.
+If you're logged into the boot2docker machine, you can check if the docker daemon is running.
 ```
     docker@boot2docker:~$ docker version
     Client version: 1.5.0

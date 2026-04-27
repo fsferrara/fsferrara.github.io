@@ -260,7 +260,7 @@ Unpacking objects: 100% (5/5), done.
 
 ## GIT - Share a commit on an existing file
 
-Ops... there is a minor bug! The 'hello' string doesn't contains the point. Bob choose to treat it as a hot bugfix, and to commit this change directly on the master branch.
+Ops... there is a minor bug! The 'hello' string doesn't contain the point. Bob choose to treat it as a hot bugfix, and to commit this change directly on the master branch.
 
 He first edit the hello.js file, and then:
 

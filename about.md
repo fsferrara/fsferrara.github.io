@@ -6,7 +6,7 @@ layout: page
 ![Saverio Ferrara](/assets/img/social-card.jpg)
 
 Hey 👋, I'm **Saverio**.  
-Born and raised in a quiet countryside town, I had the opportunity to study **Computer Scienze** in a prestigiuos italian university. Now based in Rome 🇮🇹, I am passionate **Developer** who loves all things Linux 🐧 and just about anything a computer 💻 can handle.  
+Born and raised in a quiet countryside town, I had the opportunity to study **Computer Science** in a prestigious Italian university. Now based in Rome 🇮🇹, I am a passionate **Developer** who loves all things Linux 🐧 and just about anything a computer 💻 can handle.  
 Whether I’m **Coding** or **Mentoring** teammates, I bring curiosity, creativity, and a positive attitude to everything I do.
 
 ## Work-wise

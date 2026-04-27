@@ -67,7 +67,7 @@ This is only a starting point! The remaining hardware choices may vary a lot... 
 
 ## Install an Apache Hadoop Distribution
 
-Apache Hadoop and all its friends can be installed manually on a Linux distribution by following the official [guide](https://hadoop.apache.org/docs/current2/index.html), but it is strongly suggested to instal an Hadoop distribution: At the moment the commercial [Cloudera CDH](http://www.cloudera.com) seems to be a good choise. It is a Linux distribution based on the stable CentOS (Red Hat) and it has pre-installed all the utilities used in an Hadoop cluster.
+Apache Hadoop and all its friends can be installed manually on a Linux distribution by following the official [guide](https://hadoop.apache.org/docs/current2/index.html), but it is strongly suggested to install an Hadoop distribution: At the moment the commercial [Cloudera CDH](http://www.cloudera.com) seems to be a good choice. It is a Linux distribution based on the stable CentOS (Red Hat) and it has pre-installed all the utilities used in an Hadoop cluster.
 
 Another distribution, 100% open source and freely downloadable, is [Hortonworks Data Platform](http://hortonworks.com): this distribution is lightweight and can be used with Microsoft Windows too.
 

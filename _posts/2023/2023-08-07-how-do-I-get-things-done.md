@@ -76,7 +76,7 @@ The "Inbox" list is where I stockpile everything. I'm careful not to leave stuff
 
 **Step 1: Stockpile**
 
-Stockpiling is "Step 1" to enter in my GTD system and means capturing all your outstanding stuff. It's a vital step because anything that doesn't get in your GTD system will stay on your mind. And anything that stays on your mind eats energy and kills creativity.
+Stockpiling is "Step 1" to enter in my GTD system and means capturing all your outstanding stuff. It's a vital step because anything that doesn't enter your GTD system will stay on your mind. And anything that stays on your mind eats energy and kills creativity.
 
 Trello allows me to define an inbox email address I can use to forward stuff (usually emails). I can also stockpile from my smartphone since Trello is accessible from it.
 I may have other stuff in my physical notebook. At the end of the day, I store all the pending stuff in the "Inbox" so I don't leave it off the system.
