@@ -16,11 +16,11 @@ syndicate:
   linkedin: false
 ---
 
-Your audience will forget almost everything you say. The slides, the transitions, the bullet points you agonised over — most of it evaporates by the next morning. What survives is one moment, if you were lucky enough to land one.
+Back in 2019 I gave a talk on remote work, and the only line anyone quoted back to me afterwards was a throwaway joke about a paper bag. Not the seven rules I had spent weeks putting together. Not the section on asynchronous communication I was actually proud of. The paper bag. I remember thinking: well, that's a bit humbling :-) ... but also, maybe there's something worth learning here.
 
-The best speakers do not leave that to luck. They build the memorable moment on purpose, and the craft has a name: the *star moment*.
+That accident is what got me thinking about the *star moment* on purpose. Most of what you say in a talk evaporates by the next morning. The slides, the transitions, the bullet points you agonized over... most of it is gone. What survives, if you're lucky, is one moment. And I believe the best speakers don't leave that to luck.
 
-I learned to think this way after giving a talk on remote work back in 2019. The line nobody forgot was not the slide I had marked as "the important part" — it was a throwaway joke about a paper bag. That accident taught me to engineer the memorable bit deliberately, instead of hoping it would show up.
+The craft has a name: the *star moment*.
 
 <!-- truncate -->
 
@@ -30,27 +30,27 @@ Nancy Duarte coined the term in *Resonate*: **STAR — Something They'll Always 
 
 Duarte identifies five forms it can take:
 
-- **Memorable dramatisation** — a live demo, a prop, an unexpected physical action
-- **Repeatable sound bite** — a phrase short enough to quote in a hallway conversation
-- **Evocative visuals** — an image so striking it becomes the mental shorthand for the idea
-- **Emotive storytelling** — a personal story that makes the abstract concrete
-- **Shocking statistic** — a number so counterintuitive it resets the audience's priors
+- **Memorable dramatization**: a live demo, a prop, an unexpected physical action
+- **Repeatable sound bite**: a phrase short enough to quote in a hallway conversation
+- **Evocative visuals**: an image so striking it becomes the mental shorthand for the idea
+- **Emotive storytelling**: a personal story that makes the abstract concrete
+- **Shocking statistic**: a number so counterintuitive it resets the audience's priors
 
-Chris Anderson's *TED Talks* frames the same idea differently: every good talk carries one idea worth spreading. The star moment is how that idea gets transferred — it is the spike, the signal above the noise. Without it, even a technically correct talk leaves nothing to repeat.
+Chris Anderson's *TED Talks* frames the same idea differently: every good talk carries one idea worth spreading. The star moment is how that idea gets transferred, the spike, the signal above the noise. Without it, even a technically correct talk leaves nothing to repeat.
 
 ## Why it works
 
-There is a mechanism behind this, and engineers tend to appreciate mechanisms.
+There is a mechanism behind this, and honestly, engineers tend to appreciate mechanisms.
 
-Kahneman's **peak-end rule** says we judge an experience by its emotional peak and its ending — not by its average. A talk remembered as brilliant often had one dazzling moment and a clean close; the forty minutes in between are largely irrelevant to the verdict.
+Kahneman's **peak-end rule** says we judge an experience by its emotional peak and its ending, not by its average. A talk remembered as brilliant often had one dazzling moment and a clean close; the forty minutes in between are largely irrelevant to the verdict.
 
 The **serial-position effect** adds a second constraint: we remember the beginning and end of a sequence better than the middle. Everything buried in the body of a talk competes against a structural disadvantage.
 
-One engineered peak cuts through both effects. It gives the audience something to anchor the memory to. Without it, the peak is wherever chance put it — and chance is a poor co-author.
+One engineered peak cuts through both effects. It gives the audience something to anchor the memory to. Without it, the peak is wherever chance put it, and I think we can do better than that.
 
 ## The star moment in my own talk
 
-In 2019 I gave a talk called [Working Together in a Global Company]({% link _work/talks/2019/remote-work/working-together-in-a-global-company.md %}), a set of seven rules for effective collaboration in a distributed team. Rule five was "Do Be Seen" — the point being: turn your camera on in video calls.
+In 2019 I gave a talk called [Working Together in a Global Company]({% link _work/talks/2019/remote-work/working-together-in-a-global-company.md %}), a set of seven rules for effective collaboration in a distributed team. Rule five was "Do Be Seen" (i.e. turn your camera on in video calls).
 
 I could have said exactly that. Instead, the slide opened with a question:
 
@@ -62,7 +62,7 @@ Then a picture of a face wearing one. Then:
 
 That line is the only thing people quoted back to me afterwards. Not the seven rules. Not the section on asynchronous communication. The paper bag.
 
-Why did it work? It was **surprising** (nobody expected the image), **visual** (the bag-face sticks), **funny enough to repeat** (it works as a one-liner in a corridor), and it carried the actual point without needing explanation. The underlying message — show your face — arrived inside a moment the audience would remember.
+Why did it work? It was **surprising** (nobody expected the image), **visual** (the bag-face sticks), **funny enough to repeat** (it works as a one-liner in a corridor), and it carried the actual point without needing explanation. The underlying message, show your face, arrived inside a moment the audience would remember.
 
 The irony: I did not design it as a star moment. I designed it as a joke. The lesson I took from it was to do that on purpose next time.
 
@@ -76,13 +76,13 @@ The recipe has three steps.
 
 - A vivid image or prop works for anything visual or physical
 - A live demo works for products and engineering talks (show the thing working, not slides about the thing)
-- A shocking number works for anything data-driven — one stat that resets expectations
+- A shocking number works for anything data-driven, one stat that resets expectations
 - A story beat works when the idea requires empathy to land
 - A repeatable sound bite works when the idea needs to travel beyond the room
 
 **Place it at a peak.** Do not bury it in the middle. The end of the first third (after the problem is established, before the solution) or the end of the last third (as the close builds) are natural peaks. Let everything else in the talk support the moment rather than compete with it.
 
-Famous anchors: Steve Jobs at Macworld 2008, sliding a MacBook Air out of a manila envelope — nobody forgot what *thin* meant after that. Bill Gates releasing a jar of mosquitoes at TED 2009 — the point about malaria funding preceded it and followed it, but the moment is what spread. Neither was accidental.
+Famous anchors: Steve Jobs at Macworld 2008, sliding a MacBook Air out of a manila envelope... nobody forgot what *thin* meant after that. Bill Gates releasing a jar of mosquitoes at TED 2009, the point about malaria funding preceded it and followed it, but the moment is what spread. Neither was accidental.
 
 For engineering talks the same logic applies. An architecture pitch that includes one well-chosen analogy will be remembered longer than one that covers every component. A sprint demo that pauses for thirty seconds on the one feature that actually changed someone's workflow will land better than a full-screen tour. An incident retro that surfaces one genuinely counterintuitive finding will stick with the team.
 
@@ -90,14 +90,14 @@ For engineering talks the same logic applies. An architecture pitch that include
 
 Not every talk earns the investment.
 
-A conference keynote, a promotion pitch, a product demo to a new client — these are high-stakes enough to justify engineering a star moment carefully. The audience does not know you well, the time budget is fixed, and the stakes are asymmetric: a great moment costs you an hour of preparation; a forgettable talk costs you the audience.
+A conference keynote, a promotion pitch, a product demo to a new client... these are high-stakes enough to justify engineering a star moment carefully. The audience does not know you well, the time budget is fixed, and the stakes are asymmetric: a great moment costs you an hour of preparation, while a forgettable talk loses the audience entirely.
 
 A five-minute team status update does not need one. Forcing a star moment into the wrong setting reads as theatrical and mismatched to the context. A well-structured stand-up that respects everyone's time is worth more than a memorable stand-up nobody wanted to sit through.
 
-The honest version of the rule: design a star moment when the audience will make a decision or carry an idea forward based on what you say. Skip it when the goal is information transfer and the audience already trusts you.
+Personally, I tend to think of it this way: design a star moment when the audience will make a decision or carry an idea forward based on what you say. Skip it when the goal is information transfer and the audience already trusts you.
 
-## Takeaway
+## Conclusion
 
-The memorable moment in your next talk will happen whether you plan it or not — the question is whether it will be the one you wanted. Pick the single idea worth carrying out of the room. Choose a form that makes it surprising and repeatable. Place it at a peak and let the rest of the talk support it.
+I keep coming back to the paper bag, not because it was clever but because it taught me something I genuinely use now. The memorable moment in your next talk will happen whether you plan it or not. Actually, the question is just whether it will be the one you wanted.
 
-Engineer it. Do not leave it to the paper bag.
+So next time I'm preparing a high-stakes talk, I'm going to ask myself early: what is the one moment I want people to repeat in the hallway afterwards? If I can answer that before I open the slide deck, the rest tends to fall into place. I'd encourage you to try the same... it's a surprisingly clarifying question!
