@@ -74,9 +74,17 @@ Report each missing target as: `broken-link: {% post_url <ref> %} — target not
 
 ### 5. Voice / style heuristic
 
-Compare against a recent post in `_posts/2026/`. Flag (do not rewrite):
-- Opens with "In this post I will…" or similar throat-clearing → suggest rewriting the hook
+Compare against **`VOICE.md`** and the ground-truth samples it lists (the 2017/2019/2020 posts) — **not** against `_posts/2026/`, which were written by this same AI pipeline and only model the register we're trying to avoid. Voice is subjective, so everything here is **non-blocking**: flag with a file/line pointer, let the user decide. Flag (do not rewrite):
+
+- Opens with "In this post I will…", an aphoristic thesis, or a slogan (✗ "X is the foundation. The payoff is…") instead of context / a memory / a "What is X?" self-question → suggest rewriting the hook (`VOICE.md` rule 1)
 - Missing first-person voice in a first-person series post
+- **AI tics from `VOICE.md`** — flag each occurrence:
+  - em-dash triads or em-dash appositives (✗ "Context — an `AGENTS.md`, a clear folder structure — tells…") → suggest commas / `(i.e. …)` / `...`
+  - the "the part I had not is X" / "I just have not Y" cadence
+  - relentless parallelism / antithesis (✗ "Where the writer drafts, the reviewer validates")
+  - single-word italic rhetorical punches (✗ "what to *do*")
+  - arrow-notation meta payoff (✗ "writer → reviewer → live")
+- **No personality markers at all** — a whole post with zero `...`, zero `!`, zero hedges ("I believe", "honestly", "for now"), zero asides ("Anyway,", "Actually,", "Personally,") → flag as "reads hedge-free / LLM-flat; add Saverio's voice markers per `VOICE.md`"
 - Unusually long paragraphs (>150 words) without a list or heading break
 - Placeholder text (`[TODO]`, `[INSERT]`, `YYYY/MM/DD` tokens in the body)
 
@@ -163,6 +171,8 @@ If blocking issues remain, list them and refuse to provide the promote commands 
 **Non-blocking** (flag, user decides):
 - New tags not yet in `_posts/`
 - Style / voice heuristic findings
+- **AI-tic detections** (em-dash triads, "the part I had not is X" / "I just have not Y", aphoristic thesis opening, relentless parallelism/antithesis, single-word italic punches, arrow-notation meta payoff) — voice is subjective, so flag and let the user decide
+- **No personality markers at all** (hedge-free / LLM-flat prose) — flag, suggest adding `VOICE.md` markers
 - Missing `## Conclusion` (desirable, not required)
 - `<!-- truncate -->` placement suboptimal
 
@@ -174,8 +184,9 @@ If blocking issues remain, list them and refuse to provide the promote commands 
 
 ## References
 
+- `VOICE.md` — **source of truth for Saverio's voice** (the voice/style heuristic compares against this)
 - `AGENTS.md` — site conventions
 - `HOWTOAI.md` — "Before You Commit" checklist (this skill mirrors it)
 - `categories.md` — closed category list
 - `_data/links.yml` — internal link registry
-- `_posts/2026/` — voice reference
+- `_posts/2026/` — **contrast-only** reference (AI-written by this pipeline; do not treat as a positive voice source)

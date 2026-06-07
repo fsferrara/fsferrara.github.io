@@ -96,7 +96,7 @@ Two custom collections (declared in `_config.yml`) alongside the standard `_post
 
 ## AI Skills (`.claude/skills/`)
 
-Three project skills automate the blog authoring and distribution pipeline. They live in `.claude/skills/` and are discovered automatically when running `claude` from the repo root.
+Three project skills automate the blog authoring and distribution pipeline. They live in `.claude/skills/` and are discovered automatically when running `claude` from the repo root. All three read **`VOICE.md`** (repo root) as the source of truth for Saverio's blog voice before writing or reviewing prose.
 
 | Skill | Trigger | What it does |
 |-------|---------|--------------|

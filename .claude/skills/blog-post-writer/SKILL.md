@@ -45,11 +45,19 @@ Read these files (all in the blog repo) before drafting:
 - `AGENTS.md` — folder layout, collections, permalink style, front-matter fields
 - `_data/skills.yml` — canonical skill vocabulary (only reference, not used in post front matter)
 - `categories.md` — the **closed** category list; pick only from this list
-- One or two recent posts in `_posts/2026/` — to lock in the author's voice (first-person, `##` sections, clean prose)
+- `VOICE.md` — **the source of truth for Saverio's voice.** Read it first, then read 1–2 of the ground-truth samples it lists (the 2017/2019/2020 posts) to feel the cadence. **Do not** use `_posts/2026/` as a voice source — those were written by this same AI pipeline, so they only teach the register we're trying to avoid. Treat 2026 posts as contrast-only.
 
 ### 3. Draft the body
 
-Write in Saverio's voice: first person, direct, practitioner perspective, no padding. Structure:
+Write in **Saverio's voice as defined in `VOICE.md`** — read it before drafting, not after. At a glance, the loudest markers to get right:
+
+- **Open with context, a memory, or a "What is X? ... More simply, X is..." self-question** — never an aphoristic thesis or slogan.
+- **`...` as connective tissue, almost never em dashes;** prefer commas and "(i.e. ...)".
+- **Hedge out loud** — "I believe", "I tend to", "honestly", "for now" — and let enthusiasm show with the occasional `!`, `:-)`, or "Thank you!".
+- **Discourse asides** — "Anyway,", "Actually,", "Personally," — and **bold** tool names, *italic* for named concepts (not single-word rhetorical punches).
+- **End with a personal, forward-looking `## Conclusion`** that restates a real preference and often closes on an open question — not a tidy recap or arrow-notation payoff.
+
+Avoid the AI tics listed in `VOICE.md` (em-dash triads, relentless parallelism/antithesis, single-word italic punches, "writer → reviewer → live" payoffs, hedge-free corporate prose). Structure:
 
 ```
 ## [Section heading]          ← H2 for main sections
@@ -163,9 +171,15 @@ Next: run blog-post-reviewer to validate, then promote when ready.
 
 ## References
 
+- `VOICE.md` — **source of truth for Saverio's voice** (read before drafting)
 - `AGENTS.md` — site conventions, folder layout, front-matter fields
 - `HOWTOAI.md` — "Before You Commit" checklist; human-oversight principle
 - `_data/skills.yml` — canonical skill vocabulary
 - `categories.md` — closed category list
-- `_posts/2026/` — voice reference (read 1–2 recent posts)
+- Ground-truth voice samples (the canon to emulate — see `VOICE.md`):
+  - `_work/talks/2019/remote-work/working-together-in-a-global-company.md`
+  - `_posts/2020/2020-08-02-sending-and-receiving-packets-using-netcat.md`
+  - `_posts/2017/2017-12-10-getting-started-with-graphql.md`
+  - `_posts/2007/2007-09-08-relation-intelligence-without-representation.md` (Italian — cadence only)
+- `_posts/2026/` — **contrast-only** reference (AI-written by this pipeline; do not emulate)
 - Blog series context: `coding-agents/drafts/`, `coding-agents/agents/README.md`, `coding-agents/skills/*/SKILL.md`

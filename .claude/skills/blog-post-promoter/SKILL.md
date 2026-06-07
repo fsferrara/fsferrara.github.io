@@ -78,6 +78,8 @@ Count the sections: if fewer than 2, still produce `drip/01.md` from the body; i
 
 ### 4. Generate the share-pack artifacts
 
+**Voice:** the teaser, standalone, and drip copy should sound like Saverio, not like generic LinkedIn growth-hacking. Follow **`VOICE.md`** for the hook style and warmth — open with context or a real "What is X?" question rather than a slogan, hedge where it's honest, let a `...` or genuine `!` through. Keep this *within* the platform constraints below (character limits, ≤3 hashtags, no "I wrote a post about X" throat-clearing) — `VOICE.md` shapes the tone; the limits still bound the length.
+
 #### teaser.md — LinkedIn link-out (drives traffic)
 
 Format:
@@ -215,6 +217,7 @@ after each platform is actually posted:
 
 ## References
 
+- `VOICE.md` — **source of truth for Saverio's voice** (teaser/standalone/drip copy follows it)
 - `AGENTS.md` — site conventions, permalink pattern, `site.data.links`
 - `_data/links.yml` — internal link registry for Liquid resolution
 - `_config.yml` — permalink style (verify `pretty`), `exclude:` list
