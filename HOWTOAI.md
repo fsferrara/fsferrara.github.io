@@ -43,13 +43,13 @@ Checklist after any content or layout change:
 - Place education entries under `_resume/education/<slug>/` and experience under `_resume/experience/<slug>/`, mirroring the existing folders.
 - Front matter fields: `title`, `org`, `start-date`, `end-date`, `employment-type`, `location`, `location-type`, `highlights` (list), `skills` (list), `categories` (`experience` or `education`).
 - The `skills` list must draw from `_data/skills.yml`. Rare, historically relevant skills not in the vocabulary go **after** the canonical list as plain Markdown bullets — see `_resume/education/high-school/` for the established exception pattern.
-- `_drafts/template-education.md` is a starting scaffold.
+- `_templates/template-education.md` is a starting scaffold.
 
 ### Adding or editing work items (`_work/`)
 
 - Choose the right subfolder: `projects/`, `certifications/`, `courses/`, `books/`, or `talks/`. Only `projects` appear under "Featured" in `work.md`; everything else lands under "Learnings".
 - Front matter: `title`, `date`, `categories` (one of the five above), and for projects a `skills` list (canonical vocabulary).
-- Showcase images sit **alongside** the `.md` file and share its basename. The Liquid snippet derives the filename automatically (see `_drafts/template-project.md`); existing assets are a mix of `.png` and `.jpg`, so make sure the asset that actually exists matches what the page expects.
+- Showcase images sit **alongside** the `.md` file and share its basename. The Liquid snippet derives the filename automatically (see `_templates/template-project.md`); existing assets are a mix of `.png` and `.jpg`, so make sure the asset that actually exists matches what the page expects.
 
 ### Adding blog posts (`_posts/`)
 

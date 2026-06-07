@@ -25,7 +25,8 @@ Personal website for **Saverio Ferrara** — a Software Engineer & Technology Le
 │   ├── links.yml            # Canonical internal links (site.data.links)
 │   └── skills.yml           # Canonical skill vocabulary (site.data.skills)
 ├── _posts/                  # Blog posts, organized into year folders (2006–2026, 46 posts)
-├── _drafts/                 # Unpublished drafts + reusable content templates
+├── _drafts/                 # Unpublished blog post drafts
+├── _templates/              # Reusable entry scaffolds (ignored by Jekyll)
 ├── _resume/                 # Collection: resume entries
 │   ├── education/           #   one folder per qualification
 │   └── experience/          #   one folder per role
@@ -85,12 +86,13 @@ Two custom collections (declared in `_config.yml`) alongside the standard `_post
 - `about.md`, `resume.md`, `work.md`, `contact.md` — Top-level pages (also the nav order via `header_pages`)
 - `archive.md`, `tags.md`, `categories.md` — Blog index pages
 - `assets/css/` — Small custom CSS files (headshot, CTA button); main styling from minima
-- `_drafts/` — Unpublished drafts plus reusable entry templates (`template-project.md`, `template-certification.md`, `template-education.md`)
+- `_drafts/` — Unpublished blog post drafts
+- `_templates/` — Reusable entry scaffolds (`template.md`, `template-project.md`, `template-certification.md`, `template-education.md`). Like `_share/`, it starts with `_` so Jekyll ignores it and it never leaks into `_site/`
 
 ### Conventions
 
 - Permalinks use `pretty` style: `/collection/path/` (trailing slash, no `.html`)
-- Work items reference showcase images using a Liquid snippet that derives the image filename from the page's own filename, e.g. `{%- assign showcase = page.relative_path | split: '/' | last | split: '.md' | first | append: '.png' | prepend: '../' -%}` (see `_drafts/template-project.md`). Project showcase assets are a mix of `.png` and `.jpg`; match the asset that exists alongside the page.
+- Work items reference showcase images using a Liquid snippet that derives the image filename from the page's own filename, e.g. `{%- assign showcase = page.relative_path | split: '/' | last | split: '.md' | first | append: '.png' | prepend: '../' -%}` (see `_templates/template-project.md`). Project showcase assets are a mix of `.png` and `.jpg`; match the asset that exists alongside the page.
 - Internal cross-references between pages use `site.data.links` rather than hardcoded paths
 - The `work.md` "Playgrounds" section auto-lists the owner's public GitHub repos via `site.github.public_repositories` (populated by GitHub Pages metadata at build time)
 
