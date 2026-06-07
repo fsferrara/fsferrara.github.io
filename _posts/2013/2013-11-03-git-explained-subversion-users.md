@@ -9,6 +9,11 @@ tags:
   - versioning
 categories:
   - tools
+canonical_url: https://fsferrara.github.io/tools/2013/11/03/git-explained-subversion-users/
+syndicate:
+  devto: false
+  medium: false
+  linkedin: false
 ---
 `This guide shows the most common procedures usually performed by SVN users, but using GIT.  
 

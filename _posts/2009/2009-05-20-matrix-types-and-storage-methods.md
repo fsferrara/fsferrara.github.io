@@ -7,6 +7,11 @@ tags:
   - data structures
 categories:
   - programming
+canonical_url: https://fsferrara.github.io/programming/2009/09/02/matrix-types-and-storage-methods/
+syndicate:
+  devto: false
+  medium: false
+  linkedin: false
 ---
 In mathematics, a matrix (plural matrices) is a rectangular array of numbers, symbols, or expressions, arranged in rows and columns. The individual items in a matrix are called its elements or entries.
 

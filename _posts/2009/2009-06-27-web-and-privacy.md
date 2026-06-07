@@ -7,6 +7,11 @@ tags:
   - privacy
 categories:
   - system
+canonical_url: https://fsferrara.github.io/system/2009/06/27/web-and-privacy/
+syndicate:
+  devto: false
+  medium: false
+  linkedin: false
 ---
 Tempo fa il problema della privacy non era sentito perché dovevamo fidarci solo di un insieme ristretto di persone; con Internet, e le moderne tecnologie, è diventato facilissimo raccogliere, scambiare, e trasferire informazione.
 

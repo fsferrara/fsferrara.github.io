@@ -7,6 +7,11 @@ tags:
   - writing
 categories:
   - productivity
+canonical_url: https://fsferrara.github.io/productivity/2026/04/27/technical-documentation-mini-guide/
+syndicate:
+  devto: false
+  medium: false
+  linkedin: false
 ---
 
 Technical documentation exists to give people accurate information fast.

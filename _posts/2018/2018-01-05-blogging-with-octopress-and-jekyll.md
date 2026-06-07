@@ -9,6 +9,11 @@ tags:
   - hexo
 categories:
   - tools
+canonical_url: https://fsferrara.github.io/tools/2018/01/05/blogging-with-octopress-and-jekyll/
+syndicate:
+  devto: false
+  medium: false
+  linkedin: false
 ---
 Nowadays, most blogs are powered by _Wordpress_. I am a Wordpress users too and I have to admit it is really a great for blogs.  
 As others CMS, Wordpress requires a database and PHP in order to process the **dynamic** pages server-side.

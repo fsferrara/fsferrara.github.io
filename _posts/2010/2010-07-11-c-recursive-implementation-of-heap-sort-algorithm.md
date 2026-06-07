@@ -7,6 +7,11 @@ tags:
   - sort
 categories:
   - programming
+canonical_url: https://fsferrara.github.io/programming/2010/07/11/c-recursive-implementation-of-heap-sort-algorithm/
+syndicate:
+  devto: false
+  medium: false
+  linkedin: false
 ---
 L' heapsort è un algoritmo di ordinamento iterativo ed in-place proposto da Williams nel 1964, che si basa su strutture dati ausiliarie.
 

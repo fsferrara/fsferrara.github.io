@@ -10,6 +10,11 @@ tags:
   - scala
 categories:
   - programming
+canonical_url: https://fsferrara.github.io/programming/2013/11/22/building-web-applications-scala/
+syndicate:
+  devto: false
+  medium: false
+  linkedin: false
 ---
 Scala is general purpose programming language very popular for building web application. But why? At the moment I really don't know why :) , I'm just reading about it and sharing my thoughts with you.
 

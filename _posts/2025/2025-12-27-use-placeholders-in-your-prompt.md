@@ -8,6 +8,11 @@ tags:
   - writing
 categories:
   - productivity
+canonical_url: https://fsferrara.github.io/productivity/2025/12/27/use-placeholders-in-your-prompt/
+syndicate:
+  devto: false
+  medium: false
+  linkedin: false
 ---
 
 Placeholders make your prompts reusable and adaptable. Instead of rewriting prompts for every variation, use variables to swap in different content—saving time and maintaining consistency.

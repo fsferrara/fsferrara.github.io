@@ -3,6 +3,11 @@ title: "My Work Profile - by Aperian"
 date: 2023-11-15
 tags:
   - course
+canonical_url: https://fsferrara.github.io/2023/11/15/my-work-profile/
+syndicate:
+  devto: false
+  medium: false
+  linkedin: false
 ---
 I took a quiz offered by [aperian.com](https://aperian.com/) to build my, what they call, GlobeSmart profile.  
 The result is interesting to share and compare. Here is mine.

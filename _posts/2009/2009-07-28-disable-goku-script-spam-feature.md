@@ -7,6 +7,11 @@ tags:
   - irc
 categories:
   - projects
+canonical_url: https://fsferrara.github.io/projects/2009/07/28/disable-goku-script-spam-feature/
+syndicate:
+  devto: false
+  medium: false
+  linkedin: false
 ---
 Eliminare lo spam dal goku script
 

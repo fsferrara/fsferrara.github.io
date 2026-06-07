@@ -9,6 +9,11 @@ tags:
   - command-pattern
 categories:
   - programming
+canonical_url: https://fsferrara.github.io/programming/2018/08/26/isolate-services-using-the-command-pattern/
+syndicate:
+  devto: false
+  medium: false
+  linkedin: false
 ---
 Using microservices is mainstream nowadays and them bring several challenges for the software engineers: operations and infrastructure, security, monitoring, caching, fault-tolerance, and so on.  
 In particular, having under control the communication between microservices is the key to build reliable reliable services.

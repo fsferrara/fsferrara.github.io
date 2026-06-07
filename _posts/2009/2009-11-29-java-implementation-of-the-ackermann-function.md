@@ -9,6 +9,11 @@ tags:
 categories:
   - programming
   - algorithms
+canonical_url: https://fsferrara.github.io/programming/algorithms/2009/11/29/java-implementation-of-the-ackermann-function/
+syndicate:
+  devto: false
+  medium: false
+  linkedin: false
 ---
 Wilhelm Friedrich Ackermann (29/3/1896 – 24/12/1962) was a German mathematician best known for the Ackermann function, an important example in the theory of computation.
 

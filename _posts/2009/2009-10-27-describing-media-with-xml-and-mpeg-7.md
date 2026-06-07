@@ -7,6 +7,11 @@ tags:
   - xml
 categories:
   - programming
+canonical_url: https://fsferrara.github.io/programming/2009/10/27/describing-media-with-xml-and-mpeg-7/
+syndicate:
+  devto: false
+  medium: false
+  linkedin: false
 ---
 
   La diffusione delle connessioni a banda larga ha agevolato la diffusione di audio e video via web: un esempio eclatante è YouTube! Ma riuscire a trovare un video particolare tra la grossa quantità di dati multimediali sul web è un compito arduo: il valore del dato multimediale dipende da quanto è agevole trovarlo, gestirlo, ed accedere.

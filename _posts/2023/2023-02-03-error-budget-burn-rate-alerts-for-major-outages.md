@@ -8,6 +8,11 @@ tags:
   - sli
   - error-budget
   - alerting
+canonical_url: https://fsferrara.github.io/2023/02/03/error-budget-burn-rate-alerts-for-major-outages/
+syndicate:
+  devto: false
+  medium: false
+  linkedin: false
 ---
 As a software engineer, if you're reading this, for sure you already know that the error budget is defined when we select a _Service Level Indicator_ (SLI) and for it set a target _Service Level Objective_ (SLO) over a specific time period. If you don't, head to the "references" section below which suggests introductory resources.
 

@@ -8,6 +8,11 @@ tags:
   - pointers
 categories:
   - programming
+canonical_url: https://fsferrara.github.io/programming/2009/07/03/multidimensional-arrays-in-c/
+syndicate:
+  devto: false
+  medium: false
+  linkedin: false
 ---
 Questo articolo tratta la gestione delle stringhe e, in generale, dei vettori multidimensionali nel linguaggio C.
 

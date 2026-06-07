@@ -6,6 +6,11 @@ tags:
   - git
 categories:
   - programming
+canonical_url: https://fsferrara.github.io/programming/2021/09/05/cherry-picking-git-commits-amongst-different-repositories/
+syndicate:
+  devto: false
+  medium: false
+  linkedin: false
 ---
 I am trying how the `git cherry-pick` commands works and, in the specific, I am wondering if it is suitable to copy commits amongst two different repositories that are sharing only the first part of the git log history. Let's start by creating two new repositories named *repo_A* and *repo_B*.
 

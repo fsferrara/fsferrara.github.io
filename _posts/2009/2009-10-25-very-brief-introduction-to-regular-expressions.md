@@ -7,6 +7,11 @@ tags:
   - regular-expression
 categories:
   - tools
+canonical_url: https://fsferrara.github.io/tools/2009/10/25/very-brief-introduction-to-regular-expressions/
+syndicate:
+  devto: false
+  medium: false
+  linkedin: false
 ---
 Le espressioni regolari sono utili per descrivere la validità di valori, come ad esempio valori di attributi, dati caratteri, e qualsiasi tipo di valore esprimibile con un certo alfabeto.
 

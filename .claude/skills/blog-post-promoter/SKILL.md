@@ -188,7 +188,17 @@ Create `_share/<slug>/` and write all artifacts. Create `_share/<slug>/drip/` as
 
 If `_share/<slug>/` already exists, inform the user and ask whether to overwrite.
 
-### 7. Report
+### 7. Stamp canonical URL into the source post
+
+After writing the share-pack, run the bundled script to replace the placeholder `canonical_url` (with `YYYY/MM/DD` tokens) in the source post with the real URL derived from `_site/`. This is a no-op if the post already has a real URL.
+
+```sh
+bash .claude/skills/blog-post-promoter/scripts/stamp-canonical-url.sh <post-file>
+```
+
+The script requires `_site/` to exist (run `make` first if it doesn't). It is idempotent: skips the post if a non-placeholder `canonical_url` is already present.
+
+### 8. Report
 
 ```
 Share-pack parked at _share/<slug>/
@@ -222,3 +232,4 @@ after each platform is actually posted:
 - `_data/links.yml` — internal link registry for Liquid resolution
 - `_config.yml` — permalink style (verify `pretty`), `exclude:` list
 - `HOWTOAI.md` — human-oversight principle (user reviews all share text before posting)
+- `scripts/stamp-canonical-url.sh` — stamps real `canonical_url` into a single post's front matter (replaces placeholder; requires built `_site/`)

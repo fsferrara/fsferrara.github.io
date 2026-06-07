@@ -10,6 +10,11 @@ tags:
   - spring
 categories:
   - programming
+canonical_url: https://fsferrara.github.io/programming/2015/12/18/aspect-oriented-programming-with-spring-and-aspectj/
+syndicate:
+  devto: false
+  medium: false
+  linkedin: false
 ---
 **Aspect-Oriented Programming** (_AOP_) powerfully complements **Object-Oriented Programming** (_OOP_) by providing another way of thinking about program structure.
 

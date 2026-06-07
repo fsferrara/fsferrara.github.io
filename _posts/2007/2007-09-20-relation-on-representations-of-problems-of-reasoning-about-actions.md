@@ -9,6 +9,11 @@ tags:
   - amarel
 categories:
   - learning
+canonical_url: https://fsferrara.github.io/learning/2007/09/20/relation-on-representations-of-problems-of-reasoning-about-actions/
+syndicate:
+  devto: false
+  medium: false
+  linkedin: false
 ---
 Saul Amarel - RCA Laboratories Princeton, N.J.
 

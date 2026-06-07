@@ -7,6 +7,11 @@ tags:
   - XML
 categories:
   - tools
+canonical_url: https://fsferrara.github.io/tools/2009/10/26/very-brief-introduction-to-xml/
+syndicate:
+  devto: false
+  medium: false
+  linkedin: false
 ---
 Il linguaggio XML è diventato uno degli elementi fondamentali per la realizzazione di sistemi informativi, indipendentemente dalla tecnologia usata.
 

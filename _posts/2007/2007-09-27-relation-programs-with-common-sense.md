@@ -9,6 +9,11 @@ tags:
   - mccharty
 categories:
   - learning
+canonical_url: https://fsferrara.github.io/learning/2007/09/27/relation-programs-with-common-sense/
+syndicate:
+  devto: false
+  medium: false
+  linkedin: false
 ---
 Nel 1959, quando si parlava pochissimo di "intelligenza artificiale", John McCharty con l'articolo "Programs with common sense", introduce un programma che ha buonsenso (common sense).
 

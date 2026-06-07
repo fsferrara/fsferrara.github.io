@@ -8,6 +8,11 @@ tags:
   - writing
 categories:
   - productivity
+canonical_url: https://fsferrara.github.io/productivity/2025/12/05/prompt-engineering-crash-course/
+syndicate:
+  devto: false
+  medium: false
+  linkedin: false
 ---
 The quality of AI-generated output directly mirrors the quality of your input. When you submit an imprecise or unclear prompt, expect generic or irrelevant responses in return. Conversely, a thoughtfully constructed prompt can generate remarkably accurate, actionable results that surface valuable insights or spark creativity.
 

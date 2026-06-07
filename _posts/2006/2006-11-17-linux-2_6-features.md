@@ -6,6 +6,11 @@ tags:
 categories:
   - system
   - low-level
+canonical_url: https://fsferrara.github.io/system/low-level/2006/11/17/linux-2_6-features/
+syndicate:
+  devto: false
+  medium: false
+  linkedin: false
 ---
 _17 Novembre 2006, Università degli studi di Napoli "Federico II"
 Corso di Laurea in Informatica_

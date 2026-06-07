@@ -1,25 +1,13 @@
 ---
-title: "How I Made My Blog AI-Ready"
-date: 2026-06-06
-tags:
-  - ai
-  - documentation
-  - productivity
-  - jekyll
-categories:
-  - productivity
 canonical_url: https://fsferrara.github.io/productivity/2026/06/06/how-i-made-my-blog-ai-ready/
-syndicate:
-  devto: false
-  medium: false
-  linkedin: false
+title: "How I Made My Blog AI-Ready"
 ---
+<!-- Dev.to: paste as-is; canonical_url sets rel=canonical back to the blog. -->
+<!-- Medium: use "Import a story" from the canonical URL above. -->
 
 AI coding assistants are everywhere now, and they genuinely help, but only when they understand the codebase they are working in. Without context, they guess at your conventions, invent paths that do not exist, and propose patterns that clash with what you already have. The quality of their output is almost entirely a function of the quality of the context you give them.
 
 I recently went through this exercise on this very blog. It is a Jekyll site, small and well-organised, but I had never made it explicit to an AI assistant. No explanation of the folder layout, no build commands, no conventions. The tools had to infer everything. Once I fixed that, the suggestions improved immediately. I want to share the steps, because the approach generalises to any repo.
-
-<!-- truncate -->
 
 My goal was a single source of truth: one file that captures what a developer, human or AI, needs to orient themselves and start contributing. Lightweight, no duplication, easy to maintain. Update one file and every tool stays in sync.
 
@@ -119,7 +107,7 @@ The AI suggestions improved right away. This very blog post has been 90% written
 
 The whole approach takes a few hours the first time, mostly to write a good `AGENTS.md`. After that, maintenance is just keeping one file current instead of zero, because the alternative, no documentation at all, means the AI is guessing and you are correcting.
 
-If you are interested in the broader documentation side of this, I wrote a [Technical Documentation Mini-Guide]({% post_url 2026/2026-04-27-technical-documentation-mini-guide %}) earlier this year that covers structure and writing quality in detail. The prompt-engineering angle has more depth in an [earlier post on prompting]({% post_url 2025/2025-12-05-prompt-engineering-crash-course %}) in this series.
+If you are interested in the broader documentation side of this, I wrote a [Technical Documentation Mini-Guide](https://fsferrara.github.io/productivity/2026/04/27/technical-documentation-mini-guide/) earlier this year that covers structure and writing quality in detail. The prompt-engineering angle has more depth in an [earlier post on prompting](https://fsferrara.github.io/productivity/2025/12/05/prompt-engineering-crash-course/) in this series.
 
 Start with `AGENTS.md`. Customise it to your project's actual shape. The tools will follow.
 

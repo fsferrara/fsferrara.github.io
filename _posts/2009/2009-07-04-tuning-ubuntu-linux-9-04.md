@@ -8,6 +8,11 @@ tags:
   - ubuntu
 categories:
   - system
+canonical_url: https://fsferrara.github.io/system/2009/07/04/tuning-ubuntu-linux-9-04/
+syndicate:
+  devto: false
+  medium: false
+  linkedin: false
 ---
 Sulla rete ci sono parecchie guide sul come fare il tuning di ubuntu (cioè come alleggerire ubuntu) ma ho deciso di raggruppare il tutto in questa guida.
 

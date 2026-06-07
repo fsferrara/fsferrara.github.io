@@ -9,6 +9,11 @@ tags:
   - turing
 categories:
   - learning
+canonical_url: https://fsferrara.github.io/learning/2013/10/20/early-development-of-artificial-intelligence/
+syndicate:
+  devto: false
+  medium: false
+  linkedin: false
 ---
 Primi sviluppi dell'Intelligenza Artificiale.
 

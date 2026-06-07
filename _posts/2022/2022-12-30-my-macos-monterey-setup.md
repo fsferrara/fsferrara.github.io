@@ -6,6 +6,11 @@ tags:
   - productivity
 categories:
   - productivity
+canonical_url: https://fsferrara.github.io/productivity/2022/12/30/my-macos-monterey-setup/
+syndicate:
+  devto: false
+  medium: false
+  linkedin: false
 ---
 I think you are supposing I am a macOS fan... but I am not! Linux is my favourite OS, so why I spent time customizing macOS? I am also a software developer and, like many others, I have been asked to use macOS.
 

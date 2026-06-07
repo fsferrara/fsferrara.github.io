@@ -9,6 +9,11 @@ tags:
   - warehouse
 categories:
   - system
+canonical_url: https://fsferrara.github.io/system/2014/02/21/planning-cluster-hadoop-bigdata/
+syndicate:
+  devto: false
+  medium: false
+  linkedin: false
 ---
 This post is about how to plan, for the first time, a cluster for Apache Hadoop and HBase. Hadoop, together with its friends, enable us to elaborate a large amount of data in a cheaply way: by large I mean data large about 100 gigabytes and above.
 

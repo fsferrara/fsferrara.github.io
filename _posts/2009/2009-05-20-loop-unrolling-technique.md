@@ -7,6 +7,11 @@ tags:
 categories:
   - programming
   - algorithm
+canonical_url: https://fsferrara.github.io/programming/algorithm/2009/05/20/loop-unrolling-technique/
+syndicate:
+  devto: false
+  medium: false
+  linkedin: false
 ---
 Lo "srotolamento" del ciclo consistente nel modificare il controllo del ciclo e nel replicare opportunamente le istruzioni all'interno del ciclo viene detto "tecnica di LOOP UNROLLING".
 

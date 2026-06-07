@@ -11,6 +11,11 @@ tags:
   - turing
 categories:
   - learning
+canonical_url: https://fsferrara.github.io/learning/2013/10/20/the-birth-of-computer-science/
+syndicate:
+  devto: false
+  medium: false
+  linkedin: false
 ---
 La nascita dell'informatica.
 

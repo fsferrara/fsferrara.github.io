@@ -8,6 +8,11 @@ tags:
   - writing
 categories:
   - productivity
+canonical_url: https://fsferrara.github.io/productivity/2025/12/30/multi-phase-process-prompt/
+syndicate:
+  devto: false
+  medium: false
+  linkedin: false
 ---
 
 Complex tasks often overwhelm AI models. When you ask for a multi-step workflow in a single prompt, the model often rushes to the end, skipping crucial intermediate steps or hallucinating details.
