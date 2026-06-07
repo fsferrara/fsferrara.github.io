@@ -38,7 +38,7 @@ linkedin_username: fsferrara
 # youtube_username: fsferrara
 # googleplus_username: +fsferrara
 
-# rss: rss
+rss: RSS
 show_excerpts: false # set to true to show excerpts on the homepage
 
 # Build settings
