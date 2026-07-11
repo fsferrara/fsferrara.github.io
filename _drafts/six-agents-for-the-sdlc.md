@@ -3,7 +3,7 @@ title: "Six Agents for the Software Lifecycle"
 date: 2026-06-07
 tags:
   - ai
-  - coding-agents
+  - agentic-engineering
   - agent-skills
   - sdlc
   - prompt-engineering

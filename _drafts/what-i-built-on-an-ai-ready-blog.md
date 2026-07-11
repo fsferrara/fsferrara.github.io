@@ -4,7 +4,7 @@ date: 2026-06-07
 tags:
   - ai
   - agent-skills
-  - coding-agents
+  - agentic-engineering
   - jekyll
   - productivity
 categories:

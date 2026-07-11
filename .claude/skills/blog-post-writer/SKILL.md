@@ -6,7 +6,7 @@ description: >
   post", "park a post idea", "write up what I learned about Y", "outline a
   post", or any phrasing asking to create or expand blog content. Produces a
   parked draft in _drafts/ — never publishes. Source material MUST be public
-  only (coding-agents/, blog/_posts/, public docs) — never vault/brain content.
+  only (blog/_posts/, public docs) — never vault/brain content.
 ---
 
 # Blog Post Writer
@@ -33,7 +33,7 @@ Turns a learning, idea, or public source into a parked draft at `_drafts/<slug>.
 ### 1. Resolve the source and enforce public-only
 
 Accept any of:
-- A file path (must be under `coding-agents/`, `fsferrara.github.io/`, or other public repos)
+- A file path (must be under `fsferrara.github.io/`, or other public repos)
 - Inline text the user provides
 - A brief description of a topic from public knowledge
 
@@ -94,7 +94,7 @@ Common mappings for this series:
 
 Ground tags in the existing series vocabulary and `_data/skills.yml` where applicable:
 
-Core series tags: `ai`, `coding-agents`, `agent-skills`, `prompt-engineering`, `spec-driven-development`
+Core series tags: `ai`, `programming`, `agent-skills`, `prompt-engineering`, `spec-driven-development`
 
 Add specific tags as relevant: `sdlc`, `agile`, `documentation`, `writing`, `jekyll`, `productivity`
 
@@ -182,4 +182,3 @@ Next: run blog-post-reviewer to validate, then promote when ready.
   - `_posts/2017/2017-12-10-getting-started-with-graphql.md`
   - `_posts/2007/2007-09-08-relation-intelligence-without-representation.md` (Italian — cadence only)
 - `_posts/2026/` — **contrast-only** reference (AI-written by this pipeline; do not emulate)
-- Blog series context: `coding-agents/drafts/`, `coding-agents/agents/README.md`, `coding-agents/skills/*/SKILL.md`

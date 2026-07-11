@@ -3,7 +3,7 @@ title: "The SDLC, and Where Agents Fit"
 date: 2026-06-07
 tags:
   - ai
-  - coding-agents
+  - agentic-engineering
   - sdlc
   - agile
   - prompt-engineering
