@@ -12,7 +12,7 @@ categories:
 
 _21 Dicembre 2017, Hotels.com Technology Rome Office_
 
-![Da REST a GraphQL in 90 minuti](da-rest-a-graphql-in-90-minuti.jpg)
+![Da REST a GraphQL in 90 minuti](/work/talks/2017/intro-graphql/da-rest-a-graphql-in-90-minuti.jpg)
 
 Il team HCOM technology di Roma vorrebbe condividere con voi le esperienze fatte con GraphQL, e discutere su come questo linguaggio possa essere favorito rispetto all'ormai consueto paradigma REST.
 
@@ -37,5 +37,5 @@ HCOM Tech Rome è lieta di invitarvi nella sede di HOTELS.COM che gentilmente ci
 La Registrazione è OBBLIGATORIA per garantirvi l'accesso allo stabile e per consentirci di organizzare il tutto in maniera adeguata.
 
 [📄 source code](https://github.com/fsferrara/from-rest-to-graphql-meetup)
-[💾 slides](/downloads/talks/da-rest-a-graphql-in-90-minuti.pdf)
+[💾 slides](/work/talks/2017/intro-graphql/da-rest-a-graphql-in-90-minuti.pdf)
 [🔗 meetup page](https://www.meetup.com/Rome-Software-Discussion/events/245282496/?eventId=245282496)
