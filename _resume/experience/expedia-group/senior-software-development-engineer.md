@@ -2,7 +2,7 @@
 title: "Senior Software Development Engineer"
 org: "Expedia Group"
 start-date: 2020-09-01
-end-date: "Present"
+end-date: 2026-09-01
 employment-type: "Full-time"
 location: "Rome Area, Italy"
 location-type: "Hybrid"
