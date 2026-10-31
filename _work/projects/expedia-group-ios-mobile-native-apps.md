@@ -14,7 +14,7 @@ categories:
 ---
 {%- assign showcase = page.relative_path |  split: '/' | last | split: '.md' | first | append: '.jpg' | prepend: '../' -%}
 💻 **Work Project** • _Septembet 2022 → ..._  
-🏢 [Senior Software Development Engineer @ Expedia Group]({{ site.data.links.experience.expedia-group-senior-software-development-engineer.page }})  
+🏢 [Senior Software Development Engineer @ Expedia Group]({{ site.data.links.experience.expedia-group-senior-mobile-engineer.page }})  
 📍 _Rome Area, Italy_  
 [🔗 www.expediagroup.com](https://www.expediagroup.com/)  
 
