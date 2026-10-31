@@ -46,13 +46,13 @@ Keep in mind people can’t see you.
 
 That's why I start my day by writing this in my team's chat channel:
 
-![say hello when the day starts](communicate-your-status-1.png)
+![say hello when the day starts](/work/talks/2019/remote-work/communicate-your-status-1.png)
 
 I write that message independently if I am in the office or working from home. In this way, the entire team knows the time when I start to work.
 
 Another similar example, is the following:
 
-![keep the team posted about your status](communicate-your-status-2.png)
+![keep the team posted about your status](/work/talks/2019/remote-work/communicate-your-status-2.png)
 
 Giving an acknowledge that you read the message and you are working on it has two advantages:
 1. the requester know the message was received,
@@ -76,7 +76,7 @@ Sharing a plan will increase the chances to work together even if someone is not
 
 Do you normally wear a paper bag over your head in the office?
 
-![No webcam bag face](bag-face.png)
+![No webcam bag face](/work/talks/2019/remote-work/bag-face.png)
 
 Then why hide your face during an online meeting? Non-verbal communication plays a big role, so don’t be shy and proudly show your face during online meetings.
 
@@ -100,7 +100,7 @@ If someone helps me in some way, then I use mentions in order to highlight it a
 
 Other resources available:
 
-[💾 Slide Deck](/downloads/talks/working-together-in-a-global-company.pdf) is available for download.
+[💾 Slide Deck](/work/talks/2019/remote-work/working-together-in-a-global-company.pdf) is available for download.
 <!--
 [🔗 Presentation](https://www.youtube.com/watch?v=ebPIWp0NIOk) that can be used for a "brown bag" session.
 -->
