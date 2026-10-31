@@ -30,5 +30,4 @@ Il materiale è relativo ad un seminario tenuto per il corso di _Sistemi Operati
 
 ## Slides
 
-[💾 slides](/downloads/talks/linux-2_6-features.pdf)
-[🔗 slides player](https://slideplayer.it/slide/7567/)
+[🔗 talk](/work/talks/2006/linux-kernel-updates/linux-2_6-features/)
